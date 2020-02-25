@@ -14,7 +14,7 @@ import javax.validation.constraints.NotBlank;
  */
 @Data
 @Entity
-@Table(name = "Yndp_Fkdc_Zypz")
+@Table(name = "yndp_fkdc_zypz")
 public class YndpFkdcZypz extends BaseNativeEntity {
 
     /**
@@ -71,7 +71,7 @@ public class YndpFkdcZypz extends BaseNativeEntity {
     /**
      * 机构ID
      */
-    @Column(name = "jgid", columnDefinition = "VARCHAR(2) COMMENT '机构ID'")
+    @Column(name = "jgid", columnDefinition = "VARCHAR(64) COMMENT '机构ID'")
     private String jgid;
 
 }
