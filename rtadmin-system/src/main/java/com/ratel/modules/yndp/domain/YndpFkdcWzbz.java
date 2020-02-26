@@ -20,7 +20,7 @@ public class YndpFkdcWzbz extends BaseNativeEntity {
     /**
      * 日期
      */
-    @Column(name = "rq", columnDefinition = "VARCHAR(64) COMMENT '日期'")
+    @Column(name = "rq", columnDefinition = "VARCHAR(20) COMMENT '日期'")
     private String rq;
     /**
      * 物资
