@@ -21,6 +21,37 @@ public class YndpFkbsWg extends BaseNativeEntity {
      */
     @Column(name = "jgid", columnDefinition = "VARCHAR(64) COMMENT '机构ID'")
     private String jgid;
+    /**
+     * 机构名称
+     */
+    @Column(name = "jgmc", columnDefinition = "VARCHAR(64) COMMENT '机构名称'")
+    private String jgmc;
+    /**
+     * 户数
+     */
+    @Column(name = "hs", columnDefinition = "VARCHAR(64) COMMENT '户数'")
+    private String hs;
+    /**
+     * 人数
+     */
+    @Column(name = "rs", columnDefinition = "VARCHAR(64) COMMENT '人数'")
+    private String rs;
+
+    /**
+     * 网格监督员
+     */
+    @Column(name = "wljdy", columnDefinition = "VARCHAR(255) COMMENT '网格监督员'")
+    private String wljdy;
+    /**
+     * 网格长
+     */
+    @Column(name = "wgz", columnDefinition = "VARCHAR(255) COMMENT '网格长'")
+    private String wgz;
+    /**
+     * 网格员
+     */
+    @Column(name = "wgy", columnDefinition = "VARCHAR(255) COMMENT '网格员'")
+    private String wgy;
 
     /**
      * 网格管理员

@@ -45,15 +45,15 @@ public class YndpFkbsWgcy extends BaseNativeEntity {
     @Column(name = "zrs", columnDefinition = "VARCHAR(64) COMMENT '楼栋总人数'")
     private String zrs;
     /**
-     *  网格长
+     *  机构网格长
      */
-    @Column(name = "wgz", columnDefinition = "VARCHAR(255) COMMENT '网格长'")
-    private String wgz;
+    @Column(name = "jgwgz", columnDefinition = "VARCHAR(255) COMMENT '机构网格长'")
+    private String jgwgz;
     /**
-     *  网格管理员
+     *  机构网格管理员
      */
-    @Column(name = "wggly", columnDefinition = "VARCHAR(255) COMMENT '网格管理员'")
-    private String wggly;
+    @Column(name = "jgwggly", columnDefinition = "VARCHAR(255) COMMENT '机构网格管理员'")
+    private String jgwggly;
     /**
      *  行业网格长
      */
@@ -64,6 +64,22 @@ public class YndpFkbsWgcy extends BaseNativeEntity {
      */
     @Column(name = "hywgcy", columnDefinition = "VARCHAR(3000) COMMENT '行业网格成员'")
     private String hywgcy;
+    /**
+     *  党员代表
+     */
+    @Column(name = "dydb", columnDefinition = "VARCHAR(3000) COMMENT '党员代表'")
+    private String dydb;
+    /**
+     *  联系电话
+     */
+    @Column(name = "lxdh", columnDefinition = "VARCHAR(3000) COMMENT '联系电话'")
+    private String lxdh;
+    /**
+     *  联系户数
+     */
+    @Column(name = "lxhs", columnDefinition = "VARCHAR(3000) COMMENT '联系户数'")
+    private String lxhs;
+
     /**
      * 预留字段1
      */
