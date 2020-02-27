@@ -17,7 +17,7 @@ import java.util.Map;
 @Slf4j
 @Service
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true, rollbackFor = Exception.class)
-public class YndpFkdcZdrympService extends BaseService<YndpFkdcYqqs, Integer> {
+public class YndpFkdcZdrympService extends BaseService<YndpFkdcYqqs, String> {
 
     @Autowired
     private YndpFkdcYqqsRepository yndpFkdcYqqsRepository;

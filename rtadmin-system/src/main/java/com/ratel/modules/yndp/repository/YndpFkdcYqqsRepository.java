@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface YndpFkdcYqqsRepository extends BaseRepository<YndpFkdcYqqs,Long> {
+public interface YndpFkdcYqqsRepository extends BaseRepository<YndpFkdcYqqs,String> {
 
     /**
      * 获得一个时间段的记录

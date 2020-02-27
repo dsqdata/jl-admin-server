@@ -11,7 +11,7 @@ import java.util.List;
  * @author DDXS
  * @date 2020/2/26 13:31
  */
-public interface YndpFjdcZypzRepository extends BaseRepository<YndpFkdcZypz, Long> {
+public interface YndpFjdcZypzRepository extends BaseRepository<YndpFkdcZypz, String> {
 
     /**
      * 根据机构ID查询资源配置

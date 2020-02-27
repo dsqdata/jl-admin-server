@@ -18,7 +18,7 @@ import java.util.List;
  */
 @Service
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true, rollbackFor = Exception.class)
-public class YndpFkdcZypzService extends BaseService<YndpFkdcWzbz,Integer> {
+public class YndpFkdcZypzService extends BaseService<YndpFkdcWzbz,String> {
 
     @Autowired
     private YndpFjdcZypzRepository yndpFjdcZypzRepository;

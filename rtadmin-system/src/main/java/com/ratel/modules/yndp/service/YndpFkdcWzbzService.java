@@ -13,6 +13,6 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Service
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true, rollbackFor = Exception.class)
-public class YndpFkdcWzbzService extends BaseService<YndpFkdcWzbz, Integer> {
+public class YndpFkdcWzbzService extends BaseService<YndpFkdcWzbz, String> {
 
 }

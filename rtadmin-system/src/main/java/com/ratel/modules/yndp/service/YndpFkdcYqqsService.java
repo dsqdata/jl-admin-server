@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 @Slf4j
 @Service
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true, rollbackFor = Exception.class)
-public class YndpFkdcYqqsService extends BaseService<YndpFkdcYqqs, Integer> {
+public class YndpFkdcYqqsService extends BaseService<YndpFkdcYqqs, String> {
 
     @Autowired
     private YndpFkdcYqqsRepository yndpFkdcYqqsRepository;

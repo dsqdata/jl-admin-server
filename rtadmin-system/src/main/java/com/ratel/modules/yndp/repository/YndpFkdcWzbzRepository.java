@@ -11,6 +11,6 @@ import org.springframework.stereotype.Repository;
  * @date 2020/2/26 9:39
  */
 @Repository
-public interface YndpFkdcWzbzRepository extends BaseRepository<YndpFkdcWzbz, Long> {
+public interface YndpFkdcWzbzRepository extends BaseRepository<YndpFkdcWzbz, String> {
 
 }
