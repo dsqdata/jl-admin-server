@@ -103,6 +103,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/swagger-resources/**").permitAll()
                 .antMatchers("/webjars/**").permitAll()
                 .antMatchers("/*/api-docs").permitAll()
+                //
+                .antMatchers("/api/yndp/**").permitAll()
                 // 文件
                 .antMatchers("/static/**").permitAll()
                 .antMatchers("/avatar/**").permitAll()
