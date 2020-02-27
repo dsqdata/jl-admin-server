@@ -8,25 +8,30 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 /**
- * 防控洞察-疫区来昆人员追踪表
+ * 防控洞察-疫情趋势表
  * @author zhaoweiming
- * @date 2020/2/26 11:10
+ * @date 2020/2/26 10:10
  */
 @Data
 @Entity
-@Table(name = "yndp_fkdc_yqlkryzz")
-public class YndpFkdcYqlkryzz extends BaseNativeEntity {
+@Table(name = "yndp_fkdc_yqqs")
+public class YndpFkdcYqqs extends BaseNativeEntity {
 
     /**
-     * 人员类型(总数，已住店离观，离昆，隔离期过14天，不在辖区居住地，解除医学观察人员，入住指定的如家商旅酒店，湖北以外其他地方回昆人员，其他)
+     * 疫情名称
      */
-    @Column(name = "rylx", columnDefinition = "VARCHAR(64) COMMENT '人员类型(总数，已住店离观，离昆，隔离期过14天，不在辖区居住地，解除医学观察人员，入住指定的如家商旅酒店，湖北以外其他地方回昆人员，其他)'")
-    private String rylx;
+    @Column(name = "yqmc", columnDefinition = "VARCHAR(64) COMMENT '疫情名称'")
+    private String yqmc;
     /**
-     * 人员数量
+     * 疫情数量
      */
-    @Column(name = "rysl", columnDefinition = "VARCHAR(64) COMMENT '人员数量'")
-    private String rysl;
+    @Column(name = "yqsl", columnDefinition = "VARCHAR(64) COMMENT '疫情数量'")
+    private String yqsl;
+    /**
+     * 疫情类型(1新增疑似/新增确诊 2现存确诊/现存疑似 3死亡/治愈 4病死率 5治愈率)
+     */
+    @Column(name = "yqlx", columnDefinition = "VARCHAR(64) COMMENT '疫情类型(1新增疑似/新增确诊 2现存确诊/现存疑似 3死亡/治愈 4病死率 5治愈率)'")
+    private String yqlx;
     /**
      * 排序
      */

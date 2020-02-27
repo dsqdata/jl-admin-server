@@ -18,20 +18,10 @@ import javax.persistence.Table;
 public class YndpFkdcZdrymp extends BaseNativeEntity {
 
     /**
-     * 排查特殊人群数量总数
+     * 重点人员名称
      */
-    @Column(name = "pctsrqslzs", columnDefinition = "VARCHAR(64) COMMENT '排查特殊人群数量总数'")
-    private String pctsrqslzs;
-    /**
-     * 排查特殊人群新增总人数
-     */
-    @Column(name = "pctsrqxzzrs", columnDefinition = "VARCHAR(64) COMMENT '排查特殊人群新增总人数'")
-    private String pctsrqxzzrs;
-    /**
-     * 重点人员类型
-     */
-    @Column(name = "zdrylx", columnDefinition = "VARCHAR(64) COMMENT '重点人员类型'")
-    private String zdrylx;
+    @Column(name = "zdrymc", columnDefinition = "VARCHAR(64) COMMENT '重点人员名称'")
+    private String zdrymc;
     /**
      * 重点人员人数
      */
@@ -48,15 +38,15 @@ public class YndpFkdcZdrymp extends BaseNativeEntity {
     @Column(name = "zdryxzrs", columnDefinition = "VARCHAR(64) COMMENT '重点人员新增人数'")
     private String zdryxzrs;
     /**
-     * 入住留验点人员总数
+     * 重点人员类型
      */
-    @Column(name = "rzlydryzs", columnDefinition = "VARCHAR(64) COMMENT '入住留验点人员总数'")
-    private String rzlydryzs;
+    @Column(name = "zdrylx", columnDefinition = "VARCHAR(64) COMMENT '重点人员类型（1 特殊人群 2 入住留验点人员 3登记在册 4公安检查点排查人员）'")
+    private String zdrylx;
     /**
-     * 入住留验点人员新增总人数
+     * 排序
      */
-    @Column(name = "rzlydryxzzrs", columnDefinition = "VARCHAR(64) COMMENT '入住留验点人员新增总人数'")
-    private String rzlydryxzzrs;
+    @Column(name = "px", columnDefinition = "VARCHAR(64) COMMENT '排序'")
+    private String px;
     /**
      * 类型：1:区级，2：街道级，3：社区级别
      */
