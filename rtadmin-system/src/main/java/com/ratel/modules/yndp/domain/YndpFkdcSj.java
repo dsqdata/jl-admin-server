@@ -18,25 +18,15 @@ import javax.persistence.Table;
 public class YndpFkdcSj extends BaseNativeEntity {
 
     /**
-     * 市区
+     * 机构ID
      */
-    @Column(name = "sq", columnDefinition = "VARCHAR(64) COMMENT '市区'")
-    private String sq;
+    @Column(name = "jgid", columnDefinition = "VARCHAR(64) COMMENT '机构ID'")
+    private String jgid;
     /**
-     * 街道
+     * 机构名称
      */
-    @Column(name = "jiedao", columnDefinition = "VARCHAR(64) COMMENT '街道'")
-    private String jiedao;
-    /**
-     * 社区
-     */
-    @Column(name = "shequ", columnDefinition = "VARCHAR(64) COMMENT '社区'")
-    private String shequ;
-    /**
-     * 小区/村
-     */
-    @Column(name = "xq", columnDefinition = "VARCHAR(64) COMMENT '小区/村'")
-    private String xq;
+    @Column(name = "jgmc", columnDefinition = "VARCHAR(64) COMMENT '机构名称'")
+    private String jgmc;
 
     /**
      * 事件
