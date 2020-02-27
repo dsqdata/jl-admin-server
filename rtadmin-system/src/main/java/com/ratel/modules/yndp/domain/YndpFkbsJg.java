@@ -41,6 +41,12 @@ public class YndpFkbsJg extends BaseNativeEntity {
     private String jgOrHy;
 
     /**
+     * 下级类型,1:小区，2：村，3：行业
+     */
+    @Column(name = "xjlx", columnDefinition = "VARCHAR(2) COMMENT '下级类型,1:小区，2：村，3：行业'")
+    private String xjlxe;
+
+    /**
      *   区疫情防控指挥部指挥长
      */
     @Column(name = "zhbzhz", columnDefinition = "VARCHAR(255) COMMENT '区疫情防控指挥部指挥长'")
