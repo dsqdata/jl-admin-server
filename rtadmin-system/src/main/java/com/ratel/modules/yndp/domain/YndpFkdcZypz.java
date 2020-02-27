@@ -1,10 +1,11 @@
 package com.ratel.modules.yndp.domain;
 
-import com.ratel.framework.core.domain.BaseEntity;
-import com.ratel.framework.core.domain.BaseNativeEntity;
+import com.ratel.framework.core.domain.BaseUuidEntity;
 import lombok.Data;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
 /**
@@ -15,7 +16,7 @@ import javax.validation.constraints.NotBlank;
 @Data
 @Entity
 @Table(name = "yndp_fkdc_zypz")
-public class YndpFkdcZypz extends BaseNativeEntity {
+public class YndpFkdcZypz extends BaseUuidEntity {
 
     /**
      * 网格长

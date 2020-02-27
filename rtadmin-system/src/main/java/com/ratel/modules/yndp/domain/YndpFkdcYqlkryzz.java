@@ -1,11 +1,12 @@
 package com.ratel.modules.yndp.domain;
 
-import com.ratel.framework.core.domain.BaseNativeEntity;
+import com.ratel.framework.core.domain.BaseUuidEntity;
 import lombok.Data;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  * 防控洞察-疫区来昆人员追踪表
@@ -15,7 +16,7 @@ import javax.persistence.Table;
 @Data
 @Entity
 @Table(name = "yndp_fkdc_yqlkryzz")
-public class YndpFkdcYqlkryzz extends BaseNativeEntity {
+public class YndpFkdcYqlkryzz extends BaseUuidEntity {
 
     /**
      * 人员类型(总数，已住店离观，离昆，隔离期过14天，不在辖区居住地，解除医学观察人员，入住指定的如家商旅酒店，湖北以外其他地方回昆人员，其他)
@@ -35,7 +36,7 @@ public class YndpFkdcYqlkryzz extends BaseNativeEntity {
     /**
      * 日期
      */
-    @Column(name = "rq", columnDefinition = "DATE COMMENT '日期'")
+    @Column(name = "rq", columnDefinition = "VARCHAR(20) COMMENT '日期'")
     private String rq;
     /**
      * 类型：1:区级，2：街道级，3：社区级别

@@ -13,16 +13,22 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/api/yqqs")
-@Api(tags = "疫情趋势图管理")
-public class YndpFkdcYqqsController {
+@RequestMapping("/api/yqlkryzz")
+@Api(tags = "疫区来昆人员追踪管理")
+public class YndpFkdcYqlkryzzController {
 
     @Autowired
     private YndpFkdcYqqsService yndpFkdcYqqsService;
 
-    @GetMapping(value = "/getYqqsChartData")
-    @ApiOperation("疫情趋势图")
-    public ResponseEntity<Object> getYqqsChartData(YndpFkdcYqqs yndpFkdcYqqs) {
+    @GetMapping(value = "/getYqlkryzzData")
+    @ApiOperation("疫区来昆人员追踪数据")
+    public ResponseEntity<Object> getYqlkryzzData(YndpFkdcYqqs yndpFkdcYqqs) {
+        return new ResponseEntity<>(yndpFkdcYqqsService.getYqqsChartData(yndpFkdcYqqs), HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/getDayData")
+    @ApiOperation("查询每日数据")
+    public ResponseEntity<Object> getDayData(YndpFkdcYqqs yndpFkdcYqqs) {
         return new ResponseEntity<>(yndpFkdcYqqsService.getYqqsChartData(yndpFkdcYqqs), HttpStatus.OK);
     }
 }

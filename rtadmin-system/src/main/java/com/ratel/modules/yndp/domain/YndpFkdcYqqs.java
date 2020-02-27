@@ -1,6 +1,6 @@
 package com.ratel.modules.yndp.domain;
 
-import com.ratel.framework.core.domain.BaseNativeEntity;
+import com.ratel.framework.core.domain.BaseUuidEntity;
 import lombok.Data;
 
 import javax.persistence.Column;
@@ -15,7 +15,7 @@ import javax.persistence.Table;
 @Data
 @Entity
 @Table(name = "yndp_fkdc_yqqs")
-public class YndpFkdcYqqs extends BaseNativeEntity {
+public class YndpFkdcYqqs extends BaseUuidEntity {
 
     /**
      * 疫情名称
@@ -33,14 +33,9 @@ public class YndpFkdcYqqs extends BaseNativeEntity {
     @Column(name = "yqlx", columnDefinition = "VARCHAR(64) COMMENT '疫情类型(1新增疑似/新增确诊 2现存确诊/现存疑似 3死亡/治愈 4病死率 5治愈率)'")
     private String yqlx;
     /**
-     * 排序
-     */
-    @Column(name = "px", columnDefinition = "VARCHAR(64) COMMENT '排序'")
-    private String px;
-    /**
      * 日期
      */
-    @Column(name = "rq", columnDefinition = "DATE COMMENT '日期'")
+    @Column(name = "rq", columnDefinition = "VARCHAR(20) COMMENT '日期'")
     private String rq;
     /**
      * 类型：1:区级，2：街道级，3：社区级别

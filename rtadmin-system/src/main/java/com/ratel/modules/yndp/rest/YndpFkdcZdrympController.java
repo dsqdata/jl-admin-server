@@ -13,16 +13,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/api/yqqs")
-@Api(tags = "疫情趋势图管理")
-public class YndpFkdcYqqsController {
+@RequestMapping("/api/zdrymp")
+@Api(tags = "重点人员摸排管理")
+public class YndpFkdcZdrympController {
 
     @Autowired
     private YndpFkdcYqqsService yndpFkdcYqqsService;
 
-    @GetMapping(value = "/getYqqsChartData")
-    @ApiOperation("疫情趋势图")
-    public ResponseEntity<Object> getYqqsChartData(YndpFkdcYqqs yndpFkdcYqqs) {
+    @GetMapping(value = "/getZdrympData")
+    @ApiOperation("重点人员摸排数据")
+    public ResponseEntity<Object> getZdrympData(YndpFkdcYqqs yndpFkdcYqqs) {
         return new ResponseEntity<>(yndpFkdcYqqsService.getYqqsChartData(yndpFkdcYqqs), HttpStatus.OK);
     }
 }

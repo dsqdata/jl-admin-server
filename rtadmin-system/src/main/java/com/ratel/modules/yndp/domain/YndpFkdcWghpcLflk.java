@@ -1,6 +1,6 @@
 package com.ratel.modules.yndp.domain;
 
-import com.ratel.framework.core.domain.BaseNativeEntity;
+import com.ratel.framework.core.domain.BaseUuidEntity;
 import lombok.Data;
 
 import javax.persistence.Column;
@@ -15,7 +15,7 @@ import javax.persistence.Table;
 @Data
 @Entity
 @Table(name = "yndp_fkdc_wghpclflk")
-public class YndpFkdcWghpcLflk extends BaseNativeEntity {
+public class YndpFkdcWghpcLflk extends BaseUuidEntity {
 
     /**
      * 发动参加排查人员总数-累计

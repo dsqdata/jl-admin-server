@@ -1,6 +1,6 @@
 package com.ratel.modules.yndp.domain;
 
-import com.ratel.framework.core.domain.BaseNativeEntity;
+import com.ratel.framework.core.domain.BaseUuidEntity;
 import lombok.Data;
 
 import javax.persistence.Column;
@@ -15,7 +15,7 @@ import javax.persistence.Table;
 @Data
 @Entity
 @Table(name = "yndp_fkdc_zdrymp")
-public class YndpFkdcZdrymp extends BaseNativeEntity {
+public class YndpFkdcZdrymp extends BaseUuidEntity {
 
     /**
      * 重点人员名称（【1.排查特殊人群数量】务工返昆，上学返昆，其他 ，疫区来昆旅游，近期到过疫区【2.入住留验点人员】男性，女性，幼儿，老年人（60岁以上），其他【3.登记在册人员排查】来昆游客，务工求学回昆人员，近期到过疫区人员【4.公安检查点排查】正常，异常）
@@ -42,11 +42,6 @@ public class YndpFkdcZdrymp extends BaseNativeEntity {
      */
     @Column(name = "zdrylx", columnDefinition = "VARCHAR(64) COMMENT '重点人员类型（1 特殊人群 2 入住留验点人员 3登记在册 4公安检查点排查人员）'")
     private String zdrylx;
-    /**
-     * 排序
-     */
-    @Column(name = "px", columnDefinition = "VARCHAR(64) COMMENT '排序'")
-    private String px;
     /**
      * 类型：1:区级，2：街道级，3：社区级别
      */

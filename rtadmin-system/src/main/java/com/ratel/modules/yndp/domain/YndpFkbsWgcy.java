@@ -1,6 +1,6 @@
 package com.ratel.modules.yndp.domain;
 
-import com.ratel.framework.core.domain.BaseNativeEntity;
+import com.ratel.framework.core.domain.BaseUuidEntity;
 import lombok.Data;
 
 import javax.persistence.Column;
@@ -14,7 +14,7 @@ import javax.persistence.Table;
 @Data
 @Entity
 @Table(name = "yndp_fkbs_wgcy")
-public class YndpFkbsWgcy extends BaseNativeEntity {
+public class YndpFkbsWgcy extends BaseUuidEntity {
     /**
      * 机构ID
      */
@@ -79,7 +79,11 @@ public class YndpFkbsWgcy extends BaseNativeEntity {
      */
     @Column(name = "lxhs", columnDefinition = "VARCHAR(3000) COMMENT '联系户数'")
     private String lxhs;
-
+    /**
+     * 排序
+     */
+    @Column(name = "px", columnDefinition = "VARCHAR(64) COMMENT '排序'")
+    private String px;
     /**
      * 预留字段1
      */
