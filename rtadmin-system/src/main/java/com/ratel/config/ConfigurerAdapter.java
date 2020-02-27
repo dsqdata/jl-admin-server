@@ -46,5 +46,10 @@ public class ConfigurerAdapter implements WebMvcConfigurer {
         registry.addResourceHandler("/avatar/**").addResourceLocations(avatarUtl).setCachePeriod(0);
         registry.addResourceHandler("/file/**").addResourceLocations(pathUtl).setCachePeriod(0);
         registry.addResourceHandler("/**").addResourceLocations(htmlUtl).setCachePeriod(0);
+        registry.addResourceHandler("/statics/**").addResourceLocations("classpath:/statics/");
+        // 解决 SWAGGER 404报错
+        registry.addResourceHandler("/swagger-ui.html").addResourceLocations("classpath:/META-INF/resources/");
+        registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
+
     }
 }
