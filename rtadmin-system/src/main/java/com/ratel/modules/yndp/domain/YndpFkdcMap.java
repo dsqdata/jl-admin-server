@@ -43,11 +43,30 @@ public class YndpFkdcMap  extends BaseNativeEntity {
     @Column(name = "qzlx", columnDefinition = "VARCHAR(64) COMMENT '确诊类型： 1：现存确诊，2:累计确诊'")
     private String qzlx;
     /**
-     * 疫情来昆人数
+     *  现存确诊数
      */
-    @Column(name = "yqlkrs", columnDefinition = "VARCHAR(64) COMMENT '疫情来昆人数'")
+    @Column(name = "xcqzs", columnDefinition = "VARCHAR(64) COMMENT '现存确诊数'")
+    private String xcqzs;
+    /**
+     *  累积确诊数
+     */
+    @Column(name = "ljqzs", columnDefinition = "VARCHAR(64) COMMENT '累积确诊数'")
+    private String ljqzs;
+    /**
+     * 疫区来昆人数
+     */
+    @Column(name = "yqlkrs", columnDefinition = "VARCHAR(64) COMMENT '疫区来昆人数'")
     private String yqlkrs;
-
+    /**
+     *户数
+     */
+    @Column(name = "hs", columnDefinition = "VARCHAR(64) COMMENT '户数'")
+    private String hs;
+    /**
+     *人数
+     */
+    @Column(name = "rs", columnDefinition = "VARCHAR(64) COMMENT '人数'")
+    private String rs;
     /**
      * 疫情事件
      */

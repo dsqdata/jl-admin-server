@@ -67,5 +67,30 @@ public class YndpFkdcWghpcLflk extends BaseNativeEntity {
      */
     @Column(name = "jgid", columnDefinition = "VARCHAR(64) COMMENT '机构ID'")
     private String jgid;
+    /**
+     * 预留字段1
+     */
+    @Column(name = "field1", columnDefinition = "VARCHAR(255) COMMENT '预留字段1'")
+    private String field1;
+    /**
+     * 预留字段2
+     */
+    @Column(name = "field2", columnDefinition = "VARCHAR(255) COMMENT '预留字段2'")
+    private String field2;
+    /**
+     * 预留字段3
+     */
+    @Column(name = "field3", columnDefinition = "VARCHAR(255) COMMENT '预留字段3'")
+    private String field3;
+    /**
+     * 预留字段4
+     */
+    @Column(name = "field4", columnDefinition = "VARCHAR(255) COMMENT '预留字段4'")
+    private String field4;
+    /**
+     * 预留字段5
+     */
+    @Column(name = "field5", columnDefinition = "VARCHAR(255) COMMENT '预留字段5'")
+    private String field5;
 
 }
