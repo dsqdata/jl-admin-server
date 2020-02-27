@@ -18,9 +18,9 @@ import javax.persistence.Table;
 public class YndpFkdcZdrymp extends BaseNativeEntity {
 
     /**
-     * 重点人员名称
+     * 重点人员名称（【1.排查特殊人群数量】务工返昆，上学返昆，其他 ，疫区来昆旅游，近期到过疫区【2.入住留验点人员】男性，女性，幼儿，老年人（60岁以上），其他【3.登记在册人员排查】来昆游客，务工求学回昆人员，近期到过疫区人员【4.公安检查点排查】正常，异常）
      */
-    @Column(name = "zdrymc", columnDefinition = "VARCHAR(64) COMMENT '重点人员名称'")
+    @Column(name = "zdrymc", columnDefinition = "VARCHAR(64) COMMENT '重点人员名称（【1.排查特殊人群数量】务工返昆，上学返昆，其他 ，疫区来昆旅游，近期到过疫区【2.入住留验点人员】男性，女性，幼儿，老年人（60岁以上），其他【3.登记在册人员排查】来昆游客，务工求学回昆人员，近期到过疫区人员【4.公安检查点排查】正常，异常）'")
     private String zdrymc;
     /**
      * 重点人员人数
