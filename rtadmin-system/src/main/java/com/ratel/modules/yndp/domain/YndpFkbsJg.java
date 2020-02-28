@@ -29,9 +29,9 @@ public class YndpFkbsJg extends BaseUuidEntity {
     @Column(name = "jgmc", columnDefinition = "VARCHAR(64) COMMENT '机构名称'")
     private String jgmc;
     /**
-     * 机构类型，0:区，1：街道/行业，2：社区/片区行业
+     * 机构类型，0:区，1：街道/行业，2：社区/片区行业，3:小区/村/具体行业
      */
-    @Column(name = "jglx", columnDefinition = "VARCHAR(2) COMMENT '机构类型，0:区，1：街道/行业，2：社区/片区行业'")
+    @Column(name = "jglx", columnDefinition = "VARCHAR(2) COMMENT '机构类型，0:区，1：街道/行业，2：社区/片区行业,3:村/具体行业'")
     private String jglx;
 
     /**
@@ -44,7 +44,7 @@ public class YndpFkbsJg extends BaseUuidEntity {
      * 下级类型,1:小区，2：村，3：行业
      */
     @Column(name = "xjlx", columnDefinition = "VARCHAR(2) COMMENT '下级类型,1:小区，2：村，3：行业'")
-    private String xjlxe;
+    private String xjlx;
 
     /**
      *   区疫情防控指挥部指挥长
