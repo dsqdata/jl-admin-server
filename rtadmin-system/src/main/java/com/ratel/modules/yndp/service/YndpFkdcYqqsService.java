@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,10 +27,15 @@ public class YndpFkdcYqqsService extends BaseService<YndpFkdcYqqs, String> {
     public Object getYqqsChartData(YndpFkdcYqqs yndpFkdcYqqs) {
         Map<String, Object> map = new HashMap<>();
         LocalDate localDate = LocalDate.now();
-        List<YndpFkdcYqqs> list = yndpFkdcYqqsRepository.findYqqs(localDate.minusDays(5).toString(), localDate.plusDays(0).toString());
-        /*map.put("weekDays", list.stream().map(YndpFkdcYqqs::getWeekDay).collect(Collectors.toList()));
-        map.put("visitsData", list.stream().map(YndpFkdcYqqs::getPvCounts).collect(Collectors.toList()));
-        map.put("ipData", list.stream().map(YndpFkdcYqqs::getIpCounts).collect(Collectors.toList()));*/
+        List<YndpFkdcYqqs> list;
+        if("ALL".equals(yndpFkdcYqqs.getRowCount())){
+            list = yndpFkdcYqqsRepository.findYqqs(yndpFkdcYqqs.getYqlx(),yndpFkdcYqqs.getJgid());
+        }else {
+            list = yndpFkdcYqqsRepository.findYqqs(localDate.minusDays(Long.parseLong(yndpFkdcYqqs.getRowCount())).toString(), localDate.plusDays(0).toString(), yndpFkdcYqqs.getYqlx(),yndpFkdcYqqs.getJgid());
+        }
+        map.put("weekDays", list.stream().map(YndpFkdcYqqs::getRq).collect(Collectors.toList()));
+        map.put("yqmc", list.stream().map(YndpFkdcYqqs::getYqmc).collect(Collectors.toList()));
+        map.put("yqsl", list.stream().map(YndpFkdcYqqs::getYqsl).collect(Collectors.toList()));
         return map;
     }
 }

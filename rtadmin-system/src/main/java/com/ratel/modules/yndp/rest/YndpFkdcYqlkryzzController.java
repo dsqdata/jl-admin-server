@@ -1,6 +1,8 @@
 package com.ratel.modules.yndp.rest;
 
+import com.ratel.modules.yndp.domain.YndpFkdcYqlkryzz;
 import com.ratel.modules.yndp.domain.YndpFkdcYqqs;
+import com.ratel.modules.yndp.service.YndpFkdcYqlkryzzService;
 import com.ratel.modules.yndp.service.YndpFkdcYqqsService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -13,22 +15,22 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/api/yqlkryzz")
+@RequestMapping("/api/yndp/yqlkryzz")
 @Api(tags = "疫区来昆人员追踪管理")
 public class YndpFkdcYqlkryzzController {
 
     @Autowired
-    private YndpFkdcYqqsService yndpFkdcYqqsService;
+    private YndpFkdcYqlkryzzService yndpFkdcYqlkryzzService;
 
     @GetMapping(value = "/getYqlkryzzData")
     @ApiOperation("疫区来昆人员追踪数据")
-    public ResponseEntity<Object> getYqlkryzzData(YndpFkdcYqqs yndpFkdcYqqs) {
-        return new ResponseEntity<>(yndpFkdcYqqsService.getYqqsChartData(yndpFkdcYqqs), HttpStatus.OK);
+    public ResponseEntity<Object> getYqlkryzzData(YndpFkdcYqlkryzz yndpFkdcYqlkryzz) {
+        return new ResponseEntity<>(yndpFkdcYqlkryzzService.getYqlkryzzData(yndpFkdcYqlkryzz), HttpStatus.OK);
     }
 
     @GetMapping(value = "/getDayData")
     @ApiOperation("查询每日数据")
-    public ResponseEntity<Object> getDayData(YndpFkdcYqqs yndpFkdcYqqs) {
-        return new ResponseEntity<>(yndpFkdcYqqsService.getYqqsChartData(yndpFkdcYqqs), HttpStatus.OK);
+    public ResponseEntity<Object> getDayData(YndpFkdcYqlkryzz yndpFkdcYqlkryzz) {
+        return new ResponseEntity<>(yndpFkdcYqlkryzzService.getDayData(yndpFkdcYqlkryzz), HttpStatus.OK);
     }
 }

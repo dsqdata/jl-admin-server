@@ -74,4 +74,22 @@ public class YndpFkdcYqlkryzz extends BaseUuidEntity {
      */
     @Column(name = "field5", columnDefinition = "VARCHAR(255) COMMENT '预留字段5'")
     private String field5;
+
+    /**
+     *默认查询近7日
+     */
+    @Transient
+    private String sevenDays;
+
+    /**
+     * 开始日期
+     */
+    @Transient
+    private String startDate;
+
+    /**
+     * 结束日期
+     */
+    @Transient
+    private String endDate;
 }

@@ -6,6 +6,7 @@ import lombok.Data;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  * 防控洞察-疫情趋势表
@@ -72,4 +73,10 @@ public class YndpFkdcYqqs extends BaseUuidEntity {
      */
     @Column(name = "field5", columnDefinition = "VARCHAR(255) COMMENT '预留字段5'")
     private String field5;
+
+    /**
+     * 显示多少日期数据(ALL查询所有，传数字显示数字个数的数据)
+     */
+    @Transient
+    private String rowCount;
 }
