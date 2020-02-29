@@ -55,10 +55,10 @@ public class YndpFkdcMapController {
     @ApiOperation("根据机构ID查询出地图汇总数据")
     @GetMapping(value = "/getMapHzsjList")
     public Result getMapHzsjList(@RequestParam String jgId, HttpServletRequest request, HttpServletResponse response) {
-        List<YndpFkdcMapSj>  yndpFkdcMapSjList = yndpFkdcMapSjService.getMapHzlist(jgId);
+        YndpFkdcMapSj  yndpFkdcMapSj = yndpFkdcMapSjService.getMapHz(jgId);
         Result result = new Result();
         result.setCode(Result.SUCCESS_CODE);
-        result.setData(yndpFkdcMapSjList);
+        result.setData(yndpFkdcMapSj);
         result.setMessage("成功");
         return result;
     }

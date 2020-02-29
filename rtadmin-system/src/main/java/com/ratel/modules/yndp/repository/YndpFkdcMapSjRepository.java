@@ -18,5 +18,5 @@ public interface YndpFkdcMapSjRepository extends BaseRepository<YndpFkdcMapSj, S
 
     //查询地图下方汇总数据
     @Query(nativeQuery = true, value = "select * from yndp_fkdc_map_sj where jgid = ?1")
-    List<YndpFkdcMapSj> getMapHzlist(String jgId);
+    YndpFkdcMapSj getMapHz(String jgId);
 }
