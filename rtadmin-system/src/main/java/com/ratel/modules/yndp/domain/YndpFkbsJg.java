@@ -22,7 +22,11 @@ public class YndpFkbsJg extends BaseUuidEntity {
      */
     @Column(name = "parentid", columnDefinition = "VARCHAR(64) COMMENT '父ID'")
     private String parentid;
-
+    /**
+     * 机构ID
+     */
+    @Column(name = "jgid", columnDefinition = "VARCHAR(64) COMMENT '机构ID'")
+    private String jgid;
     /**
      * 机构名称
      */
