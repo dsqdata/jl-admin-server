@@ -35,7 +35,7 @@ public class YndpFkbsJg extends BaseUuidEntity {
     /**
      * 机构类型，0:区，1：街道/行业，2：社区/片区行业，3:小区/村/具体行业
      */
-    @Column(name = "jglx", columnDefinition = "VARCHAR(2) COMMENT '机构类型，0:区，1：街道/行业，2：社区/片区行业,3:村/具体行业'")
+    @Column(name = "jglx", columnDefinition = "VARCHAR(2) COMMENT '机构类型，0:区，1：街道/行业，2：社区/片区行业,3:小区/村/具体行业'")
     private String jglx;
 
     /**

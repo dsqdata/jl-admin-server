@@ -16,6 +16,12 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "yndp_fkbs_wg")
 public class YndpFkbsWg extends BaseUuidEntity {
+
+    /**
+     * 网格ID
+     */
+    @Column(name = "wgid", columnDefinition = "VARCHAR(64) COMMENT '网格ID'")
+    private String wgid;
     /**
      * 机构ID
      */

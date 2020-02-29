@@ -15,6 +15,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "yndp_fkbs_wgcy")
 public class YndpFkbsWgcy extends BaseUuidEntity {
+
     /**
      * 机构ID
      */
