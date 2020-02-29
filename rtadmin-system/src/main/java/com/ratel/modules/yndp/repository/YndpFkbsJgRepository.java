@@ -15,6 +15,6 @@ import org.springframework.stereotype.Repository;
 public interface YndpFkbsJgRepository  extends BaseRepository<YndpFkbsJg, String> {
 
     // 根据ID查询出机构
-    @Query(nativeQuery = true, value = "select * from yndp_fkbs_jg where id = ?1")
+    @Query(nativeQuery = true, value = "select * from yndp_fkbs_jg where jgid = ?1")
     YndpFkbsJg getjg(String jgId);
 }
