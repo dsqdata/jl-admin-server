@@ -57,12 +57,6 @@ public class YndpFkbsJg extends BaseUuidEntity {
     @Column(name = "zhbfzhz", columnDefinition = "VARCHAR(255) COMMENT '区疫情防控指挥部副指挥长'")
     private String zhbfzhz;
     /**
-     * 网格长
-     */
-    @Column(name = "wgz", columnDefinition = "VARCHAR(255) COMMENT '网格长'")
-    private String wgz;
-
-    /**
      * 包保领导
      */
     @Column(name = "bbld", columnDefinition = "VARCHAR(255) COMMENT '包保领导'")
@@ -102,6 +96,14 @@ public class YndpFkbsJg extends BaseUuidEntity {
      */
     @Column(name = "qjwgy", columnDefinition = "VARCHAR(255) COMMENT '区级网格员'")
     private String qjwgy;
+
+
+
+    /**
+     * 网格长
+     */
+    @Column(name = "wgz", columnDefinition = "VARCHAR(255) COMMENT '网格长'")
+    private String wgz;
 
     /**
      * 经度

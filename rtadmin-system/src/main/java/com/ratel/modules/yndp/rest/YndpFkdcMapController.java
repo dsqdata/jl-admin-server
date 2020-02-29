@@ -66,7 +66,6 @@ public class YndpFkdcMapController {
     @ApiOperation("根据机构ID和确诊类型查询地图数据")
     @GetMapping(value = "/getMapList")
     public Result getMapList(@RequestParam(value = "jgId") String jgId, @RequestParam(value = "qzlx") String qzlx, HttpServletRequest request, HttpServletResponse response) {
-
         List<Map>  mapList = yndpFkdcMapService.getMapList(jgId,qzlx);
         Result result = new Result();
         result.setCode(Result.SUCCESS_CODE);
