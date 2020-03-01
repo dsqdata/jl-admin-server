@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * 防控部署-机构service
  * @author DDXS
@@ -23,17 +25,15 @@ public class YndpFkbsJgService extends BaseService<YndpFkbsJg, String> {
 
     // 根据机构ID查询出上级机构
     public YndpFkbsJg getSjjg(String jgId) {
+        if(jgId.equals("0")){//说明没有上机构
+          return null;
+        }
         // 1.查询出当前机构的父ID
         YndpFkbsJg jg = yndpFkbsJgRepository.getjg(jgId);
         String parentid = jg.getParentid();
-        if(parentid.equals("0")){//说明是最高层机构
-         // 如果是最高层机构返回空
-            return null;
-        }else{
-            // 2.查询出上级机构
-            YndpFkbsJg sjjg = yndpFkbsJgRepository.getjg(parentid);
-            return sjjg;
-        }
+        // 2.查询出上级机构
+        YndpFkbsJg sjjg = yndpFkbsJgRepository.getjg(parentid);
+        return sjjg;
     }
 
     // 根据机构ID查询出当前机构
@@ -41,5 +41,8 @@ public class YndpFkbsJgService extends BaseService<YndpFkbsJg, String> {
        return yndpFkbsJgRepository.getjg(jgId);
     }
 
-
+    // 根据机构ID查询出下级机构列表
+    public List<YndpFkbsJg> getxjJgList(String jgId) {
+        return yndpFkbsJgRepository.getxjJgList(jgId);
+    }
 }
