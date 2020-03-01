@@ -28,7 +28,7 @@ public class YndpFkbsJgService extends BaseService<YndpFkbsJg, String> {
         if(jgId.equals("0")){//说明没有上机构
           return null;
         }
-        // 1.查询出当前机构的父ID
+        // 1.查询出当前机构
         YndpFkbsJg jg = yndpFkbsJgRepository.getjg(jgId);
         String parentid = jg.getParentid();
         // 2.查询出上级机构

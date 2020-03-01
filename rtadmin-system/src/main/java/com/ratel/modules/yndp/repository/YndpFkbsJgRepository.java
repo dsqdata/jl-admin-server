@@ -16,7 +16,7 @@ import java.util.List;
 @Repository
 public interface YndpFkbsJgRepository  extends BaseRepository<YndpFkbsJg, String> {
 
-    // 根据ID查询出机构
+    // 根据机构ID查询出机构
     @Query(nativeQuery = true, value = "select * from yndp_fkbs_jg where jgid = ?1")
     YndpFkbsJg getjg(String jgId);
 
