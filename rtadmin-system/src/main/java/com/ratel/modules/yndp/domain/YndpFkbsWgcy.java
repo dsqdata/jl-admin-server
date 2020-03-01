@@ -34,10 +34,10 @@ public class YndpFkbsWgcy extends BaseUuidEntity {
     private String jgmc;
 
     /**
-     * 楼栋号
+     * 楼栋数
      */
-    @Column(name = "ldh", columnDefinition = "VARCHAR(64) COMMENT '楼栋号'")
-    private String ldh;
+    @Column(name = "lds", columnDefinition = "VARCHAR(64) COMMENT '楼栋数'")
+    private String lds;
 
     /**
      * 楼栋户数
