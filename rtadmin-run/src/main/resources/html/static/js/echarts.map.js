@@ -11,6 +11,7 @@ var lyjddlysq = "../static/json/data-1518338805373-LYJD-DLYSQ.json"
 var lyjdxlysq = "../static/json/data-1518338805373-LYJD-XLYSQ.json"
 var options = null;
 
+var provinceData = [[ 102.85494405299998, 24.946454769999982]]
 
 echarts.extendsMap = function (id, opt) {
     // 实例
@@ -114,7 +115,7 @@ echarts.extendsMap = function (id, opt) {
          * name 地图名
          **/
         createBreadcrumb: function (name) {
-            let cityToPinyin = {
+            var cityToPinyin = {
                 "阿拉街道": "ALA",
                 "洛羊街道": "luoyang",
                 "阿拉社区": "ALAJIE",
@@ -125,7 +126,7 @@ echarts.extendsMap = function (id, opt) {
                 "大洛羊社区":"daluoyang",
                 "大洛羊社区":"xiaoluoyang"
             };
-            let breadcrumb = {
+            var breadcrumb = {
                 type: 'group',
                 id: name,
                 left: pos.leftCur + pos.leftPlus-pos.left,
