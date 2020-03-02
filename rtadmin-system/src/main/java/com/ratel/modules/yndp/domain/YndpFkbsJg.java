@@ -93,7 +93,7 @@ public class YndpFkbsJg extends BaseUuidEntity {
     /**
      * 社区网格监督员
      */
-    @Column(name = "sqwgjdy", columnDefinition = "VARCHAR(255) COMMENT '社区网格社区网格监督员'")
+    @Column(name = "sqwgjdy", columnDefinition = "VARCHAR(255) COMMENT '社区网格监督员'")
     private String sqwgjdy;
 
     /**
