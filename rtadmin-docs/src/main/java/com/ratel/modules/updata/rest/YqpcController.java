@@ -1,5 +1,6 @@
 package com.ratel.modules.updata.rest;
 
+import com.ratel.config.DataScope;
 import com.ratel.framework.exception.BadRequestException;
 import com.ratel.modules.docs.domain.ModDocs;
 import com.ratel.modules.logging.aop.log.Log;
@@ -30,6 +31,9 @@ public class YqpcController {
     @Autowired
     private ModYqpcMainService modYqpcMainService;
 
+    @Autowired
+    private DataScope dataScope;
+
     private static final String ENTITY_NAME = "modYqpc";
 
     @Log("导出文档数据")
@@ -37,6 +41,8 @@ public class YqpcController {
     @GetMapping(value = "/download")
     @PreAuthorize("@el.check('pcdj:list')")
     public void download(HttpServletResponse response, YqpcQueryCriteria criteria) throws IOException {
+        // 数据权限
+        criteria.setSystemDeptIds(dataScope.getDeptIds());
         modYqpcMainService.download(modYqpcMainService.queryAll(criteria), response);
     }
 

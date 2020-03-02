@@ -9,6 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <name>文档管理模块</name>
     <artifactId>rtadmin-docs</artifactId>
     <dependencies>
         <!-- 同时需要common模块和logging模块只需要引入logging模块即可 -->
@@ -16,6 +17,12 @@
             <groupId>com.ratel</groupId>
             <artifactId>rtadmin-logging</artifactId>
             <version>2.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ratel</groupId>
+            <artifactId>rtadmin-system</artifactId>
+            <version>2.4</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 </project>

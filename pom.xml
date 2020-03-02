@@ -17,11 +17,10 @@
 		<module>rtadmin-monitor</module>
         <module>rtadmin-generator</module>
         <module>rtadmin-docs</module>
-        <module>rtadmin-core</module>
+        <module>rtadmin-run</module>
     </modules>
 
-    <name>EL-ADMIN后台管理系统</name>
-    <url>http://auauz.net</url>
+    <name>RT-ADMIN后台管理系统</name>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
