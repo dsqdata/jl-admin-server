@@ -17,29 +17,10 @@
     </properties>
 
     <dependencies>
-        <!--    代码生成模块    -->
-        <dependency>
-            <groupId>com.ratel</groupId>
-            <artifactId>rtadmin-generator</artifactId>
-            <version>2.4</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.ratel</groupId>
-                    <artifactId>eladmin-common</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
         <!--    tools 模块包含了 common 和 logging 模块    -->
         <dependency>
             <groupId>com.ratel</groupId>
             <artifactId>rtadmin-tools</artifactId>
-            <version>2.4</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.ratel</groupId>
-            <artifactId>rtadmin-docs</artifactId>
             <version>2.4</version>
         </dependency>
 

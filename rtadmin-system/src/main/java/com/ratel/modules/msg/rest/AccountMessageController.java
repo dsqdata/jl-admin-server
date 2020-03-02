@@ -2,7 +2,6 @@ package com.ratel.modules.msg.rest;
 
 import com.ratel.framework.exception.BadRequestException;
 import com.ratel.framework.security.vo.JwtUser;
-import com.ratel.modules.docs.domain.ModDocs;
 import com.ratel.modules.logging.aop.log.Log;
 import com.ratel.modules.mnt.websocket.MsgType;
 import com.ratel.modules.mnt.websocket.SocketMsg;
@@ -103,7 +102,7 @@ public class AccountMessageController {
     @ApiOperation("修改账号消息")
     @PutMapping
     @PreAuthorize("@el.check('accountmsg:edit')")
-    public ResponseEntity<Object> update(@Validated(ModDocs.Update.class) @RequestBody AccountMessage resources) {
+    public ResponseEntity<Object> update(@Validated(AccountMessage.Update.class) @RequestBody AccountMessage resources) {
         accountMessageService.save(resources);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }

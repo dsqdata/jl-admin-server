@@ -3,8 +3,6 @@ package com.ratel.modules.msg.rest;
 import com.ratel.config.DataScope;
 import com.ratel.framework.exception.BadRequestException;
 import com.ratel.framework.security.vo.JwtUser;
-import com.ratel.framework.utils.PageUtil;
-import com.ratel.modules.docs.domain.ModDocs;
 import com.ratel.modules.logging.aop.log.Log;
 import com.ratel.modules.mnt.websocket.MsgType;
 import com.ratel.modules.mnt.websocket.SocketMsg;
@@ -26,7 +24,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.util.CollectionUtils;
-import org.springframework.util.ObjectUtils;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -113,7 +110,7 @@ public class ManagerAccountMessageController {
             Set<Long> deptSet = new HashSet<>();
             Set<Long> result = new HashSet<>();
 
-            for (Long deptId : resources.getTargetDepts()){
+            for (Long deptId : resources.getTargetDepts()) {
                 deptSet.add(deptId);
                 deptSet.addAll(dataScope.getDeptChildren(deptService.findByPid(deptId)));
 
@@ -171,7 +168,7 @@ public class ManagerAccountMessageController {
     @ApiOperation("修改账号消息")
     @PutMapping
     @PreAuthorize("@el.check('maccountmsg:edit')")
-    public ResponseEntity<Object> update(@Validated(ModDocs.Update.class) @RequestBody AccountMessage resources) {
+    public ResponseEntity<Object> update(@Validated(AccountMessage.Update.class) @RequestBody AccountMessage resources) {
         accountMessageService.save(resources);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
