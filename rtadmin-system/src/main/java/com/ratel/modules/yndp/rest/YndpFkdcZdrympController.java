@@ -1,8 +1,6 @@
 package com.ratel.modules.yndp.rest;
 
-import com.ratel.modules.yndp.domain.YndpFkdcYqqs;
 import com.ratel.modules.yndp.domain.YndpFkdcZdrymp;
-import com.ratel.modules.yndp.service.YndpFkdcYqqsService;
 import com.ratel.modules.yndp.service.YndpFkdcZdrympService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

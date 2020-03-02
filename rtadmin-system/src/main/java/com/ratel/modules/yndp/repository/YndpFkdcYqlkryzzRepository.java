@@ -2,7 +2,6 @@ package com.ratel.modules.yndp.repository;
 
 import com.ratel.framework.core.repository.BaseRepository;
 import com.ratel.modules.yndp.domain.YndpFkdcYqlkryzz;
-import com.ratel.modules.yndp.domain.YndpFkdcYqqs;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 

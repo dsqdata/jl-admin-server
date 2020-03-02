@@ -2,9 +2,7 @@ package com.ratel.modules.yndp.service;
 
 import com.ratel.framework.core.service.BaseService;
 import com.ratel.modules.yndp.domain.YndpFkdcYqlkryzz;
-import com.ratel.modules.yndp.domain.YndpFkdcYqqs;
 import com.ratel.modules.yndp.repository.YndpFkdcYqlkryzzRepository;
-import com.ratel.modules.yndp.repository.YndpFkdcYqqsRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

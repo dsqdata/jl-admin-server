@@ -1,9 +1,7 @@
 package com.ratel.modules.yndp.service;
 
 import com.ratel.framework.core.service.BaseService;
-import com.ratel.modules.yndp.domain.YndpFkdcYqqs;
 import com.ratel.modules.yndp.domain.YndpFkdcZdrymp;
-import com.ratel.modules.yndp.repository.YndpFkdcYqqsRepository;
 import com.ratel.modules.yndp.repository.YndpFkdcZdrympRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +9,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

@@ -1,9 +1,7 @@
 package com.ratel.modules.yndp.rest;
 
 import com.ratel.modules.yndp.domain.YndpFkdcYqlkryzz;
-import com.ratel.modules.yndp.domain.YndpFkdcYqqs;
 import com.ratel.modules.yndp.service.YndpFkdcYqlkryzzService;
-import com.ratel.modules.yndp.service.YndpFkdcYqqsService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

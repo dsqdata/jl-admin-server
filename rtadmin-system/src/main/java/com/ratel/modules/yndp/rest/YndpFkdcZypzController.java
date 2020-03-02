@@ -11,10 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.util.List;
-
 /**
  * @author DDXS
  * @date 2020/2/26 13:36
@@ -27,13 +23,14 @@ public class YndpFkdcZypzController {
     @Autowired
     YndpFkdcZypzService yndpFkdcZypzService;
 
-    @ApiOperation("根据所选机构ID查询出资源配置列表")
-    @GetMapping(value = "/findListByJgId")
-    public ResponseEntity<Object> findListByJgId(String jgId, HttpServletRequest request, HttpServletResponse response) {
+    @ApiOperation("根据所选机构ID查询出资源配置数据")
+    @GetMapping(value = "/findZypzByJgId")
+    public ResponseEntity<Object> findZypzByJgId(YndpFkdcZypz yndpFkdcZypz) {
 
         // 1. 获取所选择机构ID
+        String jgId = yndpFkdcZypz.getJgid();
         // 2. 根据所选择的机构ID查询出列表
-        List<YndpFkdcZypz> yndpFkdcZypzList = yndpFkdcZypzService.findListByJgId(jgId);
-        return new ResponseEntity<>(yndpFkdcZypzList, HttpStatus.OK);
+        YndpFkdcZypz zypz = yndpFkdcZypzService.findZypzByJgId(jgId);
+        return new ResponseEntity<>(zypz, HttpStatus.OK);
     }
 }
