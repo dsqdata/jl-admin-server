@@ -1,14 +1,14 @@
-var jiangxi = "../static/json/data-1518338017111-rJK1gtpUM.json";
-var aljd = "../static/json/data-1518338805373-aljd.json";
-var aljdAlsq = "../static/json/data-1518338805373-ALJD-ALSQ.json";
-var lyjd = "../static/json/data-1518338805373-LYJD.json";
-var lyjdDxcsq = "../static/json/data-1518338805373-LYJD-DXCSQ.json";
-var lyjdDcsq = "../static/json/data-1518338805373-LYJD-DCSQ.json";
-var lyjdHtpsq = "../static/json/data-1518338805373-LYJD-HTPSQ.json";
-var lyjdXxcsq = "../static/json/data-1518338805373-LYJD-XXCSQ.json"
+var jiangxi = "./static/json/data-1518338017111-rJK1gtpUM.json";
+var aljd = "./static/json/data-1518338805373-aljd.json";
+var aljdAlsq = "./static/json/data-1518338805373-ALJD-ALSQ.json";
+var lyjd = "./static/json/data-1518338805373-LYJD.json";
+var lyjdDxcsq = "./static/json/data-1518338805373-LYJD-DXCSQ.json";
+var lyjdDcsq = "./static/json/data-1518338805373-LYJD-DCSQ.json";
+var lyjdHtpsq = "./static/json/data-1518338805373-LYJD-HTPSQ.json";
+var lyjdXxcsq = "./static/json/data-1518338805373-LYJD-XXCSQ.json"
 
-var lyjddlysq = "../static/json/data-1518338805373-LYJD-DLYSQ.json"
-var lyjdxlysq = "../static/json/data-1518338805373-LYJD-XLYSQ.json"
+var lyjddlysq = "./static/json/data-1518338805373-LYJD-DLYSQ.json"
+var lyjdxlysq = "./static/json/data-1518338805373-LYJD-XLYSQ.json"
 var options = null;
 
 var provinceData = [[ 102.85494405299998, 24.946454769999982]]
