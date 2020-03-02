@@ -17,6 +17,7 @@
     <script src="./static/js/jquery.ajax.js"></script>
     <script src="./static/js/echarts.min.js"></script>
     <script src="./static/js/echarts.map.js"></script>
+    <script type="text/javascript" src="component/socket/socketClient.js"></script>
 </head>
 <body>
 <div id="chart-panel"></div>
@@ -75,6 +76,12 @@
         initMap(jgId, jgName)
     }
     $(document).ready(function () {
+        initWebSocket(2,function(e){
+            var jgId = e.jgId;
+            var jgName = e.jgName;
+            console.log(jgId + "=============" + jgName);
+            initHtml(jgId, jgName)
+        });
         var jgId = getQueryVariable("jgId")
         var jgName = getQueryVariable("jgName")
         initHtml(jgId, jgName)

@@ -10,6 +10,7 @@
     <script type="text/javascript" src="component/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <script type="text/javascript" src="static/js/jquery.ajax.js"></script>
     <script type="text/javascript" src="static/js/template-web.js"></script>
+    <script type="text/javascript" src="component/socket/socketServer.js"></script>
 </head>
 <body>
 <div id="wrapper">
@@ -28,7 +29,7 @@
                     <span class="bgTop02"></span>
                     <span class="bgBtm01"></span>
                     <span class="bgBtm02"></span>
-                    <div class="leftBox01In">
+                    <div class="leftBox01In" onclick="send()">
                         <span>赵赵赵</span>
 
                     </div>
@@ -373,7 +374,6 @@
 
 
 <script>
-
     var initTitle = function () {
         var html = template('tpl-header', {title: '云南省自贸区昆明片区（昆明经开区）疫情防控网格化管理工作图'});
         document.getElementById('header').innerHTML = html;
@@ -384,6 +384,7 @@
     $(document).ready(function () {
         initTitle()
         initBranchInfo()
+        initWebSocket(1)
     });
 </script>
 </body>
