@@ -19,4 +19,15 @@ public interface YndpFjdcZypzRepository extends BaseRepository<YndpFkdcZypz, Str
     @Query(nativeQuery = true, value = "select * from yndp_fkdc_zypz where jgid = ?1")
     List<YndpFkdcZypz> findListByJgId(String jgId);
 
+    /**
+     * 根据机构ID查询资源配置
+     */
+    List<YndpFkdcZypz> findYndpFkdcZypzsByJgid(String jgId);
+
+    /**
+     * 根据机构ID查询资源配置
+     */
+    @Query("from YndpFkdcZypz where jgid = ?1")
+    List<YndpFkdcZypz> findListByJgIdWithHsql(String jgId);
+
 }
