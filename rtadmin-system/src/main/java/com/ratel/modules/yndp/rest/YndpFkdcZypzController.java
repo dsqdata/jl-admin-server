@@ -24,7 +24,7 @@ import java.util.List;
  */
 @Api(tags = "资源配置")
 @RestController
-@RequestMapping("/api/zypz")
+@RequestMapping("/api/yndp/zypz")
 public class YndpFkdcZypzController {
 
     @Autowired
