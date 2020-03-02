@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第二屏</title>
+    <style>
+        #chart-panel {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            padding: 0px 0px 0px 0px;
+        }
+    </style>
+    <script src="./static/js/jquery-3.4.1.min.js"></script>
+    <script src="./static/js/jquery.ajax.js"></script>
+    <script src="./static/js/echarts.min.js"></script>
+    <script src="./static/js/echarts.map.js"></script>
+</head>
+<body>
+<div id="chart-panel"></div>
+
+<script>
+    var initZypz = function (jgNo, jgName) {//初始化-资源配置
+        console.log("资源配置")
+    }
+
+    var initWzbz = function (jgNo, jgName) {//初始化-物资保障
+        console.log("物资保障")
+    }
+
+    var initFkxc = function (jgNo, jgName) {//初始化-防控宣传
+        console.log("防控宣传")
+    }
+
+    $(document).ready(function () {
+        initZypz()
+        initWzbz()
+        initFkxc()
+    });
+</script>
+</body>
+</html>
