@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -41,6 +42,18 @@ public class YndpFjbsGlgzController {
     YndpFkbsWgService yndpFkbsWgService;
     @Autowired
     YndpFkbsWgcyService yndpFkbsWgcyService;
+
+    @ApiOperation("查询出一屏页面所有机构")
+    @GetMapping(value = "/getAllJg")
+    public Result getAllJg(HttpServletRequest request, HttpServletResponse response) {
+        // 查询出一屏页面所有机构
+        List<YndpFkbsJg> yndpFkbsJgList = yndpFkbsJgService.getAllJg();
+        Result result = new Result();
+        result.setCode(Result.SUCCESS_CODE);
+        result.setData(yndpFkbsJgList);
+        result.setMessage("成功");
+        return result;
+    }
 
 
     @ApiOperation("根据机构ID查询出机构")

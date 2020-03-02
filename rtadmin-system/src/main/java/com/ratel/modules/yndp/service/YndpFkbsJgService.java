@@ -45,4 +45,9 @@ public class YndpFkbsJgService extends BaseService<YndpFkbsJg, String> {
     public List<YndpFkbsJg> getXjJgList(String jgId) {
         return yndpFkbsJgRepository.getXjJgList(jgId);
     }
+
+     // 查询出一屏页面所有机构
+    public List<YndpFkbsJg> getAllJg() {
+        return yndpFkbsJgRepository.getAllJg();
+    }
 }
