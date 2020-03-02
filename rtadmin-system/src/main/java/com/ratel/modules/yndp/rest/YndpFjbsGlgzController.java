@@ -43,6 +43,20 @@ public class YndpFjbsGlgzController {
     YndpFkbsWgcyService yndpFkbsWgcyService;
 
 
+    @ApiOperation("根据机构ID查询出机构")
+    @GetMapping(value = "/getJg")
+    public Result getJg(@RequestParam String jgId, HttpServletRequest request, HttpServletResponse response) {
+        // 根据机构ID查询出上级机构
+        YndpFkbsJg jg = yndpFkbsJgService.getJg(jgId);
+        Map<String,YndpFkbsJg> map = new HashMap<String,YndpFkbsJg>();
+        map.put("jg",jg);
+        Result result = new Result();
+        result.setCode(Result.SUCCESS_CODE);
+        result.setData(map);
+        result.setMessage("成功");
+        return result;
+    }
+
     @ApiOperation("根据机构ID查询出父机构")
     @GetMapping(value = "/getSjJg")
     public Result getsjJg(@RequestParam String jgId, HttpServletRequest request, HttpServletResponse response) {

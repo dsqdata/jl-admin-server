@@ -75,7 +75,7 @@ swagger:
 file:
   path: /Users/dongchuang/Downloads/rtadmin/file/
   avatar: /Users/dongchuang/Downloads/rtadmin/avatar/
-  html: /Users/dongchuang/Downloads/rtadmin-master/rtadmin-run/src/main/resources/html/
+  html: D:\\code\\yn_yq\\rtadmin-server\\rtadmin-run\\src\\main\\resources\\html\\
   # 文件大小 /M
   maxSize: 100
   avatarMaxSize: 5
