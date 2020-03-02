@@ -91,6 +91,12 @@ public class YndpFkbsJg extends BaseUuidEntity {
     @Column(name = "sqwggly", columnDefinition = "VARCHAR(255) COMMENT '社区网格管理员'")
     private String sqwggly;
     /**
+     * 社区网格监督员
+     */
+    @Column(name = "sqwgjdy", columnDefinition = "VARCHAR(255) COMMENT '社区网格社区网格监督员'")
+    private String sqwgjdy;
+
+    /**
      * 区级网格长
      */
     @Column(name = "qjwgz", columnDefinition = "VARCHAR(255) COMMENT '区级网格长'")
