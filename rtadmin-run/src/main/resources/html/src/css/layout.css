@@ -1,0 +1,10 @@
+body,html{ height: 100%;color: #ffffff;}
+/*组织架构*/
+#wrapper{ height: 100%; padding: 0 30px; background: url("../images/bg01.png") no-repeat; background-size:100%; }
+#header{ height: 95px; padding: 20px 0 0 0; position: relative;}
+#header h1{ width: 532px; height: 54px; background: url("../images/tit_h1.png") no-repeat; background-size:100% 100%; }
+#header .txtP{ position: absolute; right: 0; top:35px; font-size: 18px; color: #23B7E5;background: url("../images/icon_p.png") no-repeat; background-size:23px 29px; padding: 3px 0 7px 35px; }
+#container{ height: calc(100% - 125px); }
+.orgLeft{ width: 16%; float: left; margin-right: 2%; height: 100%;background: rgba(3,28,47,0.60); border: 1px solid #117491; box-shadow: inset 0 0 22px 0 #117491;}
+.orgRight{ width: 82%; float: left; height: 100%;background: rgba(9,47,75,0.85);border: 0 solid #23B7E5; box-shadow: inset 0 0 25px 0 rgba(35,183,229,0.66);}
+

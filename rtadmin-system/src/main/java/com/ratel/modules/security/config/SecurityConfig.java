@@ -97,6 +97,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/**/*.css",
                         "/**/*.js",
                         "/**/*.json",
+                        "/component/**",
+                        "/src/**",
                         "/webSocket/**"
                 ).permitAll()
                 // swagger 文档

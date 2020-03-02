@@ -10,7 +10,7 @@ var lyjdXxcsq = "../static/json/data-1518338805373-LYJD-XXCSQ.json"
 var lyjddlysq = "../static/json/data-1518338805373-LYJD-DLYSQ.json"
 var lyjdxlysq = "../static/json/data-1518338805373-LYJD-XLYSQ.json"
 var options = null;
-var myChart = null;
+
 
 echarts.extendsMap = function (id, opt) {
     // 实例
@@ -158,7 +158,7 @@ echarts.extendsMap = function (id, opt) {
                         font: style.font
                     },
                     onclick: function () {
-                        let name = this.style.text;
+                        var name = this.style.text;
                         handleEvents.resetOption(chart, option, name);
                         handleEvents.setData(chart,option,name)
                     }
@@ -175,7 +175,7 @@ echarts.extendsMap = function (id, opt) {
                     },
                     onclick: function () {
                         // console.log(this.style);
-                        let name = this.style.name;
+                        var name = this.style.name;
                         handleEvents.resetOption(chart, option, name);
                         handleEvents.setData(chart,option,name)
                     }
@@ -749,49 +749,9 @@ echarts.extendsMap = function (id, opt) {
         var _self = this;
         handleEvents.setData(_self,option,mapName)
     };
-    myChart = chart
     return chart;
 };
 
-$.getJSON(jiangxi, function (geoJson) {
-    echarts.registerMap('经开区', geoJson);
-    var myChart = echarts.extendsMap('chart-panel', {
-        bgColor: '#404a59', // 画布背景色
-        mapName: '经开区',    // 地图名
-        goDown: true,       // 是否下钻
-        // 下钻回调
-        callback: function (name, option, instance) {
-            console.log(name, option, instance);
-            myChart.setInitData('经开区')
-        },
-        // // 数据展示
-        // data: [{
-        //     name: '南昌',
-        //     value: 10,
-        //     level: 1
-        // }, {
-        //     name: '景德镇',
-        //     value: 12,
-        //     level: 2
-        // }, {
-        //     name: '萍乡',
-        //     value: 11,
-        //     level: 3
-        // }, {
-        //     name: '赣州',
-        //     value: 16,
-        //     level: 2
-        // }, {
-        //     name: '吉安',
-        //     value: 12,
-        //     level: 1
-        // }]
-    });
-
-    myChart.setInitData('经开区')
-})
-
-var provinceData = [[ 102.85494405299998, 24.946454769999982]]
 
 
 // var timer = setInterval(() => {
