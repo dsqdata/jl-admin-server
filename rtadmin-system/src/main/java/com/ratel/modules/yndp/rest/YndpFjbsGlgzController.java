@@ -44,10 +44,10 @@ public class YndpFjbsGlgzController {
 
 
     @ApiOperation("根据机构ID查询出父机构")
-    @GetMapping(value = "/getsjJg")
+    @GetMapping(value = "/getSjJg")
     public Result getsjJg(@RequestParam String jgId, HttpServletRequest request, HttpServletResponse response) {
         // 根据机构ID查询出上级机构
-        YndpFkbsJg sjjg = yndpFkbsJgService.getSjjg(jgId);
+        YndpFkbsJg sjjg = yndpFkbsJgService.getSjJg(jgId);
         Map<String,YndpFkbsJg> map = new HashMap<String,YndpFkbsJg>();
         map.put("sjjg",sjjg);
         Result result = new Result();
@@ -59,9 +59,9 @@ public class YndpFjbsGlgzController {
 
     @ApiOperation("根据机构ID查询出下级机构列表")
     @GetMapping(value = "/getxjJgList")
-    public Result getxjJgList(@RequestParam String jgId, HttpServletRequest request, HttpServletResponse response) {
+    public Result getXjJgList(@RequestParam String jgId, HttpServletRequest request, HttpServletResponse response) {
         // 根据机构ID查询出下级级机构列表
-        List<YndpFkbsJg> yndpFkbsJgList = yndpFkbsJgService.getxjJgList(jgId);
+        List<YndpFkbsJg> yndpFkbsJgList = yndpFkbsJgService.getXjJgList(jgId);
         Result result = new Result();
         result.setCode(Result.SUCCESS_CODE);
         result.setData(yndpFkbsJgList);

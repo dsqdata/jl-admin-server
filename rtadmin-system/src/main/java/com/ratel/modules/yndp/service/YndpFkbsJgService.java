@@ -24,25 +24,25 @@ public class YndpFkbsJgService extends BaseService<YndpFkbsJg, String> {
     YndpFkbsJgRepository yndpFkbsJgRepository;
 
     // 根据机构ID查询出上级机构
-    public YndpFkbsJg getSjjg(String jgId) {
+    public YndpFkbsJg getSjJg(String jgId) {
         if(jgId.equals("0")){//说明没有上机构
           return null;
         }
         // 1.查询出当前机构
-        YndpFkbsJg jg = yndpFkbsJgRepository.getjg(jgId);
+        YndpFkbsJg jg = yndpFkbsJgRepository.getJg(jgId);
         String parentid = jg.getParentid();
         // 2.查询出上级机构
-        YndpFkbsJg sjjg = yndpFkbsJgRepository.getjg(parentid);
+        YndpFkbsJg sjjg = yndpFkbsJgRepository.getJg(parentid);
         return sjjg;
     }
 
     // 根据机构ID查询出当前机构
-    public YndpFkbsJg getjg(String jgId) {
-       return yndpFkbsJgRepository.getjg(jgId);
+    public YndpFkbsJg getJg(String jgId) {
+       return yndpFkbsJgRepository.getJg(jgId);
     }
 
     // 根据机构ID查询出下级机构列表
-    public List<YndpFkbsJg> getxjJgList(String jgId) {
-        return yndpFkbsJgRepository.getxjJgList(jgId);
+    public List<YndpFkbsJg> getXjJgList(String jgId) {
+        return yndpFkbsJgRepository.getXjJgList(jgId);
     }
 }
