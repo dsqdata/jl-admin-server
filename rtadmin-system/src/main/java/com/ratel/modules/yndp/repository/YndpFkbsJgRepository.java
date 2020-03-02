@@ -18,10 +18,10 @@ public interface YndpFkbsJgRepository  extends BaseRepository<YndpFkbsJg, String
 
     // 根据机构ID查询出机构
     @Query(nativeQuery = true, value = "select * from yndp_fkbs_jg where jgid = ?1")
-    YndpFkbsJg getjg(String jgId);
+    YndpFkbsJg getJg(String jgId);
 
 
     // 根据机构ID查询出下级机构列表
     @Query(nativeQuery = true, value = "select * from yndp_fkbs_jg where parent_id = ?1")
-    List<YndpFkbsJg> getxjJgList(String jgId);
+    List<YndpFkbsJg> getXjJgList(String jgId);
 }
