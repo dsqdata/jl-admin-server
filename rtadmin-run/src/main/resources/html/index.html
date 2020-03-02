@@ -9,6 +9,7 @@
     <script type="text/javascript" src="component/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="component/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <script type="text/javascript" src="static/js/jquery.ajax.js"></script>
+    <script type="text/javascript" src="component/socket/socketServer.js"></script>
 
 </head>
 <body>
@@ -26,7 +27,7 @@
                         <span class="bgTop02"></span>
                         <span class="bgBtm01"></span>
                         <span class="bgBtm02"></span>
-                        <div class="leftBox01In">
+                        <div class="leftBox01In" onclick="send()">
                             <span>赵赵赵</span>
 
                         </div>
@@ -377,8 +378,18 @@
             });
         }
 
+        function send(){
+            var param = {};
+            param.jgId = '000';
+            param.jgName = '经开区';
+            sendSock(param, function(e){
+                console.log(e);
+            });
+        }
+
         $(document).ready(function () {
             initBranchInfo()
+            initWebSocket(1)
         });
     </script>
 </body>
