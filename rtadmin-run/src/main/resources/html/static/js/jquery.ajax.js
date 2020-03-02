@@ -75,4 +75,21 @@ $(function(){
             }
         });
     };
+
+    /**
+     * ajax封装
+     * url 发送请求的地址
+     * data 发送到服务器的数据，数组存储，如：{"date": new Date().getTime(), "state": 1}
+     * successfn 成功回调函数
+     */
+    jQuery.axget=function(url, successfn) {
+        $.ajax({
+            type: "get",
+            url: url,
+            dataType: "json",
+            success: function(d){
+                successfn(d);
+            }
+        });
+    };
 });

@@ -22,20 +22,22 @@
 <div id="chart-panel"></div>
 
 <script>
-    var initZypz = function (jgNo, jgName) {//初始化-资源配置
-        console.log("资源配置")
+    var initZypz = function (jgId, jgName) {//初始化-资源配置
+        $.axget("/api/yndp/zypz/findListByJgId?jgId=" + jgId, function (data) {
+            console.log(data)
+        });
     }
 
-    var initWzbz = function (jgNo, jgName) {//初始化-物资保障
+    var initWzbz = function (JgId, jgName) {//初始化-物资保障
         console.log("物资保障")
     }
 
-    var initFkxc = function (jgNo, jgName) {//初始化-防控宣传
+    var initFkxc = function (JgId, jgName) {//初始化-防控宣传
         console.log("防控宣传")
     }
 
     $(document).ready(function () {
-        initZypz()
+        initZypz("0000", "区")
         initWzbz()
         initFkxc()
     });
