@@ -10,6 +10,7 @@
     <script type="text/javascript" src="component/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <script type="text/javascript" src="static/js/jquery.ajax.js"></script>
     <script type="text/javascript" src="static/js/template-web.js"></script>
+    <script type="text/javascript" src="component/socket/socketServer.js"></script>
 </head>
 <body>
 <div id="wrapper">
@@ -42,22 +43,22 @@
                     <!--box1-->
                     <div class="orgBox01 clearfix bluePart" id="orgBox01"></div>
                     <script id="tpl-orgBox01" type="text/html">
-                        <div class="orgConLft" onclick="jgOnclick('{{jgid}}','{{jgmc}}')">
+                        <div class="orgConLft" onclick="jgOnclick('{{jgid}}','{{jgmc}}','{{jglx}}','{{jgOrHy}}')">
                             <a href="#">
                                 <h3 class="ttl02">{{jgmc}}</h3>
                                 <div class="ttlBox">
-                                    <span>{{jdwgz}}</span><!--<span>赵赵赵3</span>-->
+                                    <span>{{wgz}}</span><!--<span>赵赵赵3</span>-->
                                 </div>
                             </a>
                         </div>
                         <div class="orgConMid">
                             <ul class="orgList01">
                                 {{each children item i}}
-                                <li onclick="jgOnclick('{{item.jgid}}','{{item.jgmc}}','')">
+                                <li onclick="jgOnclick('{{item.jgid}}','{{item.jgmc}}','{{item.jglx}}','{{item.jgOrHy}}')">
                                     <a href="#">
                                         <h4 class="ttl03">{{item.jgmc}}</h4>
                                         <div class="ttlBox01">
-                                            <span>{{item.sqwgz}}</span><!--<span>赵赵赵5</span><span>赵赵赵6</span>-->
+                                            <span>{{item.wgz}}</span><!--<span>赵赵赵5</span><span>赵赵赵6</span>-->
                                         </div>
                                     </a>
                                 </li>
@@ -73,22 +74,22 @@
                     <!--box2-->
                     <div class="orgBox01 clearfix yellowPart" id="orgBox02"></div>
                     <script id="tpl-orgBox02" type="text/html">
-                        <div class="orgConLft">
+                        <div class="orgConLft" onclick="jgOnclick('{{jgid}}','{{jgmc}}','{{jglx}}','{{jgOrHy}}')">
                             <a href="#">
                                 <h3 class="ttl02">{{jgmc}}</h3>
                                 <div class="ttlBox">
-                                    <span>{{jdwgz}}</span><!--<span>赵赵赵</span>-->
+                                    <span>{{wgz}}</span><!--<span>赵赵赵</span>-->
                                 </div>
                             </a>
                         </div>
                         <div class="orgConMid">
                             <ul class="orgList01">
                                 {{each children item i}}
-                                <li onclick="jgOnclick('{{item.jgid}}','{{item.jgmc}}','')">
+                                <li onclick="jgOnclick('{{item.jgid}}','{{item.jgmc}}','{{item.jglx}}','{{item.jgOrHy}}')">
                                     <a href="#">
                                         <h4 class="ttl03">{{item.jgmc}}</h4>
                                         <div class="ttlBox01">
-                                            <span>{{item.sqwgz}}</span><!--<span>赵赵赵</span><span>赵赵赵</span>-->
+                                            <span>{{item.wgz}}</span><!--<span>赵赵赵</span><span>赵赵赵</span>-->
                                         </div>
                                     </a>
                                 </li>
@@ -108,20 +109,18 @@
 
                             <h3 class="ttl02">{{jgmc}}</h3>
                             <div class="ttlBox">
-                                <span>赵赵赵</span><span>赵赵赵</span>
+                                <span>{{wgz}}</span>
                             </div>
 
                         </div>
                         <div class="orgConMid">
                             <ul class="orgList01">
                                 {{each children item i}}
-                                <li onclick="jgOnclick('{{item.jgid}}','{{item.jgmc}}','')">
-
+                                <li onclick="jgOnclick('{{item.jgid}}','{{item.jgmc}}','{{item.jglx}}','{{item.jgOrHy}}')">
                                     <h4 class="ttl03">{{item.jgmc}}</h4>
                                     <div class="ttlBox01">
-                                        <span>{{item.qjwgz}}</span><!--<span>赵赵赵</span><span>赵赵赵</span>-->
+                                        <span>{{item.wgz}}</span><!--<span>赵赵赵</span><span>赵赵赵</span>-->
                                     </div>
-
                                 </li>
                                 {{/each}}
                             </ul>
@@ -160,9 +159,15 @@
         document.getElementById('orgBox03').innerHTML = html;
     }
 
-    function jgOnclick(jgId, jgName, jgType) {
-        console.log(jgId)
-        console.log(jgName)
+    function jgOnclick(jgId, jgName, jgType,jgOrHy) {
+
+        if(jgOrHy=='1'){
+            send(jgId,jgName);
+        }
+        if(jgType=='2'&&jgOrHy=='1'){
+            window.location = 'second.html?jgId='+jgId;
+        }
+
     }
 
     function toTree(data) {
@@ -194,7 +199,14 @@
 
     var initBranchInfo = function () {//初始化机构数据
     }
-
+    function send(jgId, jgName){
+        var param = {};
+        param.jgId = jgId;
+        param.jgName = jgName;
+        sendSock(param, function(e){
+            console.log(e);
+        });
+    }
     $(document).ready(function () {
      /*   var data = [
             {jgid: 1, jgmc: "经开区", parentid: 0},
@@ -230,7 +242,7 @@
         initTitle()
 
         initBranchInfo()
-
+        initWebSocket(1)
     });
 </script>
 </body>
