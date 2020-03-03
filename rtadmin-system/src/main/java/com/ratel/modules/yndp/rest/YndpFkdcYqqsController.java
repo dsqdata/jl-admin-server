@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/yndp/yqqs")
-@Api(tags = "疫情趋势图管理")
+@Api(tags = "第二屏：疫情趋势图管理")
 public class YndpFkdcYqqsController {
 
     @Autowired

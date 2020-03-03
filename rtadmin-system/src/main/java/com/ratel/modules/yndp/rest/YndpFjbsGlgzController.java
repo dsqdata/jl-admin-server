@@ -31,7 +31,7 @@ import java.util.Map;
  * @author DDXS
  * @date 2020/2/28 12:26
  */
-@Api(tags = "管理工作")
+@Api(tags = "第一屏：管理工作")
 @RestController
 @RequestMapping("/api/yndp/glgz")
 public class YndpFjbsGlgzController {
@@ -43,7 +43,7 @@ public class YndpFjbsGlgzController {
     @Autowired
     YndpFkbsWgcyService yndpFkbsWgcyService;
 
-    @ApiOperation("查询出一屏页面所有机构")
+    @ApiOperation("首页：查询出一屏页面所有机构")
     @GetMapping(value = "/getAllJg")
     public Result getAllJg(HttpServletRequest request, HttpServletResponse response) {
         // 查询出一屏页面所有机构

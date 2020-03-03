@@ -20,7 +20,7 @@ import java.util.List;
  * @author DDXS
  * @date 2020/3/2 16:18
  */
-@Api(tags = "数据时间更新表")
+@Api(tags = "第二屏：数据时间更新表")
 @RestController
 @RequestMapping("/api/yndp/sjsjgx")
 public class YndpSjgxsjController {

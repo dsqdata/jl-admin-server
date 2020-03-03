@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author DDXS
  * @date 2020/2/26 13:36
  */
-@Api(tags = "资源配置")
+@Api(tags = "第二屏：资源配置")
 @RestController
 @RequestMapping("/api/yndp/zypz")
 public class YndpFkdcZypzController {

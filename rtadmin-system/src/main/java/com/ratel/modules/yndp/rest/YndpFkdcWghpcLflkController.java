@@ -20,7 +20,7 @@ import java.util.List;
  * @author DDXS
  * @date 2020/2/27 17:16
  */
-@Api(tags = "网格化排查及联防联控")
+@Api(tags = "第二屏：网格化排查及联防联控")
 @RestController
 @RequestMapping("/api/yndp/wghpclflk")
 public class YndpFkdcWghpcLflkController {

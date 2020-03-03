@@ -29,7 +29,7 @@ import java.util.Map;
  * @author DDXS
  * @date 2020/2/28 9:06
  */
-@Api(tags = "中间地图")
+@Api(tags = "第二屏：中间地图")
 @RestController
 @RequestMapping("/api/yndp/map")
 public class YndpFkdcMapController {

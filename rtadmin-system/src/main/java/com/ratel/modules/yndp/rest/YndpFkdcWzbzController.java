@@ -17,7 +17,7 @@ import java.util.List;
  * @author DDXS
  * @date 2020/2/26 9:45
  */
-@Api(tags = "物资保障")
+@Api(tags = "第二屏：物资保障")
 @RestController
 @RequestMapping("/api/yndp/wzbz")
 public class YndpFkdcWzbzController {

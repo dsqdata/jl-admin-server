@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/yndp/zdrymp")
-@Api(tags = "重点人员摸排管理")
+@Api(tags = "第二屏：重点人员摸排管理")
 public class YndpFkdcZdrympController {
 
     @Autowired
