@@ -107,8 +107,6 @@ public class YndpFkbsJg extends BaseUuidEntity {
     @Column(name = "qjwgy", columnDefinition = "VARCHAR(255) COMMENT '区级网格员'")
     private String qjwgy;
 
-
-
     /**
      * 网格长
      */

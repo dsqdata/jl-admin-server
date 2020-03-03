@@ -8,3 +8,5 @@ body,html{ height: 100%;color: #ffffff;}
 .orgLeft{ width: 16%; float: left; margin-right: 2%; height: 100%;background: rgba(3,28,47,0.60); border: 1px solid #117491; box-shadow: inset 0 0 22px 0 #117491;}
 .orgRight{ width: 82%; float: left; height: 100%;background: rgba(9,47,75,0.85);border: 0 solid #23B7E5; box-shadow: inset 0 0 25px 0 rgba(35,183,229,0.66);}
 
+.orgLeft01{ width: 19%; float: left; margin-right: 2%; height: 100%;background: rgba(3,28,47,0.60); border: 1px solid #117491; box-shadow: inset 0 0 22px 0 #117491;}
+.orgRight01{ width: 79%; float: left; height: 100%;background: rgba(9,47,75,0.85);border: 0 solid #23B7E5; box-shadow: inset 0 0 25px 0 rgba(35,183,229,0.66);}

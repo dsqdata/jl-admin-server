@@ -1,6 +1,6 @@
 @charset "utf-8";
 /*组织架构*/
-.orgRightIn{ padding: 25px 25px 0 60px; background: url("../images/arrow03.png") no-repeat 30px center; background-size:25px 70%;  height: 100%;}
+.orgRightIn{ padding: 25px 25px 0 60px; font-size: 16px; background: url("../images/arrow03.png") no-repeat 30px center; background-size:25px 70%;  height: 100%;}
 .orgCon{ height: 100%;}
 .orgBox01{ height: calc(33% - 25px); margin-bottom:25px;  }
 .orgLeftIn{ padding: 20px; height: 100%;}
@@ -11,46 +11,103 @@
 .leftBox01 .bgBtm01{ position: absolute; left:0; bottom:0; display: block; width: 9px; height: 9px; background: url("../images/left_bg03.png") no-repeat;}
 .leftBox01 .bgBtm02{ position: absolute; right:0; bottom:0; display: block; width: 10px; height: 11px; background: url("../images/left_bg04.png") no-repeat;}
 .leftBox01In{ height:100%; min-height: 55px; padding:5% 0 0 0;background: rgba(9,47,75,0.85);border: 1px solid #1c94be; box-shadow: inset 0 0 25px 0 rgba(35,183,229,0.66);}
-.leftArrow01{ height: 58px; background: url("../images/arrow01.png") no-repeat center top; background-size:15px 100%; }
+.leftArrow01{ height: 58px; background: url("../images/arrow01.png") no-repeat center top; background-size:15px 100%; margin-bottom: 8px; }
 .orgConLft{ float: left; width:15%; height: 100%; }
 .orgConMid{ float: left; width:67%;  height: 100%; margin: 0 18px;background: rgba(9,47,75,0.55);border: 0 solid #23B7E5; box-shadow: inset 0 0 25px 0 rgba(35,183,229,0.66);}
 .orgConRgt{ float: left; width:calc(18% - 36px);  height: 100%;background: rgba(9,47,75,0.55);border: 0 solid #23B7E5; box-shadow: inset 0 0 25px 0 rgba(35,183,229,0.66); }
-.ttl02{  height: 40px; padding: 0 0 0 105px;  font-size: 16px; margin-top: 20%; color: #fff; }
-.ttlBox{ min-height: 40%; font-weight: bold; text-align: center; padding: 13% 20px; }
+.ttl02{  height: 40px; padding: 0 0 0 105px;  font-size: 18px; margin-top: 20%; color: #fff; font-weight: bold; }
+.ttlBox{ min-height: 30%; font-weight: bold; text-align: center; padding: 13% 20px; font-size: 18px; }
 .ttlBox span{ margin: 0 5px;}
 .orgTb01{ width: 100%; height: 100%;}
 .orgTb01 td{ width: 20%; border: 1px solid #fff; }
 .orgList01{ height: 100%; overflow-y: auto; padding: 2% 0 0 2%;}
 .orgList01 li{ height: 30%; margin-bottom: 7px;  width: 18%; float: left; margin-right: 2%;}
-.ttl03{ height: 30px;  color: #fff; font-size: 14px; padding: 0 0 0 80px; }
+.ttl03{ height: 30px;  color: #fff; font-size: 16px; font-weight: bold; padding: 0 0 0 80px; }
 .ttlBox01{ height: calc(100% - 30px); font-weight: bold; text-align: center; padding: 5% 0; }
 .ttlBox01 span{ margin: 0 5px;}
 .orgConRgt{ padding: 20px 15px;}
-.orgTxt01{ font-weight: bold;}
+.orgTxt01{ font-weight: bold; line-height: 28px;}
 .ttl04{ color: #fff; font-size: 16px; font-weight: bold; margin-bottom: 10px;}
-.bluePart .ttl02{background: url("../images/mid_blue01.png") no-repeat; background-size:100%;}
-.bluePart .ttlBox{background:url("../images/mid_blue02.png") no-repeat center bottom; background-size: 100%;}
-.bluePart .orgConLft a:hover .ttl02{background: url("../images/mid_blue01_on.png") no-repeat;}
-.bluePart .orgConLft a:hover .ttlBox{background:url("../images/mid_blue02_on.png") no-repeat center bottom; color: #fff;}
-.bluePart .ttl03{background: url("../images/mid_blue03.png") no-repeat;background-size:100% 100%; }
-.bluePart .ttlBox01{background: url("../images/mid_blue04.png") no-repeat center bottom;background-size:100%;}
+.orgConLft a{ display: block;min-height: 50%;}
+.orgConLft a:hover{ text-decoration: none;color: #fff;}
+.orgList01 a{ display: block;text-decoration: none; height: 95%;}
+.orgList01 a:hover .ttlBox01{color: #fff;}
+
 .bluePart .ttlBox01,.bluePart .ttlBox,.bluePart .orgTxt01{ color: #23B7E5;}
-.bluePart .orgList01 a:hover .ttlBox01{ background: url("../images/mid_blue04_on.png") no-repeat center bottom;background-size:100%; color: #fff;}
-.bluePart .orgList01 a:hover .ttl03{background: url("../images/mid_blue03_on.png") no-repeat;}
+.bluePart .orgConLft a{background: url("../images/mid1_blue01.png") no-repeat; background-size:100% 100%; }
+.bluePart .orgConLft a:hover {background: url("../images/mid1_blue01_on.png") no-repeat; background-size:100% 100%;}
+.bluePart .orgConLft a:hover .ttlBox{color: #fff;}
+.bluePart .orgList01 a{background: url("../images/mid1_blue02.png") no-repeat center bottom;background-size:100% 100%;}
+.bluePart .orgList01 a:hover {background: url("../images/mid1_blue02_on.png") no-repeat center bottom;background-size:100% 100%;}
 
-.yellowPart .ttl02{background: url("../images/mid_yellow01.png") no-repeat; background-size:100%;}
-.yellowPart .ttlBox{background:url("../images/mid_yellow02.png") no-repeat center bottom; background-size: 100%;}
-.yellowPart .orgConLft a:hover .ttl02{background: url("../images/mid_yellow01_on.png") no-repeat;}
-.yellowPart .orgConLft a:hover .ttlBox{background:url("../images/mid_yellow02_on.png") no-repeat center bottom; color: #fff;}
-.yellowPart .ttl03{background: url("../images/mid_yellow03.png") no-repeat;background-size:100% 100%; }
-.yellowPart .ttlBox01{background: url("../images/mid_yellow04.png") no-repeat center bottom;background-size:100%;}
 .yellowPart .ttlBox01,.yellowPart .ttlBox,.yellowPart .orgTxt01{ color: #F8E71C;}
-.yellowPart .orgList01 a:hover .ttlBox01{ background: url("../images/mid_yellow04_on.png") no-repeat center bottom;background-size:100%; color: #fff;}
-.yellowPart .orgList01 a:hover .ttl03{background: url("../images/mid_yellow03_on.png") no-repeat;}
+.yellowPart .orgConLft a{background: url("../images/mid1_yellow01.png") no-repeat; background-size:100% 100%; }
+.yellowPart .orgConLft a:hover {background: url("../images/mid1_yellow01_on.png") no-repeat; background-size:100% 100%;}
+.yellowPart .orgConLft a:hover .ttlBox{color: #fff;}
+.yellowPart .orgList01 a{background: url("../images/mid1_yellow02.png") no-repeat center bottom;background-size:100% 100%;}
+.yellowPart .orgList01 a:hover {background: url("../images/mid1_yellow02_on.png") no-repeat center bottom;background-size:100% 100%;}
 
-.greenPart .ttl02{background: url("../images/mid_green01.png") no-repeat; background-size:100%;}
-.greenPart .ttlBox{background:url("../images/mid_green02.png") no-repeat center bottom; background-size: 100%;}
-.greenPart .ttl03{background: url("../images/mid_green03.png") no-repeat;background-size:100% 100%; }
-.greenPart .ttlBox01{background: url("../images/mid_green04.png") no-repeat center bottom;background-size:100%;}
 .greenPart .ttlBox01,.greenPart .ttlBox,.greenPart .orgTxt01{ color: #7ED321;}
+.greenPart .orgConLft{background: url("../images/mid1_green01.png") no-repeat; background-size:100% 100%; height: 50%;margin-top: 7%;}
+.greenPart .ttl02{ margin: 0; }
+.greenPart .orgList01 li{background: url("../images/mid1_green02.png") no-repeat; background-size:100% 100%;}
+
+
+
+/*组织结构2*/
+.posT{ position: relative;}
+.arrowMid{ position: absolute; left:18%; top:51%; display: block; width: 110px; height: 9px; background: url("../images/arrow02.png") no-repeat right center; background-size:100% 100%; }
+.orgRightIn01{ padding: 50px 0 0 60px; background: url("../images/arrow03.png") no-repeat 30px center; background-size:25px 70%;  height: 100%;}
+.orgRightIn01 .orgBox01{ height: calc(33% - 50px); margin-bottom:50px;  }
+.orgLeft01 .orgLeftIn{padding: 35px 20px; height: 100%;}
+.orgLeft01 .leftBox01In{ min-height: 115px;}
+.orgConLft01{ float: left; width:21%; height: 100%; }
+.orgConLft01 a{ text-decoration: none;display: block;}
+.orgConLft01 a:hover .orgList02 strong,.orgConLft01 a:hover .orgList02{ color: #fff;}
+.orgConMid01{ float: left; width:74%;  height: 100%; padding:40px 0; margin: 0 0 0 30px;background: rgba(9,47,75,0.55);border: 0 solid #23B7E5; box-shadow: inset 0 0 25px 0 rgba(35,183,229,0.66);}
+.orgConLft01 .ttl02{ margin-top: 20px; background: none; padding: 0 0 0 100px; font-weight: bold;}
+.orgConLft01 .ttlBox{ min-height: 65%; padding: 0; background: none; text-align: left;}
+.orgList02{ padding:10px 15px; font-size: 16px;}
+.orgList02 li{ font-weight: bold; line-height: 26px; margin-bottom: 10px; color: #fff;}
+.orgList02 strong{ color: #23B7E5; margin-right: 10px;}
+.orgList02 span{ margin-right: 10px; }
+.leftBox02{ min-height: 140px; padding: 9px; position: relative;}
+.leftBox02 .bgTop01{ position: absolute; left:0; top:0; display: block; width: 9px; height: 9px; background: url("../images/left_bg05.png") no-repeat;}
+.leftBox02 .bgTop02{ position: absolute; right:0; top:0; display: block; width: 9px; height: 9px; background: url("../images/left_bg06.png") no-repeat;}
+.leftBox02 .bgBtm01{ position: absolute; left:0; bottom:0; display: block; width: 9px; height: 9px; background: url("../images/left_bg07.png") no-repeat;}
+.leftBox02 .bgBtm02{ position: absolute; right:0; bottom:0; display: block; width: 9px; height: 9px; background: url("../images/left_bg08.png") no-repeat;}
+.leftBox02In{ background: #477e22; padding: 8px 0 0 0;}
+.leftBox02In .orgList02 strong{ color: #f8e71c;}
+.lftBtns{ overflow: hidden; position: absolute; left:30px; bottom:40px;}
+.lftBtns li{ float: left; width: 56px; height: 56px; margin-right: 25px;}
+.lftBtns li a{ display: block; width: 56px; height: 56px;}
+.lftBtns .btn_home a{ background: url("../images/btn_home.png") no-repeat; background-size:100%; }
+.lftBtns .btn_map a{ background: url("../images/btn_map.png") no-repeat; background-size:100%; }
+.lftBtns .btn_home a:hover{background: url("../images/btn_home_on.png") no-repeat; background-size:100%;}
+.lftBtns .btn_map a:hover{ background: url("../images/btn_map_on.png") no-repeat; background-size:100%;}
+.prevBig{ position: absolute; left: 100px; top:-30px; display: block; width: 38px; height: 38px; background: url("../images/btn_up.png") no-repeat; background-size:100%; }
+.nextBig{ position: absolute; left: 100px; bottom:25px; display: block; width: 38px; height: 38px; background: url("../images/btn_down.png") no-repeat; background-size:100%; }
+.orgList03{padding: 0 25px; height: 100%;}
+.orgList03In{ float: left; width: calc(33% - 20px); margin: 0 10px; padding: 3% 0 2% 0; height: 100%; }
+.prevSmall{ position: absolute; left:10px; top:45%; width: 8px; height: 12px; display: block; background: url("../images/btn_left.png") no-repeat; background-size:100%; }
+.prevSmall:hover{ position: absolute; left:10px; top:45%; width: 11px; height: 18px; display: block; background: url("../images/btn_left.png") no-repeat; background-size:100%; }
+.nextSmall{ position: absolute; right:10px; top:45%; width: 8px; height: 12px; display: block; background: url("../images/btn_right.png") no-repeat; background-size:100%; }
+.nextSmall:hover{ position: absolute; right:10px; top:45%; width: 11px; height: 18px; display: block; background: url("../images/btn_right.png") no-repeat; background-size:100%; }
+
+.bluePart .orgConLft01 a{  background: url("../images/mid2_blue01.png") no-repeat; background-size:100% 100%; }
+.bluePart .orgConLft01 a:hover{  background: url("../images/mid2_blue01_on.png") no-repeat; background-size:100% 100%; }
+.bluePart .orgList03In{ background: url("../images/mid2_blue02.png") no-repeat; background-size:100% 100%; }
+
+.yellowPart .orgConLft01 a{  background: url("../images/mid2_yellow01.png") no-repeat; background-size:100% 100%; }
+.yellowPart .orgConLft01 a:hover{  background: url("../images/mid2_yellow01_on.png") no-repeat; background-size:100% 100%; }
+.yellowPart .orgList03In{ background: url("../images/mid2_yellow02.png") no-repeat; background-size:100% 100%; }
+.yellowPart .orgList02 li{ color: #F8E71C;}
+.yellowPart .orgConLft01 a:hover .orgList02 li{color: #fff;}
+
+
+.greenPart .orgConLft01 a{  background: url("../images/mid2_green01.png") no-repeat; background-size:100% 100%; }
+.greenPart .orgConLft01 a:hover{  background: url("../images/mid2_green01_on.png") no-repeat; background-size:100% 100%; }
+.greenPart .orgList03In{ background: url("../images/mid2_green02.png") no-repeat; background-size:100% 100%; }
+.greenPart .orgList02 li{ color: #7ED321;}
+.greenPart .orgConLft01 a:hover .orgList02 li{color: #fff;}
 
