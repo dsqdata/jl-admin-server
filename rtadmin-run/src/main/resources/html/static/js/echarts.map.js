@@ -7,8 +7,35 @@ var lyjdDcsq = "./static/json/data-1518338805373-LYJD-DCSQ.json";
 var lyjdHtpsq = "./static/json/data-1518338805373-LYJD-HTPSQ.json";
 var lyjdXxcsq = "./static/json/data-1518338805373-LYJD-XXCSQ.json"
 
+
 var lyjddlysq = "./static/json/data-1518338805373-LYJD-DLYSQ.json"
 var lyjdxlysq = "./static/json/data-1518338805373-LYJD-XLYSQ.json"
+
+var aljdhzsq = "./static/json/data-1518338805373-ALJD-HZSQ.json";
+var aljdqssq = "./static/json/data-1518338805373-ALJD-QSSQ.json";
+var aljdgpsq = "./static/json/data-1518338805373-ALJD-GPSQ.json";
+var aljdpzsq = "./static/json/data-1518338805373-ALJD-PZSQ.json";
+var aljdsbsq = "./static/json/data-1518338805373-ALJD-SBSQ.json";
+var aljdsbsq = "./static/json/data-1518338805373-ALJD-SBSQ.json";
+var aljdynhtsq = "./static/json/data-1518338805373-ALJD-YNHTSQ.json";
+var aljdstsq = "./static/json/data-1518338805373-ALJD-STSQ.json";
+var aljdyzsq = "./static/json/data-1518338805373-ALJD-YZSQ.json";
+var aljdyzsq = "./static/json/data-1518338805373-ALJD-YZSQ.json";
+var aljdkcsq = "./static/json/data-1518338805373-ALJD-KCSQ.json";
+var aljdbglsq = "./static/json/data-1518338805373-ALJD-BGLSQ.json";
+var aljdchsq = "./static/json/data-1518338805373-ALJD-CHSQ.json";
+var aljdccsq = "./static/json/data-1518338805373-ALJD-CCSQ.json";
+
+
+var lyjdglsq = "./static/json/data-1518338805373-LYJD-GLSQ.json";
+var lyjdcmsq = "./static/json/data-1518338805373-LYJD-CMSQ.json";
+var lyjdnjysq = "./static/json/data-1518338805373-LYJD-NJYSQ.json";
+var lyjdnjysq = "./static/json/data-1518338805373-LYJD-NJYSQ.json";
+var lyjdslhsq = "./static/json/data-1518338805373-LYJD-SLHSQ.json";
+var lyjdsjssq = "./static/json/data-1518338805373-LYJD-SJSSQ.json";
+
+
+
 var options = null;
 
 var provinceData = [[ 102.85494405299998, 24.946454769999982]]
@@ -19,7 +46,20 @@ echarts.extendsMap = function (id, opt) {
     var curGeoJson = {};
     var cityMap = {
         "阿拉街道": aljd,
-        "洛羊街道": lyjd,
+        "高坡社区": aljdgpsq,
+        "海子社区": aljdhzsq,
+        "清水社区": aljdqssq,
+        "普照社区": aljdpzsq,
+        "石坝社区": aljdsbsq,
+        "云南航天社区": aljdynhtsq,
+        "顺通社区": aljdstsq,
+        "云知社区": aljdyzsq,
+        "昆船社区": aljdkcsq,
+        "八公里社区": aljdbglsq,
+        "昌宏社区": aljdchsq,
+        "长春社区": aljdccsq,
+
+        "洛羊街道":lyjd,
 
         "大冲社区":lyjdDcsq,
         "阿拉社区": aljdAlsq,
@@ -28,7 +68,15 @@ echarts.extendsMap = function (id, opt) {
         "黄土坡社区":lyjdHtpsq,
 
         "大洛羊社区":lyjddlysq,
-        "小洛羊社区":lyjdxlysq
+        "小洛羊社区":lyjdxlysq,
+        "果林社区":lyjdglsq,
+        "春漫社区":lyjdcmsq,
+        "倪家营社区":lyjdnjysq,
+        "石龙湖社区":lyjdslhsq,
+        "水井山社区":lyjdsjssq
+
+
+
     };
 
     var levelColorMap = {
@@ -118,13 +166,39 @@ echarts.extendsMap = function (id, opt) {
             var cityToPinyin = {
                 "阿拉街道": "ALA",
                 "洛羊街道": "luoyang",
-                "阿拉社区": "ALAJIE",
-                "大新册社区":"DAXINCE",
-                "小新册社区":"xiaoxince",
+
+                "高坡社区": "gaopo",
+                "海子社区":  "haizi",
+                "清水社区": "qingshui",
+                "普照社区": "puzhao",
+                "石坝社区": "shiba",
+                "云南航天社区": "yunnanhangtian",
+                "顺通社区": "shuntong",
+                "云知社区": "yunzhi",
+                "昆船社区": "kunchuang",
+                "八公里社区": "bagongli",
+                "昌宏社区": "changhong",
+                "长春社区": "changchun",
+
+
+
                 "大冲社区":"dachong",
+                "阿拉社区": "ala",
+                "大新册社区":"daxince",
+                "小新册社区":"xiaoxince",
                 "黄土坡社区":"huangtupo",
+
                 "大洛羊社区":"daluoyang",
-                "大洛羊社区":"xiaoluoyang"
+                "小洛羊社区":"xiaoluoyang",
+                "果林社区":"guolin",
+                "春漫社区":"chunman",
+                "倪家营社区":"nijiaying",
+                "石龙湖社区":"shilonghu",
+                "水井山社区":"shuijingshan"
+
+
+
+
             };
             var breadcrumb = {
                 type: 'group',
@@ -268,23 +342,37 @@ echarts.extendsMap = function (id, opt) {
                 // }];
                 option.series[6].data =  [
                     { name: "阿拉街道", value: 1110 },
-                    { name: '洛羊街道', value: 54 },
-                    { name: '阿拉社区', value: 13 },
-                    { name: '大冲社区', value: 0 },
-                    { name: '黄土坡社区', value: 0 },
+                    { name: '洛羊街道', value: 0 },
                     { name: '高坡社区', value: 0 },
-                    { name: '普照社区', value: 20 },
-                    { name: '石坝社区', value: 20 },
-                    { name: '海子社区', value: 20 },
-                    { name: '清水社区', value: 20 },
-                    { name: '小新册社区', value: 0 },
-                    { name: '倪家营社区', value: 20 },
-                    { name: '小洛羊社区', value: 20 },
-                    { name: '洛龙社区', value: 20 },
-                    { name: '大洛羊社区', value: 20 },
-                    { name: '大新册社区', value: 20 }
+                    { name: '海子社区', value: 11 },
+                    { name: '清水社区', value: 554 },
+                    { name: '普照社区', value: 220 },
+                    { name: '石坝社区', value: 115 },
+                    { name: '云南航天社区', value: 6 },
+                    { name: '顺通社区', value: 121 },
+                    { name: '昆船社区', value: 44 },
+                    { name: '八公里社区', value: 77 },
+                    { name: '昌宏社区', value: 55 },
+                    { name: '长春社区', value: 55 },
 
-                ];
+                    { name: '大冲社区', value: 0 },
+                    { name: '阿拉社区', value: 2 },
+                    { name: '大新册社区', value: 3 },
+                    { name: '小新册社区', value: 111 },
+                    { name: '黄土坡社区', value: 222 },
+                    { name: '大洛羊社区', value: 555 },
+                    { name: '小洛羊社区', value: 1444 },
+                    { name: '果林社区', value: 11 },
+                    { name: '春漫社区', value: 3123 },
+                    { name: '倪家营社区', value: 0 },
+                    { name: '石龙湖社区', value: 20 },
+                    { name: '水井山社区', value: 0 }
+
+
+
+
+
+            ];
                 i.setOption(option, true);
             }
         }
@@ -432,7 +520,7 @@ echarts.extendsMap = function (id, opt) {
                     show: true,
                     textStyle: {
                         color: '#C4C4C4',
-                        fontSize: 20,
+                        fontSize: 12,
                     }
                 },
                 emphasis: {
