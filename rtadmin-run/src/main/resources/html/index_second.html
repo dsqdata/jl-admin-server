@@ -21,8 +21,7 @@
         <div id="container" class="clearfix posT">
             <span class="arrowMid"></span>
             <div class="orgLeft01">
-                <div class="orgLeftIn posT">
-                    <div class="orgBox01 clearfix bluePart" id="orgBox01"></div>
+                <div class="orgLeftIn posT" id="orgBox01">
                     <script id="tpl-orgBox01" type="text/html">
                         <% if (xjlx==1 || xjlx==2) { %>
                             <div class="leftBox01">
@@ -99,12 +98,30 @@
                     <div class="orgCon posT">
                             <a onclick="wgClick('up')" class="prevBig"></a>  <!--点击网格上-->
                             <a onclick="wgClick('down')" class="nextBig"></a>  <!--点击网格下-->
-                                <div class="orgBox02 clearfix bluePart" id="orgBox02"></div>
+                        <div id="orgBox02"></div>
+
+
+
+
                                 <script id="tpl-orgBox02" type="text/html">
                                     {{each wglist item i}}
+
+                                    <% if (i==0) { %>
+                                    <div class="orgBox01 clearfix bluePart">
+                                    <% } %>
+
+                                        <% if (i==1) { %>
+                                        <div class="orgBox01 clearfix yellowPart">
+                                            <% } %>
+
+                                            <% if (i==2) { %>
+                                            <div class="orgBox01 clearfix greenPart">
+                                                <% } %>
+
+
+
                                         <% if (xjlx==1) { %>
                                             <!--box1-->
-                                            <div class="orgBox01 clearfix bluePart">
                                                 <div class="orgConLft01">
                                                     <a href="#">
                                                         <h3 class="ttl02">{{item.wgmc}}{{item.hs}}户{{item.rs}}人 </h3>
@@ -113,8 +130,8 @@
                                                                 <li><strong>网格管理员</strong><span>{{item.wggly}}</span></li>
                                                                 <li><strong>小区</strong><span>{{item.xqnum}}</span></li>
                                                                 <li><strong>主干道</strong><span>{{item.zgdts}}</span></li>
-                                                                <li><strong>背街小巷</strong><span>{{item.bjxxts}}</span></li>
-                                                                <li><strong>企事业单位</strong><span>{{item.qsydwgs}}</span></li>
+                                                         <!--       <li><strong>背街小巷</strong><span>{{item.bjxxts}}</span></li>
+                                                                <li><strong>企事业单位</strong><span>{{item.qsydwgs}}</span></li>-->
                                                             </ul>
                                                         </div>
                                                     </a>
@@ -126,21 +143,17 @@
                                                         {{each item.children subItem j}}
                                                         <div class="orgList03In">
                                                             <ul class="orgList02">
-                                                                <li><strong>{{subItem.jgmc}}</strong></li>
-                                                                <li><span>({{subItem.lds}}栋{{subItem.hs}}户{{subItem.zrs}}人)</span></li>
+                                                                <li><strong>{{subItem.jgmc}}</strong><span>({{subItem.lds}}栋{{subItem.hs}}户{{subItem.zrs}}人)</span></li>
                                                                 <li><strong>网格长</strong><span>{{subItem.jgwgz}}</span></li>
                                                                 <li><strong>网格管理员</strong><span>{{subItem.jgwggly}}</span></li>
-
                                                             </ul>
                                                         </div>
                                                         {{/each}}
                                                     </div>
                                                 </div>
-                                            </div>
                                             <!--box1 //-->
                                         <% } else if (xjlx==2) { %>
                                             <!--box1-->
-                                            <div class="orgBox01 clearfix yellowPart">
                                                 <div class="orgConLft01">
                                                     <a href="#">
                                                         <h3 class="ttl02">{{item.jgmc}} 网格{{i+1}} <span> {{item.hs}}户{{item.rs}}人 </span></h3>
@@ -164,17 +177,14 @@
                                                                 <li><strong>党员代表</strong><span>{{subItem.dydb}}</span></li>
                                                                 <li><strong>联系电话</strong><span>{{item.lxdh}}</span></li>
                                                                 <li><strong>联系户数</strong><span>{{item.lxhs}}</span></li>
-
                                                             </ul>
                                                         </div>
                                                         {{/each}}
                                                     </div>
                                                 </div>
-                                            </div>
                                               <!--box1 //-->
                                         <% } else  { %>
                                             <!--box1-->
-                                            <div class="orgBox01 clearfix greenPart">
                                                 <div class="orgConLft01">
                                                     <a href="#">
                                                         <h3 class="ttl02">{{item.jgmc}} <span>{{item.gsgs}}</span></h3>
@@ -201,14 +211,14 @@
                                                         {{/each}}
                                                     </div>
                                                 </div>
-                                            </div>
                                             <!--box1 //-->
                                         <% } %>
-
+                                    </div>
+                                    </div>
                                     {{/each}}
+
                                 </script>
-                            </div>
-                    </div>
+
 
                 </div>
             </div>
