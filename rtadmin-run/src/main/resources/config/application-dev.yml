@@ -7,7 +7,7 @@ spring:
 #      url: jdbc:log4jdbc:mysql://localhost:3306/s1?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
 #      username: root
 #      password: Dongsiqi@12
-      url: jdbc:log4jdbc:mysql://172.16.36.217:3309/yn_yqdp?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
+      url: jdbc:log4jdbc:mysql://172.16.36.217:3309/yn_yqdp_dev?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
       username: root
       password: 12345678
       # 初始化配置
@@ -41,7 +41,7 @@ spring:
   jpa:
     hibernate:
       # 生产环境设置成 none，避免程序运行时自动更新数据库结构
-      ddl-auto: update
+      ddl-auto: none
 
 pagehelper:
   helperDialect: mysql
@@ -75,7 +75,8 @@ swagger:
 file:
   path: /Users/dongchuang/Downloads/rtadmin/file/
   avatar: /Users/dongchuang/Downloads/rtadmin/avatar/
-  html: D:\\code\\yn_yq\\rtadmin-server\\rtadmin-run\\src\\main\\resources\\html\\
+  jarHtml: classpath:/html/  # none - 代表不实用jar包 中的静态文件
+  html: /home/Devops/ynyq/html/
   # 文件大小 /M
   maxSize: 100
   avatarMaxSize: 5

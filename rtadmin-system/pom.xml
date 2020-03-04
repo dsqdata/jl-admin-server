@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>rtadmin-system</artifactId>
-    <name>核心模块</name>
+    <name>系统模块</name>
 
     <properties>
         <jjwt.version>0.10.6</jjwt.version>
