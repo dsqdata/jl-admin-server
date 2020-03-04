@@ -98,7 +98,7 @@
                 <div class="orgRightIn01">
                     <div class="orgCon posT">
                             <a onclick="wgClick('up')" class="prevBig"></a>  <!--点击网格上-->
-                            <a href="wgClick('down')" class="nextBig"></a>  <!--点击网格下-->
+                            <a onclick="wgClick('down')" class="nextBig"></a>  <!--点击网格下-->
                                 <div class="orgBox02 clearfix bluePart" id="orgBox02"></div>
                                 <script id="tpl-orgBox02" type="text/html">
                                     {{each wglist item i}}
@@ -107,7 +107,7 @@
                                             <div class="orgBox01 clearfix bluePart">
                                                 <div class="orgConLft01">
                                                     <a href="#">
-                                                        <h3 class="ttl02">&nbsp;&nbsp;{{item.jgmc}}{{item.hs}}户{{item.rs}}人 </h3>
+                                                        <h3 class="ttl02">{{item.wgmc}}{{item.hs}}户{{item.rs}}人 </h3>
                                                         <div class="ttlBox">
                                                             <ul class="orgList02">
                                                                 <li><strong>网格管理员</strong><span>{{item.wggly}}</span></li>
@@ -120,8 +120,8 @@
                                                     </a>
                                                 </div>
                                                 <div class="orgConMid01 posT">
-                                                    <a href="javascript:;" class="prevSmall"></a><!--点击网格成员左-->
-                                                    <a href="javascript:;" class="nextSmall"></a><!--点击网格成员右-->
+                                                    <a onclick="wgcyClick('left','{{item.wgid}}',1)" class="prevSmall"></a><!--点击网格成员左-->
+                                                    <a onclick="wgcyClick('right','{{item.wgid}}',1)" class="nextSmall"></a><!--点击网格成员右-->
                                                     <div class="orgList03 clearfix">
                                                         {{each item.children subItem j}}
                                                         <div class="orgList03In">
@@ -154,8 +154,8 @@
                                                     </a>
                                                 </div>
                                                 <div class="orgConMid01 posT">
-                                                    <a href="javascript:;" class="prevSmall"></a><!--点击网格成员左-->
-                                                    <a href="javascript:;" class="nextSmall"></a><!--点击网格成员右-->
+                                                    <a onclick="wgcyClick('left','{{item.wgid}}',2)" class="prevSmall"></a><!--点击网格成员左-->
+                                                    <a onclick="wgcyClick('right','{{item.wgid}}',2)" class="nextSmall"></a><!--点击网格成员右-->
                                                     <div class="orgList03 clearfix">
                                                         {{each item.children subItem j}}
                                                         <div class="orgList03In">
@@ -187,8 +187,8 @@
                                                     </a>
                                                 </div>
                                                 <div class="orgConMid01 posT">
-                                                    <a href="javascript:;" class="prevSmall"></a><!--点击网格成员左-->
-                                                    <a href="javascript:;" class="nextSmall"></a><!--点击网格成员右-->
+                                                    <a onclick="wgcyClick('left','{{item.wgid}}',3)" class="prevSmall"></a><!--点击网格成员左-->
+                                                    <a onclick="wgcyClick('right','{{item.wgid}}',3)" class="nextSmall"></a><!--点击网格成员右-->
                                                     <div class="orgList03 clearfix">
                                                         {{each item.children subItem j}}
                                                         <div class="orgList03In">
@@ -196,7 +196,6 @@
                                                                 <li><strong>{{subItem.jgmc}}</strong></li>
                                                                 <li><strong>网格长</strong><span>{{subItem.hywgz}}</span></li>
                                                                 <li><strong>网格管理员</strong><span>{{subItem.hywgcy}}</span></li>
-
                                                             </ul>
                                                         </div>
                                                         {{/each}}
@@ -207,10 +206,7 @@
                                         <% } %>
 
                                     {{/each}}
-
                                 </script>
-
-
                             </div>
                     </div>
 
@@ -254,23 +250,59 @@
         if (r!=null) return (r[2]); return null;
     }
 
+    var treeData = []
     var currentWgPage = 1;
+    var wgMaxPage = 0;
     var currentWgcyPage1 = 1;
+    var wgcyMaxPage1=0;
     var currentWgcyPage2 = 1;
+    var wgcyMaxPage2=0;
     var currentWgcyPage3 = 1;
+    var wgcyMaxPage3=0;
 
-
+    var xjlx = "";
+    var jgId= GetQueryString("jgId");
     function wgClick(type){
-
+    console.log("xjlx="+xjlx);
         //处理方法
-        if(type === 'up'){
-
+        if(type === 'down'){
+            if(currentWgPage>=(wgMaxPage/3)){
+                return;
+            }
             //查询
-
-            currentWgPage = currentWgPage +1;
+                currentWgPage = currentWgPage +1;
+                console.log("currentWgPage="+currentWgPage);
+                $.axget("/api/yndp/glgz/getWgList?jgId="+jgId+"&pageNum="+currentWgPage, function (wgRes) {
+                    console.log("wgRes="+wgRes.data.list);
+                    treeData = wgRes.data.list;
+                    console.log("tdt"+treeData);
+                    for( var i = 0;i<treeData.length;i++){
+                        treeData[i].children =[];
+                        $.axget1("/api/yndp/glgz/getWgcyList?wgId="+treeData[i].wgid+"&pageNum=1",false, function (res) {
+                            treeData[i].children=res.data.list;
+                        });
+                    }
+                    initOrgBox02(treeData,xjlx)
+                });
         }else{
-            currentWgPage = currentWgPage -1;
+            if(currentWgPage==1){
+                return;
+            }else{
+                currentWgPage = currentWgPage -1;
+            }
             //查询
+            $.axget("/api/yndp/glgz/getWgList?jgId="+jgId+"&pageNum="+currentWgPage, function (wgRes) {
+                console.log("wgRes="+wgRes.data.list);
+                treeData = wgRes.data.list;
+                console.log("tdt"+treeData);
+                for( var i = 0;i<treeData.length;i++){
+                    treeData[i].children =[];
+                    $.axget1("/api/yndp/glgz/getWgcyList?wgId="+treeData[i].wgid+"&pageNum=1",false, function (res) {
+                        treeData[i].children=res.data.list;
+                    });
+                }
+                initOrgBox02(treeData,xjlx)
+            });
         }
 
          currentWgcyPage1 = 1;
@@ -283,42 +315,88 @@
 
     function wgcyClick(type,wgid,currentNum){
         //处理方法
-        if(type === 'left'){
+        if(type === 'right'){
             if(currentNum  === 1){
-                //查询
-
+                if(currentWgcyPage1>=(wgcyMaxPage1/3)){
+                    return;
+                }
                 currentWgcyPage1 = currentWgcyPage1 +1;
+                //查询
+                $.axget1("/api/yndp/glgz/getWgcyList?wgId="+wgid+"&pageNum="+currentWgcyPage1,false, function (res) {
+                    treeData[0].children =[];
+                    treeData[0].children=res.data.list;
+                    initOrgBox02(treeData,xjlx);
+                });
             } else if (currentNum  === 2){
+                if(currentWgcyPage1>=(wgcyMaxPage1/3)){
+                    return;
+                }
                 //查询
-
                 currentWgcyPage2 = currentWgcyPage2 +1;
+                $.axget1("/api/yndp/glgz/getWgcyList?wgId="+wgid+"&pageNum="+currentWgcyPage2,false, function (res) {
+                    treeData[1].children =[];
+                    treeData[1].children=res.data.list;
+                    initOrgBox02(treeData,xjlx);
+                });
             } else{
+                if(currentWgcyPage1>=(wgcyMaxPage1/3)){
+                    return;
+                }
                 //查询
-
                 currentWgcyPage3 = currentWgcyPage3 +1;
+                $.axget1("/api/yndp/glgz/getWgcyList?wgId="+wgid+"&pageNum="+currentWgcyPage3,false, function (res) {
+                    treeData[2].children =[];
+                    treeData[2].children=res.data.list;
+                    initOrgBox02(treeData,xjlx);
+                });
             }
         }else {
 
             if(currentNum  === 1){
-                currentWgcyPage1 = currentWgcyPage1 -1;
+                if(currentWgcyPage1==1){
+                    return;
+                }else{
+                    currentWgcyPage1 = currentWgcyPage1 -1;
+                }
                 //查询
-
+                $.axget1("/api/yndp/glgz/getWgcyList?wgId="+wgid+"&pageNum="+currentWgcyPage1,false, function (res) {
+                    treeData[0].children =[];
+                    treeData[0].children=res.data.list;
+                    initOrgBox02(treeData,xjlx);
+                });
             } else if (currentNum  === 2){
-                currentWgcyPage2 = currentWgcyPage2 -1;
-                //查询
+                if(currentWgcyPage2==1){
+                    return;
+                }else{
+                    currentWgcyPage2 = currentWgcyPage2 -1;
+                }
 
-            } else{
-                currentWgcyPage3 = currentWgcyPage3 -1;
                 //查询
-                
+                $.axget1("/api/yndp/glgz/getWgcyList?wgId="+wgid+"&pageNum="+currentWgcyPage2,false, function (res) {
+                    treeData[1].children =[];
+                    treeData[1].children=res.data.list;
+                    initOrgBox02(treeData,xjlx);
+                });
+            } else{
+                if(currentWgcyPage3==1){
+                    return;
+                }else{
+                    currentWgcyPage3 = currentWgcyPage3 -1;
+                }
+
+                //查询
+                $.axget1("/api/yndp/glgz/getWgcyList?wgId="+wgid+"&pageNum="+currentWgcyPage3,false, function (res) {
+                    treeData[2].children =[];
+                    treeData[2].children=res.data.list;
+                    initOrgBox02(treeData,xjlx);
+                });
             }
         }
     }
 
     $(document).ready(function () {
 
-        var treeData = []
-        var xjlx = "";
+
         var jgId = GetQueryString("jgId");
         var jgName = GetQueryString("jgName");
         console.log(jgId);
@@ -329,13 +407,19 @@
             initOrgBox01(res.data.jg);
             xjlx=res.data.jg.xjlx;
             $.axget("/api/yndp/glgz/getWgList?jgId="+jgId+"&pageNum=1", function (wgRes) {
-                console.log("wgRes="+wgRes.data.list);
+                wgMaxPage=wgRes.data.total;
                 treeData = wgRes.data.list;
-                console.log("tdt"+treeData);
                 for( var i = 0;i<treeData.length;i++){
                     treeData[i].children =[];
                     $.axget1("/api/yndp/glgz/getWgcyList?wgId="+treeData[i].wgid+"&pageNum=1",false, function (res) {
                          treeData[i].children=res.data.list;
+                         if(i==0){
+                             wgcyMaxPage1=res.data.total;
+                         }else if(i==1){
+                             wgcyMaxPage2=res.data.total;
+                         }else {
+                             wgcyMaxPage3=res.data.total;
+                         }
                     });
                 }
                 initOrgBox02(treeData,xjlx)
