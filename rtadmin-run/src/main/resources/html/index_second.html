@@ -124,14 +124,14 @@
                                             <!--box1-->
                                                 <div class="orgConLft01">
                                                     <a href="#">
-                                                        <h3 class="ttl02">{{item.wgmc}}{{item.hs}}户{{item.rs}}人 </h3>
+                                                        <h3 class="ttl02">{{item.wgmc}}&nbsp;&nbsp;<span>{{item.hs}}户{{item.rs}}人</span></h3>
                                                         <div class="ttlBox">
-                                                            <ul class="orgList02">
+                                                            <ul class="orgList02 lineMore">
                                                                 <li><strong>网格管理员</strong><span>{{item.wggly}}</span></li>
-                                                                <li><strong>小区</strong><span>{{item.xqnum}}</span></li>
-                                                                <li><strong>主干道</strong><span>{{item.zgdts}}</span></li>
-                                                         <!--       <li><strong>背街小巷</strong><span>{{item.bjxxts}}</span></li>
-                                                                <li><strong>企事业单位</strong><span>{{item.qsydwgs}}</span></li>-->
+                                                                <li><strong>小区</strong><span>{{item.xqnum}}个</span></li>
+                                                                <li><strong>主干道</strong><span>{{item.zgdts}}条</span></li>
+                                                                <li><strong>背街小巷</strong><span>{{item.bjxxts}}条</span></li>
+                                                                <li><strong>企事业单位</strong><span>{{item.qsydwgs}}条</span></li>
                                                             </ul>
                                                         </div>
                                                     </a>
@@ -142,7 +142,7 @@
                                                     <div class="orgList03 clearfix">
                                                         {{each item.children subItem j}}
                                                         <div class="orgList03In">
-                                                            <ul class="orgList02">
+                                                            <ul class="orgList02 lineMore">
                                                                 <li><strong>{{subItem.jgmc}}</strong><span>({{subItem.lds}}栋{{subItem.hs}}户{{subItem.zrs}}人)</span></li>
                                                                 <li><strong>网格长</strong><span>{{subItem.jgwgz}}</span></li>
                                                                 <li><strong>网格管理员</strong><span>{{subItem.jgwggly}}</span></li>
@@ -156,9 +156,9 @@
                                             <!--box1-->
                                                 <div class="orgConLft01">
                                                     <a href="#">
-                                                        <h3 class="ttl02">{{item.wgmc}} <span> {{item.hs}}户{{item.rs}}人 </span></h3>
+                                                        <h3 class="ttl02">{{item.wgmc}} &nbsp;<span>{{item.hs}}户{{item.rs}}人 </span></h3>
                                                         <div class="ttlBox">
-                                                            <ul class="orgList02">
+                                                            <ul class="orgList02 lineMore">
                                                                 <li><strong>网格监督员</strong><span>{{item.wljdy}}</span></li>
                                                                 <li><strong>网格长</strong><span>{{item.wgz}}</span></li>
                                                                 <li><strong>网格员</strong><span>{{item.wgy}}</span></li>
@@ -172,7 +172,7 @@
                                                     <div class="orgList03 clearfix">
                                                         {{each item.children subItem j}}
                                                         <div class="orgList03In">
-                                                            <ul class="orgList02">
+                                                            <ul class="orgList02 lineMore">
                                                                 <li><strong>党员代表</strong><span>{{subItem.dydb}}</span></li>
                                                                 <li><strong>联系电话</strong><span>{{subItem.lxdh}}</span></li>
                                                                 <li><strong>联系户数</strong><span>{{subItem.lxhs}}</span></li>
@@ -184,11 +184,11 @@
                                               <!--box1 //-->
                                         <% } else  { %>
                                             <!--box1-->
-                                                <div class="orgConLft01">
+                                                <div class="orgConLft01 lineMore">
                                                     <a href="#">
                                                         <h3 class="ttl02">{{item.jgmc}} <span>{{item.gsgs}}</span></h3>
                                                         <div class="ttlBox">
-                                                            <ul class="orgList02">
+                                                            <ul class="orgList02 lineMore">
                                                                 <li><strong>网格长</strong><span>{{item.hywgz}}</span></li>
                                                                 <li><strong>网格员</strong><span>{{item.hywgy}}</span></li>
                                                             </ul>
@@ -201,7 +201,7 @@
                                                     <div class="orgList03 clearfix">
                                                         {{each item.children subItem j}}
                                                         <div class="orgList03In">
-                                                            <ul class="orgList02">
+                                                            <ul class="orgList02 lineMore">
                                                                 <li><strong>{{subItem.jgmc}}</strong></li>
                                                                 <li><strong>网格长</strong><span>{{subItem.hywgz}}</span></li>
                                                                 <li><strong>网格管理员</strong><span>{{subItem.hywgcy}}</span></li>
@@ -338,6 +338,7 @@
                     treeData[0].children=res.data.list;
                     console.log("3333="+res.data.list);
                     console.log(JSON.stringify((treeData[0].children)));
+                    wgcyMaxPage1=res.data.total;
                     initOrgBox02(treeData,xjlx);
                 });
             } else if (currentNum  === '2'){
@@ -349,6 +350,7 @@
                 $.axget1("/api/yndp/glgz/getWgcyList?wgId="+wgid+"&pageNum="+currentWgcyPage2,false, function (res) {
                     treeData[1].children =[];
                     treeData[1].children=res.data.list;
+                    wgcyMaxPage2=res.data.total;
                     initOrgBox02(treeData,xjlx);
                 });
             } else{
@@ -360,6 +362,7 @@
                 $.axget1("/api/yndp/glgz/getWgcyList?wgId="+wgid+"&pageNum="+currentWgcyPage3,false, function (res) {
                     treeData[2].children =[];
                     treeData[2].children=res.data.list;
+                    wgcyMaxPage3=res.data.total;
                     initOrgBox02(treeData,xjlx);
                 });
             }
@@ -375,6 +378,7 @@
                 $.axget1("/api/yndp/glgz/getWgcyList?wgId="+wgid+"&pageNum="+currentWgcyPage1,false, function (res) {
                     treeData[0].children =[];
                     treeData[0].children=res.data.list;
+                    wgcyMaxPage1=res.data.total;
                     initOrgBox02(treeData,xjlx);
                 });
             } else if (currentNum  === '2'){
@@ -388,6 +392,7 @@
                 $.axget1("/api/yndp/glgz/getWgcyList?wgId="+wgid+"&pageNum="+currentWgcyPage2,false, function (res) {
                     treeData[1].children =[];
                     treeData[1].children=res.data.list;
+                    wgcyMaxPage2=res.data.total;
                     initOrgBox02(treeData,xjlx);
                 });
             } else{
@@ -401,6 +406,7 @@
                 $.axget1("/api/yndp/glgz/getWgcyList?wgId="+wgid+"&pageNum="+currentWgcyPage3,false, function (res) {
                     treeData[2].children =[];
                     treeData[2].children=res.data.list;
+                    wgcyMaxPage3=res.data.total;
                     initOrgBox02(treeData,xjlx);
                 });
             }

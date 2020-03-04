@@ -20,8 +20,10 @@
         <p class="txtP">{{title}}</p>
     </script>
 
-    <div id="container" class="clearfix">
-        <div class="orgLeft">
+    <div id="container" class="clearfix posT">
+        <span class="arrowMid01"></span>
+        <div class="orgLeft" id="orgBoxLeft">
+            <script id="tpl-orgBoxLeft" type="text/html">
             <div class="orgLeftIn">
                 <h2 class="ttl01">区疫情防控指挥长</h2>
                 <div class="leftBox01">
@@ -30,12 +32,41 @@
                     <span class="bgBtm01"></span>
                     <span class="bgBtm02"></span>
                     <div class="leftBox01In">
-                        <span>赵赵赵1</span>
+                        <!--<span>赵学峰</span>
+                        <span>李河流</span>-->
+                        {{each zhbzhzList item i}}
+                            <span> {{item}} </span>
+                        {{/each}}
 
                     </div>
                 </div>
                 <div class="leftArrow01"></div>
+                <h2 class="ttl01">区疫情防控指挥部副指挥长</h2>
+                <div class="leftBox01">
+                    <span class="bgTop01"></span>
+                    <span class="bgTop02"></span>
+                    <span class="bgBtm01"></span>
+                    <span class="bgBtm02"></span>
+                    <div class="leftBox01In tmore clearfix">
+                        <!--<span>何云虹</span>
+                        <span>王月冲</span>
+                        <span>王桂泽</span>
+                        <span>徐春</span>
+                        <span>李勇</span>
+                        <span>金平</span>
+                        <span>戴瑞</span>
+                        <span>王刚</span>
+                        <span>王勇</span>-->
+                        {{each zhbfzhzList item i}}
+                        <span> {{item}} </span>
+                        {{/each}}
+
+                    </div>
+                </div>
+                <div class="leftArrow01"></div>
+                <h2 class="ttlR">区疫情防控指挥部</h2>
             </div>
+            </script>
         </div>
         <div class="orgRight">
             <div class="orgRightIn">
@@ -159,6 +190,16 @@
         document.getElementById('orgBox03').innerHTML = html;
     }
 
+    var initOrgBoxLeft = function (zhbzhzList,zhbfzhzList) {
+        console.log(zhbzhzList);
+        console.log(zhbfzhzList);
+        var html = template('tpl-orgBoxLeft', {
+            zhbzhzList: zhbzhzList,
+            zhbfzhzList:zhbfzhzList
+        });
+        document.getElementById('orgBoxLeft').innerHTML = html;
+    }
+
     function jgOnclick(jgId, jgName, jgType,jgOrHy) {
 
         if(jgOrHy=='1'){
@@ -223,6 +264,12 @@
         $.axget("/api/yndp/glgz/getAllJg", function (res) {
             var treeData = toTree(res.data)
             console.log(treeData)
+
+            var zhbzhz = treeData[0].zhbzhz;
+            var zhbfzhz = treeData[0].zhbfzhz;
+            var zhbzhzList = zhbzhz.trim().split(/\s+/);
+            var zhbfzhzList = zhbfzhz.trim().split(/\s+/);
+            initOrgBoxLeft(zhbzhzList,zhbfzhzList);
             for (var i = 0; i < treeData[0].children.length; i++) {
                 if (treeData[0].children[i].jgmc === "阿拉街道") {
                     initOrgBox01(treeData[0].children[i])
