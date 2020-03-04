@@ -22,187 +22,196 @@
             <span class="arrowMid"></span>
             <div class="orgLeft01">
                 <div class="orgLeftIn posT">
-                    <div class="leftBox01">
-                        <span class="bgTop01"></span>
-                        <span class="bgTop02"></span>
-                        <span class="bgBtm01"></span>
-                        <span class="bgBtm02"></span>
-                        <div class="leftBox01In">
-                            <ul class="orgList02">
-                                <li><strong>包保领导</strong><span>赵赵赵</span>13600000000</li>
-                                <li><strong>区级联系部门</strong>住建局</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="leftArrow01"></div>
-                    <div class="leftBox01">
-                        <span class="bgTop01"></span>
-                        <span class="bgTop02"></span>
-                        <span class="bgBtm01"></span>
-                        <span class="bgBtm02"></span>
-                        <div class="leftBox01In">
-                            <ul class="orgList02">
-                                <li><strong>包保领导</strong><span>赵赵赵</span>13600000000</li>
-                                <li><strong>区级联系部门</strong>住建局</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="leftArrow01"></div>
-                    <div class="leftBox02">
-                        <span class="bgTop01"></span>
-                        <span class="bgTop02"></span>
-                        <span class="bgBtm01"></span>
-                        <span class="bgBtm02"></span>
-                        <div class="leftBox02In">
-                            <ul class="orgList02">
-                                <li><strong>包保领导</strong><span>赵赵赵</span>13600000000</li>
-                                <li><strong>社区监督员</strong><span>赵赵赵</span>13600000000</li>
-                                <li><strong>监督员</strong><span>赵赵赵</span>13600000000</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <ul class="lftBtns">
-                        <li class="btn_home"><a href="#"></a></li>
-                    </ul>
+                    <div class="orgBox01 clearfix bluePart" id="orgBox01"></div>
+                    <script id="tpl-orgBox01" type="text/html">
+                        <% if (xjlx==1 || xjlx==2) { %>
+                            <div class="leftBox01">
+                                <span class="bgTop01"></span>
+                                <span class="bgTop02"></span>
+                                <span class="bgBtm01"></span>
+                                <span class="bgBtm02"></span>
+                                <div class="leftBox01In">
+                                    <ul class="orgList02">
+                                        <li><strong>包保领导</strong><span>{{bbld}}</span></li>
+                                        <li><strong>区级联系部门</strong>{{qjlxbm}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="leftArrow01"></div>
+                            <div class="leftBox01">
+                                <span class="bgTop01"></span>
+                                <span class="bgTop02"></span>
+                                <span class="bgBtm01"></span>
+                                <span class="bgBtm02"></span>
+                                <div class="leftBox01In">
+                                    <ul class="orgList02">
+                                        <li><strong>街道网格长</strong><span>{{jdwgz}}</span></li>
+                                        <li><strong>网格管理员</strong>{{jdwggly}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="leftArrow01"></div>
+                            <div class="leftBox02">
+                                <span class="bgTop01"></span>
+                                <span class="bgTop02"></span>
+                                <span class="bgBtm01"></span>
+                                <span class="bgBtm02"></span>
+                                <div class="leftBox02In">
+                                    <ul class="orgList02">
+                                        <% if (xjlx==1) { %>
+                                        <li><strong>社区网格长</strong><span>{{sqwgz}}</span></li>
+                                        <li><strong>网格管理员</strong><span>{{sqwggly}}</span></li>
+                                        <% } else if (xjlx==2) { %>
+                                        <li><strong>社区网格长</strong><span>{{sqwgz}}</span></li>
+                                        <li><strong>社区网格监督员</strong><span>{{sqwgjdy}}</span></li>
+                                        <li><strong>网格员</strong><span>{{sqwggly}}</span></li>
+                                        <% } else if (xjlx==3) { %>
+                                        <li><strong>包保领导</strong><span>赵赵赵</span>13600000000</li>
+                                        <li><strong>社区监督员</strong><span>赵赵赵</span>13600000000</li>
+                                        <li><strong>监督员</strong><span>赵赵赵</span>13600000000</li>
+                                        <% } %>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        <% } else { %>
+                            <div class="leftBox01">
+                                <span class="bgTop01"></span>
+                                <span class="bgTop02"></span>
+                                <span class="bgBtm01"></span>
+                                <span class="bgBtm02"></span>
+                                <div class="leftBox01In">
+                                    <ul class="orgList02">
+                                        <li><strong>区级网格长</strong><span>{{qjwgz}}</span></li>
+                                        <li><strong>网格员</strong>{{qjwgy}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        <% } %>
+                        <ul class="lftBtns">
+                            <li class="btn_home"><a href="javascript:history.go(-1)"></a></li>
+                        </ul>
+                    </script>
                 </div>
             </div>
             <div class="orgRight01">
                 <div class="orgRightIn01">
                     <div class="orgCon posT">
-                        <a href="javascript:;" class="prevBig"></a>
-                        <a href="javascript:;" class="nextBig"></a>
-                        <!--box1-->
-                        <div class="orgBox01 clearfix bluePart">
-                            <div class="orgConLft01">
-                                <a href="#">
-                                <h3 class="ttl02">普照 222户1111人</h3>
-                                <div class="ttlBox">
-                                    <ul class="orgList02">
-                                        <li><strong>包保领导</strong><span>赵赵赵</span>13600000000</li>
-                                        <li><strong>社区监督员</strong><span>赵赵赵</span>13600000000</li>
-                                        <li><strong>监督员</strong><span>赵赵赵</span>13600000000</li>
-                                    </ul>
-                                </div>
-                                </a>
-                            </div>
-                            <div class="orgConMid01 posT">
-                                <a href="javascript:;" class="prevSmall"></a>
-                                <a href="javascript:;" class="nextSmall"></a>
-                              <div class="orgList03 clearfix">
-                                  <div class="orgList03In">
-                                      <ul class="orgList02">
-                                          <li><strong>包保领导</strong><span>赵赵赵</span>13600000000</li>
-                                          <li><strong>社区监督员</strong><span>赵赵赵</span>13600000000</li>
-                                          <li><strong>监督员</strong><span>赵赵赵</span>13600000000</li>
-                                      </ul>
-                                  </div>
-                                  <div class="orgList03In">
-                                      <ul class="orgList02">
-                                          <li><strong>包保领导</strong><span>赵赵赵</span>13600000000</li>
-                                          <li><strong>社区监督员</strong><span>赵赵赵</span>13600000000</li>
-                                          <li><strong>监督员</strong><span>赵赵赵</span>13600000000</li>
-                                      </ul>
-                                  </div>
-                                  <div class="orgList03In">
-                                      <ul class="orgList02">
-                                          <li><strong>包保领导</strong><span>赵赵赵</span>13600000000</li>
-                                          <li><strong>社区监督员</strong><span>赵赵赵</span>13600000000</li>
-                                          <li><strong>监督员</strong><span>赵赵赵</span>13600000000</li>
-                                      </ul>
-                                  </div>
-                              </div>
-                            </div>
+                            <a onclick="wgClick('up')" class="prevBig"></a>  <!--点击网格上-->
+                            <a href="wgClick('down')" class="nextBig"></a>  <!--点击网格下-->
+                                <div class="orgBox02 clearfix bluePart" id="orgBox02"></div>
+                                <script id="tpl-orgBox02" type="text/html">
+                                    {{each wglist item i}}
+                                        <% if (xjlx==1) { %>
+                                            <!--box1-->
+                                            <div class="orgBox01 clearfix bluePart">
+                                                <div class="orgConLft01">
+                                                    <a href="#">
+                                                        <h3 class="ttl02">&nbsp;&nbsp;{{item.jgmc}}{{item.hs}}户{{item.rs}}人 </h3>
+                                                        <div class="ttlBox">
+                                                            <ul class="orgList02">
+                                                                <li><strong>网格管理员</strong><span>{{item.wggly}}</span></li>
+                                                                <li><strong>小区</strong><span>{{item.xqnum}}</span></li>
+                                                                <li><strong>主干道</strong><span>{{item.zgdts}}</span></li>
+                                                                <li><strong>背街小巷</strong><span>{{item.bjxxts}}</span></li>
+                                                                <li><strong>企事业单位</strong><span>{{item.qsydwgs}}</span></li>
+                                                            </ul>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="orgConMid01 posT">
+                                                    <a href="javascript:;" class="prevSmall"></a><!--点击网格成员左-->
+                                                    <a href="javascript:;" class="nextSmall"></a><!--点击网格成员右-->
+                                                    <div class="orgList03 clearfix">
+                                                        {{each item.children subItem j}}
+                                                        <div class="orgList03In">
+                                                            <ul class="orgList02">
+                                                                <li><strong>{{subItem.jgmc}}</strong></li>
+                                                                <li><span>({{subItem.lds}}栋{{subItem.hs}}户{{subItem.zrs}}人)</span></li>
+                                                                <li><strong>网格长</strong><span>{{subItem.jgwgz}}</span></li>
+                                                                <li><strong>网格管理员</strong><span>{{subItem.jgwggly}}</span></li>
 
-                        </div>
-                        <!--box1 //-->
-                        <!--box2-->
-                        <div class="orgBox01 clearfix yellowPart">
-                            <div class="orgConLft01">
-                                <a href="#">
-                                    <h3 class="ttl02">普照 222户1111人</h3>
-                                    <div class="ttlBox">
-                                        <ul class="orgList02">
-                                            <li><strong>包保领导</strong><span>赵赵赵</span>13600000000</li>
-                                            <li><strong>社区监督员</strong><span>赵赵赵</span>13600000000</li>
-                                            <li><strong>监督员</strong><span>赵赵赵</span>13600000000</li>
-                                        </ul>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="orgConMid01 posT">
-                                <a href="javascript:;" class="prevSmall"></a>
-                                <a href="javascript:;" class="nextSmall"></a>
-                                <div class="orgList03 clearfix">
-                                    <div class="orgList03In">
-                                        <ul class="orgList02">
-                                            <li><strong>包保领导</strong><span>赵赵赵</span>13600000000</li>
-                                            <li><strong>社区监督员</strong><span>赵赵赵</span>13600000000</li>
-                                            <li><strong>监督员</strong><span>赵赵赵</span>13600000000</li>
-                                        </ul>
-                                    </div>
-                                    <div class="orgList03In">
-                                        <ul class="orgList02">
-                                            <li><strong>包保领导</strong><span>赵赵赵</span>13600000000</li>
-                                            <li><strong>社区监督员</strong><span>赵赵赵</span>13600000000</li>
-                                            <li><strong>监督员</strong><span>赵赵赵</span>13600000000</li>
-                                        </ul>
-                                    </div>
-                                    <div class="orgList03In">
-                                        <ul class="orgList02">
-                                            <li><strong>包保领导</strong><span>赵赵赵</span>13600000000</li>
-                                            <li><strong>社区监督员</strong><span>赵赵赵</span>13600000000</li>
-                                            <li><strong>监督员</strong><span>赵赵赵</span>13600000000</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                                                            </ul>
+                                                        </div>
+                                                        {{/each}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--box1 //-->
+                                        <% } else if (xjlx==2) { %>
+                                            <!--box1-->
+                                            <div class="orgBox01 clearfix yellowPart">
+                                                <div class="orgConLft01">
+                                                    <a href="#">
+                                                        <h3 class="ttl02">{{item.jgmc}} 网格{{i+1}} <span> {{item.hs}}户{{item.rs}}人 </span></h3>
+                                                        <div class="ttlBox">
+                                                            <ul class="orgList02">
+                                                                <li><strong>网格监督员</strong><span>{{item.wljdy}}</span></li>
+                                                                <li><strong>网格长</strong><span>{{item.wgz}}</span></li>
+                                                                <li><strong>网格员</strong><span>{{item.wgy}}</span></li>
+                                                            </ul>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="orgConMid01 posT">
+                                                    <a href="javascript:;" class="prevSmall"></a><!--点击网格成员左-->
+                                                    <a href="javascript:;" class="nextSmall"></a><!--点击网格成员右-->
+                                                    <div class="orgList03 clearfix">
+                                                        {{each item.children subItem j}}
+                                                        <div class="orgList03In">
+                                                            <ul class="orgList02">
+                                                                <li><strong>{{subItem.jgmc}}</strong></li>
+                                                                <li><strong>党员代表</strong><span>{{subItem.dydb}}</span></li>
+                                                                <li><strong>联系电话</strong><span>{{item.lxdh}}</span></li>
+                                                                <li><strong>联系户数</strong><span>{{item.lxhs}}</span></li>
 
-                        </div>
-                        <!--box2 //-->
-                        <!--box3-->
-                        <div class="orgBox01 clearfix greenPart">
-                            <div class="orgConLft01">
-                                <a href="#">
-                                    <h3 class="ttl02">普照 222户1111人</h3>
-                                    <div class="ttlBox">
-                                        <ul class="orgList02">
-                                            <li><strong>包保领导</strong><span>赵赵赵</span>13600000000</li>
-                                            <li><strong>社区监督员</strong><span>赵赵赵</span>13600000000</li>
-                                            <li><strong>监督员</strong><span>赵赵赵</span>13600000000</li>
-                                        </ul>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="orgConMid01 posT">
-                                <a href="javascript:;" class="prevSmall"></a>
-                                <a href="javascript:;" class="nextSmall"></a>
-                                <div class="orgList03 clearfix">
-                                    <div class="orgList03In">
-                                        <ul class="orgList02">
-                                            <li><strong>包保领导</strong><span>赵赵赵</span>13600000000</li>
-                                            <li><strong>社区监督员</strong><span>赵赵赵</span>13600000000</li>
-                                            <li><strong>监督员</strong><span>赵赵赵</span>13600000000</li>
-                                        </ul>
-                                    </div>
-                                    <div class="orgList03In">
-                                        <ul class="orgList02">
-                                            <li><strong>包保领导</strong><span>赵赵赵</span>13600000000</li>
-                                            <li><strong>社区监督员</strong><span>赵赵赵</span>13600000000</li>
-                                            <li><strong>监督员</strong><span>赵赵赵</span>13600000000</li>
-                                        </ul>
-                                    </div>
-                                    <div class="orgList03In">
-                                        <ul class="orgList02">
-                                            <li><strong>包保领导</strong><span>赵赵赵</span>13600000000</li>
-                                            <li><strong>社区监督员</strong><span>赵赵赵</span>13600000000</li>
-                                            <li><strong>监督员</strong><span>赵赵赵</span>13600000000</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                                                            </ul>
+                                                        </div>
+                                                        {{/each}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                              <!--box1 //-->
+                                        <% } else  { %>
+                                            <!--box1-->
+                                            <div class="orgBox01 clearfix greenPart">
+                                                <div class="orgConLft01">
+                                                    <a href="#">
+                                                        <h3 class="ttl02">{{item.jgmc}} <span>{{item.gsgs}}</span></h3>
+                                                        <div class="ttlBox">
+                                                            <ul class="orgList02">
+                                                                <li><strong>网格长</strong><span>{{item.hywgz}}</span></li>
+                                                                <li><strong>网格员</strong><span>{{item.hywgy}}</span></li>
+                                                            </ul>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="orgConMid01 posT">
+                                                    <a href="javascript:;" class="prevSmall"></a><!--点击网格成员左-->
+                                                    <a href="javascript:;" class="nextSmall"></a><!--点击网格成员右-->
+                                                    <div class="orgList03 clearfix">
+                                                        {{each item.children subItem j}}
+                                                        <div class="orgList03In">
+                                                            <ul class="orgList02">
+                                                                <li><strong>{{subItem.jgmc}}</strong></li>
+                                                                <li><strong>网格长</strong><span>{{subItem.hywgz}}</span></li>
+                                                                <li><strong>网格管理员</strong><span>{{subItem.hywgcy}}</span></li>
 
-                        </div>
-                        <!--box3 //-->
+                                                            </ul>
+                                                        </div>
+                                                        {{/each}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--box1 //-->
+                                        <% } %>
+
+                                    {{/each}}
+
+                                </script>
+
+
+                            </div>
                     </div>
 
                 </div>
@@ -212,22 +221,147 @@
     </div>
 <script>
 
+    function toTree(data) {
+        // 删除 所有 children,以防止多次调用
+        data.forEach(function (item) {
+            delete item.children;
+        });
+
+        // 将数据存储为 以 id 为 KEY 的 map 索引数据列
+        var map = {};
+        data.forEach(function (item) {
+            map[item.jgid] = item;
+        });
+        var val = [];
+        data.forEach(function (item) {
+            // 以当前遍历项，的parentid,去map对象中找到索引的id
+            var parent = map[item.parentid];
+            // 好绕啊，如果找到索引，那么说明此项不在顶级当中,那么需要把此项添加到，他对应的父级中
+            if (parent) {
+                (parent.children || (parent.children = [])).push(item);
+            } else {
+                //如果没有在map中找到对应的索引ID,那么直接把 当前的item添加到 val结果集中，作为顶级
+                val.push(item);
+            }
+        });
+        return val;
+    }
+
+
     function GetQueryString(name) {
         var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)","i");
         var r = window.location.search.substr(1).match(reg);
         if (r!=null) return (r[2]); return null;
     }
 
+    var currentWgPage = 1;
+    var currentWgcyPage1 = 1;
+    var currentWgcyPage2 = 1;
+    var currentWgcyPage3 = 1;
+
+
+    function wgClick(type){
+
+        //处理方法
+        if(type === 'up'){
+
+            //查询
+
+            currentWgPage = currentWgPage +1;
+        }else{
+            currentWgPage = currentWgPage -1;
+            //查询
+        }
+
+         currentWgcyPage1 = 1;
+         currentWgcyPage2 = 1;
+         currentWgcyPage3 = 1;
+    }
+
+
+
+
+    function wgcyClick(type,wgid,currentNum){
+        //处理方法
+        if(type === 'left'){
+            if(currentNum  === 1){
+                //查询
+
+                currentWgcyPage1 = currentWgcyPage1 +1;
+            } else if (currentNum  === 2){
+                //查询
+
+                currentWgcyPage2 = currentWgcyPage2 +1;
+            } else{
+                //查询
+
+                currentWgcyPage3 = currentWgcyPage3 +1;
+            }
+        }else {
+
+            if(currentNum  === 1){
+                currentWgcyPage1 = currentWgcyPage1 -1;
+                //查询
+
+            } else if (currentNum  === 2){
+                currentWgcyPage2 = currentWgcyPage2 -1;
+                //查询
+
+            } else{
+                currentWgcyPage3 = currentWgcyPage3 -1;
+                //查询
+                
+            }
+        }
+    }
+
     $(document).ready(function () {
+
+        var treeData = []
+        var xjlx = "";
         var jgId = GetQueryString("jgId");
         var jgName = GetQueryString("jgName");
         console.log(jgId);
         console.log(jgName);
-        $.axget("/api/yndp/glgz/getJg", function (res) {
-            console.log(res.data);
+
+
+        $.axget("/api/yndp/glgz/getJg?jgId="+jgId, function (res) {
+            initOrgBox01(res.data.jg);
+            xjlx=res.data.jg.xjlx;
+            $.axget("/api/yndp/glgz/getWgList?jgId="+jgId+"&pageNum=1", function (wgRes) {
+                console.log("wgRes="+wgRes.data.list);
+                treeData = wgRes.data.list;
+                console.log("tdt"+treeData);
+                for( var i = 0;i<treeData.length;i++){
+                    treeData[i].children =[];
+                    $.axget1("/api/yndp/glgz/getWgcyList?wgId="+treeData[i].wgid+"&pageNum=1",false, function (res) {
+                         treeData[i].children=res.data.list;
+                    });
+                }
+                initOrgBox02(treeData,xjlx)
+            });
         });
 
+
     });
+
+
+
+    var initOrgBox01 = function (data) {
+        var html = template('tpl-orgBox01', data);
+        document.getElementById('orgBox01').innerHTML = html;
+    }
+
+    var initOrgBox02 = function (data,xjlx) {
+        console.log(data);
+        console.log(xjlx);
+        var html = template('tpl-orgBox02', {
+            wglist: data,
+            xjlx:xjlx
+        });
+        document.getElementById('orgBox02').innerHTML = html;
+    }
+
 </script>
 
 </body>

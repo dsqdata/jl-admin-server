@@ -1,5 +1,6 @@
 package com.ratel.modules.yndp.rest;
 
+import com.github.pagehelper.PageInfo;
 import com.ratel.modules.yndp.domain.YndpFkbsJg;
 import com.ratel.modules.yndp.domain.YndpFkbsWg;
 import com.ratel.modules.yndp.domain.YndpFkbsWgcy;
@@ -10,6 +11,8 @@ import com.ratel.modules.yndp.util.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.LinkedMultiValueMap;
@@ -98,9 +101,13 @@ public class YndpFjbsGlgzController {
 
     @ApiOperation("根据机构ID查询所有网格")
     @GetMapping(value = "/getWgList")
-    public Result getWgList(@RequestParam String jgId, HttpServletRequest request, HttpServletResponse response) {
-        //根据机构ID查询所有网格
-        List<YndpFkbsWg> yndpFkbsWgList = yndpFkbsWgService.getWgList(jgId);
+    public Result getWgList(@RequestParam String jgId,@RequestParam Integer pageNum, HttpServletRequest request, HttpServletResponse response) {
+        if(pageNum==null){
+            pageNum=1;
+        }
+        PageRequest pageRequest =
+                new PageRequest(pageNum,3,new Sort(Sort.Direction.DESC,"id"));
+       PageInfo<YndpFkbsWg> yndpFkbsWgList = yndpFkbsWgService.getWgList(jgId,pageRequest);
         Result result = new Result();
         result.setCode(Result.SUCCESS_CODE);
         result.setData(yndpFkbsWgList);
@@ -111,14 +118,20 @@ public class YndpFjbsGlgzController {
 
     @ApiOperation("根据网格ID查询出网格成员列表")
     @GetMapping(value = "/getWgcyList")
-    public Result getWgcyList(@RequestParam String wgId, HttpServletRequest request, HttpServletResponse response) {
+    public Result getWgcyList(@RequestParam String wgId,@RequestParam Integer pageNum, HttpServletRequest request, HttpServletResponse response) {
+        if(pageNum==null){
+            pageNum=1;
+        }
+        PageRequest pageRequest =
+                new PageRequest(pageNum,3,new Sort(Sort.Direction.DESC,"id"));
         // 根据网格ID查询出网格成员列表
-        List<YndpFkbsWgcy> yndpFkbsWgcyList = yndpFkbsWgcyService.getWgcyList(wgId);
+        PageInfo<YndpFkbsWgcy> yndpFkbsWgcyList = yndpFkbsWgcyService.getWgcyList(wgId,pageRequest);
         Result result = new Result();
         result.setCode(Result.SUCCESS_CODE);
         result.setData(yndpFkbsWgcyList);
         result.setMessage("成功");
         return result;
+
     }
 
 }
