@@ -174,8 +174,8 @@
                                                         <div class="orgList03In">
                                                             <ul class="orgList02">
                                                                 <li><strong>党员代表</strong><span>{{subItem.dydb}}</span></li>
-                                                                <li><strong>联系电话</strong><span>{{item.lxdh}}</span></li>
-                                                                <li><strong>联系户数</strong><span>{{item.lxhs}}</span></li>
+                                                                <li><strong>联系电话</strong><span>{{subItem.lxdh}}</span></li>
+                                                                <li><strong>联系户数</strong><span>{{subItem.lxhs}}</span></li>
                                                             </ul>
                                                         </div>
                                                         {{/each}}
@@ -271,6 +271,7 @@
 
     var xjlx = "";
     var jgId= GetQueryString("jgId");
+
     function wgClick(type){
     console.log("xjlx="+xjlx);
         //处理方法
