@@ -22,6 +22,11 @@ public class YndpFkbsWg extends BaseUuidEntity {
      */
     @Column(name = "wgid", columnDefinition = "VARCHAR(64) COMMENT '网格ID'")
     private String wgid;
+    /**
+     * 网格名称
+     */
+    @Column(name = "wgmc", columnDefinition = "VARCHAR(64) COMMENT '网格名称'")
+    private String wgmc;
 
     /**
      * 机构ID
