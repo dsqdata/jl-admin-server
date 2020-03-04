@@ -137,8 +137,8 @@
                                                     </a>
                                                 </div>
                                                 <div class="orgConMid01 posT">
-                                                    <a onclick="wgcyClick('left','{{item.wgid}}',1)" class="prevSmall"></a><!--点击网格成员左-->
-                                                    <a onclick="wgcyClick('right','{{item.wgid}}',1)" class="nextSmall"></a><!--点击网格成员右-->
+                                                    <a onclick="wgcyClick('left','{{item.wgid}}','{{i+1}}')" class="prevSmall"></a><!--点击网格成员左-->
+                                                    <a onclick="wgcyClick('right','{{item.wgid}}','{{i+1}}')" class="nextSmall"></a><!--点击网格成员右-->
                                                     <div class="orgList03 clearfix">
                                                         {{each item.children subItem j}}
                                                         <div class="orgList03In">
@@ -167,8 +167,8 @@
                                                     </a>
                                                 </div>
                                                 <div class="orgConMid01 posT">
-                                                    <a onclick="wgcyClick('left','{{item.wgid}}',2)" class="prevSmall"></a><!--点击网格成员左-->
-                                                    <a onclick="wgcyClick('right','{{item.wgid}}',2)" class="nextSmall"></a><!--点击网格成员右-->
+                                                    <a onclick="wgcyClick('left','{{item.wgid}}','{{i+1}}')" class="prevSmall"></a><!--点击网格成员左-->
+                                                    <a onclick="wgcyClick('right','{{item.wgid}}','{{i+1}}')" class="nextSmall"></a><!--点击网格成员右-->
                                                     <div class="orgList03 clearfix">
                                                         {{each item.children subItem j}}
                                                         <div class="orgList03In">
@@ -196,8 +196,8 @@
                                                     </a>
                                                 </div>
                                                 <div class="orgConMid01 posT">
-                                                    <a onclick="wgcyClick('left','{{item.wgid}}',3)" class="prevSmall"></a><!--点击网格成员左-->
-                                                    <a onclick="wgcyClick('right','{{item.wgid}}',3)" class="nextSmall"></a><!--点击网格成员右-->
+                                                    <a onclick="wgcyClick('left','{{item.wgid}}','{{i+1}}')" class="prevSmall"></a><!--点击网格成员左-->
+                                                    <a onclick="wgcyClick('right','{{item.wgid}}','{{i+1}}')" class="nextSmall"></a><!--点击网格成员右-->
                                                     <div class="orgList03 clearfix">
                                                         {{each item.children subItem j}}
                                                         <div class="orgList03In">
@@ -324,9 +324,10 @@
 
 
     function wgcyClick(type,wgid,currentNum){
+
         //处理方法
         if(type === 'right'){
-            if(currentNum  === 1){
+            if(currentNum  === '1'){
                 if(currentWgcyPage1>=(wgcyMaxPage1/3)){
                     return;
                 }
@@ -335,9 +336,11 @@
                 $.axget1("/api/yndp/glgz/getWgcyList?wgId="+wgid+"&pageNum="+currentWgcyPage1,false, function (res) {
                     treeData[0].children =[];
                     treeData[0].children=res.data.list;
+                    console.log("3333="+res.data.list);
+                    console.log(JSON.stringify((treeData[0].children)));
                     initOrgBox02(treeData,xjlx);
                 });
-            } else if (currentNum  === 2){
+            } else if (currentNum  === '2'){
                 if(currentWgcyPage1>=(wgcyMaxPage1/3)){
                     return;
                 }
@@ -362,7 +365,7 @@
             }
         }else {
 
-            if(currentNum  === 1){
+            if(currentNum  === '1'){
                 if(currentWgcyPage1==1){
                     return;
                 }else{
@@ -374,7 +377,7 @@
                     treeData[0].children=res.data.list;
                     initOrgBox02(treeData,xjlx);
                 });
-            } else if (currentNum  === 2){
+            } else if (currentNum  === '2'){
                 if(currentWgcyPage2==1){
                     return;
                 }else{
