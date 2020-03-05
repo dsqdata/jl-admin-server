@@ -9,6 +9,7 @@
     <script type="text/javascript" src="component/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="component/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <script type="text/javascript" src="component/echarts/echarts.js"></script>
+    <script type="text/javascript" src="static/js/template-web.js"></script>
     <script type="text/javascript" src="component/socket/socketClient.js"></script>
 
 </head>
@@ -21,25 +22,28 @@
     <div id="container" class="clearfix">
         <div class="sideCon">
             <!--资源配置-->
-            <div class="sideBox01">
+            <div class="sideBox01" id="orgBox01">
+            <script id="tpl-orgBox01" type="text/html">>
                 <h2 class="mapTbox">
                    <span class="mapT01"><span class="mapTbg01">资源配置</span></span>
                 </h2>
                 <ul class="list01">
-                    <li class="li01"><div class="liBg"><p class="ln">网格长</p><strong>5</strong><span>人</span></div></li>
-                    <li class="li02"><div class="liBg"><p class="ln">网格员</p><strong>5</strong><span>人</span></div></li>
-                    <li class="li03"><div class="liBg"><p class="ln">楼栋长/单元长</p><strong>5</strong><span>人</span></div></li>
-                    <li class="li04"><div class="liBg"><p class="ln">留验站点</p><strong>5</strong><span>人</span></div></li>
-                    <li class="li05"><div class="liBg"><p class="ln">医护人员</p><strong>5</strong><span>位</span></div></li>
-                    <li class="li06"><div class="liBg"><p class="ln">留观酒店</p><strong>5</strong><span>家</span></div></li>
-                    <li class="li07"><p class="ln">警力支撑</p><strong>5</strong><span>人</span></li>
-                    <li class="li08"><p class="ln">固定检查点</p><strong>5</strong><span>个</span></li>
-                    <li class="li09"><p class="ln">视频卡口</p><strong>5</strong><span>个</span></li>
+                    <li class="li01"><div class="liBg"><p class="ln">网格长</p><strong>{{wgz}}</strong><span>人</span></div></li>
+                    <li class="li02"><div class="liBg"><p class="ln">网格员</p><strong>{{wgy}}</strong><span>人</span></div></li>
+                    <li class="li03"><div class="liBg"><p class="ln">楼栋长/单元长</p><strong>{{ldz}}</strong><span>人</span></div></li>
+                    <li class="li04"><div class="liBg"><p class="ln">留验站点</p><strong>{{lyzd}}</strong><span>人</span></div></li>
+                    <li class="li05"><div class="liBg"><p class="ln">医护人员</p><strong>{{yhry}}</strong><span>位</span></div></li>
+                    <li class="li06"><div class="liBg"><p class="ln">留观酒店</p><strong>{{lgjd}}</strong><span>家</span></div></li>
+                    <li class="li07"><p class="ln">警力支撑</p><strong>{{jlzc}}</strong><span>人</span></li>
+                    <li class="li08"><p class="ln">固定检查点</p><strong>{{gdjcd}}</strong><span>个</span></li>
+                    <li class="li09"><p class="ln">视频卡口</p><strong>{{spkk}}</strong><span>个</span></li>
                 </ul>
+            </script>
             </div>
             <!--资源配置 //-->
             <!--物资保障-->
-            <div class="sideBox02">
+            <div class="sideBox02" id="orgBox02">
+                <script id="tpl-orgBox02" type="text/html">
                 <h2 class="mapTbox">
                     <span class="mapT01"><span class="mapTbg01">物资保障</span></span>
                 </h2>
@@ -54,75 +58,44 @@
                         <th>结存</th>
                         <th>备注</th>
                     </tr>
+                    {{each wzbz item i}}
                     <tr>
-                        <td>1</td>
-                        <td>20190909</td>
-                        <td>口罩</td>
-                        <td>100</td>
-                        <td>100</td>
-                        <td>100</td>
-                        <td>全新</td>
+                        <td>{{i}}</td>
+                        <td>{{item.rq}}</td>
+                        <td>{{item.wz}}</td>
+                        <td>{{item.rk}}</td>
+                        <td>{{item.fc}}</td>
+                        <td>{{item.jc}}</td>
+                        <td>{{item.bz}}</td>
                     </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>20190909</td>
-                        <td>口罩</td>
-                        <td>100</td>
-                        <td>100</td>
-                        <td>100</td>
-                        <td>全新</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>20190909</td>
-                        <td>口罩</td>
-                        <td>100</td>
-                        <td>100</td>
-                        <td>100</td>
-                        <td>全新</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>20190909</td>
-                        <td>口罩</td>
-                        <td>100</td>
-                        <td>100</td>
-                        <td>100</td>
-                        <td>全新</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>20190909</td>
-                        <td>口罩</td>
-                        <td>100</td>
-                        <td>100</td>
-                        <td>100</td>
-                        <td>全新</td>
-                    </tr>
+                    {{/each}}
                 </table>
                 </div>
+                </script>
             </div>
             <!--物资保障 //-->
             <!--防控宣传-->
-            <div class="sideBox03">
+            <div class="sideBox03" id="orgBox03">
+                <script id="tpl-orgBox03" type="text/html">
                 <h2 class="mapTbox">
                     <span class="mapT01"><span class="mapTbg01">防控宣传</span></span>
                 </h2>
                 <div class="ycBox01 clearfix">
                     <div class="ycBox02">
-                        <p class="ycTxt01">10,000,000人</p>
-                        <p class="ycTxt02">+0<span>较昨日</span></p>
+                        <p class="ycTxt01">{{fkxc[0].szrc}}</p>
+                        <p class="ycTxt02">+{{fkxc[0].szrcjzr}}<span>较昨日</span></p>
                         <p class="ycTxt03">受众人次</p>
                     </div>
 
                     <ul class="list02">
-                        <li class="lia01"><strong>发放宣传资料</strong><span>10034 份 <em>+2 <i>较昨日</i></em></span></li>
-                        <li class="lia02"><strong>微信群宣传</strong><span>10034 份 <em>+2 <i>较昨日</i></em></span></li>
-                        <li class="lia03"><strong>LED宣传</strong><span>10034 份 <em>+2 <i>较昨日</i></em></span></li>
-                        <li class="lia04"><strong>发送短信</strong><span>10034 份 <em>+2 <i>较昨日</i></em></span></li>
-                        <li class="lia05"><strong>其他</strong><span>10034 份 <em>+2 <i>较昨日</i></em></span></li>
+                        <li class="lia01"><strong>发放宣传资料</strong><span>{{fkxc[0].ffxczl}} 份 <em>+{{fkxc[0].ffxczljzr}} <i>较昨日</i></em></span></li>
+                        <li class="lia02"><strong>微信群宣传</strong><span>{{fkxc[0].wxqxc}} 份 <em>+{{fkxc[0].wxqxcjzr}} <i>较昨日</i></em></span></li>
+                        <li class="lia03"><strong>LED宣传</strong><span>{{fkxc[0].ledxc}} 份 <em>+{{fkxc[0].ledxcjzr}} <i>较昨日</i></em></span></li>
+                        <li class="lia04"><strong>发送短信</strong><span>{{fkxc[0].fsdx}} 份 <em>+{{fkxc[0].fsdxjzr}} <i>较昨日</i></em></span></li>
+                        <li class="lia05"><strong>其他</strong><span>{{fkxc[0].qt}} 份 <em>+{{fkxc[0].qtjzr}} <i>较昨日</i></em></span></li>
                     </ul>
                 </div>
+                </script>
             </div>
             <!--防控宣传-->
         </div>
@@ -372,6 +345,26 @@
 
     });
 
+    var initOrgBox01 = function (data) {
+        var html = template('tpl-orgBox01', data);
+        document.getElementById('orgBox01').innerHTML = html;
+    }
+
+    var initOrgBox02 = function (data) {
+        var html = template('tpl-orgBox02', {
+            wzbz: data
+        });
+        document.getElementById('orgBox02').innerHTML = html;
+    }
+
+    var initOrgBox03 = function (data) {
+        alert(data)
+        var html = template('tpl-orgBox03',{
+            fkxc: data
+        });
+        document.getElementById('orgBox03').innerHTML = html;
+    }
+
     function getQueryVariable(variable) {
         var query = window.location.search.substring(1);
         var vars = query.split("&");
@@ -385,17 +378,23 @@
     }
 
     var initZypz = function (jgId, jgName) {//初始化-资源配置
-        $.axget("/api/yndp/zypz/findListByJgId?jgId=" + jgId, function (data) {
-            console.log(data)
+        $.axget("/api/yndp/zypz/findZypzByJgId?jgid=1", function (data) {
+            initOrgBox01(data)
+            console.log("资源配置"+data)
         });
     }
 
     var initWzbz = function (jgId, jgName) {//初始化-物资保障
+        $.axget("/api/yndp/wzbz/findWzbzListByJgId?jgid=1", function (data) {
+        initOrgBox02(data)
         console.log("物资保障")
+        });
     }
 
     var initFkxc = function (jgId, jgName) {//初始化-防控宣传
-        console.log("防控宣传")
+        $.axget("/api/yndp/fkxc/getFkxcList?jgId=1", function (res) {
+            initOrgBox03(res.data)
+        });
     }
 
     var initMap = function (jgId,jgName) {
