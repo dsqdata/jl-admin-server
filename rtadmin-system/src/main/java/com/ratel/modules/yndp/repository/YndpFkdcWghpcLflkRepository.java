@@ -19,7 +19,8 @@ public interface YndpFkdcWghpcLflkRepository extends BaseRepository<YndpFkdcWghp
     /**
      * 根据机构ID查询网格化排查及联防联控
      */
-    @Query(nativeQuery = true, value = "select * from yndp_fkdc_wghpclflk where jgid = ?1")
+//    @Query(nativeQuery = true, value = "select * from yndp_fkdc_wghpclflk where jgid = ?1")
+    @Query(nativeQuery = true, value = "select * from yndp_fkdc_wghpclflk where jgid = ?1  ORDER BY rq desc limit 1")
     List<YndpFkdcWghpcLflk> getPcjlflkList(String jgId);
 
 }
