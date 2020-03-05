@@ -9,6 +9,7 @@
     <script type="text/javascript" src="component/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="component/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <script type="text/javascript" src="component/echarts/echarts.js"></script>
+    <script type="text/javascript" src="component/socket/socketClient.js"></script>
 
 </head>
 <body>
@@ -423,6 +424,14 @@
         initMap(jgId, jgName)
     }
     $(document).ready(function () {
+        initWebSocket(2,function(e){
+            var jgId = e.jgId;
+            var jgName = e.jgName;
+
+            console.log("!!!!!"+jgId)
+            console.log("!!!!!"+jgName)
+            initHtml(jgId, jgName);
+        })
         var jgId = getQueryVariable("jgId")
         var jgName = getQueryVariable("jgName")
         initHtml(jgId, jgName)
