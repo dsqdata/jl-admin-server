@@ -65,6 +65,7 @@
                                         <% if (xjlx==1) { %>
                                         <li><strong>社区网格长</strong><span>{{sqwgz}}</span></li>
                                         <li><strong>网格管理员</strong><span>{{sqwggly}}</span></li>
+                                        <li><strong></strong><span></span></li>
                                         <% } else if (xjlx==2) { %>
                                         <li><strong>社区网格长</strong><span>{{sqwgz}}</span></li>
                                         <li><strong>社区网格监督员</strong><span>{{sqwgjdy}}</span></li>
@@ -94,10 +95,13 @@
                         <% } %>
                         <ul class="lftBtns">
                             <li class="btn_home"><a href="javascript:history.go(-1)"></a></li>
+<!--                            <li class="btn_map"><a href="javascript:;" data-toggle="modal" data-target="#myModal"></a></li>-->
+                            <li class="btn_map"><a onclick="mapModal('{{jgid}}','{{jgmc}}')" data-toggle="modal"></a></li>
                         </ul>
                     </script>
                     <ul class="lftBtns">
                         <li class="btn_home"><a href="javascript:history.go(-1)"></a></li>
+                        <li class="btn_map"><a href="javascript:;" data-toggle="modal" data-target="#myModal"></a></li>
                     </ul>
                 </div>
             </div>
@@ -105,8 +109,8 @@
                 <div class="orgRightIn01">
                     <div class="orgCon posT">
                             <a onclick="wgClick('up')" class="prevBig"></a>  <!--点击网格上-->
-                            <a onclick="wgClick('down')" class="nextBig" id="orgBox02"></a>  <!--点击网格下-->
-<!--                            <div id="orgBox02"></div>-->
+                            <a onclick="wgClick('down')" class="nextBig"></a>  <!--点击网格下-->
+                            <div id="orgBox02" style="height: 100%"></div>
 
                                 <script id="tpl-orgBox02" type="text/html">
                                     {{each wglist item i}}
@@ -232,14 +236,30 @@
         </div>
 
     </div>
-<script>
 
+    <!-- Modal -->
+    <div class="modal fade mapWin" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">阿拉街道八公里社区</h4>
+                </div>
+                <div class="modal-body">
+                    <img id="modalsrc" height="620" src="../src/images/mapno.png" alt="" onerror="maperror()">
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    var sjjg = "";
     var initTitle = function (data) {
-        var sjjg = "";
         var title = ""
         var type = "";
             // console.log("title="+JSON.stringify(data));
         $.axget1("/api/yndp/glgz/getSjJg?jgId="+data.jgid,false, function (res) {
+            sjjg=res.data.sjjg.jgmc;
              if(data.xjlx==='1'){
                 type = "城市";
                  title = "云南省自贸区昆明片区（昆明经开区） " + res.data.sjjg.jgmc +data.jgmc+ " ("+type+") "+ "社区网格化管理服务分布图";
@@ -451,6 +471,16 @@
         return  str.trim().split(/\s+/);
     }
 
+    function mapModal(jgId,jgmc){
+        $("#myModalLabel").text(sjjg+jgmc);
+        $('#modalsrc').attr('src','../src/images/map'+jgId+".jpg");
+        $("#myModal").modal("show");
+    }
+
+    function maperror(){
+        $('#modalsrc').attr('src','../src/images/mapno.png');
+    }
+
     $(document).ready(function () {
 
 
@@ -458,7 +488,6 @@
         var jgName = GetQueryString("jgName");
         console.log(jgId);
         console.log(jgName);
-
 
         $.axget("/api/yndp/glgz/getJg?jgId="+jgId, function (res) {
             initOrgBox01(res.data.jg);
@@ -495,14 +524,16 @@
     }
 
     var initOrgBox02 = function (data,xjlx) {
-        console.log(data);
         console.log(xjlx);
         var html = template('tpl-orgBox02', {
             wglist: data,
             xjlx:xjlx
         });
-        $("#orgBox02").after(html)
-        // document.getElementById('orgBox02').innerHTML = html;
+        // $(".orgBox01").remove();
+
+
+        // $("#orgBox02").after(html);
+        document.getElementById('orgBox02').innerHTML = html;
     }
 
 </script>

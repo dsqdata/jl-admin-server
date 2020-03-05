@@ -14,7 +14,7 @@
         <module>rtadmin-logging</module>
         <module>rtadmin-system</module>
         <module>rtadmin-tools</module>
-		<module>rtadmin-monitor</module>
+
         <module>rtadmin-generator</module>
         <module>rtadmin-docs</module>
         <module>rtadmin-run</module>
