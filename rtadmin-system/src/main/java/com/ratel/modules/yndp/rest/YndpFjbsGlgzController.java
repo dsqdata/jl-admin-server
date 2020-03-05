@@ -28,6 +28,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 
 /**
  * 防控部署-管理工作Controller
@@ -49,6 +50,7 @@ public class YndpFjbsGlgzController {
     @ApiOperation("首页：查询出一屏页面所有机构")
     @GetMapping(value = "/getAllJg")
     public Result getAllJg(HttpServletRequest request, HttpServletResponse response) {
+
         // 查询出一屏页面所有机构
         List<YndpFkbsJg> yndpFkbsJgList = yndpFkbsJgService.getAllJg();
         Result result = new Result();
