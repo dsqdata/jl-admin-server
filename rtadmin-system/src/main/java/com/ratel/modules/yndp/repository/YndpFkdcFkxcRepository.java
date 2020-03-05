@@ -19,7 +19,8 @@ public interface YndpFkdcFkxcRepository extends BaseRepository<YndpFkdcFkxc, Str
     /**
      * 根据机构ID查询防控宣传
      */
-    @Query(nativeQuery = true, value = "select * from yndp_fkdc_fkxc where jgid = ?1")
+//    @Query(nativeQuery = true, value = "select * from yndp_fkdc_fkxc where jgid = ?1")
+    @Query(nativeQuery = true, value = "select * from yndp_fkdc_fkxc where jgid = ?1  ORDER BY field1 desc limit 1")
     List<YndpFkdcFkxc> getFkxcList(String jgId);
 
 }
