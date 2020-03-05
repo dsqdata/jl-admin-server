@@ -123,9 +123,12 @@
 .midBox01 .greenBg03{ position: absolute; left:0;bottom:0; display: block; width: 23px; height: 23px; background: url("../images/bg_green03.png") no-repeat; background-size:100%; }
 .midBox01 .greenBg04{ position: absolute; right:0;bottom:0; display: block; width: 23px; height: 23px; background: url("../images/bg_green04.png") no-repeat; background-size:100%; }
 .midBox01in{ height: 100%; background: url("../images/bg_map.png"); border: 1px solid #1c4659; position: relative;}
-.mapMess{ position: absolute; left:15px; top:15px;}
-.mapMess li{ background: url("../images/warn.png") no-repeat left 5px; line-height: 22px; background-size:14px 14px; padding: 0 0 0 20px; color: #F8E71C; font-size: 12px; }
+.mapMessbox{ position: absolute; left:15px; top:15px; height: 40px; width: 100%;background: url("../images/warn.png") no-repeat left 0; background-size:14px 14px;padding: 0 0 0 20px;}
+.mapMess{ height: 40px; width: 100%;}
+.mapMess ul { margin: 0; line-height: 30px; }
+.mapMess li{ line-height: 22px; background-size:14px 14px;  color: #F8E71C; font-size: 12px; }
 .mapMess li span{ display: block;}
+
 .mapTab{ position: absolute; right: 15px; top:15px; overflow: hidden;}
 .mapTab li{ float: left; margin-left: 8px;}
 .mapTab li a{ display: block;background: rgba(73,175,205,0.30); text-decoration:none;border: 1px solid #46a9c6; color: #23B7E5; padding: 3px 20px;}
@@ -191,8 +194,7 @@
 .tab01 li a{ padding: 8px 15px; color: #23B7E5; border: none!important; margin: 0!important; border-radius: 0;}
 .tab01>li.active>a, .tab01>li.active>a:focus, .tab01>li.active>a:hover{  background: url("../images/btn_tab_on.png") no-repeat;background-size:100% 100%; color: #23B7E5;}
 .tab01>li>a:hover{color: #23B7E5; background: url("../images/btn_tab_on.png") no-repeat;background-size:100% 100%;}
-.midBox02 .tab-content{ height: 83%; margin-bottom: 10px; position: relative; }
-.midBox02 .tab-pane{ height: 100%;}
+
 .dateBox{ padding: 0 0 0 25px; margin-bottom: 10px;}
 .dateBox .form_date{ float: left;}
 .dateBox .wLine{ float: left; margin: 0 3px;}
@@ -210,8 +212,11 @@
 .tb02 td{ padding: 3px 5px;}
 .lineBox{ width: 100%; height: 16px; background: #092f4b; border-radius: 0 8px 8px 0;}
 .lineBox span{ display: block; height: 16px; border-radius: 0 8px 8px 0; background-image: linear-gradient(to right, #0cadf2 , #0af2b6);}
-.chartSty01{ height: 100%; width: 100%;}
-.sideBox02 .tab-content,.sideBox02 .tab-pane{height: 100%;}
+.chartSty01{ height: 280px; width: 100%; margin-bottom: 10px;}
+.chartSty02{ height: 240px; width: 100%;}
+.mapTbox01{ text-align: center;}
+.midBox02 .tab-content{ margin-top: -30px;}
+
 
 /*补充*/
 .arrowMid01{ position: absolute; left:15%; top:47%; display: block; width: 110px; height: 9px; background: url("../images/arrow02.png") no-repeat right center; background-size:100% 100%; }
@@ -229,6 +234,10 @@
 .yellowPart .orgConLft01.lineMore a:hover{ background: url("../images/mid3_yellow01_on.png") no-repeat; background-size:100% 100%;}
 .greenPart .orgConLft01.lineMore a{ background: url("../images/mid3_green01.png") no-repeat; background-size:100% 100%; }
 .greenPart .orgConLft01.lineMore a:hover{ background: url("../images/mid3_green01_on.png") no-repeat; background-size:100% 100%;}
+.mapWin .modal-content{background: rgba(4,28,53,0.80);border: 1px solid #23B7E5;box-shadow: 4px 4px 17px 0 rgba(0,0,0,0.50);}
+.mapWin .modal-header{background: #092F4B;border: 1px solid #23B7E5;box-shadow: inset 0 0 19px 0 #23B7E5;}
+.mapWin .modal-body{ padding: 20px;}
+.mapWin .close{ color: #115779!important;text-shadow:none;opacity:1;}
 #chart-panel {
     position: absolute;
     left: 0;
@@ -236,4 +245,12 @@
     top: 0;
     bottom: 0;
     padding: 0px 0px 0px 0px;
+}
+
+@media (min-width: 768px){
+
+    .modal-dialog {
+        width: auto;
+        margin: 30px auto;
+    }
 }

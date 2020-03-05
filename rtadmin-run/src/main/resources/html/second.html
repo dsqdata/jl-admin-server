@@ -79,6 +79,9 @@
         initWebSocket(2,function(e){
             var jgId = e.jgId;
             var jgName = e.jgName;
+
+            console.log("!!!!!"+jgId)
+            console.log("!!!!!"+jgName)
             initHtml(jgId, jgName);
         })
         var jgId = getQueryVariable("jgId")

@@ -10,3 +10,68 @@ body,html{ height: 100%;color: #ffffff;}
 
 .orgLeft01{ width: 19%; float: left; margin-right: 2%; height: 100%;background: rgba(3,28,47,0.60); border: 1px solid #117491; box-shadow: inset 0 0 22px 0 #117491;}
 .orgRight01{ width: 79%; float: left; height: 100%;background: rgba(9,47,75,0.85);border: 0 solid #23B7E5; box-shadow: inset 0 0 25px 0 rgba(35,183,229,0.66);}
+
+/*tab切换 echart显示问题*/
+.tab-content > .tab-pane,
+.pill-content > .pill-pane {
+    display: block; /* undo display:none */
+    height: 0; /* height:0 is also invisible */
+    overflow-y: hidden; /* no-overflow */
+}
+.tab-content > .active,
+.pill-content > .active {
+    height: auto; /* let the content decide it */
+} /* bootstrap hack end */
+
+/*Plugin CSS*/
+.str_wrap {
+    overflow:hidden;
+//zoom:1;
+    width:100%;
+    font-size:12px;
+    line-height:16px;
+    position:relative;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    white-space:nowrap;
+}
+
+
+.str_move {
+    white-space:nowrap;
+    position:absolute;
+    top:0;
+    left:0;
+    cursor:move;
+}
+.str_move_clone {
+    display:inline-block;
+//display:inline;
+//zoom:1;
+    vertical-align:top;
+    position:absolute;
+    left:100%;
+    top:0;
+}
+.str_vertical .str_move_clone {
+    left:0;
+    top:100%;
+}
+.str_down .str_move_clone {
+    left:0;
+    bottom:100%;
+}
+.str_vertical .str_move,
+.str_down .str_move {
+    white-space:normal;
+    width:100%;
+}
+.str_static .str_move,
+.no_drag .str_move,
+.noStop .str_move{
+    cursor:inherit;
+}
+.str_wrap img {
+    max-width:none !important;
+}

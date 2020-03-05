@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -25,6 +26,7 @@ public class YndpFkdcZypzController {
 
     @ApiOperation("根据所选机构ID查询出资源配置数据")
     @GetMapping(value = "/findZypzByJgId")
+    @ResponseBody
     public ResponseEntity<Object> findZypzByJgId(YndpFkdcZypz yndpFkdcZypz) {
 
         // 1. 获取所选择机构ID

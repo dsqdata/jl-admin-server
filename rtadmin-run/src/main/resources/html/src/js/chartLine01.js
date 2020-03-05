@@ -1,137 +1,132 @@
 $(function(){
     var myChart = echarts.init(document.getElementById('chartLine01'));
+    var option = {
+        color: ['#72d7e9', '#f5e665'],
 
-    option = {
-
-
-        color: ['#3398DB'],
-        tooltip : {
-            trigger: 'axis',
-            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
-                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-            },
-            padding: [5, 10],
-            formatter: function(params) {
-                for (var i = 0; i < params.length; i++) {
-                    return params[i].name + '<br>'+ "<span style=' background: #f34853; display: inline-block; border-radius: 10px; width: 7px; height: 7px; margin-right: 5px;'></span>当日新增: " + '111' + "<br><span style=' background: #32b778; display: inline-block; border-radius: 10px; width: 7px; height: 7px; margin-right: 5px;'></span>当日累计: " + params[i].value;
-                }
-
+        tooltip: {
+            trigger: 'axis'
+            //formatter: "{b} <br> 合格率: {c}%"
+        },
+        legend: {
+            top:'5%',
+            right:'10',
+            data: ['新增确诊', '新增疑似'],
+            textStyle: {
+                fontSize: 12,
+                color: '#20E0D9'
             }
         },
-        dataZoom: [{
-            type: 'inside',
-            start: 0,
-            end: 100
-        }],
-
         grid: {
-            top:'30',
-            left: '20',
-            right: '20',
-            bottom: '3%',
+            left: '3%',
+            right: '5%',
+            bottom:10,
+            top:'23%',
             containLabel: true
         },
-        xAxis : [
-            {
-                type : 'category',
-                data : [ '1月5日', '1月5日', '1月5日', '1月5日', '1月5日', '1月5日', '1月5日', '1月5日','1月5日', '1月5日', '1月5日', '1月5日', '1月5日', '1月5日', '1月5日', '1月5日','1月5日', '1月5日', '1月5日', '1月5日', '1月5日', '1月5日', '1月5日', '1月5日','1月5日', '1月5日', '1月5日', '1月5日', '1月5日', '1月5日', '1月5日', '1月5日'],
-                splitLine: {
-                    show: false,
-                },
 
-                axisLine: {
-                    show: false,
-                    lineStyle: {
-                        color: '#609ee9'
-                    }
-                },
-                axisLabel: {
-                    textStyle: {
-                        color:'#e3f6fe',
-                        fontSize: 14
-                    }
-                },
-            }
-        ],
-        yAxis : [
-            {
+        xAxis: {
+            type: 'category',
 
-                type : 'value',
-                name:'单位：件  ',
-                nameTextStyle: {
-                    color: '#e3f6fe',
-                    fontSize: 14
-                },
-                splitLine: {
-                    show: false,
-                },
-                axisTick: {
-                    show: false
-                },
-                axisLine: {
-                    show: false,
-                    lineStyle: {
-                        color: '#609ee9'
-                    }
-                },
-                axisLabel: {
-                    textStyle: {
-                        color:'#e3f6fe',
-                        fontSize: 14
-                    }
-                },
-            }
-        ],
+            data: ['01/01', '01/01', '01/01', '01/01', '01/01', '01/01', '01/01' ,
+                '01/01', '01/01', '01/01', '01/01' ,'01/01'],
 
-        series : [
+            axisLabel: {
+                color: '#22b3e0',
+                fontSize: 12,
+                rotate: 30
+            },
+            axisLine: {
+                lineStyle: {
+                    color: '#464f57'
+                }
+            },
+            axisTick: {
+                show: false,
+            },
+        },
+        yAxis: {
+            type: 'value',
+            name: '人',
+            nameTextStyle: {
+                color: '#22b3e0'
+            },
+            min:0,
+            max:20000,
+            axisLabel: {
+                color: '#22b3e0',
+                fontSize: 12
+            },
+            axisLine: {
+                lineStyle: {
+                    color: '#464f57'
+                }
+            },
+            axisTick: {
+                show: false,
+            },
+            splitLine: {
+                show: false,
+                lineStyle: {
+                    color: '#112a2f',
+                    type: 'solid'
+                }
+            },
+
+        },
+        series: [{
+            name: '新增确诊',
+            type: 'line',
+            symbol: "circle",      // 默认是空心圆（中间是白色的），改成实心圆
+            symbolSize: 8,
+            smooth:0.5,
+            itemStyle: {
+                normal: {
+                    color: "#72d7e9",  // 会设置点和线的颜色，所以需要下面定制 line
+                    borderWidth: 8,
+                    borderColor: "rgba(255,255,255,0.2)"  // 点边线的颜色
+                }
+            },
+            data: [10000, 18200, 12100, 15400, 11000, 20000, 19100,17400, 10000, 14300,
+                13100, 12300]
+        },
             {
-                name:'当日累计',
-                type:'bar',
-                barWidth: '60%',
-                data:[100, 52, 200, 234, 290, 230, 220, 52,100, 52, 200, 234, 290, 230, 220, 52,100, 52, 200, 234, 290, 230, 220, 52,100, 52, 200, 234, 290, 230, 220, 52,100, 52, 200, 234, 290, 230, 220, 52,100, 52, 200, 234, 290, 230, 220, 52,100, 52, 200, 234, 290, 230, 220, 52,100, 52, 200, 234, 290, 230, 220, 10],
-                label: {
-                     normal: {
-                         show: true,
-                         lineHeight: 22,
-                         width: 45,
-                         height: 20,
-                         backgroundColor: '#092a65',
-                         borderRadius: 3,
-                         position: 'top',
-                         distance: 1,
-                         formatter: '{a|{c}}',
-                         rich: {
-                             a: {
-                                 color: '#fff',
-                                 align: 'center',
-                             }
-                         }
-                     }
-                 },
+                name: '新增疑似',
+                type: 'line',
+                symbol: "circle",      // 默认是空心圆（中间是白色的），改成实心圆
+                symbolSize: 8,
+                smooth:0.5,
                 itemStyle: {
                     normal: {
-                        color:
-                            new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                                offset: 0,
-                                color: '#34b86f' // 0% 处的颜色
-                            }, {
-                                offset: 1,
-                                color: '#2ab5a0' // 100% 处的颜色
-                            }], false),
-                        barBorderRadius: [10, 10, 0, 0],
-                    },
+                        color: "#f5e665",  // 会设置点和线的颜色，所以需要下面定制 line
+                        borderWidth: 8,
+                        borderColor: "rgba(255,255,255,0.2)"
+                    }
+                },
 
-                }
+                data: [13000, 11200, 9100, 11400, 7000, 13000, 15100,12400, 5000, 10300,
+                    10100, 9300]
+            },
+            {
+                name: '柱子',
+                type: 'bar',
+                barGap: '-100%',
+                barWidth: 8,
+                label: {
+                    normal: {
+                        color: '#072338'
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        barBorderRadius: 25,
+                        color: '#072338',
+                    }
+                },
+                z: -12,
+                data: [20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000]
             }
-        ]
-    }
-    myChart.setOption(option);
 
-
-    window.onresize = function () {
-        setTimeout(function () {
-            myChart.resize();
-
-        }, 300)
+            ]
     };
+    myChart.setOption(option);
 })

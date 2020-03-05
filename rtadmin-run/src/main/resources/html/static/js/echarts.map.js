@@ -204,7 +204,7 @@ echarts.extendsMap = function (id, opt) {
                 type: 'group',
                 id: name,
                 left: pos.leftCur + pos.leftPlus-pos.left,
-                top: pos.top + 3,
+                top: pos.top + 65,
                 children: [{
                     type: 'polyline',
                     left: -90,
@@ -240,7 +240,7 @@ echarts.extendsMap = function (id, opt) {
                 }, {
                     type: 'text',
                     left: -68,
-                    top: 10,
+                    top: 17,
                     style: {
                         name: name,
                         text: cityToPinyin[name] ? cityToPinyin[name].toUpperCase() : '',
@@ -321,7 +321,8 @@ echarts.extendsMap = function (id, opt) {
                     name: '',
                     visualMap: false,
                     username: "阿拉街道",
-                    address: "疫区来昆人数：8130人",
+                    address: "疫区来昆人数",
+                    number:"8130人",
                     value: [ 102.85494405299998, 24.998903901328593]
                 }];
 
@@ -329,7 +330,8 @@ echarts.extendsMap = function (id, opt) {
                     name: '',
                     visualMap: false,
                     username: "洛羊街道",
-                    address: "疫区来昆人数：8130人",
+                    address: "疫区来昆人数",
+                    number:"8130人",
                     value: [  102.85494405299998,24.946454769999982]
                 }];
 
@@ -372,7 +374,7 @@ echarts.extendsMap = function (id, opt) {
 
 
 
-            ];
+                ];
                 i.setOption(option, true);
             }
         }
@@ -383,7 +385,7 @@ echarts.extendsMap = function (id, opt) {
             min: 0,
             max: 1000,
             left: 26,
-            bottom: 40,
+            bottom: 100,
             showLabel: !0,
             text: ["高", "低"],
             textStyle:{
@@ -429,7 +431,7 @@ echarts.extendsMap = function (id, opt) {
             }],
             show: !0
         },
-        backgroundColor: opt.bgColor,
+
         graphic: [
             {
                 type: 'group',
@@ -483,10 +485,11 @@ echarts.extendsMap = function (id, opt) {
                         var name = this.style.key;
                         handleEvents.resetOption(chart, option, name);
                     }
-                }, {
+                },
+                    {
                     type: 'text',
                     left: 0,
-                    top: 'middle',
+                    top: 50,
                     style: {
                         text: name[0] === '经开区' ? '经开区' : name[0],
                         textAlign: 'center',
@@ -499,7 +502,7 @@ echarts.extendsMap = function (id, opt) {
                 }, {
                     type: 'text',
                     left: 0,
-                    top: 10,
+                    top: 80,
                     style: {
                         text: 'JINGKAIQU',
                         textAlign: 'center',
@@ -509,12 +512,13 @@ echarts.extendsMap = function (id, opt) {
                     onclick: function () {
                         handleEvents.resetOption(chart, option, '经开区');
                     }
-                }]
+                }
+                ]
             }],
         geo: {
             map: opt.mapName,
             roam: true,
-            zoom: 1,
+            zoom: 0.8,
             label: {
                 normal: {
                     show: true,
@@ -617,29 +621,36 @@ echarts.extendsMap = function (id, opt) {
                 coordinateSystem: 'geo',
                 z: 1,
                 data: [],
-                symbolSize: 14,
+                symbolSize: 5,
                 label: {
                     normal: {
                         show: true,
                         formatter: function (params) {
-                            return '{fline|' + params.data.username + '}\n{tline|' + params.data.address + '}';
+                            return '{fline|' + params.data.username + '}\n{nline|' + params.data.number  + '}\n{tline|' + params.data.address + '}';
                         },
                         position: 'top',
-                        backgroundColor: 'rgba(254,174,33,.8)',
+                        backgroundColor: 'rgba(5,20,17,0.7)',
                         padding: [0, 0],
-                        borderRadius: 3,
+                        borderColor: '#50e3c2',
+                        borderWidth: 1,
                         lineHeight: 32,
                         color: '#f7fafb',
                         rich: {
                             fline: {
                                 align: 'center',
-                                padding: [0, 10, 10, 10],
-                                color: '#ffffff'
+                                padding: [0, 20],
+                                color: '#50e3c2'
+                            },
+                            nline: {
+                                align: 'center',
+                                padding: [0, 20],
+                                color: '#f8e71c',
+                                lineHeight: 10,
                             },
                             tline: {
                                 align: 'center',
-                                padding: [10, 10, 0, 10],
-                                color: '#ffffff'
+                                padding: [0, 20],
+                                color: '#fff'
                             }
                         }
                     },
@@ -648,46 +659,9 @@ echarts.extendsMap = function (id, opt) {
                     }
                 },
                 itemStyle: {
-                    color: '#F4E925',
-                }
-            },
-            {
-                type: 'effectScatter',
-                coordinateSystem: 'geo',
-                z: 1,
-                data: [],
-                symbolSize: 14,
-                label: {
                     normal: {
-                        show: true,
-                        formatter: function (params) {
-                            return '{fline|' + params.data.username + '}\n{tline|' + params.data.address + '}';
-                        },
-                        position: 'top',
-                        backgroundColor: 'rgba(233,63,66,.9)',
-                        padding: [0, 0],
-                        borderRadius: 3,
-                        lineHeight: 32,
-                        color: '#ffffff',
-                        rich: {
-                            fline: {
-                                align: 'center',
-                                padding: [0, 10, 10, 10],
-                                color: '#ffffff'
-                            },
-                            tline: {
-                                align: 'center',
-                                padding: [10, 10, 0, 10],
-                                color: '#ffffff'
-                            }
-                        }
-                    },
-                    emphasis: {
-                        show: true
+                        color: '#50e3c2'
                     }
-                },
-                itemStyle: {
-                    color: '#e93f42',
                 }
             },
             {
@@ -695,68 +669,36 @@ echarts.extendsMap = function (id, opt) {
                 coordinateSystem: 'geo',
                 z: 1,
                 data: [],
-                symbolSize: 14,
+                symbolSize: 5,
                 label: {
                     normal: {
                         show: true,
                         formatter: function (params) {
-                            return '{fline|' + params.data.username + '}\n{tline|' + params.data.address + '}';
+                            return '{fline|' + params.data.username + '}\n{nline|' + params.data.number  + '}\n{tline|' + params.data.address + '}';
                         },
                         position: 'top',
-                        backgroundColor: 'rgba(8,186,236,.9)',
+                        backgroundColor: 'rgba(5,20,17,0.7)',
                         padding: [0, 0],
-                        borderRadius: 3,
-                        lineHeight: 32,
-                        color: '#ffffff',
-                        rich: {
-                            fline: {
-                                align: 'center',
-                                padding: [0, 10, 10, 10],
-                                color: '#ffffff'
-                            },
-                            tline: {
-                                align: 'center',
-                                padding: [10, 10, 0, 10],
-                                color: '#ffffff'
-                            }
-                        }
-                    },
-                    emphasis: {
-                        show: true
-                    }
-                },
-                itemStyle: {
-                    color: '#08baec',
-                }
-            },
-            {
-                type: 'effectScatter',
-                coordinateSystem: 'geo',
-                z: 1,
-                data: [],
-                symbolSize: 14,
-                label: {
-                    normal: {
-                        show: true,
-                        formatter: function (params) {
-                            return '{fline|' + params.data.username + '}\n{tline|' + params.data.address + '}';
-                        },
-                        position: 'top',
-                        backgroundColor: 'rgba(254,174,33,.8)',
-                        padding: [0, 0],
-                        borderRadius: 3,
+                        borderColor: '#50e3c2',
+                        borderWidth: 1,
                         lineHeight: 32,
                         color: '#f7fafb',
                         rich: {
                             fline: {
                                 align: 'center',
-                                padding: [0, 10, 10, 10],
-                                color: '#ffffff'
+                                padding: [0, 20],
+                                color: '#50e3c2'
+                            },
+                            nline: {
+                                align: 'center',
+                                padding: [0, 20],
+                                color: '#f8e71c',
+                                lineHeight: 10,
                             },
                             tline: {
                                 align: 'center',
-                                padding: [10, 10, 0, 10],
-                                color: '#ffffff'
+                                padding: [0, 20],
+                                color: '#fff'
                             }
                         }
                     },
@@ -765,7 +707,105 @@ echarts.extendsMap = function (id, opt) {
                     }
                 },
                 itemStyle: {
-                    color: '#feae21',
+                    normal: {
+                        color: '#50e3c2'
+                    }
+                }
+            },
+            {
+                type: 'effectScatter',
+                coordinateSystem: 'geo',
+                z: 1,
+                data: [],
+                symbolSize: 5,
+                label: {
+                    normal: {
+                        show: true,
+                        formatter: function (params) {
+                            return '{fline|' + params.data.username + '}\n{nline|' + params.data.number  + '}\n{tline|' + params.data.address + '}';
+                        },
+                        position: 'top',
+                        backgroundColor: 'rgba(5,20,17,0.7)',
+                        padding: [0, 0],
+                        borderColor: '#50e3c2',
+                        borderWidth: 1,
+                        lineHeight: 32,
+                        color: '#f7fafb',
+                        rich: {
+                            fline: {
+                                align: 'center',
+                                padding: [0, 20],
+                                color: '#50e3c2'
+                            },
+                            nline: {
+                                align: 'center',
+                                padding: [0, 20],
+                                color: '#f8e71c',
+                                lineHeight: 10,
+                            },
+                            tline: {
+                                align: 'center',
+                                padding: [0, 20],
+                                color: '#fff'
+                            }
+                        }
+                    },
+                    emphasis: {
+                        show: true
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        color: '#50e3c2'
+                    }
+                }
+            },
+            {
+                type: 'effectScatter',
+                coordinateSystem: 'geo',
+                z: 1,
+                data: [],
+                symbolSize: 14,
+                label: {
+                    normal: {
+                        show: true,
+                        formatter: function (params) {
+                            return '{fline|' + params.data.username + '}\n{nline|' + params.data.number  + '}\n{tline|' + params.data.address + '}';
+                        },
+                        position: 'top',
+                        backgroundColor: 'rgba(5,20,17,0.7)',
+                        padding: [0, 0],
+                        borderColor: '#50e3c2',
+                        borderWidth: 1,
+                        lineHeight: 32,
+                        color: '#f7fafb',
+                        rich: {
+                            fline: {
+                                align: 'center',
+                                padding: [0, 20],
+                                color: '#50e3c2'
+                            },
+                            nline: {
+                                align: 'center',
+                                padding: [0, 20],
+                                color: '#f8e71c',
+                                lineHeight: 10,
+                            },
+                            tline: {
+                                align: 'center',
+                                padding: [0, 20],
+                                color: '#fff'
+                            }
+                        }
+                    },
+                    emphasis: {
+                        show: true
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        color: '#50e3c2'
+                    }
                 }
             },
             {
