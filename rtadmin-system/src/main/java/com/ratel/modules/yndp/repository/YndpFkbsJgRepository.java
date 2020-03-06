@@ -28,4 +28,8 @@ public interface YndpFkbsJgRepository  extends BaseRepository<YndpFkbsJg, String
     // 查询出一屏页面所有机构
     @Query(nativeQuery = true, value = "select * from yndp_fkbs_jg where jglx in(0,1,2)")
     List<YndpFkbsJg> getAllJg();
+
+    //  //根据机构名称查询出机构Id
+    @Query(nativeQuery = true, value = "select jgid from yndp_fkbs_jg where jgmc=?1")
+    String getJgId(String jgmc);
 }

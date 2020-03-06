@@ -56,6 +56,18 @@ public class YndpFjbsGlgzController {
     }
 
 
+    @ApiOperation("根据机构名称查询出机构Id")
+    @GetMapping(value = "/getJgId")
+    public Result getJgId(@RequestParam String jgmc, HttpServletRequest request, HttpServletResponse response) {
+        // 根据机构ID查询出上级机构
+        String jgId = yndpFkbsJgService.getJgId(jgmc);
+        Result result = new Result();
+        result.setCode(Result.SUCCESS_CODE);
+        result.setData(jgId);
+        result.setMessage("成功");
+        return result;
+    }
+
     @ApiOperation("根据机构ID查询出机构")
     @GetMapping(value = "/getJg")
     public Result getJg(@RequestParam String jgId, HttpServletRequest request, HttpServletResponse response) {
