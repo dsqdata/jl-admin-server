@@ -179,17 +179,19 @@
                         <h2 class="mapTbox01">
                             <span class="mapT01"><span class="mapTbg01">疫情死亡/治愈病例趋势图</span></span>
                         </h2>
+                        <div id="chartLine03" class="chartSty01"></div>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="tab04">
                         <h2 class="mapTbox01">
                             <span class="mapT01"><span class="mapTbg01">疫情病死率趋势图</span></span>
                         </h2>
-
+                        <div id="chartLine04" class="chartSty01"></div>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="tab05">
                         <h2 class="mapTbox01">
                             <span class="mapT01"><span class="mapTbg01">疫情治愈率趋势图</span></span>
                         </h2>
+                        <div id="chartLine05" class="chartSty01"></div>
                     </div>
 
                 </div>
@@ -251,8 +253,10 @@
                 </h2>
                 <div class="tab02Box clearfix">
                     <ul class="nav nav-tabs tab02" role="tablist">
-                        <li role="presentation" class="active  liLft"><a href="#tab06" aria-controls="home" role="tab" data-toggle="tab">排查特殊人群数量</a></li>
-                        <li role="presentation" class="liRgt"><a href="#tab07" aria-controls="profile" role="tab" data-toggle="tab">入住留验点人员</a></li>
+                        <li role="presentation" class="active  liLft" id="tab06title"><a href="#tab06" aria-controls="home" role="tab" data-toggle="tab" id="tab1">排查特殊人群数量</a></li>
+                        <li role="presentation" class="liRgt" id="tab07title"><a href="#tab07" aria-controls="profile" role="tab" data-toggle="tab">入住留验点人员</a></li>
+                        <li role="presentation" class="active  liLft" style="display: none" id="tab08title"><a href="#tab08" aria-controls="home" role="tab" data-toggle="tab" id="tab2">登记在册人员排查</a></li>
+                        <li role="presentation" class="liRgt" style="display: none;" id="tab09title"><a href="#tab09" aria-controls="profile" role="tab" data-toggle="tab">公安检查点排查</a></li>
 
                     </ul>
                 </div>
@@ -261,7 +265,14 @@
                         <div id="chartPie01" class="chartSty02"></div>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="tab07">
-                        122
+                        <div id="chartPie02" class="chartSty02"></div>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane active" id="tab08">
+                        <div id="chartPie03" class="chartSty02"></div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="tab09">
+                        <div id="chartPie04" class="chartSty02"></div>
                     </div>
 
                 </div>
@@ -308,7 +319,13 @@
 <script src="./static/js/echarts.map.js"></script>
 <script type="text/javascript" src="src/js/chartLine01.js"></script>
 <script type="text/javascript" src="src/js/chartLine02.js"></script>
+<script type="text/javascript" src="src/js/chartLine03.js"></script>
+<script type="text/javascript" src="src/js/chartLine04.js"></script>
+<script type="text/javascript" src="src/js/chartLine05.js"></script>
 <script type="text/javascript" src="src/js/chartPie01.js"></script>
+<script type="text/javascript" src="src/js/chartPie02.js"></script>
+<script type="text/javascript" src="src/js/chartPie03.js"></script>
+<script type="text/javascript" src="src/js/chartPie04.js"></script>
 <script>
 
     var initTime = function (data) {
@@ -536,6 +553,267 @@
         });
     }
 
+    var chartLine01 = echarts.init(document.getElementById('chartLine01'));
+    var chartLine02 = echarts.init(document.getElementById('chartLine02'));
+    var chartLine03 = echarts.init(document.getElementById('chartLine03'));
+    var chartLine04 = echarts.init(document.getElementById('chartLine04'));
+    var chartLine05 = echarts.init(document.getElementById('chartLine05'));
+    var initYqqs = function (jgId, jgName) {//初始化-疫情趋势
+        $.axget("/api/yndp/yqqs/getYqqsChartData?jgid=1&rowCount=ALL&yqlx=1", function (res) {
+            chartLine01.setOption({
+                xAxis:{
+                    data:res.data.weekDays
+                },
+                series:[{
+                    name: '新增确诊',
+                    data:res.data.yqsl
+                }
+                ]
+            });
+        });
+        $.axget("/api/yndp/yqqs/getYqqsChartData?jgid=1&rowCount=ALL&yqlx=2", function (res) {
+            chartLine01.setOption({
+                series:[{
+                    name: '新增疑似',
+                    data:res.data.yqsl
+                }
+                ]
+            });
+        });
+        $.axget("/api/yndp/yqqs/getYqqsChartData?jgid=1&rowCount=ALL&yqlx=3", function (res) {
+            chartLine02.setOption({
+                xAxis:{
+                    data:res.data.weekDays
+                },
+                series:[{
+                    name: '现存确诊',
+                    data:res.data.yqsl
+                }
+                ]
+            });
+        });
+        $.axget("/api/yndp/yqqs/getYqqsChartData?jgid=1&rowCount=ALL&yqlx=4", function (res) {
+            chartLine02.setOption({
+                series:[{
+                    name: '现存疑似',
+                    data:res.data.yqsl
+                }
+                ]
+            });
+        });
+        $.axget("/api/yndp/yqqs/getYqqsChartData?jgid=1&rowCount=ALL&yqlx=5", function (res) {
+            chartLine03.setOption({
+                xAxis:{
+                    data:res.data.weekDays
+                },
+                series:[{
+                    name: '死亡',
+                    data:res.data.yqsl
+                }
+                ]
+            });
+        });
+        $.axget("/api/yndp/yqqs/getYqqsChartData?jgid=1&rowCount=ALL&yqlx=6", function (res) {
+            chartLine03.setOption({
+                series:[{
+                    name: '治愈',
+                    data:res.data.yqsl
+                }
+                ]
+            });
+        });
+        $.axget("/api/yndp/yqqs/getYqqsChartData?jgid=1&rowCount=ALL&yqlx=7", function (res) {
+            chartLine04.setOption({
+                xAxis:{
+                    data:res.data.weekDays
+                },
+                series:[{
+                    name: '病死率',
+                    data:res.data.yqsl
+                }
+                ]
+            });
+        });
+        $.axget("/api/yndp/yqqs/getYqqsChartData?jgid=1&rowCount=ALL&yqlx=8", function (res) {
+            chartLine05.setOption({
+                xAxis:{
+                    data:res.data.weekDays
+                },
+                series:[{
+                    name: '治愈率',
+                    data:res.data.yqsl
+                }
+                ]
+            });
+        });
+    }
+
+    var chartPie01 = echarts.init(document.getElementById('chartPie01'));
+    var chartPie02 = echarts.init(document.getElementById('chartPie02'));
+    var chartPie03 = echarts.init(document.getElementById('chartPie03'));
+    var chartPie04 = echarts.init(document.getElementById('chartPie04'));
+    var initZdrymp = function (jgId, jgName,jgType) {//初始化-重点人员摸排
+        console.log(jgType+"=======")
+        if(jgType=='2'){
+            $("#tab06title").hide();
+            $("#tab07title").hide();
+            $("#tab08title").show();
+            $("#tab09title").show();
+            $("#tab2").tab('show')
+            $("#tab2").focus()
+            $("#tab06").hide();
+            $("#tab07").hide();
+            $("#tab08").show();
+            $("#tab09").show();
+        }else {
+            $("#tab06title").show();
+            $("#tab07title").show();
+            $("#tab08title").hide();
+            $("#tab09title").hide();
+            $("#tab1").tab('show')
+            $("#tab1").focus()
+            $("#tab06").show();
+            $("#tab07").show();
+            $("#tab08").hide();
+            $("#tab09").hide();
+        }
+        $.axget("/api/yndp/zdrymp/getZdrympData?jgid=1&zdrylx=3", function (res) {
+            var pie01rs =0
+            var pie01xzrs = 0
+            chartPie03.setOption({
+                series:[{
+                    name: '重点人员摸排',
+                    data:(function () {
+                        var arrNum = [];
+                        var zdrymp = res.data;
+                        console.log(zdrymp)
+                        for(var i=0;i<zdrymp.length; i++){
+                            arrNum.push({"value": zdrymp[i].zdryrs,"name":zdrymp[i].zdrymc,"xzrs":zdrymp[i].zdryxzrs,"bfb":zdrymp[i].zdryrszb});
+                            pie01rs= parseInt(zdrymp[i].zdryrs)+parseInt(pie01rs);
+                            pie01xzrs = parseInt(zdrymp[i].zdryxzrs)+parseInt(pie01xzrs);
+                        }
+
+                        return arrNum;
+                    })()
+
+                }
+                ],
+                tooltip: {
+                    trigger: 'item',
+                    formatter:function(data){
+                        console.log(data)
+                        return data.name+ " : " + data.value + " ("+data.percent.toFixed(0)+"%)";
+                    }
+                },
+                title: [
+                    {text:pie01rs+'人'},{text:'登记在册'},{text:'新增 +'+pie01xzrs+'人'}
+                ]
+            });
+        });
+        $.axget("/api/yndp/zdrymp/getZdrympData?jgid=1&zdrylx=4", function (res) {
+            var pie01rs =0
+            var pie01xzrs = 0
+            chartPie04.setOption({
+                series:[{
+                    name: '重点人员摸排',
+                    data:(function () {
+                        var arrNum = [];
+                        var zdrymp = res.data;
+                        console.log(zdrymp)
+                        for(var i=0;i<zdrymp.length; i++){
+                            arrNum.push({"value": zdrymp[i].zdryrs,"name":zdrymp[i].zdrymc,"xzrs":zdrymp[i].zdryxzrs,"bfb":zdrymp[i].zdryrszb});
+                            pie01rs= parseInt(zdrymp[i].zdryrs)+parseInt(pie01rs);
+                            pie01xzrs = parseInt(zdrymp[i].zdryxzrs)+parseInt(pie01xzrs);
+                        }
+
+                        return arrNum;
+                    })()
+
+                }
+                ],
+                tooltip: {
+                    trigger: 'item',
+                    formatter:function(data){
+                        console.log(data)
+                        return data.name+ " : " + data.value + " ("+data.percent.toFixed(0)+"%)";
+                    }
+                },
+                title: [
+                    {text:pie01rs+'人'},{text:'公安检查点排查'},{text:'新增 +'+pie01xzrs+'人'}
+                ]
+            });
+        });
+
+        $.axget("/api/yndp/zdrymp/getZdrympData?jgid=1&zdrylx=1", function (res) {
+            var pie01rs =0
+            var pie01xzrs = 0
+            chartPie01.setOption({
+                series:[{
+                    name: '重点人员摸排',
+                    data:(function () {
+                        var arrNum = [];
+                        var zdrymp = res.data;
+                        console.log(zdrymp)
+                        for(var i=0;i<zdrymp.length; i++){
+                            arrNum.push({"value": zdrymp[i].zdryrs,"name":zdrymp[i].zdrymc,"xzrs":zdrymp[i].zdryxzrs,"bfb":zdrymp[i].zdryrszb});
+                            pie01rs= parseInt(zdrymp[i].zdryrs)+parseInt(pie01rs);
+                            pie01xzrs = parseInt(zdrymp[i].zdryxzrs)+parseInt(pie01xzrs);
+                        }
+
+                        return arrNum;
+                    })()
+
+                }
+                ],
+                tooltip: {
+                    trigger: 'item',
+                    formatter:function(data){
+                        console.log(data)
+                        return data.name+ " : " + data.value + " ("+data.percent.toFixed(0)+"%)";
+                    }
+                },
+                title: [
+                    {text:pie01rs+'人'},{text:'特殊人群'},{text:'新增 +'+pie01xzrs+'人'}
+                ]
+            });
+        });
+        $.axget("/api/yndp/zdrymp/getZdrympData?jgid=1&zdrylx=2", function (res) {
+            var pie01rs =0
+            var pie01xzrs = 0
+            chartPie02.setOption({
+                series:[{
+                    name: '重点人员摸排',
+                    data:(function () {
+                        var arrNum = [];
+                        var zdrymp = res.data;
+                        console.log(zdrymp)
+                        for(var i=0;i<zdrymp.length; i++){
+                            arrNum.push({"value": zdrymp[i].zdryrs,"name":zdrymp[i].zdrymc,"xzrs":zdrymp[i].zdryxzrs,"bfb":zdrymp[i].zdryrszb});
+                            pie01rs= parseInt(zdrymp[i].zdryrs)+parseInt(pie01rs);
+                            pie01xzrs = parseInt(zdrymp[i].zdryxzrs)+parseInt(pie01xzrs);
+                        }
+
+                        return arrNum;
+                    })()
+
+                }
+                ],
+                tooltip: {
+                    trigger: 'item',
+                    formatter:function(data){
+                        console.log(data)
+                        return data.name+ " : " + data.value + " ("+data.percent.toFixed(0)+"%)";
+                    }
+                },
+                title: [
+                    {text:pie01rs+'人'},{text:'入住留验点人员'},{text:'新增 +'+pie01xzrs+'人'}
+                ]
+            });
+        });
+
+
+    }
+
     var initPclk = function (jgId, jgName) {//初始化-网格化排查及联防联控
         $.axget("/api/yndp/wghpclflk/getPcjlflkList?jgId="+jgId, function (res) {
             initOrgBox04(res.data)
@@ -605,10 +883,12 @@
     }
 
 
-    var initHtml = function (jgId, jgName) {
+    var initHtml = function (jgId, jgName,jgType) {
         initZypz(jgId, jgName)
         initWzbz(jgId, jgName)
         initFkxc(jgId, jgName)
+        initYqqs(jgId, jgName);
+        initZdrymp(jgId,jgName,jgType);
         initPclk(jgId, jgName)
         initRyzz(jgId, jgName)
         initMap(jgId, jgName, initdt)
@@ -633,10 +913,10 @@
         initWebSocket(2,function(e){
             var jgId = e.jgId;
             var jgName = e.jgName;
-
+            var jgType = e.jgType;
             console.log("!!!!!"+jgId)
             console.log("!!!!!"+jgName)
-            initHtml(jgId, jgName);
+            initHtml(jgId, jgName,jgType);
         })
         // var jgId = getQueryVariable("jgId")
         // var jgName = getQueryVariable("jgName")
