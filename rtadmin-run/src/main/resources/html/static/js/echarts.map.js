@@ -296,7 +296,7 @@ echarts.extendsMap = function (id, opt) {
         initHtml: function( name){
             $.axget1("/api/yndp/glgz/getJgId?jgmc="+ name ,false, function (res) {
                 console.log(res.data)
-                initHtmlNoMap(res.data, name)
+                initHtmlNoMap(res.data.id, name)
             });
         },
         setData: function (i,option,name) {

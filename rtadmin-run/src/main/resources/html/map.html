@@ -864,12 +864,14 @@
                         jname = name
                     $.axget1("/api/yndp/glgz/getJgId?jgmc="+ jname,false, function (res) {
                         // myChart.setInitData('经开区')
-                        initZypz(res.data, name)
-                        initWzbz(res.data, name)
-                        initFkxc(res.data, name)
-                        initPclk(res.data, name)
-                        initRyzz(res.data, name)
-                        initdt(res.data, name)
+                        initZypz(res.data.id, name)
+                        initWzbz(res.data.id, name)
+                        initFkxc(res.data.id, name)
+                        initYqqs(res.data.id, name);
+                        initZdrymp(res.data.id,name,res.data.jglx);
+                        initPclk(res.data.id, name)
+                        initRyzz(res.data.id, name)
+                        initdt(res.data.id, name)
                     });
                 }
             });
@@ -923,7 +925,7 @@
         // initHtml(jgId, jgName)
 
         $.axget1("/api/yndp/glgz/getJgId?jgmc="+ '区疫情防控指挥部',false, function (res) {
-            initHtml(res.data, '经开区')
+            initHtml(res.data.id, '经开区')
         });
 
     });
