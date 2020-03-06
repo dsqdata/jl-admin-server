@@ -29,9 +29,9 @@ public class YndpFkdcYqqs extends BaseUuidEntity {
     @Column(name = "yqsl", columnDefinition = "VARCHAR(64) COMMENT '疫情数量'")
     private String yqsl;
     /**
-     * 疫情类型(1新增疑似/新增确诊 2现存确诊/现存疑似 3死亡/治愈 4病死率 5治愈率)
+     * 疫情类型(1新增确诊 2新增疑似 3现存确诊 4现存疑似 5死亡 6治愈 7病死率 8治愈率)
      */
-    @Column(name = "yqlx", columnDefinition = "VARCHAR(64) COMMENT '疫情类型(1新增疑似/新增确诊 2现存确诊/现存疑似 3死亡/治愈 4病死率 5治愈率)'")
+    @Column(name = "yqlx", columnDefinition = "VARCHAR(64) COMMENT '疫情类型(1新增疑似 2新增确诊 3现存确诊 4现存疑似 5死亡 6治愈 7病死率 8治愈率)'")
     private String yqlx;
     /**
      * 日期

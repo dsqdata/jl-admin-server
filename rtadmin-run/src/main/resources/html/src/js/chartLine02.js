@@ -1,5 +1,5 @@
 $(function(){
-    var myChart = echarts.init(document.getElementById('chartLine02'));
+
     var option = {
         color: ['#72d7e9', '#f5e665'],
 
@@ -10,7 +10,7 @@ $(function(){
         legend: {
             top:'5%',
             right:'10',
-            data: ['新增确诊', '新增疑似'],
+            data: ['现存确诊', '现存疑似'],
             textStyle: {
                 fontSize: 12,
                 color: '#20E0D9'
@@ -43,6 +43,7 @@ $(function(){
             axisTick: {
                 show: false,
             },
+            interval:'auto'
         },
         yAxis: {
             type: 'value',
@@ -50,8 +51,6 @@ $(function(){
             nameTextStyle: {
                 color: '#22b3e0'
             },
-            min:0,
-            max:20000,
             axisLabel: {
                 color: '#22b3e0',
                 fontSize: 12
@@ -74,7 +73,7 @@ $(function(){
 
         },
         series: [{
-            name: '新增确诊',
+            name: '现存确诊',
             type: 'line',
             symbol: "circle",      // 默认是空心圆（中间是白色的），改成实心圆
             symbolSize: 8,
@@ -90,7 +89,7 @@ $(function(){
                 13100, 12300]
         },
             {
-                name: '新增疑似',
+                name: '现存疑似',
                 type: 'line',
                 symbol: "circle",      // 默认是空心圆（中间是白色的），改成实心圆
                 symbolSize: 8,
@@ -122,11 +121,10 @@ $(function(){
                         color: '#072338',
                     }
                 },
-                z: -12,
-                data: [20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000]
+                z: -12
             }
 
             ]
     };
-    myChart.setOption(option);
+    chartLine02.setOption(option);
 })

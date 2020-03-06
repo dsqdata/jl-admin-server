@@ -10,7 +10,7 @@ $(function(){
         legend: {
             top:'5%',
             right:'10',
-            data: ['新增确诊', '新增疑似'],
+            data: ['死亡', '治愈'],
             textStyle: {
                 fontSize: 12,
                 color: '#20E0D9'
@@ -74,7 +74,7 @@ $(function(){
 
         },
         series: [{
-            name: '新增确诊',
+            name: '死亡',
             type: 'line',
             symbol: "circle",      // 默认是空心圆（中间是白色的），改成实心圆
             symbolSize: 8,
@@ -90,7 +90,7 @@ $(function(){
                 13100, 12300]
         },
             {
-                name: '新增疑似',
+                name: '治愈',
                 type: 'line',
                 symbol: "circle",      // 默认是空心圆（中间是白色的），改成实心圆
                 symbolSize: 8,
@@ -127,5 +127,5 @@ $(function(){
 
             ]
     };
-    chartLine01.setOption(option);
+    chartLine03.setOption(option);
 })

@@ -1,7 +1,7 @@
 $(function(){
 
     var option = {
-        color: ['#72d7e9', '#f5e665'],
+        color: ['#72d7e9'],
 
         tooltip: {
             trigger: 'axis'
@@ -10,7 +10,7 @@ $(function(){
         legend: {
             top:'5%',
             right:'10',
-            data: ['新增确诊', '新增疑似'],
+            data: ['病死率'],
             textStyle: {
                 fontSize: 12,
                 color: '#20E0D9'
@@ -47,7 +47,7 @@ $(function(){
         },
         yAxis: {
             type: 'value',
-            name: '人',
+            name: '%',
             nameTextStyle: {
                 color: '#22b3e0'
             },
@@ -74,7 +74,7 @@ $(function(){
 
         },
         series: [{
-            name: '新增确诊',
+            name: '病死率',
             type: 'line',
             symbol: "circle",      // 默认是空心圆（中间是白色的），改成实心圆
             symbolSize: 8,
@@ -89,23 +89,6 @@ $(function(){
             data: [10000, 18200, 12100, 15400, 11000, 20000, 19100,17400, 10000, 14300,
                 13100, 12300]
         },
-            {
-                name: '新增疑似',
-                type: 'line',
-                symbol: "circle",      // 默认是空心圆（中间是白色的），改成实心圆
-                symbolSize: 8,
-                smooth:0.5,
-                itemStyle: {
-                    normal: {
-                        color: "#f5e665",  // 会设置点和线的颜色，所以需要下面定制 line
-                        borderWidth: 8,
-                        borderColor: "rgba(255,255,255,0.2)"
-                    }
-                },
-
-                data: [13000, 11200, 9100, 11400, 7000, 13000, 15100,12400, 5000, 10300,
-                    10100, 9300]
-            },
             {
                 name: '柱子',
                 type: 'bar',
@@ -127,5 +110,5 @@ $(function(){
 
             ]
     };
-    chartLine01.setOption(option);
+    chartLine04.setOption(option);
 })

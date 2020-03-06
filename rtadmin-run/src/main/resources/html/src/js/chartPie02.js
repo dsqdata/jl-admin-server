@@ -14,7 +14,7 @@ $(function(){
                 }
             },
             {
-                text: '特殊人群',
+                text: '入住留验点人员',
                 x: 'center',
                 y: '47%',
                 textStyle: {
@@ -62,11 +62,11 @@ $(function(){
                         function(params){
                             var str = ''
                             switch(params.name){
-                                case '务工返昆':str =  '{circle01|}{a|'+params.name+'}\n{b|'+params.value+'人}{c|'+params.data.bfb+'%'+'}\n{c|新增 '+'+'+params.data.xzrs+'人}';break;
-                                case '其他':str =  '{circle02|}{a|'+params.name+'}\n{b|'+params.value+'人}{c|'+params.data.bfb+"%"+'}\n{c|新增 '+'+'+params.data.xzrs+'人}';break;
-                                case '上学返昆':str =  '{circle03|}{a|'+params.name+'}\n{b|'+params.value+'人}{c|'+params.data.bfb+"%"+'}\n{c|新增'+'+'+params.data.xzrs+'人}';break;
-                                case '疫区来昆旅游':str =  '{circle04|}{a|'+params.name+'}\n{b|'+params.value+'人}{c|'+params.data.bfb+"%"+'}\n{c|新增'+'+'+params.data.xzrs+'人}';break;
-                                case '近期到过疫区':str =  '{circle05|}{a|'+params.name+'}\n{b|'+params.value+'人}{c|'+params.data.bfb+"%"+'}\n{c|新增'+'+'+params.data.xzrs+'人}';break;
+                                case '男性':str =  '{circle01|}{a|'+params.name+'}\n{b|'+params.value+'人}{c|'+params.data.bfb+'%'+'}\n{c|新增 '+'+'+params.data.xzrs+'人}';break;
+                                case '女性':str =  '{circle02|}{a|'+params.name+'}\n{b|'+params.value+'人}{c|'+params.data.bfb+"%"+'}\n{c|新增 '+'+'+params.data.xzrs+'人}';break;
+                                case '幼儿':str =  '{circle03|}{a|'+params.name+'}\n{b|'+params.value+'人}{c|'+params.data.bfb+"%"+'}\n{c|新增'+'+'+params.data.xzrs+'人}';break;
+                                case '老年人（60岁以上）':str =  '{circle04|}{a|'+params.name+'}\n{b|'+params.value+'人}{c|'+params.data.bfb+"%"+'}\n{c|新增'+'+'+params.data.xzrs+'人}';break;
+                                case '其他':str =  '{circle05|}{a|'+params.name+'}\n{b|'+params.value+'人}{c|'+params.data.bfb+"%"+'}\n{c|新增'+'+'+params.data.xzrs+'人}';break;
                             }
                             return str
                         },
@@ -145,43 +145,43 @@ $(function(){
             },
             data: [{
                 value: 1,
-                name: '务工返昆',
+                name: '男性',
                 xzrs:22,
                 bfb:12
             },
                 {
                     value: 2,
-                    name: '其他',
+                    name: '女性',
                     xzrs:22,
                     bfb:12
                 },
                 {
                     value: 3,
-                    name: '上学返昆',
+                    name: '幼儿',
                     xzrs:22,
                     bfb:12
                 },
                 {
                     value: 4,
-                    name: '疫区来昆旅游',
+                    name: '老年人（60岁以上）',
                     xzrs:22,
                     bfb:12
                 },
                 {
                     value: 5,
-                    name: '近期到过疫区',
+                    name: '其他',
                     xzrs:22,
                     bfb:12
                 }
             ]
         }]
     }
-    chartPie01.setOption(option);
+    chartPie02.setOption(option);
 
 
     window.onresize = function () {
         setTimeout(function () {
-            chartPie01.resize();
+            chartPie02.resize();
 
         }, 300)
     };
