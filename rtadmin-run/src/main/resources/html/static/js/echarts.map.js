@@ -296,7 +296,7 @@ echarts.extendsMap = function (id, opt) {
         initHtml: function( name){
             $.axget1("/api/yndp/glgz/getJgId?jgmc="+ name ,false, function (res) {
                 console.log(res.data)
-                initHtmlNoMap(res.data.id, name)
+                initHtmlNoMap(res.data.id, name,res.data.jglx)
             });
         },
         setData: function (i,option,name) {
@@ -307,7 +307,7 @@ echarts.extendsMap = function (id, opt) {
             i.setOption(options, true);
 
             if(name == "大新册社区"){
-                option.series[2].data = [{
+                /*option.series[2].data = [{
                     name: '',
                     username: "username",
                     telphone: "telphone",
@@ -322,7 +322,7 @@ echarts.extendsMap = function (id, opt) {
                     value: [102.86190032958984,
                         24.909481126447975]
                 }];
-                i.setOption(options, true);
+                i.setOption(options, true);*/
             } else if(name == "经开区"){
                 // option.series[1].data = [{
                 //     name: '',
