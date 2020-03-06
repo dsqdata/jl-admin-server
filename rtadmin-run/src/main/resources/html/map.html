@@ -559,7 +559,7 @@
     var chartLine04 = echarts.init(document.getElementById('chartLine04'));
     var chartLine05 = echarts.init(document.getElementById('chartLine05'));
     var initYqqs = function (jgId, jgName) {//初始化-疫情趋势
-        $.axget("/api/yndp/yqqs/getYqqsChartData?jgid=1&rowCount=ALL&yqlx=1", function (res) {
+        $.axget("/api/yndp/yqqs/getYqqsChartData?jgid="+jgId+"&rowCount=ALL&yqlx=1", function (res) {
             chartLine01.setOption({
                 xAxis:{
                     data:res.data.weekDays
@@ -571,7 +571,7 @@
                 ]
             });
         });
-        $.axget("/api/yndp/yqqs/getYqqsChartData?jgid=1&rowCount=ALL&yqlx=2", function (res) {
+        $.axget("/api/yndp/yqqs/getYqqsChartData?jgid="+jgId+"&rowCount=ALL&yqlx=2", function (res) {
             chartLine01.setOption({
                 series:[{
                     name: '新增疑似',
@@ -580,7 +580,7 @@
                 ]
             });
         });
-        $.axget("/api/yndp/yqqs/getYqqsChartData?jgid=1&rowCount=ALL&yqlx=3", function (res) {
+        $.axget("/api/yndp/yqqs/getYqqsChartData?jgid="+jgId+"&rowCount=ALL&yqlx=3", function (res) {
             chartLine02.setOption({
                 xAxis:{
                     data:res.data.weekDays
@@ -592,7 +592,7 @@
                 ]
             });
         });
-        $.axget("/api/yndp/yqqs/getYqqsChartData?jgid=1&rowCount=ALL&yqlx=4", function (res) {
+        $.axget("/api/yndp/yqqs/getYqqsChartData?jgid="+jgId+"&rowCount=ALL&yqlx=4", function (res) {
             chartLine02.setOption({
                 series:[{
                     name: '现存疑似',
@@ -601,7 +601,7 @@
                 ]
             });
         });
-        $.axget("/api/yndp/yqqs/getYqqsChartData?jgid=1&rowCount=ALL&yqlx=5", function (res) {
+        $.axget("/api/yndp/yqqs/getYqqsChartData?jgid="+jgId+"&rowCount=ALL&yqlx=5", function (res) {
             chartLine03.setOption({
                 xAxis:{
                     data:res.data.weekDays
@@ -613,7 +613,7 @@
                 ]
             });
         });
-        $.axget("/api/yndp/yqqs/getYqqsChartData?jgid=1&rowCount=ALL&yqlx=6", function (res) {
+        $.axget("/api/yndp/yqqs/getYqqsChartData?jgid="+jgId+"&rowCount=ALL&yqlx=6", function (res) {
             chartLine03.setOption({
                 series:[{
                     name: '治愈',
@@ -622,7 +622,7 @@
                 ]
             });
         });
-        $.axget("/api/yndp/yqqs/getYqqsChartData?jgid=1&rowCount=ALL&yqlx=7", function (res) {
+        $.axget("/api/yndp/yqqs/getYqqsChartData?jgid="+jgId+"&rowCount=ALL&yqlx=7", function (res) {
             chartLine04.setOption({
                 xAxis:{
                     data:res.data.weekDays
@@ -634,7 +634,7 @@
                 ]
             });
         });
-        $.axget("/api/yndp/yqqs/getYqqsChartData?jgid=1&rowCount=ALL&yqlx=8", function (res) {
+        $.axget("/api/yndp/yqqs/getYqqsChartData?jgid="+jgId+"&rowCount=ALL&yqlx=8", function (res) {
             chartLine05.setOption({
                 xAxis:{
                     data:res.data.weekDays
@@ -677,7 +677,7 @@
             $("#tab08").hide();
             $("#tab09").hide();
         }
-        $.axget("/api/yndp/zdrymp/getZdrympData?jgid=1&zdrylx=3", function (res) {
+        $.axget("/api/yndp/zdrymp/getZdrympData?jgid="+jgId+"&zdrylx=3", function (res) {
             var pie01rs =0
             var pie01xzrs = 0
             chartPie03.setOption({
@@ -710,7 +710,7 @@
                 ]
             });
         });
-        $.axget("/api/yndp/zdrymp/getZdrympData?jgid=1&zdrylx=4", function (res) {
+        $.axget("/api/yndp/zdrymp/getZdrympData?jgid="+jgId+"&zdrylx=4", function (res) {
             var pie01rs =0
             var pie01xzrs = 0
             chartPie04.setOption({
@@ -744,7 +744,7 @@
             });
         });
 
-        $.axget("/api/yndp/zdrymp/getZdrympData?jgid=1&zdrylx=1", function (res) {
+        $.axget("/api/yndp/zdrymp/getZdrympData?jgid="+jgId+"&zdrylx=1", function (res) {
             var pie01rs =0
             var pie01xzrs = 0
             chartPie01.setOption({
@@ -777,7 +777,7 @@
                 ]
             });
         });
-        $.axget("/api/yndp/zdrymp/getZdrympData?jgid=1&zdrylx=2", function (res) {
+        $.axget("/api/yndp/zdrymp/getZdrympData?jgid="+jgId+"&zdrylx=2", function (res) {
             var pie01rs =0
             var pie01xzrs = 0
             chartPie02.setOption({
