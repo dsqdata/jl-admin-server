@@ -17,6 +17,6 @@ import java.util.List;
 public interface YndpFkdcMapSjRepository extends BaseRepository<YndpFkdcMapSj, String> {
 
     //查询地图下方汇总数据
-    @Query(nativeQuery = true, value = "select * from yndp_fkdc_map_sj where jgid = ?1")
+    @Query(nativeQuery = true, value = "select * from yndp_fkdc_map_sj where jgid = ?1  ORDER BY field1 desc limit 1")
     YndpFkdcMapSj getMapHz(String jgId);
 }
