@@ -47,4 +47,8 @@ public class YndpFkdcYqlkryzzService extends BaseService<YndpFkdcYqlkryzz, Strin
         map.put("rysl", list.stream().map(YndpFkdcYqlkryzz::getRysl).collect(Collectors.toList()));
         return map;
     }
+
+    public List<YndpFkdcYqlkryzz> getSameDay(String jgId) {
+        return yndpFkdcYqlkryzzRepository.getSameDay(jgId);
+    }
 }

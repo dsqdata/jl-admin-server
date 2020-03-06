@@ -13,6 +13,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
+import org.springframework.web.bind.annotation.*;
+
+import org.springframework.http.ResponseEntity;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.List;
+
+
 @RestController
 @RequestMapping("/api/yndp/yqlkryzz")
 @Api(tags = "第二屏：疫区来昆人员追踪管理")
@@ -42,4 +50,14 @@ public class YndpFkdcYqlkryzzController {
         result.setMessage("成功");
         return result;
     }
+
+    @GetMapping(value = "/getSameDay")
+    @ApiOperation("查询当日日数据")
+    public List<YndpFkdcYqlkryzz> getSameDay(@RequestParam String jgId, HttpServletRequest request, HttpServletResponse response) {
+
+        //1. 根据所选择的机构ID查询出列表
+        List<YndpFkdcYqlkryzz> yndpFkdcYqlkryzzList = yndpFkdcYqlkryzzService.getSameDay(jgId);
+        return yndpFkdcYqlkryzzList;
+    }
+
 }

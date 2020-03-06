@@ -28,15 +28,15 @@
                    <span class="mapT01"><span class="mapTbg01">资源配置</span></span>
                 </h2>
                 <ul class="list01">
-                    <li class="li01"><div class="liBg"><p class="ln">网格长</p><strong>{{wgz}}</strong><span>人</span></div></li>
-                    <li class="li02"><div class="liBg"><p class="ln">网格员</p><strong>{{wgy}}</strong><span>人</span></div></li>
-                    <li class="li03"><div class="liBg"><p class="ln">楼栋长/单元长</p><strong>{{ldz}}</strong><span>人</span></div></li>
-                    <li class="li04"><div class="liBg"><p class="ln">留验站点</p><strong>{{lyzd}}</strong><span>人</span></div></li>
-                    <li class="li05"><div class="liBg"><p class="ln">医护人员</p><strong>{{yhry}}</strong><span>位</span></div></li>
-                    <li class="li06"><div class="liBg"><p class="ln">留观酒店</p><strong>{{lgjd}}</strong><span>家</span></div></li>
-                    <li class="li07"><p class="ln">警力支撑</p><strong>{{jlzc}}</strong><span>人</span></li>
-                    <li class="li08"><p class="ln">固定检查点</p><strong>{{gdjcd}}</strong><span>个</span></li>
-                    <li class="li09"><p class="ln">视频卡口</p><strong>{{spkk}}</strong><span>个</span></li>
+                    <li class="li01"><div class="liBg"><p class="ln">网格长</p><strong>{{!wgz?'-':wgz}}</strong><span>人</span></div></li>
+                    <li class="li02"><div class="liBg"><p class="ln">网格员</p><strong>{{wgy==null?'-':wgy}}</strong><span>人</span></div></li>
+                    <li class="li03"><div class="liBg"><p class="ln">楼栋长/单元长</p><strong>{{ldz==null?'-':ldz}}</strong><span>人</span></div></li>
+                    <li class="li04"><div class="liBg"><p class="ln">留验站点</p><strong>{{lyzd==null?'-':lyzd}}</strong><span>人</span></div></li>
+                    <li class="li05"><div class="liBg"><p class="ln">医护人员</p><strong>{{yhry==null?'-':yhry}}</strong><span>位</span></div></li>
+                    <li class="li06"><div class="liBg"><p class="ln">留观酒店</p><strong>{{lgjd==null?'-':lgjd}}</strong><span>家</span></div></li>
+                    <li class="li07"><p class="ln">警力支撑</p><strong>{{jlzc==null?'-':jlzc}}</strong><span>人</span></li>
+                    <li class="li08"><p class="ln">固定检查点</p><strong>{{gdjcd==null?'-':gdjcd}}</strong><span>个</span></li>
+                    <li class="li09"><p class="ln">视频卡口</p><strong>{{spkk==null?'-':spkk}}</strong><span>个</span></li>
                 </ul>
             </script>
             </div>
@@ -61,12 +61,12 @@
                     {{each wzbz item i}}
                     <tr>
                         <td>{{i}}</td>
-                        <td>{{item.rq}}</td>
-                        <td>{{item.wz}}</td>
-                        <td>{{item.rk}}</td>
-                        <td>{{item.fc}}</td>
-                        <td>{{item.jc}}</td>
-                        <td>{{item.bz}}</td>
+                        <td>{{!item.rq?'-':item.rq}}</td>
+                        <td>{{item.wz==null?'-':item.wz}}</td>
+                        <td>{{item.rk==null?'-':item.rk}}</td>
+                        <td>{{item.fc==null?'-':item.fc}}</td>
+                        <td>{{item.jc==null?'-':item.jc}}</td>
+                        <td>{{item.bz==null?'-':item.bz}}</td>
                     </tr>
                     {{/each}}
                 </table>
@@ -82,17 +82,18 @@
                 </h2>
                 <div class="ycBox01 clearfix">
                     <div class="ycBox02">
-                        <p class="ycTxt01">{{fkxc[0].szrc}}</p>
-                        <p class="ycTxt02">+{{fkxc[0].szrcjzr}}<span>较昨日</span></p>
+                        <p class="ycTxt01">{{szrc}}</p>
+                        <p class="ycTxt02">
+                            <% if (szrcjzr>0) { %>+ <% } %> {{szrcjzr}}<span>较昨日</span></p>
                         <p class="ycTxt03">受众人次</p>
                     </div>
 
                     <ul class="list02">
-                        <li class="lia01"><strong>发放宣传资料</strong><span>{{fkxc[0].ffxczl}} 份 <em>+{{fkxc[0].ffxczljzr}} <i>较昨日</i></em></span></li>
-                        <li class="lia02"><strong>微信群宣传</strong><span>{{fkxc[0].wxqxc}} 份 <em>+{{fkxc[0].wxqxcjzr}} <i>较昨日</i></em></span></li>
-                        <li class="lia03"><strong>LED宣传</strong><span>{{fkxc[0].ledxc}} 份 <em>+{{fkxc[0].ledxcjzr}} <i>较昨日</i></em></span></li>
-                        <li class="lia04"><strong>发送短信</strong><span>{{fkxc[0].fsdx}} 份 <em>+{{fkxc[0].fsdxjzr}} <i>较昨日</i></em></span></li>
-                        <li class="lia05"><strong>其他</strong><span>{{fkxc[0].qt}} 份 <em>+{{fkxc[0].qtjzr}} <i>较昨日</i></em></span></li>
+                        <li class="lia01"><strong>发放宣传资料</strong><span>{{ffxczl}} 份 <em><% if (ffxczljzr>0) { %>+ <% } %>{{ffxczljzr}} <i>较昨日</i></em></span></li>
+                        <li class="lia02"><strong>微信群宣传</strong><span>{{wxqxc}} 份 <em><% if (wxqxcjzr>0) { %>+ <% } %>{{wxqxcjzr}} <i>较昨日</i></em></span></li>
+                        <li class="lia03"><strong>LED宣传</strong><span>{{ledxc}} 份 <em><% if (ledxcjzr>0) { %>+ <% } %>{{ledxcjzr}} <i>较昨日</i></em></span></li>
+                        <li class="lia04"><strong>发送短信</strong><span>{{fsdx}} 份 <em><% if (fsdxjzr>0) { %>+ <% } %>{{fsdxjzr}} <i>较昨日</i></em></span></li>
+                        <li class="lia05"><strong>其他</strong><span>{{qt}} 份 <em><% if (qtjzr>0) { %>+ <% } %>{{qtjzr}} <i>较昨日</i></em></span></li>
                     </ul>
                 </div>
                 </script>
@@ -102,7 +103,9 @@
         <div class="midCon">
 
             <!--地图-->
-            <div class="midBox01">
+            <div class="midBox01" >
+                <div id="orgBox06" ></div>
+                <script id="tpl-orgBox06" type="text/html">
                 <h2 class="mapTbox">
                     <span class="mapT01"><span class="mapTbg01">经济技术开发区</span></span>
                 </h2>
@@ -110,35 +113,38 @@
                 <span class="greenBg02"></span>
                 <span class="greenBg03"></span>
                 <span class="greenBg04"></span>
-
                     <ul class="mapTxt">
-                        <li><span><em>+20</em>较昨日</span><strong>9898</strong>现存确诊</li>
-                        <li><span><em>+20</em>较昨日</span><strong>9898</strong>累计确诊</li>
-                        <li><span><em>+20</em>较昨日</span><strong>9898</strong>现存疑似</li>
-                        <li><span><em>+20</em>较昨日</span><strong>9898</strong>累计死亡</li>
-                        <li><span><em>+20</em>较昨日</span><strong>9898</strong>现存重症</li>
-                        <li><span><em>+20</em>较昨日</span><strong>9898</strong>累计治愈</li>
+                        <li><span><em><% if (b.xcqzjzr>0) { %>+ <% } %>{{b.xcqzjzr}}</em>较昨日</span><strong>{{b.xcqz}}</strong>现存确诊</li>
+                        <li><span><em><% if (b.ljqzjzr>0) { %>+ <% } %>{{b.ljqzjzr}}</em>较昨日</span><strong>{{b.ljqz}}</strong>累计确诊</li>
+                        <li><span><em><% if (b.xcysjzr>0) { %>+ <% } %>{{b.xcysjzr}}</em>较昨日</span><strong>{{b.xcys}}</strong>现存疑似</li>
+                        <li><span><em><% if (b.ljswjzr>0) { %>+ <% } %>{{b.ljswjzr}}</em>较昨日</span><strong>{{b.ljsw}}</strong>累计死亡</li>
+                        <li><span><em><% if (b.xczzjzr>0) { %>+ <% } %>{{b.xczzjzr}}</em>较昨日</span><strong>{{b.xczz}}</strong>现存重症</li>
+                        <li><span><em><% if (b.ljzyjzr>0) { %>+ <% } %>{{b.ljzyjzr}}</em>较昨日</span><strong>{{b.ljzy}}</strong>累计治愈</li>
                     </ul>
 
                 <div class="midBox01in">
                     <div class="mapMessbox">
                         <div class="mapMess">
                             <ul>
+                                {{each a item i}}
+                                <li><span>{{item.sjfssj}}</span>{{item.sj}}</li>
+                                {{/each}}
+                             <!--   <li><span>2020/02/20 15:00:00</span>昆经开洛羊街道259号世贸大厦 有一市民未佩戴口罩</li>
                                 <li><span>2020/02/20 15:00:00</span>昆经开洛羊街道259号世贸大厦 有一市民未佩戴口罩</li>
                                 <li><span>2020/02/20 15:00:00</span>昆经开洛羊街道259号世贸大厦 有一市民未佩戴口罩</li>
-                                <li><span>2020/02/20 15:00:00</span>昆经开洛羊街道259号世贸大厦 有一市民未佩戴口罩</li>
-                                <li><span>2020/02/20 15:00:00</span>昆经开洛羊街道259号世贸大厦 有一市民未佩戴口罩</li>
+                                <li><span>2020/02/20 15:00:00</span>昆经开洛羊街道259号世贸大厦 有一市民未佩戴口罩</li>-->
                             </ul>
                         </div>
                     </div>
-                    <ul class="mapTab">
-                        <li><a href="#" class="hover">现在确诊</a></li>
-                        <li><a href="#">累计确诊</a></li>
+                   <ul class="mapTab">
+                        <li><a href="javascript:void(0)" class="hover" onclick="searchMap('1')" id="btn01">现存确诊</a></li>
+                        <li><a href="javascript:void(0)" onclick="searchMap('2')" id="btn02">累计确诊</a></li>
                     </ul>
                 </div>
 
-                <div id="chart-panel"></div>
+                </script>
 
+                <div id="chart-panel"></div>
             </div>
             <!--地图 //-->
             <!--趋势图-->
@@ -196,7 +202,8 @@
         </div>
         <div class="sideCon">
             <!--网格化排查及联防联控-->
-            <div class="sideBox01">
+            <div class="sideBox01" id="orgBox04">
+                <script id="tpl-orgBox04" type="text/html">
                 <h2 class="mapTbox">
                     <span class="mapT01"><span class="mapTbg01">网格化排查及联防联控</span></span>
                 </h2>
@@ -205,29 +212,30 @@
                         <li>
                             <div class="liBg">
                             <strong>发动参加排查人员总数</strong>
-                            <p class="color01"><em>累计</em>2127人</p>
-                            <p class="color02"><em>新增</em>2127人</p>
+                            <p class="color01"><em>累计</em>{{fdcjpcryzslj}}人</p>
+                            <p class="color02"><em>新增</em>{{fdcjpcryzsxz}}人</p>
                             </div>
                         </li>
                         <li>
                             <div class="liBg">
                             <strong>微信群数量</strong>
-                            <p class="color01"><em>累计</em>2127人</p>
-                            <p class="color02"><em>新增</em>2127人</p>
+                            <p class="color01"><em>累计</em>{{wxqsllj}}人</p>
+                            <p class="color02"><em>新增</em>{{wxqslxz}}人</p>
                             </div>
                         </li>
                         <li>
                             <strong>排查总人数</strong>
-                            <p class="color01"><i></i><em>累计</em>2127人</p>
-                            <p class="color02"><i></i><em>新增</em>2127人</p>
+                            <p class="color01"><i></i><em>累计</em>{{pczrslj}}人</p>
+                            <p class="color02"><i></i><em>新增</em>{{pczrsxz}}人</p>
                         </li>
                         <li>
                             <strong>微信群覆盖率</strong>
-                            <p class="color01"><i></i><em>累计</em>2127人</p>
-                            <p class="color02"><i></i><em>新增</em>2127人</p>
+                            <p class="color01"><i></i><em>累计</em>{{fxqfgllj}}人</p>
+                            <p class="color02"><i></i><em>新增</em>{{fxqfglxz}}人</p>
                         </li>
                     </ul>
                 </div>
+                </script>
             </div>
             <!--网格化排查及联防联控 //-->
             <!--重点人员摸排-->
@@ -254,7 +262,8 @@
             </div>
             <!--重点人员摸排 //-->
             <!--疫区来昆人员追踪-->
-            <div class="sideBox03">
+            <div class="sideBox03" id="orgBox05">
+                <script id="tpl-orgBox05" type="text/html">
                 <h2 class="mapTbox">
                     <span class="mapT01"><span class="mapTbg01">疫区来昆人员追踪</span></span>
                 </h2>
@@ -265,64 +274,22 @@
                             <col width="*" />
                             <col width="18%" />
                         </colgroup>
+                        {{each ryzz item i}}
                         <tr>
-                            <th>总数</th>
-                            <td><p class="lineBox"><span style="width: 20%"></span></p></td>
-                            <td>12345人</td>
+                            <th>{{item.rylx}}</th>
+
+                                <% if (item.rylx=='总数') { %>
+                            <td><p class="lineBox"> <span style="width: 100%"></span></p></td>
+                                         <% } else { %>
+                            <td><p class="lineBox"> <span style="width: {{(item.rysl/ ryzz[0].rysl)*100}}%"></span></p></td>
+                                         <% } %>
+
+                            <td>{{item.rysl}}</td>
                         </tr>
-                        <tr>
-                            <th>入住指定得如家商旅</th>
-                            <td><p class="lineBox"><span style="width: 20%"></span></p></td>
-                            <td>12345人</td>
-                        </tr>
-                        <tr>
-                            <th>入住指定得如家商旅</th>
-                            <td><p class="lineBox"><span style="width: 20%"></span></p></td>
-                            <td>12345人</td>
-                        </tr>
-                        <tr>
-                            <th>入住指定得如家商旅</th>
-                            <td><p class="lineBox"><span style="width: 20%"></span></p></td>
-                            <td>12345人</td>
-                        </tr>
-                        <tr>
-                            <th>入住指定得如家商旅</th>
-                            <td><p class="lineBox"><span style="width: 20%"></span></p></td>
-                            <td>12345人</td>
-                        </tr>
-                        <tr>
-                            <th>入住指定得如家商旅</th>
-                            <td><p class="lineBox"><span style="width: 20%"></span></p></td>
-                            <td>12345人</td>
-                        </tr>
-                        <tr>
-                            <th>入住指定得如家商旅</th>
-                            <td><p class="lineBox"><span style="width: 20%"></span></p></td>
-                            <td>12345人</td>
-                        </tr>
-                        <tr>
-                            <th>入住指定得如家商旅</th>
-                            <td><p class="lineBox"><span style="width: 20%"></span></p></td>
-                            <td>12345人</td>
-                        </tr>
-                        <tr>
-                            <th>入住指定得如家商旅</th>
-                            <td><p class="lineBox"><span style="width: 20%"></span></p></td>
-                            <td>12345人</td>
-                        </tr>
-                        <tr>
-                            <th>入住指定得如家商旅</th>
-                            <td><p class="lineBox"><span style="width: 20%"></span></p></td>
-                            <td>12345人</td>
-                        </tr>
-                        <tr>
-                            <th>入住指定得如家商旅</th>
-                            <td><p class="lineBox"><span style="width: 20%"></span></p></td>
-                            <td>12345人</td>
-                        </tr>
+                        {{/each}}
                     </table>
                 </div>
-
+                </script>
             </div>
             <!--疫区来昆人员追踪 //-->
 
@@ -337,32 +304,191 @@
 <script type="text/javascript" src="src/js/chartLine02.js"></script>
 <script type="text/javascript" src="src/js/chartPie01.js"></script>
 <script>
-    //消息滚动
-    $('.mapMess').liMarquee({
-        direction: 'up',
-        scrolldelay:0,
-        scrollamount: 10
 
-    });
+    function searchMap(type) {//初始化-资源配置
+        if(type === 1 || type === '1' ){
+            $("#btn02").removeClass('hover')
+            $("#btn01").addClass('hover')
+        }else{
+            $("#btn01").removeClass('hover')
+            $("#btn02").addClass('hover')
+        }
+        $.axget("/api/yndp/map/getMapList?jgId=1&qzlx="+type, function (res) {
+
+            setMyMapChartData(res.data);
+        });
+    }
 
     var initOrgBox01 = function (data) {
-        var html = template('tpl-orgBox01', data);
-        document.getElementById('orgBox01').innerHTML = html;
+        if(data){
+            var html = template('tpl-orgBox01', data);
+            document.getElementById('orgBox01').innerHTML = html;
+        }else{
+            var html = template('tpl-orgBox01', {});
+            document.getElementById('orgBox01').innerHTML = html;
+
+        }
     }
 
     var initOrgBox02 = function (data) {
-        var html = template('tpl-orgBox02', {
-            wzbz: data
-        });
-        document.getElementById('orgBox02').innerHTML = html;
+        if(data.length != 0){
+            var html = template('tpl-orgBox02', {
+                wzbz: data
+            });
+            document.getElementById('orgBox02').innerHTML = html;
+        }else{
+            var html = template('tpl-orgBox02', {
+                wzbz: [{},{},{},{},{}]
+            });
+            document.getElementById('orgBox02').innerHTML = html;
+
+        }
+
     }
 
     var initOrgBox03 = function (data) {
-        alert(data)
+        var szrc ='-';
+        var szrcjzr ='-';
+        var ffxczl ='-';
+        var ffxczljzr ='-';
+
+        var wxqxc ='-';
+        var wxqxcjzr ='-';
+        var ledxc ='-';
+        var ledxcjzr ='-';
+
+        var fsdx ='-';
+        var fsdxjzr ='-';
+        var qt ='-';
+        var qtjzr ='-';
+        if(data!=null && data!=""&&data.length>0){
+            if(data[0].szrc!=null && data[0].szrc!=""){
+                szrc=data[0].szrc;
+            }
+            if(data[0].szrcjzr!=null && data[0].szrcjzr!=""){
+                szrcjzr=data[0].szrcjzr;
+            }
+            if(data[0].ffxczl!=null && data[0].ffxczl!=""){
+                ffxczl=data[0].ffxczl;
+            }
+            if(data[0].ffxczljzr!=null && data[0].ffxczljzr!=""){
+                ffxczljzr=data[0].ffxczljzr;
+            }
+            if(data[0].wxqxc!=null && data[0].wxqxc!=""){
+                wxqxc=data[0].wxqxc;
+            }
+            if(data[0].wxqxcjzr!=null && data[0].wxqxcjzr!=""){
+                wxqxcjzr=data[0].wxqxcjzr;
+            }
+            if(data[0].ledxc!=null && data[0].ledxc!=""){
+                ledxc=data[0].ledxc;
+            }
+            if(data[0].ledxcjzr!=null && data[0].ledxcjzr!=""){
+                ledxcjzr=data[0].ledxcjzr;
+            }
+
+            if(data[0].fsdx!=null && data[0].fsdx!=""){
+                fsdx=data[0].fsdx;
+            }
+            if(data[0].fsdxjzr!=null && data[0].fsdxjzr!=""){
+                fsdxjzr=data[0].fsdxjzr;
+            }
+            if(data[0].qt!=null && data[0].qt!=""){
+                qt=data[0].qt;
+            }
+            if(data[0].qtjzr!=null && data[0].qtjzr!=""){
+                qtjzr=data[0].qtjzr;
+            }
+        }
+
         var html = template('tpl-orgBox03',{
-            fkxc: data
+            szrc: szrc,
+            szrcjzr: szrcjzr,
+            ffxczl: ffxczl,
+            ffxczljzr: ffxczljzr,
+
+            wxqxc: wxqxc,
+            wxqxcjzr: wxqxcjzr,
+            ledxc: ledxc,
+            ledxcjzr: ledxcjzr,
+
+            fsdx: fsdx,
+            fsdxjzr: fsdxjzr,
+            qt: qt,
+            qtjzr: qtjzr
         });
         document.getElementById('orgBox03').innerHTML = html;
+    }
+
+    var initOrgBox04 = function (data) {
+        var fdcjpcryzslj ='-';
+        var fdcjpcryzsxz ='-';
+        var wxqsllj ='-';
+        var wxqslxz ='-';
+        var pczrslj ='-';
+        var pczrsxz ='-';
+        var fxqfgllj ='-';
+        var fxqfglxz ='-';
+       if(data!=null && data!=""&&data.length>0){
+           if(data[0].fdcjpcryzslj!=null && data[0].fdcjpcryzslj!=""){
+               fdcjpcryzslj=data[0].fdcjpcryzslj;
+           }
+           if(data[0].fdcjpcryzsxz!=null && data[0].fdcjpcryzsxz!=""){
+               fdcjpcryzsxz=data[0].fdcjpcryzsxz;
+           }
+           if(data[0].wxqsllj!=null && data[0].wxqsllj!=""){
+               wxqsllj=data[0].wxqsllj;
+           }
+           if(data[0].wxqslxz!=null && data[0].wxqslxz!=""){
+               wxqslxz=data[0].wxqslxz;
+           }
+           if(data[0].pczrslj!=null && data[0].pczrslj!=""){
+               pczrslj=data[0].pczrslj;
+           }
+           if(data[0].pczrsxz!=null && data[0].pczrsxz!=""){
+               pczrsxz=data[0].pczrsxz;
+           }
+           if(data[0].fxqfgllj!=null && data[0].fxqfgllj!=""){
+               fxqfgllj=data[0].fxqfgllj;
+           }
+           if(data[0].fxqfglxz!=null && data[0].fxqfglxz!=""){
+               fxqfglxz=data[0].fxqfglxz;
+           }
+       }
+        var html = template('tpl-orgBox04',{
+            fdcjpcryzslj: fdcjpcryzslj,
+            fdcjpcryzsxz: fdcjpcryzsxz,
+            wxqsllj: wxqsllj,
+            wxqslxz: wxqslxz,
+            pczrslj: pczrslj,
+            pczrsxz: pczrsxz,
+            fxqfgllj: fxqfgllj,
+            fxqfglxz: fxqfglxz
+        });
+        document.getElementById('orgBox04').innerHTML = html;
+    }
+
+    var initOrgBox05 = function (data) {
+        var html = template('tpl-orgBox05', {
+            ryzz: data
+        });
+        document.getElementById('orgBox05').innerHTML = html;
+    }
+
+    var initOrgBox06 = function (a,b,c) {
+        var html = template('tpl-orgBox06', {
+            a: a,
+            b: b,
+            c: c
+        });
+        document.getElementById('orgBox06').innerHTML = html;
+        //消息滚动
+        $('.mapMess').liMarquee({
+            direction: 'up',
+            scrolldelay:0,
+            scrollamount: 10
+
+        });
     }
 
     function getQueryVariable(variable) {
@@ -378,26 +504,60 @@
     }
 
     var initZypz = function (jgId, jgName) {//初始化-资源配置
-        $.axget("/api/yndp/zypz/findZypzByJgId?jgid=1", function (data) {
-            initOrgBox01(data)
-            console.log("资源配置"+data)
+        $.axget("/api/yndp/zypz/findZypzByJgId?jgId="+jgId, function (res) {
+            initOrgBox01(res.data)
         });
     }
 
     var initWzbz = function (jgId, jgName) {//初始化-物资保障
-        $.axget("/api/yndp/wzbz/findWzbzListByJgId?jgid=1", function (data) {
-        initOrgBox02(data)
-        console.log("物资保障")
+        $.axget("/api/yndp/wzbz/findWzbzListByJgId?jgId="+jgId, function (res) {
+        initOrgBox02(res.data)
+        console.log("物资保障"+res.data)
         });
     }
 
     var initFkxc = function (jgId, jgName) {//初始化-防控宣传
-        $.axget("/api/yndp/fkxc/getFkxcList?jgId=1", function (res) {
-            initOrgBox03(res.data)
+        $.axget("/api/yndp/fkxc/getFkxcList?jgId="+jgId, function (res) {
+                initOrgBox03(res.data)
         });
     }
 
-    var initMap = function (jgId,jgName) {
+    var initPclk = function (jgId, jgName) {//初始化-网格化排查及联防联控
+        $.axget("/api/yndp/wghpclflk/getPcjlflkList?jgId="+jgId, function (res) {
+            initOrgBox04(res.data)
+        });
+    }
+
+    var initRyzz = function (jgId, jgName) {//初始化-疫区来昆人员追踪
+        $.axget("/api/yndp/yqlkryzz/getSameDay?jgId="+jgId, function (data) {
+            initOrgBox05(data)
+        });
+    }
+
+
+
+    var initdt = function (jgId, jgName) {//初始化-地图
+        var a ='';
+        var b ='';
+        var c ='';
+        $.axget1("/api/yndp/map/getMapSjList?jgId="+jgId,false, function (res) {
+            a=res.data;
+        });
+        $.axget1("/api/yndp/map/getMapHzsjList?jgId="+jgId,false, function (res) {
+            b=res.data;
+        });
+        $.axget1("/api/yndp/map/getMapList?qzlx=1&jgId="+jgId,false, function (res) {
+            c=res.data;
+            setMyMapChartData(c);
+        });
+        if(a && b && c)
+            initOrgBox06(a,b,c);
+        else
+            initOrgBox06({},{},{});
+    }
+
+    var initMap = function (jgId,jgName, call) {
+        echartsMap();
         $.getJSON(jiangxi, function (geoJson) {
             echarts.registerMap('经开区', geoJson);
             var myChart = echarts.extendsMap('chart-panel', {
@@ -406,11 +566,27 @@
                 goDown: true,       // 是否下钻
                 // 下钻回调
                 callback: function (name, option, instance) {
-                    myChart.setInitData('经开区')
+                    if(name === "经开区")
+                        jname = '区疫情防控指挥部'
+                    else
+                        jname = name
+                    $.axget1("/api/yndp/glgz/getJgId?jgmc="+ jname,false, function (res) {
+                        // myChart.setInitData('经开区')
+                        initZypz(res.data, name)
+                        initWzbz(res.data, name)
+                        initFkxc(res.data, name)
+                        initPclk(res.data, name)
+                        initRyzz(res.data, name)
+                        initdt(res.data, name)
+                    });
                 }
             });
 
             myChart.setInitData('经开区')
+            myChart.setMap(jgName )
+            // initdt(jgId,jgName)
+
+            call(jgId,jgName)
         })
     }
 
@@ -419,9 +595,22 @@
         initZypz(jgId, jgName)
         initWzbz(jgId, jgName)
         initFkxc(jgId, jgName)
+        initPclk(jgId, jgName)
+        initRyzz(jgId, jgName)
+        initMap(jgId, jgName, initdt)
 
-        initMap(jgId, jgName)
     }
+
+    var initHtmlNoMap = function (jgId, jgName) {
+        initZypz(jgId, jgName)
+        initWzbz(jgId, jgName)
+        initFkxc(jgId, jgName)
+        initPclk(jgId, jgName)
+        initRyzz(jgId, jgName)
+        // initMap(jgId, jgName)
+        initdt(jgId, jgName)
+    }
+
     $(document).ready(function () {
         initWebSocket(2,function(e){
             var jgId = e.jgId;
@@ -431,9 +620,14 @@
             console.log("!!!!!"+jgName)
             initHtml(jgId, jgName);
         })
-        var jgId = getQueryVariable("jgId")
-        var jgName = getQueryVariable("jgName")
-        initHtml(jgId, jgName)
+        // var jgId = getQueryVariable("jgId")
+        // var jgName = getQueryVariable("jgName")
+        // initHtml(jgId, jgName)
+
+        $.axget1("/api/yndp/glgz/getJgId?jgmc="+ '区疫情防控指挥部',false, function (res) {
+            initHtml(res.data, '经开区')
+        });
+
     });
 </script>
 </body>

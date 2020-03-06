@@ -29,4 +29,13 @@ public interface YndpFkdcYqlkryzzRepository extends BaseRepository<YndpFkdcYqlkr
      */
     @Query(value = "select * FROM yndp_fkdc_yqlkryzz where rq between STR_TO_DATE(?1,'%Y-%m-%d') and STR_TO_DATE(?2,'%Y-%m-%d') and jgid= ?3 and rylx = '总数' ORDER BY str_to_date(rq, '%Y-%m-%d')",nativeQuery = true)
     List<YndpFkdcYqlkryzz> findDayData(String date1, String date2,String jgid);
+
+
+    /**
+     * 获得时间段每日数据记录
+     * @param jgid  机构ID
+     * @return List
+     */
+    @Query(value = "SELECT * FROM yndp_fkdc_yqlkryzz WHERE DATE_FORMAT(rq, 'Y%m%d') = DATE_FORMAT(now(), 'Y%m%d') AND jgid= ?1 ORDER BY px",nativeQuery = true)
+    List<YndpFkdcYqlkryzz> getSameDay(String jgid);
 }

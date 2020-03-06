@@ -34,15 +34,13 @@ var lyjdnjysq = "./static/json/data-1518338805373-LYJD-NJYSQ.json";
 var lyjdslhsq = "./static/json/data-1518338805373-LYJD-SLHSQ.json";
 var lyjdsjssq = "./static/json/data-1518338805373-LYJD-SJSSQ.json";
 
-
-
-var options = null;
-
-var provinceData = [[ 102.85494405299998, 24.946454769999982]]
+var myMapChart = null;
+var myMapOp = null
 
 echarts.extendsMap = function (id, opt) {
     // 实例
     var chart = this.init(document.getElementById(id));
+    myMapChart = chart;
     var curGeoJson = {};
     var cityMap = {
         "阿拉街道": aljd,
@@ -219,6 +217,7 @@ echarts.extendsMap = function (id, opt) {
                     },
                     onclick: function () {
                         var name = this.style.key;
+                        // handleEvents.initHtml(name)
                         handleEvents.resetOption(chart, option, name);
                         handleEvents.setData(chart,option,name)
                     }
@@ -234,6 +233,7 @@ echarts.extendsMap = function (id, opt) {
                     },
                     onclick: function () {
                         var name = this.style.text;
+                        // handleEvents.initHtml(name)
                         handleEvents.resetOption(chart, option, name);
                         handleEvents.setData(chart,option,name)
                     }
@@ -251,6 +251,7 @@ echarts.extendsMap = function (id, opt) {
                     onclick: function () {
                         // console.log(this.style);
                         var name = this.style.name;
+                        // handleEvents.initHtml(name)
                         handleEvents.resetOption(chart, option, name);
                         handleEvents.setData(chart,option,name)
                     }
@@ -292,6 +293,12 @@ echarts.extendsMap = function (id, opt) {
                 zoom(0.2);
             });
         },
+        initHtml: function( name){
+            $.axget1("/api/yndp/glgz/getJgId?jgmc="+ name ,false, function (res) {
+                console.log(res.data)
+                initHtmlNoMap(res.data, name)
+            });
+        },
         setData: function (i,option,name) {
             console.log("name"+name)
             option.series[1].data =[]
@@ -317,23 +324,23 @@ echarts.extendsMap = function (id, opt) {
                 }];
                 i.setOption(options, true);
             } else if(name == "经开区"){
-                option.series[1].data = [{
-                    name: '',
-                    visualMap: false,
-                    username: "阿拉街道",
-                    address: "疫区来昆人数",
-                    number:"8130人",
-                    value: [ 102.85494405299998, 24.998903901328593]
-                }];
-
-                option.series[2].data = [{
-                    name: '',
-                    visualMap: false,
-                    username: "洛羊街道",
-                    address: "疫区来昆人数",
-                    number:"8130人",
-                    value: [  102.85494405299998,24.946454769999982]
-                }];
+                // option.series[1].data = [{
+                //     name: '',
+                //     visualMap: false,
+                //     username: "阿拉街道",
+                //     address: "疫区来昆人数",
+                //     number:ljqzs1+"人",
+                //     value: [ 102.85494405299998, 24.998903901328593]
+                // }];
+                //
+                // option.series[2].data = [{
+                //     name: '',
+                //     visualMap: false,
+                //     username: "洛羊街道",
+                //     address: "疫区来昆人数",
+                //     number:ljqzs2+"人",
+                //     value: [  102.85494405299998,24.946454769999982]
+                // }];
 
                 // options.series[5].data = [{
                 //     name: '',
@@ -343,7 +350,7 @@ echarts.extendsMap = function (id, opt) {
                 //     value: [102.85494405299998, 24.946454769999982]
                 // }];
                 option.series[6].data =  [
-                    { name: "阿拉街道", value: 1110 },
+                    { name: "阿拉街道", value: 0 },
                     { name: '洛羊街道', value: 0 },
                     { name: '高坡社区', value: 0 },
                     { name: '海子社区', value: 11 },
@@ -356,7 +363,6 @@ echarts.extendsMap = function (id, opt) {
                     { name: '八公里社区', value: 77 },
                     { name: '昌宏社区', value: 55 },
                     { name: '长春社区', value: 55 },
-
                     { name: '大冲社区', value: 0 },
                     { name: '阿拉社区', value: 2 },
                     { name: '大新册社区', value: 3 },
@@ -369,11 +375,6 @@ echarts.extendsMap = function (id, opt) {
                     { name: '倪家营社区', value: 0 },
                     { name: '石龙湖社区', value: 20 },
                     { name: '水井山社区', value: 0 }
-
-
-
-
-
                 ];
                 i.setOption(option, true);
             }
@@ -392,42 +393,17 @@ echarts.extendsMap = function (id, opt) {
                 color: "#ffffff"
             },
             pieces: [{
-                gt: 10000,
-                label: "> 10000 人",
-                color: "#033250"
-            },{
-                gte: 1000,
-                lte: 10000,
-                label: "1000 - 10000 人",
-                color: "#064e7b"
-            },{
-                gte: 500,
-                lt: 999,
-                label: "500 - 499 人",
-                color: "#0d83cf"
-            },  {
-                gte: 100,
-                lt: 500,
-                label: "10 - 499 人",
-                color: "#11a2f8"
-            }, {
-                gte: 10,
-                lt: 100,
-                label: "10 - 99 人",
-                color: "#3db2f8"
+                gt: 10,
+                label: "> 10 人",
+                color:  'rgba(250,107,64,0.60)'
             }, {
                 gte: 1,
                 lt: 10,
                 label: "1 - 9 人",
-                color: "#5fbdf6"
-            }, {
-                gt: 0,
-                lt: 1,
-                label: "疑似",
-                color: "#77c6f6"
+                color:  'rgba(3,176,246,0.60)'
             }, {
                 value: 0,
-                color: "#ffffff"
+                color: 'rgba(19,187,135,0.60)'
             }],
             show: !0
         },
@@ -487,32 +463,32 @@ echarts.extendsMap = function (id, opt) {
                     }
                 },
                     {
-                    type: 'text',
-                    left: 0,
-                    top: 50,
-                    style: {
-                        text: name[0] === '经开区' ? '经开区' : name[0],
-                        textAlign: 'center',
-                        fill: style.textColor,
-                        font: style.font
-                    },
-                    onclick: function () {
-                        handleEvents.resetOption(chart, option, '经开区');
+                        type: 'text',
+                        left: 0,
+                        top: 50,
+                        style: {
+                            text: name[0] === '经开区' ? '经开区' : name[0],
+                            textAlign: 'center',
+                            fill: style.textColor,
+                            font: style.font
+                        },
+                        onclick: function () {
+                            handleEvents.resetOption(chart, option, '经开区');
+                        }
+                    }, {
+                        type: 'text',
+                        left: 0,
+                        top: 80,
+                        style: {
+                            text: 'JINGKAIQU',
+                            textAlign: 'center',
+                            fill: style.textColor,
+                            font: '12px "Microsoft YaHei", sans-serif',
+                        },
+                        onclick: function () {
+                            handleEvents.resetOption(chart, option, '经开区');
+                        }
                     }
-                }, {
-                    type: 'text',
-                    left: 0,
-                    top: 80,
-                    style: {
-                        text: 'JINGKAIQU',
-                        textAlign: 'center',
-                        fill: style.textColor,
-                        font: '12px "Microsoft YaHei", sans-serif',
-                    },
-                    onclick: function () {
-                        handleEvents.resetOption(chart, option, '经开区');
-                    }
-                }
                 ]
             }],
         geo: {
@@ -523,8 +499,8 @@ echarts.extendsMap = function (id, opt) {
                 normal: {
                     show: true,
                     textStyle: {
-                        color: '#C4C4C4',
-                        fontSize: 12,
+                        color: '#fff',
+                        fontSize: 14,
                     }
                 },
                 emphasis: {
@@ -558,8 +534,7 @@ echarts.extendsMap = function (id, opt) {
                     shadowBlur: 10
                 },
                 emphasis: {
-                    areaColor: '#2B91B7',
-                    borderWidth: 0
+                    areaColor: 'rgba(30,218,226,0.60)',
                 }
             },
             regions: opt.activeArea.map(function (item) {
@@ -637,7 +612,6 @@ echarts.extendsMap = function (id, opt) {
                         color: '#f7fafb',
                         rich: {
                             fline: {
-                                align: 'center',
                                 padding: [0, 20],
                                 color: '#50e3c2'
                             },
@@ -839,12 +813,19 @@ echarts.extendsMap = function (id, opt) {
         ]
     };
     options = option
+    myMapOp = option
     chart.setOption(option);
     // 添加事件
     chart.on('click', function (params) {
         console.log(params);
         var _self = this;
         if (opt.goDown && params.name !== name[idx]) {
+            // $.axget1("/api/yndp/glgz/getJgId?jgmc="+ params.name ,false, function (res) {
+            //     console.log(res.data)
+            //     initHtml(res.data, params.name)
+            // });
+
+            handleEvents.initHtml(params.name)
             if (cityMap[params.name]) {
                 var url = cityMap[params.name];
                 $.get(url, function (response) {
@@ -863,8 +844,8 @@ echarts.extendsMap = function (id, opt) {
         // if (mapName.indexOf('区') < 0) mapName = mapName + '区';
         var citySource = cityMap[mapName];
         if (citySource) {
-            var url = './map/' + citySource + '.json';
-            $.get(url, function (response) {
+            // var url = './map/' + citySource + '.json';
+            $.get(citySource, function (response) {
                 // console.log(response);
                 curGeoJson = response;
                 echarts.registerMap(mapName, response);
@@ -876,17 +857,91 @@ echarts.extendsMap = function (id, opt) {
     };
     chart.setInitData = function(mapName){
         var _self = this;
+        // $.axget1("/api/yndp/glgz/getJgId?jgmc="+ name ,false, function (res) {
+        //     console.log(res.data)
+        //     initHtml(res.data, name)
+        // });
+
         handleEvents.setData(_self,option,mapName)
     };
     return chart;
 };
 
+function setMyMapChartData(data) {
+    var  ljqzs1='';
+    var  ljqzs2='';
+    if(data!=null && data!=""&&data.length>0) {
+        if (data[0].ljqzs != null && data[0].ljqzs != "") {
+            ljqzs1 = data[0].ljqzs;
+        }
+    }
+    if(data!=null && data!=""&&data.length>1) {
+
+        if (data[1].ljqzs != null && data[1].ljqzs != "") {
+            ljqzs2 = data[1].ljqzs;
+        }
+    }
+    // console.log(data[0].ljqzs)
+
+    myMapOp.series[1].data = []
+    myMapOp.series[2].data = []
+    myMapOp.series[6].data =  []
+    myMapChart.setOption(myMapOp, true);
+
+    myMapOp.series[6].data =  [
+        { name: "阿拉街道", value: ljqzs1 },
+        { name: '洛羊街道', value: ljqzs2 }
+    ]
+
+    myMapOp.series[1].data = [{
+        name: '',
+        visualMap: false,
+        username: "阿拉街道",
+        address: "疫区来昆人数",
+        number:ljqzs1+"人",
+        value: [ 102.85494405299998, 24.998903901328593]
+    }];
+
+    myMapOp.series[2].data = [{
+        name: '',
+        visualMap: false,
+        username: "洛羊街道",
+        address: "疫区来昆人数",
+        number:ljqzs2+"人",
+        value: [  102.85494405299998,24.946454769999982]
+    }];
+
+    myMapChart.setOption(myMapOp, true);
+
+}
+function  echartsMap(data){
+    var  ljqzs1='';
+    var  ljqzs2='';
+    if(data!=null && data!=""&&data.length>1) {
+        if (data[0].ljqzs != null && data[0].ljqzs != "") {
+            ljqzs1 = data[0].ljqzs;
+        }
+        if (data[1].ljqzs != null && data[1].ljqzs != "") {
+            ljqzs2 = data[1].ljqzs;
+        }
+    }
+    // console.log(data[0].ljqzs)
+
+    var options = null;
+
+    var provinceData = [[ 102.85494405299998, 24.946454769999982]]
+
+
+
 
 
 // var timer = setInterval(() => {
 //数据情况重绘，清除formatter移动效果，也可根据自身需求是否需要，删除这两行代码
-/*option.series[seriesjson[runidx].createType-1].data = [];
-myChart.setOption(option, true);*/
+    /*option.series[seriesjson[runidx].createType-1].data = [];
+    myChart.setOption(option, true);*/
 
 // }, 3000);
+}
+
+
 

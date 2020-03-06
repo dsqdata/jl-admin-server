@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * @author DDXS
@@ -27,18 +28,19 @@ public class YndpFkdcZypzController {
 
     @ApiOperation("根据所选机构ID查询出资源配置数据")
     @GetMapping(value = "/findZypzByJgId")
-    @ResponseBody
-    public Result findZypzByJgId(YndpFkdcZypz yndpFkdcZypz) {
+    public Result findZypzByJgId(@RequestParam String jgId) {
 
         // 1. 获取所选择机构ID
-        String jgId = yndpFkdcZypz.getJgid();
+     /*   String jgId = yndpFkdcZypz.getJgid();*/
         // 2. 根据所选择的机构ID查询出列表
         YndpFkdcZypz zypz = yndpFkdcZypzService.findZypzByJgId(jgId);
 //        return new ResponseEntity<>(zypz, HttpStatus.OK);
+
         Result result = new Result();
         result.setCode(Result.SUCCESS_CODE);
         result.setData(zypz);
         result.setMessage("成功");
         return result;
+
     }
 }
