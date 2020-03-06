@@ -60,10 +60,10 @@ public class YndpFjbsGlgzController {
     @GetMapping(value = "/getJgId")
     public Result getJgId(@RequestParam String jgmc, HttpServletRequest request, HttpServletResponse response) {
         // 根据机构ID查询出上级机构
-        String jgId = yndpFkbsJgService.getJgId(jgmc);
+        YndpFkbsJg yndpFkbsJg = yndpFkbsJgService.getJgId(jgmc);
         Result result = new Result();
         result.setCode(Result.SUCCESS_CODE);
-        result.setData(jgId);
+        result.setData(yndpFkbsJg);
         result.setMessage("成功");
         return result;
     }

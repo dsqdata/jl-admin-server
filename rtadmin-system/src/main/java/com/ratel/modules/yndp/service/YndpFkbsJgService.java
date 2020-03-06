@@ -52,7 +52,7 @@ public class YndpFkbsJgService extends BaseService<YndpFkbsJg, String> {
     }
 
     //根据机构名称查询出机构Id
-    public String getJgId(String jgmc) {
+    public YndpFkbsJg getJgId(String jgmc) {
         return yndpFkbsJgRepository.getJgId(jgmc);
     }
 }

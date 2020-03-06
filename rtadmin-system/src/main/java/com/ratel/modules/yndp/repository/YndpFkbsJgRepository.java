@@ -30,6 +30,6 @@ public interface YndpFkbsJgRepository  extends BaseRepository<YndpFkbsJg, String
     List<YndpFkbsJg> getAllJg();
 
     //  //根据机构名称查询出机构Id
-    @Query(nativeQuery = true, value = "select jgid from yndp_fkbs_jg where jgmc=?1")
-    String getJgId(String jgmc);
+    @Query(nativeQuery = true, value = "select * from yndp_fkbs_jg where jgmc=?1")
+    YndpFkbsJg getJgId(String jgmc);
 }
