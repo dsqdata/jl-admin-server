@@ -2,6 +2,7 @@ package com.ratel.modules.yndp.rest;
 
 import com.ratel.modules.yndp.domain.YndpFkdcYqqs;
 import com.ratel.modules.yndp.service.YndpFkdcYqqsService;
+import com.ratel.modules.yndp.util.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,12 @@ public class YndpFkdcYqqsController {
 
     @GetMapping(value = "/getYqqsChartData")
     @ApiOperation("疫情趋势图")
-    public ResponseEntity<Object> getYqqsChartData(YndpFkdcYqqs yndpFkdcYqqs) {
-        return new ResponseEntity<>(yndpFkdcYqqsService.getYqqsChartData(yndpFkdcYqqs), HttpStatus.OK);
+    public Result getYqqsChartData(YndpFkdcYqqs yndpFkdcYqqs) {
+//        return new ResponseEntity<>(yndpFkdcYqqsService.getYqqsChartData(yndpFkdcYqqs), HttpStatus.OK);
+        Result result = new Result();
+        result.setCode(Result.SUCCESS_CODE);
+        result.setData(yndpFkdcYqqsService.getYqqsChartData(yndpFkdcYqqs));
+        result.setMessage("成功");
+        return result;
     }
 }

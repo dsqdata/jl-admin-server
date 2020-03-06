@@ -2,6 +2,7 @@ package com.ratel.modules.yndp.rest;
 
 import com.ratel.modules.yndp.domain.YndpFkdcYqlkryzz;
 import com.ratel.modules.yndp.service.YndpFkdcYqlkryzzService;
+import com.ratel.modules.yndp.util.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,13 +23,23 @@ public class YndpFkdcYqlkryzzController {
 
     @GetMapping(value = "/getYqlkryzzData")
     @ApiOperation("疫区来昆人员追踪数据")
-    public ResponseEntity<Object> getYqlkryzzData(YndpFkdcYqlkryzz yndpFkdcYqlkryzz) {
-        return new ResponseEntity<>(yndpFkdcYqlkryzzService.getYqlkryzzData(yndpFkdcYqlkryzz), HttpStatus.OK);
+    public Result getYqlkryzzData(YndpFkdcYqlkryzz yndpFkdcYqlkryzz) {
+//        return new ResponseEntity<>(yndpFkdcYqlkryzzService.getYqlkryzzData(yndpFkdcYqlkryzz), HttpStatus.OK);
+        Result result = new Result();
+        result.setCode(Result.SUCCESS_CODE);
+        result.setData(yndpFkdcYqlkryzzService.getYqlkryzzData(yndpFkdcYqlkryzz));
+        result.setMessage("成功");
+        return result;
     }
 
     @GetMapping(value = "/getDayData")
     @ApiOperation("查询每日数据")
-    public ResponseEntity<Object> getDayData(YndpFkdcYqlkryzz yndpFkdcYqlkryzz) {
-        return new ResponseEntity<>(yndpFkdcYqlkryzzService.getDayData(yndpFkdcYqlkryzz), HttpStatus.OK);
+    public Result getDayData(YndpFkdcYqlkryzz yndpFkdcYqlkryzz) {
+//        return new ResponseEntity<>(yndpFkdcYqlkryzzService.getDayData(yndpFkdcYqlkryzz), HttpStatus.OK);
+        Result result = new Result();
+        result.setCode(Result.SUCCESS_CODE);
+        result.setData(yndpFkdcYqlkryzzService.getDayData(yndpFkdcYqlkryzz));
+        result.setMessage("成功");
+        return result;
     }
 }

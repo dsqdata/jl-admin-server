@@ -2,6 +2,7 @@ package com.ratel.modules.yndp.rest;
 
 import com.ratel.modules.yndp.domain.YndpFkdcZdrymp;
 import com.ratel.modules.yndp.service.YndpFkdcZdrympService;
+import com.ratel.modules.yndp.util.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,12 @@ public class YndpFkdcZdrympController {
 
     @GetMapping(value = "/getZdrympData")
     @ApiOperation("重点人员摸排数据")
-    public ResponseEntity<Object> getZdrympData(YndpFkdcZdrymp yndpFkdcZdrymp) {
-        return new ResponseEntity<>(yndpFkdcZdrympService.getZdrympData(yndpFkdcZdrymp), HttpStatus.OK);
+    public Result getZdrympData(YndpFkdcZdrymp yndpFkdcZdrymp) {
+//        return new ResponseEntity<>(yndpFkdcZdrympService.getZdrympData(yndpFkdcZdrymp), HttpStatus.OK);
+        Result result = new Result();
+        result.setCode(Result.SUCCESS_CODE);
+        result.setData(yndpFkdcZdrympService.getZdrympData(yndpFkdcZdrymp));
+        result.setMessage("成功");
+        return result;
     }
 }
