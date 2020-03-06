@@ -79,6 +79,8 @@
                                     </ul>
                                 </div>
                             </div>
+                        <% } else if(xjlx==null){ %>
+
                         <% } else { %>
                             <div class="leftBox01">
                                 <span class="bgTop01"></span>
@@ -396,7 +398,7 @@
                     initOrgBox02(treeData,xjlx);
                 });
             } else if (currentNum  === '2'){
-                if(currentWgcyPage1>=(wgcyMaxPage2/3)){
+                if(currentWgcyPage2>=(wgcyMaxPage2/3)){
                     return;
                 }
                 //查询
@@ -408,7 +410,7 @@
                     initOrgBox02(treeData,xjlx);
                 });
             } else{
-                if(currentWgcyPage1>=(wgcyMaxPage3/3)){
+                if(currentWgcyPage3>=(wgcyMaxPage3/3)){
                     return;
                 }
                 //查询

@@ -10,15 +10,21 @@
     <script type="text/javascript" src="component/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <script type="text/javascript" src="component/echarts/echarts.js"></script>
     <script type="text/javascript" src="static/js/template-web.js"></script>
+    <script type="text/javascript" src="component/socket/socketConfig.js"></script>
     <script type="text/javascript" src="component/socket/socketClient.js"></script>
 
 </head>
 <body>
 <div id="wrapper">
-    <div id="header">
+    <div id="header"></div>
+    <script id="tpl-header" type="text/html">
         <h1></h1>
-        <p class="txtP">数据更新时间 <span>2020年2月29日</span></p>
-    </div>
+        <p class="txtP">数据更新时间 <span>{{sjgxsj}}</span></p>
+    </script>
+    <!--    <div id="header">-->
+    <!--        <h1></h1>-->
+    <!--        <p class="txtP">数据更新时间 <span>2020年2月29日</span></p>-->
+    <!--    </div>-->
     <div id="container" class="clearfix">
         <div class="sideCon">
             <!--资源配置-->
@@ -304,6 +310,14 @@
 <script type="text/javascript" src="src/js/chartLine02.js"></script>
 <script type="text/javascript" src="src/js/chartPie01.js"></script>
 <script>
+
+    var initTime = function (data) {
+        var arr = data.sjgxsj.split('-');
+        console.log(arr);
+        var time = arr[0]+"年"+arr[1]+"月"+arr[2]+"日";
+        var html = template('tpl-header', {sjgxsj: time});
+        document.getElementById('header').innerHTML = html;
+    }
 
     function searchMap(type) {//初始化-资源配置
         if(type === 1 || type === '1' ){
@@ -612,6 +626,10 @@
     }
 
     $(document).ready(function () {
+        $.axget("/api/yndp/sjsjgx/getGxsj", function (res) {
+            initTime(res.data);
+        });
+
         initWebSocket(2,function(e){
             var jgId = e.jgId;
             var jgName = e.jgName;

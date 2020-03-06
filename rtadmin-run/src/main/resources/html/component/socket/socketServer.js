@@ -1,9 +1,11 @@
 var websock = null
 var globalCallback = null
 //
+
+
 var initWebSocket = function(id) {
     // ws地址 -->这里是你的请求路径
-    var ws = 'ws://localhost:8000/webSocket/' + id
+    var ws = socketUrl + id
 
     console.log(ws)
 

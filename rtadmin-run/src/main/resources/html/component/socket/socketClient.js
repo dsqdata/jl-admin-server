@@ -1,8 +1,9 @@
 //新建webSocket，接收到信息后调用回调方法
 var initWebSocket = function (id,callback) {
 
+
     // ws地址 -->这里是你的请求路径
-    var ws = 'ws://localhost:8000/webSocket/' + id;
+    var ws = socketUrl + id;
     console.log(ws)
     var websock = new WebSocket(ws);
 
@@ -23,3 +24,4 @@ var initWebSocket = function (id,callback) {
     }
 
 }
+
