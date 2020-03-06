@@ -36,6 +36,6 @@ public interface YndpFkdcYqlkryzzRepository extends BaseRepository<YndpFkdcYqlkr
      * @param jgid  机构ID
      * @return List
      */
-    @Query(value = "SELECT * FROM yndp_fkdc_yqlkryzz WHERE DATE_FORMAT(rq, 'Y%m%d') = DATE_FORMAT(now(), 'Y%m%d') AND jgid= ?1 ORDER BY px",nativeQuery = true)
-    List<YndpFkdcYqlkryzz> getSameDay(String jgid);
+    @Query(value = "SELECT * FROM yndp_fkdc_yqlkryzz WHERE DATE_FORMAT(rq, 'Y%m%d') = DATE_FORMAT(?1, 'Y%m%d') AND jgid= ?2 ORDER BY px",nativeQuery = true)
+    List<YndpFkdcYqlkryzz> getSameDay(String data,String jgid);
 }

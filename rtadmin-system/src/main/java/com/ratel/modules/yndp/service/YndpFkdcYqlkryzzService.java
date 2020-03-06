@@ -48,7 +48,7 @@ public class YndpFkdcYqlkryzzService extends BaseService<YndpFkdcYqlkryzz, Strin
         return map;
     }
 
-    public List<YndpFkdcYqlkryzz> getSameDay(String jgId) {
-        return yndpFkdcYqlkryzzRepository.getSameDay(jgId);
+    public List<YndpFkdcYqlkryzz> getSameDay(String data,String jgId) {
+        return yndpFkdcYqlkryzzRepository.getSameDay(data,jgId);
     }
 }

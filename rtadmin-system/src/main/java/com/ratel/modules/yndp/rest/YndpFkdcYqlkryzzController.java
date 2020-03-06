@@ -1,7 +1,9 @@
 package com.ratel.modules.yndp.rest;
 
 import com.ratel.modules.yndp.domain.YndpFkdcYqlkryzz;
+import com.ratel.modules.yndp.domain.YndpSjgxsj;
 import com.ratel.modules.yndp.service.YndpFkdcYqlkryzzService;
+import com.ratel.modules.yndp.service.YndpSjgxsjService;
 import com.ratel.modules.yndp.util.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -28,6 +30,9 @@ public class YndpFkdcYqlkryzzController {
 
     @Autowired
     private YndpFkdcYqlkryzzService yndpFkdcYqlkryzzService;
+
+    @Autowired
+    YndpSjgxsjService yndpSjgxsjService;
 
     @GetMapping(value = "/getYqlkryzzData")
     @ApiOperation("疫区来昆人员追踪数据")
@@ -56,7 +61,10 @@ public class YndpFkdcYqlkryzzController {
     public List<YndpFkdcYqlkryzz> getSameDay(@RequestParam String jgId, HttpServletRequest request, HttpServletResponse response) {
 
         //1. 根据所选择的机构ID查询出列表
-        List<YndpFkdcYqlkryzz> yndpFkdcYqlkryzzList = yndpFkdcYqlkryzzService.getSameDay(jgId);
+        YndpSjgxsj yndpSjgxsj = yndpSjgxsjService.getGxsj();
+
+
+        List<YndpFkdcYqlkryzz> yndpFkdcYqlkryzzList = yndpFkdcYqlkryzzService.getSameDay(yndpSjgxsj.getSjgxsj(),jgId);
         return yndpFkdcYqlkryzzList;
     }
 

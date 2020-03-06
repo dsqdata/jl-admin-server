@@ -867,20 +867,31 @@ echarts.extendsMap = function (id, opt) {
     return chart;
 };
 
-function setMyMapChartData(data) {
-    var  ljqzs1='';
-    var  ljqzs2='';
-    if(data!=null && data!=""&&data.length>0) {
-        if (data[0].ljqzs != null && data[0].ljqzs != "") {
-            ljqzs1 = data[0].ljqzs;
-        }
+function setMyMapChartData(data,name) {
+    var td = []
+    var map = {}
+    for(var i =0 ;i<data.length;i++){
+        var item = data[i]
+        map[item.jgmc] = item.ljqzs
+        var temp = !item.ljqzs ? 0 :item.ljqzs
+        td.push({name:item.jgmc,value:temp })
     }
-    if(data!=null && data!=""&&data.length>1) {
 
-        if (data[1].ljqzs != null && data[1].ljqzs != "") {
-            ljqzs2 = data[1].ljqzs;
-        }
-    }
+    console.log(td)
+    //
+    // var  ljqzs1='';
+    // var  ljqzs2='';
+    // if(data!=null && data!=""&&data.length>0) {
+    //     if (data[0].ljqzs != null && data[0].ljqzs != "") {
+    //         ljqzs1 = data[0].ljqzs;
+    //     }
+    // }
+    // if(data!=null && data!=""&&data.length>1) {
+    //
+    //     if (data[1].ljqzs != null && data[1].ljqzs != "") {
+    //         ljqzs2 = data[1].ljqzs;
+    //     }
+    // }
     // console.log(data[0].ljqzs)
 
     myMapOp.series[1].data = []
@@ -888,28 +899,26 @@ function setMyMapChartData(data) {
     myMapOp.series[6].data =  []
     myMapChart.setOption(myMapOp, true);
 
-    myMapOp.series[6].data =  [
-        { name: "阿拉街道", value: ljqzs1 },
-        { name: '洛羊街道', value: ljqzs2 }
-    ]
-
-    myMapOp.series[1].data = [{
-        name: '',
-        visualMap: false,
-        username: "阿拉街道",
-        address: "疫区来昆人数",
-        number:ljqzs1+"人",
-        value: [ 102.85494405299998, 24.998903901328593]
-    }];
-
-    myMapOp.series[2].data = [{
-        name: '',
-        visualMap: false,
-        username: "洛羊街道",
-        address: "疫区来昆人数",
-        number:ljqzs2+"人",
-        value: [  102.85494405299998,24.946454769999982]
-    }];
+    myMapOp.series[6].data =  td
+console.log(name)
+    if(name === '经开区'){
+        myMapOp.series[1].data = [{
+            name: '',
+            visualMap: false,
+            username: "阿拉街道",
+            address: "疫区来昆人数",
+            number:map['阿拉街道']+"人",
+            value: [ 102.85494405299998, 24.998903901328593]
+        }];
+        myMapOp.series[2].data = [{
+            name: '',
+            visualMap: false,
+            username: "洛羊街道",
+            address: "疫区来昆人数",
+            number:map['洛羊街道']+"人",
+            value: [  102.85494405299998,24.946454769999982]
+        }];
+    }
 
     myMapChart.setOption(myMapOp, true);
 

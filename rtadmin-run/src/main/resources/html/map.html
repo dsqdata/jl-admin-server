@@ -143,8 +143,8 @@
                         </div>
                     </div>
                    <ul class="mapTab">
-                        <li><a href="javascript:void(0)" class="hover" onclick="searchMap('1')" id="btn01">现存确诊</a></li>
-                        <li><a href="javascript:void(0)" onclick="searchMap('2')" id="btn02">累计确诊</a></li>
+                        <li><a href="javascript:void(0)" class="hover" onclick="searchMap('1','{{jgId}}','{{jgName}}')" id="btn01">现存确诊</a></li>
+                        <li><a href="javascript:void(0)" onclick="searchMap('2','{{jgId}}','{{jgName}}')" id="btn02">累计确诊</a></li>
                     </ul>
                 </div>
 
@@ -336,7 +336,7 @@
         document.getElementById('header').innerHTML = html;
     }
 
-    function searchMap(type) {//初始化-资源配置
+    function searchMap(type,jgId,jgName) {//初始化-资源配置
         if(type === 1 || type === '1' ){
             $("#btn02").removeClass('hover')
             $("#btn01").addClass('hover')
@@ -344,9 +344,9 @@
             $("#btn01").removeClass('hover')
             $("#btn02").addClass('hover')
         }
-        $.axget("/api/yndp/map/getMapList?jgId=1&qzlx="+type, function (res) {
+        $.axget("/api/yndp/map/getMapList?jgId="+jgId+"&qzlx="+type, function (res) {
 
-            setMyMapChartData(res.data);
+            setMyMapChartData(res.data,jgName);
         });
     }
 
@@ -506,11 +506,13 @@
         document.getElementById('orgBox05').innerHTML = html;
     }
 
-    var initOrgBox06 = function (a,b,c) {
+    var initOrgBox06 = function (a,b,c,jgId,jgName) {
         var html = template('tpl-orgBox06', {
             a: a,
             b: b,
-            c: c
+            c: c,
+            jgId: jgId,
+            jgName:jgName
         });
         document.getElementById('orgBox06').innerHTML = html;
         //消息滚动
@@ -536,6 +538,7 @@
 
     var initZypz = function (jgId, jgName) {//初始化-资源配置
         $.axget("/api/yndp/zypz/findZypzByJgId?jgId="+jgId, function (res) {
+
             initOrgBox01(res.data)
         });
     }
@@ -840,12 +843,12 @@
         });
         $.axget1("/api/yndp/map/getMapList?qzlx=1&jgId="+jgId,false, function (res) {
             c=res.data;
-            setMyMapChartData(c);
+            setMyMapChartData(c,jgName);
         });
         if(a && b && c)
-            initOrgBox06(a,b,c);
+            initOrgBox06(a,b,c,jgId, jgName);
         else
-            initOrgBox06({},{},{});
+            initOrgBox06({},{},{},jgId, jgName);
     }
 
     var initMap = function (jgId,jgName, call) {
