@@ -709,7 +709,7 @@
                     }
                 },
                 title: [
-                    {text:pie01rs+'人'},{text:'登记在册'},{text:'新增 +'+pie01xzrs+'人'}
+                    {text:parseInt(pie01rs)+parseInt(pie01xzrs)==0?"":pie01rs+'人'},{text:parseInt(pie01rs)+parseInt(pie01xzrs)==0?"":'登记在册'},{text:parseInt(pie01rs)+parseInt(pie01xzrs)==0?"":'新增 +'+pie01xzrs+'人'}
                 ]
             });
         });
@@ -742,7 +742,7 @@
                     }
                 },
                 title: [
-                    {text:pie01rs+'人'},{text:'公安检查点排查'},{text:'新增 +'+pie01xzrs+'人'}
+                    {text:parseInt(pie01rs)+parseInt(pie01xzrs)==0?"":pie01rs+'人'},{text:parseInt(pie01rs)+parseInt(pie01xzrs)==0?"":'公安检查点排查'},{text:parseInt(pie01rs)+parseInt(pie01xzrs)==0?"":'新增 +'+pie01xzrs+'人'}
                 ]
             });
         });
@@ -776,7 +776,7 @@
                     }
                 },
                 title: [
-                    {text:pie01rs+'人'},{text:'特殊人群'},{text:'新增 +'+pie01xzrs+'人'}
+                    {text:parseInt(pie01rs)+parseInt(pie01xzrs)==0?"":pie01rs+'人'},{text:parseInt(pie01rs)+parseInt(pie01xzrs)==0?"":'特殊人群'},{text:parseInt(pie01rs)+parseInt(pie01xzrs)==0?"":'新增 +'+pie01xzrs+'人'}
                 ]
             });
         });
@@ -809,7 +809,7 @@
                     }
                 },
                 title: [
-                    {text:pie01rs+'人'},{text:'入住留验点人员'},{text:'新增 +'+pie01xzrs+'人'}
+                    {text:parseInt(pie01rs)+parseInt(pie01xzrs)==0?"":pie01rs+'人'},{text:parseInt(pie01rs)+parseInt(pie01xzrs)==0?"":'入住留验点人员'},{text:parseInt(pie01rs)+parseInt(pie01xzrs)==0?"":'新增 +'+pie01xzrs+'人'}
                 ]
             });
         });
@@ -900,10 +900,12 @@
 
     }
 
-    var initHtmlNoMap = function (jgId, jgName) {
+    var initHtmlNoMap = function (jgId, jgName,jgType) {
         initZypz(jgId, jgName)
         initWzbz(jgId, jgName)
         initFkxc(jgId, jgName)
+        initYqqs(jgId, jgName);
+        initZdrymp(jgId,jgName,jgType);
         initPclk(jgId, jgName)
         initRyzz(jgId, jgName)
         // initMap(jgId, jgName)
