@@ -204,7 +204,7 @@
     function jgOnclick(jgId, jgName, jgType,jgOrHy) {
 
         if(jgOrHy=='1'){
-            send(jgId,jgName);
+            send(jgId,jgName,jgType);
         }
         if(jgType=='2'&&jgOrHy=='1'){
             window.location = 'index_second.html?jgId='+jgId;
@@ -241,10 +241,11 @@
 
     var initBranchInfo = function () {//初始化机构数据
     }
-    function send(jgId, jgName){
+    function send(jgId, jgName,jgType){
         var param = {};
         param.jgId = jgId;
         param.jgName = jgName;
+        param.jgType = jgType;
         sendSock(param, function(e){
             console.log(e);
         });
