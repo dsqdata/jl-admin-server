@@ -1,5 +1,5 @@
 var jiangxi = "./static/json/data-1518338017111-rJK1gtpUM.json";
-var aljd = "./static/json/data-1518338805373-aljd.json";
+var aljd = "./static/json/data-1518338805373-ALJD.json";
 var aljdAlsq = "./static/json/data-1518338805373-ALJD-ALSQ.json";
 var lyjd = "./static/json/data-1518338805373-LYJD.json";
 var lyjdDxcsq = "./static/json/data-1518338805373-LYJD-DXCSQ.json";

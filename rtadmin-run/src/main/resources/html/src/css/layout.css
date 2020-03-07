@@ -75,3 +75,6 @@ body,html{ height: 100%;color: #ffffff;}
 .str_wrap img {
     max-width:none !important;
 }
+
+/*layout.css追加样式：防空洞察*/
+#header h1.h02{ width: 538px; height: 54px; background: url("../images/tit_h1_01.png") no-repeat; background-size:100% 100%; }
