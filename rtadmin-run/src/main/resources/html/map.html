@@ -19,6 +19,7 @@
     <div id="header"></div>
     <script id="tpl-header" type="text/html">
         <h1 class="h02"></h1>
+<!--        <h1></h1>-->
         <p class="txtP">数据更新时间 <span>{{sjgxsj}}</span></p>
     </script>
     <!--    <div id="header">-->
@@ -868,7 +869,7 @@
                 mapName: '经开区',    // 地图名
                 goDown: true,       // 是否下钻
                 // 下钻回调
-                callback: function (na, option, instance) {
+                callback: function (name, option, instance) {
                     if(name === "经开区")
                         jname = '区疫情防控指挥部'
                     else
