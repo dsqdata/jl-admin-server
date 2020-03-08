@@ -66,7 +66,7 @@
                     </tr>
                     {{each wzbz item i}}
                     <tr>
-                        <td>{{i}}</td>
+                        <td>{{i+1}}</td>
                         <td>{{!item.rq?'-':item.rq}}</td>
                         <td>{{item.wz==null?'-':item.wz}}</td>
                         <td>{{item.rk==null?'-':item.rk}}</td>
@@ -120,12 +120,12 @@
                 <span class="greenBg03"></span>
                 <span class="greenBg04"></span>
                     <ul class="mapTxt">
-                        <li><span><em><% if (b.xcqzjzr>0) { %>+ <% } %>{{b.xcqzjzr}}</em>较昨日</span><strong>{{b.xcqz}}</strong>现存确诊</li>
-                        <li><span><em><% if (b.ljqzjzr>0) { %>+ <% } %>{{b.ljqzjzr}}</em>较昨日</span><strong>{{b.ljqz}}</strong>累计确诊</li>
-                        <li><span><em><% if (b.xcysjzr>0) { %>+ <% } %>{{b.xcysjzr}}</em>较昨日</span><strong>{{b.xcys}}</strong>现存疑似</li>
-                        <li><span><em><% if (b.ljswjzr>0) { %>+ <% } %>{{b.ljswjzr}}</em>较昨日</span><strong>{{b.ljsw}}</strong>累计死亡</li>
-                        <li><span><em><% if (b.xczzjzr>0) { %>+ <% } %>{{b.xczzjzr}}</em>较昨日</span><strong>{{b.xczz}}</strong>现存重症</li>
-                        <li><span><em><% if (b.ljzyjzr>0) { %>+ <% } %>{{b.ljzyjzr}}</em>较昨日</span><strong>{{b.ljzy}}</strong>累计治愈</li>
+                        <li><span><em><% if (b.xcqzjzr>0) { %>+ <% } %>{{b.xcqzjzr==null?'-':b.xcqzjzr}}</em>较昨日</span><strong>{{b.xcqz==null?'-':b.xcqz}}</strong>现存确诊</li>
+                        <li><span><em><% if (b.ljqzjzr>0) { %>+ <% } %>{{b.ljqzjzr==null?'-':b.ljqzjzr}}</em>较昨日</span><strong>{{b.ljqz==null?'-':b.ljqz}}</strong>累计确诊</li>
+                        <li><span><em><% if (b.xcysjzr>0) { %>+ <% } %>{{b.xcysjzr==null?'-':b.xcysjzr}}</em>较昨日</span><strong>{{b.xcys==null?'-':b.xcys}}</strong>现存疑似</li>
+                        <li><span><em><% if (b.ljswjzr>0) { %>+ <% } %>{{b.ljswjzr==null?'-':b.ljswjzr}}</em>较昨日</span><strong>{{b.ljsw==null?'-':b.ljsw}}</strong>累计死亡</li>
+                        <li><span><em><% if (b.xczzjzr>0) { %>+ <% } %>{{b.xczzjzr==null?'-':b.xczzjzr}}</em>较昨日</span><strong>{{b.xczz==null?'-':b.xczz}}</strong>现存重症</li>
+                        <li><span><em><% if (b.ljzyjzr>0) { %>+ <% } %>{{b.ljzyjzr==null?'-':b.ljzyjzr}}</em>较昨日</span><strong>{{b.ljzy==null?'-':b.ljzy}}</strong>累计治愈</li>
                     </ul>
 
                 <div class="midBox01in">
