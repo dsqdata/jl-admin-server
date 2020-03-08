@@ -900,23 +900,25 @@ function setMyMapChartData(data,name) {
     myMapChart.setOption(myMapOp, true);
 
     myMapOp.series[6].data =  td
-console.log(name)
-    if(name === '经开区'){
+console.log("@@@@@@@@@"+name);
+    if (name === '经开区') {
+        var al = !!map['阿拉街道'] ? map['阿拉街道'] : 0
+        var ly = !!map['洛羊街道'] ? map['洛羊街道'] : 0
         myMapOp.series[1].data = [{
             name: '',
             visualMap: false,
             username: "阿拉街道",
             address: "疫区来昆人数",
-            number:map['阿拉街道']+"人",
-            value: [ 102.85494405299998, 24.998903901328593]
+            number: al + "人",
+            value: [102.85494405299998, 24.998903901328593]
         }];
         myMapOp.series[2].data = [{
             name: '',
             visualMap: false,
             username: "洛羊街道",
             address: "疫区来昆人数",
-            number:map['洛羊街道']+"人",
-            value: [  102.85494405299998,24.946454769999982]
+            number: ly + "人",
+            value: [102.85494405299998, 24.946454769999982]
         }];
     }
 
