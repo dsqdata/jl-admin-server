@@ -27,13 +27,14 @@ $(function(){
         xAxis: {
             type: 'category',
 
-            data: ['01/01', '01/01', '01/01', '01/01', '01/01', '01/01', '01/01' ,
-                '01/01', '01/01', '01/01', '01/01' ,'01/01'],
+            data: [],
 
             axisLabel: {
+                show:true,
                 color: '#22b3e0',
                 fontSize: 12,
-                rotate: 30
+                rotate: 30,
+                showMaxLabel: true,
             },
             axisLine: {
                 lineStyle: {
@@ -43,7 +44,7 @@ $(function(){
             axisTick: {
                 show: false,
             },
-            interval:'auto'
+
         },
         yAxis: {
             type: 'value',
@@ -71,7 +72,8 @@ $(function(){
                     type: 'solid'
                 }
             },
-
+            minInterval : 1,
+            boundaryGap : [ 0, 0.1 ]
         },
         series: [{
             name: '新增确诊',

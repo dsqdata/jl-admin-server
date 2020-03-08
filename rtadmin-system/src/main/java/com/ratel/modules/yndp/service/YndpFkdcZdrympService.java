@@ -24,11 +24,15 @@ public class YndpFkdcZdrympService extends BaseService<YndpFkdcZdrymp, String> {
 
     public Object getZdrympData(YndpFkdcZdrymp yndpFkdcZdrymp) {
         Map<String, Object> map = new HashMap<>();
-        List<YndpFkdcZdrymp> list = yndpFkdcZdrympRepository.findZdrymp(yndpFkdcZdrymp.getZdrylx(),yndpFkdcZdrymp.getJgid());
+        List<YndpFkdcZdrymp> list = yndpFkdcZdrympRepository.findZdrymp(yndpFkdcZdrymp.getZdrylx(),yndpFkdcZdrymp.getJgid(),yndpFkdcZdrymp.getField4());
 //        map.put("zdrymc", list.stream().map(YndpFkdcZdrymp::getZdrymc).collect(Collectors.toList()));
 //        map.put("zdryrs", list.stream().map(YndpFkdcZdrymp::getZdryrs).collect(Collectors.toList()));
 //        map.put("zdryrszb", list.stream().map(YndpFkdcZdrymp::getZdryrszb).collect(Collectors.toList()));
 //        map.put("zdryxzrs", list.stream().map(YndpFkdcZdrymp::getZdryxzrs).collect(Collectors.toList()));
         return list;
+    }
+
+    public String getMaxDay(YndpFkdcZdrymp yndpFkdcZdrymp) {
+        return yndpFkdcZdrympRepository.getMaxDay(yndpFkdcZdrymp.getZdrylx(),yndpFkdcZdrymp.getJgid());
     }
 }

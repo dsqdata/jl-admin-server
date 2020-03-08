@@ -25,6 +25,8 @@ public class YndpFkdcZdrympController {
     @ApiOperation("重点人员摸排数据")
     public Result getZdrympData(YndpFkdcZdrymp yndpFkdcZdrymp) {
 //        return new ResponseEntity<>(yndpFkdcZdrympService.getZdrympData(yndpFkdcZdrymp), HttpStatus.OK);
+        String rq = yndpFkdcZdrympService.getMaxDay(yndpFkdcZdrymp);
+        yndpFkdcZdrymp.setField4(rq);
         Result result = new Result();
         result.setCode(Result.SUCCESS_CODE);
         result.setData(yndpFkdcZdrympService.getZdrympData(yndpFkdcZdrymp));

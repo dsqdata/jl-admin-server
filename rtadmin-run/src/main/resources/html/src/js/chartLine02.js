@@ -27,13 +27,13 @@ $(function(){
         xAxis: {
             type: 'category',
 
-            data: ['02/01', '01/01', '01/01', '01/01', '01/01', '01/01', '01/01' ,
-                '01/01', '01/01', '01/01', '01/01' ,'01/01'],
+            data: [],
 
             axisLabel: {
                 color: '#22b3e0',
                 fontSize: 12,
-                rotate: 30
+                rotate: 30,
+                showMaxLabel:true,
             },
             axisLine: {
                 lineStyle: {
@@ -70,7 +70,8 @@ $(function(){
                     type: 'solid'
                 }
             },
-
+            minInterval : 1,
+            boundaryGap : [ 0, 0.1 ]
         },
         series: [{
             name: '现存确诊',
