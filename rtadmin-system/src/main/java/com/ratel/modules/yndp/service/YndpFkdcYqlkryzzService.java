@@ -51,4 +51,9 @@ public class YndpFkdcYqlkryzzService extends BaseService<YndpFkdcYqlkryzz, Strin
     public List<YndpFkdcYqlkryzz> getSameDay(String data,String jgId) {
         return yndpFkdcYqlkryzzRepository.getSameDay(data,jgId);
     }
+
+    public String getMaxDay() {
+        return yndpFkdcYqlkryzzRepository.getMaxDay();
+    }
+
 }

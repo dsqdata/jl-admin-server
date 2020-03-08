@@ -31,6 +31,13 @@ public interface YndpFkdcYqlkryzzRepository extends BaseRepository<YndpFkdcYqlkr
     List<YndpFkdcYqlkryzz> findDayData(String date1, String date2,String jgid);
 
 
+
+    /**
+     * 获得最大日期
+     */
+    @Query(value = "select max(rq)  rq FROM yndp_fkdc_yqlkryzz",nativeQuery = true)
+    String getMaxDay();
+
     /**
      * 获得时间段每日数据记录
      * @param jgid  机构ID

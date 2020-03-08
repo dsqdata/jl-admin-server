@@ -61,10 +61,10 @@ public class YndpFkdcYqlkryzzController {
     public List<YndpFkdcYqlkryzz> getSameDay(@RequestParam String jgId, HttpServletRequest request, HttpServletResponse response) {
 
         //1. 根据所选择的机构ID查询出列表
-        YndpSjgxsj yndpSjgxsj = yndpSjgxsjService.getGxsj();
+        String rq = yndpFkdcYqlkryzzService.getMaxDay();
 
 
-        List<YndpFkdcYqlkryzz> yndpFkdcYqlkryzzList = yndpFkdcYqlkryzzService.getSameDay(yndpSjgxsj.getSjgxsj(),jgId);
+        List<YndpFkdcYqlkryzz> yndpFkdcYqlkryzzList = yndpFkdcYqlkryzzService.getSameDay(rq,jgId);
         return yndpFkdcYqlkryzzList;
     }
 
