@@ -22,6 +22,6 @@ public interface YndpFkdcZdrympRepository extends BaseRepository<YndpFkdcZdrymp,
     /**
      * 获得最大日期
      */
-    @Query(value = "select max(rq)  rq FROM yndp_fkdc_zdrymp  where zdrylx = ?1 and jgid = ?2",nativeQuery = true)
+    @Query(value = "select max(field4)  rq FROM yndp_fkdc_zdrymp  where zdrylx = ?1 and jgid = ?2",nativeQuery = true)
     String getMaxDay(String rylx, String jgid);
 }
