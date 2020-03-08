@@ -25,8 +25,6 @@ var aljdkcsq = "./static/json/data-1518338805373-ALJD-KCSQ.json";
 var aljdbglsq = "./static/json/data-1518338805373-ALJD-BGLSQ.json";
 var aljdchsq = "./static/json/data-1518338805373-ALJD-CHSQ.json";
 var aljdccsq = "./static/json/data-1518338805373-ALJD-CCSQ.json";
-
-
 var lyjdglsq = "./static/json/data-1518338805373-LYJD-GLSQ.json";
 var lyjdcmsq = "./static/json/data-1518338805373-LYJD-CMSQ.json";
 var lyjdnjysq = "./static/json/data-1518338805373-LYJD-NJYSQ.json";
@@ -36,6 +34,8 @@ var lyjdsjssq = "./static/json/data-1518338805373-LYJD-SJSSQ.json";
 
 var myMapChart = null;
 var myMapOp = null
+
+var onClickAble = true
 
 echarts.extendsMap = function (id, opt) {
     // 实例
@@ -56,15 +56,12 @@ echarts.extendsMap = function (id, opt) {
         "八公里社区": aljdbglsq,
         "昌宏社区": aljdchsq,
         "长春社区": aljdccsq,
-
         "洛羊街道":lyjd,
-
         "大冲社区":lyjdDcsq,
         "阿拉社区": aljdAlsq,
         "大新册社区":lyjdDxcsq,
         "小新册社区":lyjdXxcsq,
         "黄土坡社区":lyjdHtpsq,
-
         "大洛羊社区":lyjddlysq,
         "小洛羊社区":lyjdxlysq,
         "果林社区":lyjdglsq,
@@ -72,17 +69,12 @@ echarts.extendsMap = function (id, opt) {
         "倪家营社区":lyjdnjysq,
         "石龙湖社区":lyjdslhsq,
         "水井山社区":lyjdsjssq
-
-
-
     };
-
     var levelColorMap = {
         '1': 'rgba(241, 109, 115, .8)',
         '2': 'rgba(255, 235, 59, .7)',
         '3': 'rgba(147, 235, 248, 1)'
     };
-
     var defaultOpt = {
         mapName: 'china',     // 地图展示
         goDown: false,        // 是否下钻
@@ -121,7 +113,6 @@ echarts.extendsMap = function (id, opt) {
          **/
         resetOption: function (i, o, n) {
             var breadcrumb = this.createBreadcrumb(n);
-
             var j = name.indexOf(n);
             var l = o.graphic.length;
             if (j < 0) {
@@ -296,88 +287,16 @@ echarts.extendsMap = function (id, opt) {
         initHtml: function( name){
             $.axget1("/api/yndp/glgz/getJgId?jgmc="+ name ,false, function (res) {
                 console.log(res.data)
-                initHtmlNoMap(res.data.id, name,res.data.jglx)
+                if(!!res.data && res.data.id)
+                    initHtmlNoMap(res.data.id, name,res.data.jglx)
             });
         },
         setData: function (i,option,name) {
-            console.log("name"+name)
-            option.series[1].data =[]
-            option.series[2].data =[]
-            option.series[5].data =[]
-            i.setOption(options, true);
-
-            if(name == "大新册社区"){
-                /*option.series[2].data = [{
-                    name: '',
-                    username: "username",
-                    telphone: "telphone",
-                    address: "address",
-                    value: [102.84730911254883,
-                        24.92800713812781]
-                },{
-                    name: '',
-                    username: "username",
-                    telphone: "telphone",
-                    address: "address",
-                    value: [102.86190032958984,
-                        24.909481126447975]
-                }];
-                i.setOption(options, true);*/
-            } else if(name == "经开区"){
-                // option.series[1].data = [{
-                //     name: '',
-                //     visualMap: false,
-                //     username: "阿拉街道",
-                //     address: "疫区来昆人数",
-                //     number:ljqzs1+"人",
-                //     value: [ 102.85494405299998, 24.998903901328593]
-                // }];
-                //
-                // option.series[2].data = [{
-                //     name: '',
-                //     visualMap: false,
-                //     username: "洛羊街道",
-                //     address: "疫区来昆人数",
-                //     number:ljqzs2+"人",
-                //     value: [  102.85494405299998,24.946454769999982]
-                // }];
-
-                // options.series[5].data = [{
-                //     name: '',
-                //     username: "username",
-                //     telphone: "telphone",
-                //     address: "address",
-                //     value: [102.85494405299998, 24.946454769999982]
-                // }];
-                option.series[6].data =  [
-                    { name: "阿拉街道", value: 0 },
-                    { name: '洛羊街道', value: 0 },
-                    { name: '高坡社区', value: 0 },
-                    { name: '海子社区', value: 11 },
-                    { name: '清水社区', value: 554 },
-                    { name: '普照社区', value: 220 },
-                    { name: '石坝社区', value: 115 },
-                    { name: '云南航天社区', value: 6 },
-                    { name: '顺通社区', value: 121 },
-                    { name: '昆船社区', value: 44 },
-                    { name: '八公里社区', value: 77 },
-                    { name: '昌宏社区', value: 55 },
-                    { name: '长春社区', value: 55 },
-                    { name: '大冲社区', value: 0 },
-                    { name: '阿拉社区', value: 2 },
-                    { name: '大新册社区', value: 3 },
-                    { name: '小新册社区', value: 111 },
-                    { name: '黄土坡社区', value: 222 },
-                    { name: '大洛羊社区', value: 555 },
-                    { name: '小洛羊社区', value: 1444 },
-                    { name: '果林社区', value: 11 },
-                    { name: '春漫社区', value: 3123 },
-                    { name: '倪家营社区', value: 0 },
-                    { name: '石龙湖社区', value: 20 },
-                    { name: '水井山社区', value: 0 }
-                ];
-                i.setOption(option, true);
-            }
+            // console.log("name"+name)
+            // option.series[1].data =[]
+            // option.series[2].data =[]
+            // option.series[5].data =[]
+            // i.setOption(options, true);
         }
     };
 
@@ -812,29 +731,33 @@ echarts.extendsMap = function (id, opt) {
             }
         ]
     };
-    options = option
+    // options = option
     myMapOp = option
     chart.setOption(option);
     // 添加事件
     chart.on('click', function (params) {
-        console.log(params);
         var _self = this;
         if (opt.goDown && params.name !== name[idx]) {
-            // $.axget1("/api/yndp/glgz/getJgId?jgmc="+ params.name ,false, function (res) {
-            //     console.log(res.data)
-            //     initHtml(res.data, params.name)
-            // });
-
-            handleEvents.initHtml(params.name)
+            if(!onClickAble){
+                return false
+            }
+            onClickAble = false
+            // handleEvents.initHtml(params.name)
             if (cityMap[params.name]) {
                 var url = cityMap[params.name];
-                $.get(url, function (response) {
-                    // console.log(response);
-                    curGeoJson = response;
-                    echarts.registerMap(params.name, response);
-                    handleEvents.resetOption(_self, option, params.name);
-                    handleEvents.setData(_self,option,params.name)
-                });
+                try {
+                    $.get(url, function (response) {
+                        curGeoJson = response;
+                        echarts.registerMap(params.name, response);
+                        handleEvents.resetOption(_self, option, params.name);
+                        handleEvents.setData(_self,option,params.name)
+                        onClickAble = true
+                    });
+                }catch (e) {
+                    onClickAble = true
+                }
+            }else{
+                onClickAble = true
             }
         }
     });
@@ -857,11 +780,6 @@ echarts.extendsMap = function (id, opt) {
     };
     chart.setInitData = function(mapName){
         var _self = this;
-        // $.axget1("/api/yndp/glgz/getJgId?jgmc="+ name ,false, function (res) {
-        //     console.log(res.data)
-        //     initHtml(res.data, name)
-        // });
-
         handleEvents.setData(_self,option,mapName)
     };
     return chart;
@@ -877,30 +795,12 @@ function setMyMapChartData(data,name) {
         td.push({name:item.jgmc,value:temp })
     }
 
-    console.log(td)
-    //
-    // var  ljqzs1='';
-    // var  ljqzs2='';
-    // if(data!=null && data!=""&&data.length>0) {
-    //     if (data[0].ljqzs != null && data[0].ljqzs != "") {
-    //         ljqzs1 = data[0].ljqzs;
-    //     }
-    // }
-    // if(data!=null && data!=""&&data.length>1) {
-    //
-    //     if (data[1].ljqzs != null && data[1].ljqzs != "") {
-    //         ljqzs2 = data[1].ljqzs;
-    //     }
-    // }
-    // console.log(data[0].ljqzs)
-
     myMapOp.series[1].data = []
     myMapOp.series[2].data = []
     myMapOp.series[6].data =  []
     myMapChart.setOption(myMapOp, true);
-
     myMapOp.series[6].data =  td
-console.log("@@@@@@@@@"+name);
+
     if (name === '经开区') {
         var al = !!map['阿拉街道'] ? map['阿拉街道'] : 0
         var ly = !!map['洛羊街道'] ? map['洛羊街道'] : 0
@@ -921,9 +821,7 @@ console.log("@@@@@@@@@"+name);
             value: [102.85494405299998, 24.946454769999982]
         }];
     }
-
     myMapChart.setOption(myMapOp, true);
-
 }
 function  echartsMap(data){
     var  ljqzs1='';
@@ -941,10 +839,6 @@ function  echartsMap(data){
     var options = null;
 
     var provinceData = [[ 102.85494405299998, 24.946454769999982]]
-
-
-
-
 
 // var timer = setInterval(() => {
 //数据情况重绘，清除formatter移动效果，也可根据自身需求是否需要，删除这两行代码

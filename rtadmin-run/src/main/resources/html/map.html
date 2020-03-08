@@ -852,7 +852,7 @@
     }
 
     var initMap = function (jgId,jgName, call) {
-        echartsMap();
+        //echartsMap();
         $.getJSON(jiangxi, function (geoJson) {
             echarts.registerMap('经开区', geoJson);
             var myChart = echarts.extendsMap('chart-panel', {
