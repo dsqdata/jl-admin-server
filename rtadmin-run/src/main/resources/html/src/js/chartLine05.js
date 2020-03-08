@@ -19,7 +19,7 @@ $(function(){
         grid: {
             left: '3%',
             right: '5%',
-            bottom:10,
+            bottom:20,
             top:'23%',
             containLabel: true
         },
