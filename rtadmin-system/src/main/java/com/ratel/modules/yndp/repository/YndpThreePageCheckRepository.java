@@ -19,6 +19,6 @@ public interface YndpThreePageCheckRepository extends BaseRepository<YndpThreePa
      * 根据日期查询三类重点目标人群核查
      */
     @Query(nativeQuery = true, value = "select * from yndp_three_page_check where date = ?1 limit 1")
-    List<YndpThreePageCheck> getYndpThreePageCheckList(String date);
+    YndpThreePageCheck getYndpThreePageCheck(String date);
 
 }

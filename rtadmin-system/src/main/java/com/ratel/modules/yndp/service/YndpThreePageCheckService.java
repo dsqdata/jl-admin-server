@@ -22,7 +22,7 @@ public class YndpThreePageCheckService extends BaseService<YndpThreePageCheck, S
     @Autowired
     private YndpThreePageCheckRepository YndpThreePageCheckRepository;
 
-    public List<YndpThreePageCheck> getYndpThreePageCheckList(String date) {
-        return YndpThreePageCheckRepository.getYndpThreePageCheckList(date);
+    public YndpThreePageCheck getYndpThreePageCheck(String date) {
+        return YndpThreePageCheckRepository.getYndpThreePageCheck(date);
     }
 }

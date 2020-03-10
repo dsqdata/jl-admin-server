@@ -29,14 +29,14 @@ public class YndpThreePageCheckController {
     YndpThreePageCheckService YndpThreePageCheckService;
 
     @ApiOperation("根据日期查询三类重点目标人群核查")
-    @GetMapping(value = "/getYndpThreePageCheckList")
-    public Result getYndpThreePageCheckList(@RequestParam String date, HttpServletRequest request, HttpServletResponse response) {
+    @GetMapping(value = "/getYndpThreePageCheck")
+    public Result getYndpThreePageCheck(@RequestParam String date, HttpServletRequest request, HttpServletResponse response) {
 
         //1. 根据日期查询三类重点目标人群核查
-        List<YndpThreePageCheck> YndpThreePageCheckList = YndpThreePageCheckService.getYndpThreePageCheckList(date);
+        YndpThreePageCheck yndpThreePageCheck = YndpThreePageCheckService.getYndpThreePageCheck(date);
         Result result = new Result();
         result.setCode(Result.SUCCESS_CODE);
-        result.setData(YndpThreePageCheckList);
+        result.setData(yndpThreePageCheck);
         result.setMessage("成功");
         return result;
     }
