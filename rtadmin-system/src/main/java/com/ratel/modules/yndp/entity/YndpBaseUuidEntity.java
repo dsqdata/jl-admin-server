@@ -19,7 +19,7 @@ import java.io.Serializable;
  */
 @Getter
 @Access(AccessType.FIELD)
-@JsonInclude(Include.NON_EMPTY)
+@JsonInclude(Include.ALWAYS)
 @MappedSuperclass
 @AuditOverrides({@AuditOverride(forClass = YndpBaseUuidEntity.class)})
 public abstract class YndpBaseUuidEntity extends YndpBaseEntity<String> implements Serializable {
