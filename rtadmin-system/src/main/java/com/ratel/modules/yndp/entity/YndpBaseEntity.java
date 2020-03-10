@@ -22,13 +22,14 @@ import java.util.Date;
  * @author DDXS
  * @date 2020/3/9 11:56
  */
+@Getter
 @Setter
 @Access(AccessType.FIELD)
 @JsonIgnoreProperties(value = {"hibernateLazyInitializer", "javassistLazyInitializer", "revisionEntity", "handler"}, ignoreUnknown = true)
 @MappedSuperclass
 @EntityListeners({SaveUpdateAuditListener.class})
 @AuditOverrides({@AuditOverride(forClass = YndpBaseEntity.class)})
-public abstract class YndpBaseEntity<ID extends Serializable> extends AbstractPersistableEntity<ID> {
+public abstract class YndpBaseEntity<ID extends Serializable> extends AbstractPersistableEntity<ID>{
 
     //乐观锁版本
     //@Version
