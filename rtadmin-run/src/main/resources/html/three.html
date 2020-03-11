@@ -91,79 +91,85 @@
                     <span class="ttl07Bg01"><span class="ttl07Bg02">人员排查</span></span>
                 </h2>
                 <div class="clearfix midPart01in">
-                    <div class="midPart0101">
-                        <h3 class="ttl08">三类重点目标人群核查</h3>
-                        <ul class="actionList03">
-                            <li>
-                                <p class="clearfix"><strong class="sttl01">第一类</strong><span class="txt_green"><i></i>已核查</span></p>
-                                <p class="clearfix"><strong>昨日推送</strong><span><em>5</em>个</span></p>
-                                <p class="clearfix"><strong>涉经开区</strong><span><em>5</em>个</span></p>
-                            </li>
-                            <li>
-                                <p class="clearfix"><strong class="sttl01">第二类</strong><span class="txt_yellow"><i></i>已核查</span></p>
-                                <p class="clearfix"><strong>昨日推送</strong><span><em>5</em>个</span></p>
-                                <p class="clearfix"><strong>涉经开区</strong><span><em>5</em>个</span></p>
-                            </li>
-                            <li>
-                                <p class="clearfix"><strong class="sttl01">第三类</strong><span class="txt_green"><i></i>已核查</span></p>
-                                <p class="clearfix"><strong>昨日推送</strong><span><em>5</em>个</span></p>
-                                <p class="clearfix"><strong>涉经开区</strong><span><em>5</em>个</span></p>
-                            </li>
-                        </ul>
+                    <div class="midPart0101" id="orgBoxCheck">
+                        <script id="tpl-orgBoxCheck" type="text/html">
+                            <h3 class="ttl08">三类重点目标人群核查</h3>
+                            <ul class="actionList03">
+                                <li>
+                                    <p class="clearfix"><strong class="sttl01">第一类</strong><span class="txt_green"><i></i>{{first_status==''?'--':first_status}}</span></p>
+                                    <p class="clearfix"><strong>昨日推送</strong><span><em>{{first_yesterday==''?'--':first_yesterday}}</em>个</span></p>
+                                    <p class="clearfix"><strong>涉经开区</strong><span><em>{{first_jkq==''?'--':first_jkq}}</em>个</span></p>
+                                </li>
+                                <li>
+                                    <p class="clearfix"><strong class="sttl01">第二类</strong><span class="txt_yellow"><i></i>{{second_status==''?'--':second_status}}</span></p>
+                                    <p class="clearfix"><strong>昨日推送</strong><span><em>{{second_yesterday==''?'--':second_yesterday}}</em>个</span></p>
+                                    <p class="clearfix"><strong>涉经开区</strong><span><em>{{second_jkq==''?'--':second_jkq}}</em>个</span></p>
+                                </li>
+                                <li>
+                                    <p class="clearfix"><strong class="sttl01">第三类</strong><span class="txt_green"><i></i>{{third_status==''?'--':third_status}}</span></p>
+                                    <p class="clearfix"><strong>昨日推送</strong><span><em>{{third_yesterday==''?'--':third_yesterday}}</em>个</span></p>
+                                    <p class="clearfix"><strong>涉经开区</strong><span><em>{{third_jkq==''?'--':third_jkq}}</em>个</span></p>
+                                </li>
+                            </ul>
+                        </script>
                     </div>
-                    <div class="midPart0102">
-                        <h3 class="ttl08">社区/村人员核查和信息采集</h3>
-                        <ul class="actionList04">
-                            <li class="li01">
-                                <a href="javascript:;" data-toggle="modal" data-target="#collectWin01">
-                                <strong>基础要素采集APP</strong>
-                                <span><em>1111</em>个</span>
-                                </a>
-                            </li>
-                            <li class="li02">
-                                <a href="javascript:;" data-toggle="modal" data-target="#collectWin02">
-                                <strong>社会信息APP使用量</strong>
-                                <span><em>1111</em>个</span>
-                                </a>
-                            </li>
-                            <li class="li03">
-                                <a href="javascript:;" data-toggle="modal" data-target="#collectWin03">
-                                <strong>核查实有人口</strong>
-                                <span><em>1111</em>个</span>
-                                </a>
-                            </li>
-                            <li class="li04">
-                                <a href="javascript:;" data-toggle="modal" data-target="#collectWin04">
-                                <strong>核查从业人员</strong>
-                                <span><em>1111</em>个</span>
-                                </a>
-                            </li>
-                        </ul>
+                    <div class="midPart0102" id="orgBoxCollection">
+                        <script id="tpl-orgBoxCollection" type="text/html">
+                            <h3 class="ttl08">社区/村人员核查和信息采集</h3>
+                            <ul class="actionList04">
+                                <li class="li01">
+                                    <a href="javascript:;" data-toggle="modal" data-target="#collectWin01">
+                                        <strong>基础要素采集APP</strong>
+                                        <span><em>{{app_install==''?'--':app_install}}</em>个</span>
+                                    </a>
+                                </li>
+                                <li class="li02">
+                                    <a href="javascript:;" data-toggle="modal" data-target="#collectWin02">
+                                        <strong>社会信息APP使用量</strong>
+                                        <span><em>{{app_used==''?'--':app_used}}</em>个</span>
+                                    </a>
+                                </li>
+                                <li class="li03">
+                                    <a href="javascript:;" data-toggle="modal" data-target="#collectWin03">
+                                        <strong>核查实有人口</strong>
+                                        <span><em>{{people_num==''?'--':people_num}}</em>个</span>
+                                    </a>
+                                </li>
+                                <li class="li04">
+                                    <a href="javascript:;" data-toggle="modal" data-target="#collectWin04">
+                                        <strong>核查从业人员</strong>
+                                        <span><em>{{woker_num==''?'--':woker_num}}</em>个</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </script>
                     </div>
-                    <div class="midPart0103">
-                        <h3 class="ttl08">固定检查点排查</h3>
-                        <ul class="actionList05">
-                            <li class="li01">
-                                <a href="javascript:;" data-toggle="modal" data-target="#checkWin01">
-                                    <strong>固定检查点</strong>
-                                    <p class="p01"><span>111</span>个</p>
-                                </a>
-                            </li>
-                            <li class="li02">
-                                <a href="javascript:;" data-toggle="modal" data-target="#checkWin02">
-                                <strong>排查人员</strong>
-                                <p class="clearfix">单日<em>111111人</em></p>
-                                <p class="clearfix">累计<em>111111人</em></p>
-                                </a>
-                            </li>
-                            <li class="li03">
-                                <a href="javascript:;" data-toggle="modal" data-target="#checkWin03">
-                                <strong>排查车辆</strong>
-                                <p class="clearfix">单日<em>111111人</em></p>
-                                <p class="clearfix">累计<em>111111人</em></p>
-                                </a>
-                            </li>
-                        </ul>
+                    <div class="midPart0103" id="orgBoxInvestigation">
+                        <script id="tpl-orgBoxInvestigation" type="text/html">
+                            <h3 class="ttl08">固定检查点排查</h3>
+                            <ul class="actionList05">
+                                <li class="li01">
+                                    <a href="javascript:;" data-toggle="modal" data-target="#checkWin01">
+                                        <strong>固定检查点</strong>
+                                        <p class="p01"><span>{{count==''?'--':count}}</span>个</p>
+                                    </a>
+                                </li>
+                                <li class="li02">
+                                    <a href="javascript:;" data-toggle="modal" data-target="#checkWin02">
+                                        <strong>排查人员</strong>
+                                        <p class="clearfix">单日<em>{{today_person==''?'--':today_person}}人</em></p>
+                                        <p class="clearfix">累计<em>{{all_persons==''?'--':all_persons}}人</em></p>
+                                    </a>
+                                </li>
+                                <li class="li03">
+                                    <a href="javascript:;" data-toggle="modal" data-target="#checkWin03">
+                                        <strong>排查车辆</strong>
+                                        <p class="clearfix">单日<em>{{today_vehicle==''?'--':today_vehicle}}人</em></p>
+                                        <p class="clearfix">累计<em>{{all_vehicle==''?'--':all_vehicle}}人</em></p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </script>
                     </div>
 
                 </div>
@@ -173,99 +179,106 @@
                 <h2 class="ttl07Box">
                     <span class="ttl07Bg01"><span class="ttl07Bg02">留验站工作动态</span></span>
                 </h2>
-                <div class="selectBox">
-                <select class="default">
-                    <option value="0">经开区</option>
-                    <option value="1">经开区11</option>
-                </select>
+                <div class="selectBox" id="orgBoxWork">
+
+                    <select class="default" id="work">
+                        <option value="1">经开区</option>
+                        <option value="2">威尔登酒店</option>
+                        <option value="3">维也纳智好酒店</option>
+                        <option value="4">维也纳国际酒店</option>
+                        <option value="5">云琪酒店</option>
+                    </select>
+
                 </div>
-                <div class="flowBox">
-                    <table class="flowImg">
-                        <colgroup>
-                            <col width="26%" />
-                            <col width="" />
-                            <col width="18%" />
-                            <col width="32%" />
-                        </colgroup>
-                        <tr>
-                            <td rowspan="7" class="bg01">
-                                <dl class="flowList01 pd0">
-                                    <a href="javascript:;" data-toggle="modal" data-target="#flowWin01">
-                                    <dt>留验站集中医学观察人员</dt>
-                                    <dd class="clearfix">累计<span>222</span></dd>
-                                    <dd class="clearfix">新增<span>222</span></dd>
-                                    </a>
-                                </dl>
-                            </td>
-                            <td rowspan="5" class="bg02">
-                                <dl class="flowList01 short">
-                                    <dt>解除隔离</dt>
-                                    <dd class="clearfix">累计<span>222</span></dd>
-                                    <dd class="clearfix">新增<span>222</span></dd>
-                                </dl>
-                            </td>
-                            <td rowspan="3" class="bg04">
-                                <dl class="flowList01 shortMax">
-                                    <dt>湖北籍</dt>
-                                    <dd>222</dd>
-                                </dl>
-                            </td>
-                            <td>
-                                <p class="flowTxt01 clearfix">去如家酒店 <span>666</span></p>
-                            </td>
-                        </tr>
-                        <tr>
+                <div class="flowBox" id="orgBoxTotal">
+                    <script id="tpl-orgBoxTotal" type="text/html">
+                        <table class="flowImg">
+                            <colgroup>
+                                <col width="24%" />
+                                <col width="" />
+                                <col width="16%" />
+                                <col width="38%" />
+                            </colgroup>
+                            <tr>
+                                <td rowspan="7" class="bg01">
+                                    <dl class="flowList01 pd0">
+                                        <a href="javascript:;" data-toggle="modal" data-target="#flowWin01">
+                                            <dt>留验站集中医学观察人员</dt>
+                                            <dd class="clearfix">累计<span>{{all_count==null?'-':all_count}}</span></dd>
+                                            <dd class="clearfix">新增<span>{{today_count==null?'-':today_count}}</span></dd>
+                                        </a>
+                                    </dl>
+                                </td>
+                                <td rowspan="5" class="bg02">
+                                    <dl class="flowList01 short">
+                                        <dt>解除隔离</dt>
+                                        <dd class="clearfix">累计<span>{{all_remove==null?'-':all_remove}}</span></dd>
+                                        <dd class="clearfix">新增<span>{{tody_remove==null?'-':tody_remove}}</span></dd>
+                                    </dl>
+                                </td>
+                                <td rowspan="3" class="bg04">
+                                    <dl class="flowList01 shortMax">
+                                        <dt>湖北籍</dt>
+                                        <dd>{{hubei_remove==null?'-':hubei_remove}}</dd>
+                                    </dl>
+                                </td>
+                                <td>
+                                    <p class="flowTxt01 clearfix">去如家酒店 <span>{{hubei_remove_rujia==null?'-':hubei_remove_rujia}}</span></p>
+                                </td>
+                            </tr>
+                            <tr>
 
-                            <td><p class="flowTxt01 clearfix">去经开区固定住所 <span>666</span></p></td>
-                        </tr>
-                        <tr>
-                            <td><p class="flowTxt01 clearfix">其他去向 <span>666</span></p></td>
-                        </tr>
-                        <tr>
-                            <td rowspan="2" class="bg05">
-                                <dl class="flowList01 shortMax">
-                                    <dt>非湖北籍</dt>
-                                    <dd>222</dd>
-                                </dl>
-                            </td>
-                            <td>
-                                <p class="flowTxt01 clearfix">云南籍 <span>666</span></p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p class="flowTxt01 clearfix">其他省市籍 <span>666</span></p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td rowspan="2" class="bg03">
-                                <dl class="flowList01 short pd0">
-                                    <a href="javascript:;" data-toggle="modal" data-target="#flowWin02">
-                                    <dt>入住验留</dt>
-                                    <dd class="clearfix">累计<span>222</span></dd>
-                                    <dd class="clearfix">新增<span>222</span></dd>
-                                    </a>
-                                </dl>
-                            </td>
-                            <td>
-                                <dl class="flowList01 shortMax">
-                                    <dt>湖北籍</dt>
-                                    <dd>222</dd>
-                                </dl>
-                            </td>
-                            <td rowspan="2">
+                                <td><p class="flowTxt01 clearfix">去经开区固定住所 <span>{{hubei_remove_home==null?'-':hubei_remove_home}}</span></p></td>
+                            </tr>
+                            <tr>
+                                <td><p class="flowTxt01 clearfix">其他去向 <span>{{hubei_remove_other==null?'-':hubei_remove_other}}</span></p></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" class="bg05">
+                                    <dl class="flowList01 shortMax">
+                                        <dt>非湖北籍</dt>
+                                        <dd>{{other_remove==null?'-':other_remove}}</dd>
+                                    </dl>
+                                </td>
+                                <td>
+                                    <p class="flowTxt01 clearfix">云南籍 <span>{{other_yunan_remove==null?'-':other_yunan_remove}}</span></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="flowTxt01 clearfix">其他省市籍 <span>{{other_other_remove==null?'-':other_other_remove}}</span></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" class="bg03">
+                                    <dl class="flowList01 short pd0">
+                                        <a href="javascript:;" data-toggle="modal" data-target="#flowWin02">
+                                            <dt>入住验留</dt>
+                                            <dd class="clearfix">累计<span>{{all_checkin==null?'-':all_checkin}}</span></dd>
+                                            <dd class="clearfix">新增<span>{{toady_checkin==null?'-':toady_checkin}}</span></dd>
+                                        </a>
+                                    </dl>
+                                </td>
+                                <td>
+                                    <dl class="flowList01 shortMax">
+                                        <dt>湖北籍</dt>
+                                        <dd>{{hubei_checkin==null?'-':hubei_checkin}}</dd>
+                                    </dl>
+                                </td>
+                                <td rowspan="2">
 
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <dl class="flowList01 shortMax">
-                                    <dt>非湖北籍</dt>
-                                    <dd>222</dd>
-                                </dl>
-                            </td>
-                        </tr>
-                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <dl class="flowList01 shortMax">
+                                        <dt>非湖北籍</dt>
+                                        <dd>{{other_checkin==null?'-':other_checkin}}</dd>
+                                    </dl>
+                                </td>
+                            </tr>
+                        </table>
+                    </script>
                 </div>
 
             </div>
@@ -273,25 +286,53 @@
                 <h2 class="ttl07Box">
                     <span class="ttl07Bg01"><span class="ttl07Bg02">物资保障工作</span></span>
                 </h2>
-                <div class="midPart0301 clearfix">
-                    <h3 class="ttl09">物资保供</h3>
-                    <ul class="actionList06">
-                        <li>生活物资<span class="ico_green">正常</span></li>
-                        <li>防疫物资<span class="ico_red">紧缺</span></li>
-                        <li>资金保障<span class="ico_orange">告急</span></li>
-                    </ul>
-
+                <div class="midPart0301 clearfix" id="orgBoxSupport">
+                    <script id="tpl-orgBoxSupport" type="text/html">
+                        <h3 class="ttl09">物资保供</h3>
+                        <ul class="actionList06">
+                            <% if (living=='正常') { %>
+                            <li>生活物资<span class="ico_green">{{living}}</span></li>
+                            <% } else if (living=='紧缺') { %>
+                            <li>生活物资<span class="ico_red">{{living}}</span></li>
+                            <% } else if (living=='告急') { %>
+                            <li>生活物资<span class="ico_orange">{{living}}</span></li>
+                            <% } else { %>
+                            <li>生活物资<span>{{living==null?'--':living}}</span></li>
+                            <% } %>
+                            <% if (prevention=='正常') { %>
+                            <li>防疫物资<span class="ico_green">{{prevention}}</span></li>
+                            <% } else if (prevention=='紧缺') { %>
+                            <li>防疫物资<span class="ico_red">{{prevention}}</span></li>
+                            <% } else if (prevention=='告急') { %>
+                            <li>防疫物资<span class="ico_orange">{{prevention}}</span></li>
+                            <% } else { %>
+                            <li>防疫物资<span>{{prevention==null?'--':prevention}}</span></li>
+                            <% } %>
+                            <% if (capital=='正常') { %>
+                            <li>资金保障<span class="ico_green">{{capital}}</span></li>
+                            <% } else if (capital=='紧缺') { %>
+                            <li>资金保障<span class="ico_red">{{capital}}</span></li>
+                            <% } else if (capital=='告急') { %>
+                            <li>资金保障<span class="ico_orange">{{capital}}</span></li>
+                            <% } else { %>
+                            <li>资金保障<span>{{capital==null?'--':capital}}</span></li>
+                            <% } %>
+                        </ul>
+                    </script>
                 </div>
-                <div class="midPart0302 clearfix">
-                    <h3 class="ttl10">紧缺物资</h3>
-                    <ul class="actionList07">
-                        <li>N95口罩</li>
-                        <li>护目镜（长期缺货）</li>
-                        <li>红外额温计</li>
-                        <li>防护服（长期缺货）</li>
-                        <li>一次性橡胶手套</li>
-                        <li>资金保障</li>
-                    </ul>
+                <div class="midPart0302 clearfix" id="orgBoxLack">
+                    <script id="tpl-orgBoxLack" type="text/html">
+                        <h3 class="ttl10">紧缺物资</h3>
+                        <ul class="actionList07">
+                            {{each lacklist item i}}
+                            <% if (item.status=='长期缺货') { %>
+                            <li>{{item.name}}({{item.status}})</li>
+                            <% } else { %>
+                            <li>{{item.name}}</li>
+                            <% } %>
+                            {{/each}}
+                        </ul>
+                    </script>
                 </div>
             </div>
         </div>
@@ -703,6 +744,7 @@
 <script type="text/javascript" src="src/js/threeCommon.js"></script>
 <script type="text/javascript" src="src/js/threeSituation.js"></script>
 <script type="text/javascript" src="src/js/threeBroadcast.js"></script>
+<script type="text/javascript" src="src/js/threeCenter.js"></script>
 
 <script>
     $('.mess01').liMarquee({
@@ -726,9 +768,13 @@
 
     $(document).ready(function () {
 
-
-
-
+        var sel1 = document.getElementById('work');
+        sel1.onchange = function(){
+            var index = sel1.selectedIndex;
+            console.log(sel1.options[index].value);
+            workid = sel1.options[index].value;
+            WorkstationTotal(selectTime.replace(/-/g,""),workid);
+        }
 
     });
 </script>

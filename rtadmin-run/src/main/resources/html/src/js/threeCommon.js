@@ -1,4 +1,5 @@
 var selectTime ='';
+var workid = '1';
 $(function () {
     var beforeDate = '';
     $.axget1("/api/yndp/time/getBeforeDay",false, function (res) {
@@ -32,5 +33,14 @@ $(function () {
         querySituation(date);
         //其他疫情播报
         queryBroadcast(date);
+
+        ThreePageCheck(date);
+        ThreePageCollection(date);
+        ThreePageInvestigation(date);
+        ThreePageSupport(date);
+        ThreePageLackList(date);
+        ThreePageWorkstationList();
+        ThreePageWorkstationTotal(date)
+
     }
 });
