@@ -27,8 +27,8 @@ public class YndpThreePageCurrentTimeController {
     @GetMapping(value = "/getBeforeDay")
     public Result getBeforeDay(HttpServletRequest request, HttpServletResponse response) {
        // 1.获取当前日期前一天
-//        String beforeDay = DateUtils.getBeforeDay();
-        String beforeDay = DateUtils.getBeforeYesterday();
+        String beforeDay = DateUtils.getBeforeDay();
+//        String beforeDay = DateUtils.getBeforeYesterday();
         Result result = new Result();
         result.setCode(Result.SUCCESS_CODE);
         result.setData(beforeDay); //格式：2020-03-08

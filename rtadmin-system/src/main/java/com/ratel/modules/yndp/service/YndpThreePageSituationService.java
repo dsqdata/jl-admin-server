@@ -27,4 +27,10 @@ public class YndpThreePageSituationService  extends BaseService<YndpThreePageSit
     public List<YndpThreePageSituation> getSituation(String date) {
      return yndpThreePageSituationReposiitory.getSituation(date);
     }
+
+    //发热门诊接触弹出图表List
+    public List<YndpThreePageSituation> getReceive(String date) {
+        return yndpThreePageSituationReposiitory.getReceive(date);
+    }
+
 }

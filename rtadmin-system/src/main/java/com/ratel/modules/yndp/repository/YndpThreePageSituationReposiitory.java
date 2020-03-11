@@ -16,7 +16,10 @@ import java.util.List;
 @Repository
 public interface YndpThreePageSituationReposiitory extends BaseRepository<YndpThreePageSituation, String> {
 
-//    根据时间查询当日疫情动态
+    // 根据时间查询当日疫情动态
     @Query(nativeQuery = true, value = "select * from yndp_three_page_situation where date = ?1")
     List<YndpThreePageSituation> getSituation(String date);
+    // 发热门诊接触弹出图表List
+    @Query(nativeQuery = true, value = "select * from yndp_three_page_situation where date between STR_TO_DATE(?1,'%Y%m%d')-7 and STR_TO_DATE(?1,'%Y%m%d')")
+    List<YndpThreePageSituation> getReceive(String date);
 }

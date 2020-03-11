@@ -33,12 +33,23 @@ public class YndpThreePageSituationController {
     @ApiOperation("第三屏：根据时间查询当日疫情动态")
     @GetMapping(value = "/getSituation")
     public Result getSituation(@RequestParam String date, HttpServletRequest request, HttpServletResponse response) {
-
         // 根据时间查询当日疫情动态
         List<YndpThreePageSituation> yndpThreePageSituationList = yndpThreePageSituationService.getSituation(date);
         Result result = new Result();
         result.setCode(Result.SUCCESS_CODE);
         result.setData(yndpThreePageSituationList);
+        result.setMessage("成功");
+        return result;
+    }
+
+    @ApiOperation("第三屏：发热门诊接触弹出图表接口")
+    @GetMapping(value = "/getReceive")
+    public Result getReceive(@RequestParam String date, HttpServletRequest request, HttpServletResponse response) {
+        // 发热门诊接触弹出图表List
+        List<YndpThreePageSituation> yndpThreePageReceiveList = yndpThreePageSituationService.getReceive(date);
+        Result result = new Result();
+        result.setCode(Result.SUCCESS_CODE);
+        result.setData(yndpThreePageReceiveList);
         result.setMessage("成功");
         return result;
     }
