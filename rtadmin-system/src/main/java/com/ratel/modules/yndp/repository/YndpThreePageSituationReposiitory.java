@@ -20,6 +20,6 @@ public interface YndpThreePageSituationReposiitory extends BaseRepository<YndpTh
     @Query(nativeQuery = true, value = "select * from yndp_three_page_situation where date = ?1")
     List<YndpThreePageSituation> getSituation(String date);
     // 发热门诊接触弹出图表List
-    @Query(nativeQuery = true, value = "select * from yndp_three_page_situation where date between STR_TO_DATE(?1,'%Y%m%d')-7 and STR_TO_DATE(?1,'%Y%m%d')")
+    @Query(nativeQuery = true, value = "select * from yndp_three_page_situation where date between STR_TO_DATE(?1,'%Y%m%d')-7 and STR_TO_DATE(?1,'%Y%m%d') order by date asc ")
     List<YndpThreePageSituation> getReceive(String date);
 }

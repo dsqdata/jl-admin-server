@@ -36,42 +36,52 @@
     <div id="container">
         <div class="topPart clearfix">
             <h2 class="ttl06"><span>当日<br />疫情<br />动态</span></h2>
-            <div class="topPart01">
-                <ul class="actionList01">
-                    <li>
-                        <strong>确诊病例</strong>
-                        <p class="actionList0101"><span>1</span>例</p>
-                        <p class="actionList0102 clearfix">累计<span>14例</span></p>
-                    </li>
-                    <li>
-                        <strong>疑似病例</strong>
-                        <p class="actionList0101"><span>1</span>例</p>
-                        <p class="actionList0102">累计<span>14例</span></p>
-                    </li>
-                    <li>
-                        <strong>密切接触者</strong>
-                        <p class="actionList0101"><span>1</span>例</p>
-                        <p class="actionList0102">累计 14例<span class="txt_yellow">解除 33例</span></p>
-                    </li>
-                    <li class="li01">
-                        <strong>留站集中医学观察</strong>
-                        <p class="actionList0101"><span>1</span>人</p>
-                        <p class="actionList0102">健康状况<span>无异常</span></p>
-                    </li>
-                    <li class="li01 hand" data-toggle="modal" data-target="#myModal">
-                        <strong>发热门诊接触</strong>
-                        <p class="actionList0101"><span>1</span>人次</p>
-                        <p class="actionList0102">复诊 14人<span>隔离观察治疗 14人</span></p>
-                    </li>
-                </ul>
+            <div class="topPart01" id="orgBoxDryqdt">
+                <script id="tpl-orgBoxDryqdt" type="text/html">
+                    <ul class="actionList01">
+                        <li>
+                            <strong>确诊病例</strong>
+                            <p class="actionList0101"><span>{{today_confirmed==null?'-':today_confirmed}}</span>例</p>
+                            <p class="actionList0102 clearfix">累计<span>{{all_confirmed==null?'-':all_confirmed}}例</span></p>
+                        </li>
+                        <li>
+                            <strong>疑似病例</strong>
+                            <p class="actionList0101"><span>{{today_suspected==null?'-':today_suspected}}</span>例</p>
+                            <p class="actionList0102">累计<span>{{all_suspected==null?'-':today_suspected}}例</span></p>
+                        </li>
+                        <li>
+                            <strong>密切接触者</strong>
+                            <p class="actionList0101"><span>{{today_dlose==null?'-':today_dlose}}</span>例</p>
+                            <p class="actionList0102">累计 {{all_close==null?'-':all_close}}例<span class="txt_yellow">解除 {{relieve==null?'-':relieve}}例</span></p>
+                        </li>
+                        <li class="li01">
+                            <strong>留站集中医学观察</strong>
+                            <p class="actionList0101"><span>{{observation==null?'-':observation}}</span>人</p>
+                            <p class="actionList0102">健康状况<span>{{observation_status==null?'-':observation_status}}</span></p>
+                        </li>
+                        <li class="li01 hand" data-toggle="modal" data-target="#myModal">
+                            <strong>发热门诊接触</strong>
+                            <p class="actionList0101"><span>{{today_receive==null?'-':today_receive}}</span>人次</p>
+                            <p class="actionList0102">复诊 {{today_further==null?'-':today_further}}人<span>隔离观察治疗 {{today_quarantine==null?'-':today_quarantine}}人</span></p>
+                        </li>
+                    </ul>
+                </script>
             </div>
-            <div class="topPart02">
+            <div class="topPart02" id="orgBoxBroadcast">
                 <h2 class="actionT01">其他疫情信息报告</h2>
-                <div class="mess01">
-                <ul class="actionList02">
-                    <li>【1】到一心堂（经桥路店）购药的湖北武汉籍黄达，目前正在官渡区人民医院治疗，两次核酸结果阴性，现已排除新冠肺炎可能。已通知一心堂两名接触员工可以复工</li>
-                </ul>
-                </div>
+                <script id="tpl-orgBoxBroadcast" type="text/html">
+                    <h2 class="actionT01">其他疫情信息报告</h2>
+                    <div class="mess01">
+                        <ul class="actionList02">
+                            {{each broadcastList item i}}
+                            <!--                                <li>【1】1到一心堂（经桥路店）购药的湖北武汉籍黄达，目前正在官渡区人民医院治疗，两次核酸结果阴性，现已排除新冠肺炎可能。已通知一心堂两名接触员工可以复工</li>-->
+                            <!--                                <li>【2】2到一心堂（经桥路店）购药的湖北武汉籍黄达，目前正在官渡区人民医院治疗，两次核酸结果阴性，现已排除新冠肺炎可能。已通知一心堂两名接触员工可以复工</li>-->
+                            <!--                                <li>【3】3到一心堂（经桥路店）购药的湖北武汉籍黄达，目前正在官渡区人民医院治疗，两次核酸结果阴性，现已排除新冠肺炎可能。已通知一心堂两名接触员工可以复工</li>-->
+                            <li>【{{i}}】{{item.content}}</li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </script>
             </div>
         </div>
         <div class="midPart clearfix">
@@ -428,8 +438,7 @@
                 <h4 class="modal-title">发热门诊接触</h4>
             </div>
             <div class="modal-body">
-                弹出4
-                <div id="chartLine03" class="chartWinSty"></div>
+                <div id="situationChart" class="chartWinSty"></div>
             </div>
 
         </div>
@@ -692,6 +701,8 @@
 <script type="text/javascript" src="component/bootstrap-3.3.7-dist/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
 <script type="text/javascript" src="component/bootstrap-3.3.7-dist/js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
 <script type="text/javascript" src="src/js/threeCommon.js"></script>
+<script type="text/javascript" src="src/js/threeSituation.js"></script>
+<script type="text/javascript" src="src/js/threeBroadcast.js"></script>
 
 <script>
     $('.mess01').liMarquee({

@@ -3,6 +3,7 @@ $(function () {
     var beforeDate = '';
     $.axget1("/api/yndp/time/getBeforeDay",false, function (res) {
         beforeDate=res.data;
+        checkDate(beforeDate.replace(/-/g,""));
     });
     // new Date(Date.parse(beforeDate.replace(/-/g,"/")))
     $('#datetimepicker').datetimepicker({
@@ -27,5 +28,9 @@ $(function () {
         getDcgzList(date)
         getQyfgfcList(date)
         getGdjcpcEList(date)
+        // 当日疫情动态
+        querySituation(date);
+        //其他疫情播报
+        queryBroadcast(date);
     }
 });
