@@ -279,7 +279,7 @@
 .midPart0301{background: rgba(1,15,26,0.80);border: 1px solid #117491;box-shadow: inset 0 0 22px 0 #117491; height: calc(51% - 10px); margin-bottom: 10px;}
 .midPart0302{background: rgba(39,1,1,0.64);border: 1px solid rgba(255,89,89,0.52);box-shadow: inset 0 0 22px 0 rgba(255,89,89,0.91); height: 49%;}
 
-.actionList01{ overflow: hidden; height: 100%; padding: 25px 0 0 40px;}
+.actionList01{ overflow: hidden; height: 100%; padding: 20px 0 0 40px;}
 .actionList01 li{ float: left; font-size: 16px; padding: 0 5px; height: 100%; width: 19%; text-align: center; background: url("../images/ac_line01.png") no-repeat right 10px;}
 .actionList01 strong{ font-size: 22px; font-weight: bold; display: block;  margin-bottom: 5px;}
 .actionList0101{ font-size: 20px; margin-bottom: 10px;}
@@ -299,13 +299,13 @@
 .midPart01in{ height: 100%; padding: 40px 15px 20px 40px;}
 .ttl08{ color: #22FCFE; font-size: 14px; margin-bottom: 5px; text-align: center; font-weight: bold;}
 .actionList03{ height: 100%;}
-.actionList03 li{ background: url("../images/ac_line02.png") repeat-x left bottom; height: 34%; padding: 20px 0; line-height: 24px; }
-.actionList03 li p{ margin-bottom: 10px;}
+.actionList03 li{ background: url("../images/ac_line02.png") repeat-x left bottom; height: 33%; padding: 20px 0; line-height: 24px; }
+.actionList03 li p{ margin-bottom: 5px;}
 .actionList03 li:last-child{ background: none;}
 .actionList03 li strong{ color: #23B7E5; font-size: 16px;}
 .actionList03 .sttl01{ color: #22FCFE; font-size: 14px;}
 .actionList03 span{ float: right;}
-.actionList03 em{ font-size: 20px; font-weight: bold; margin-right: 5px;}
+.actionList03 em{ font-size: 18px; font-weight: bold; margin-right: 5px;}
 .mb5{ margin-bottom: 5px;}
 .mb10{ margin-bottom: 10px;}
 .actionList03 .txt_green{ font-size: 12px; color: #7ED321;}
@@ -332,10 +332,10 @@
 .actionList05 li.li02:before{background: url("../images/z6.png") no-repeat; background-size:100%; }
 .actionList05 li.li03:before{background: url("../images/z7.png") no-repeat; background-size:100%; }
 .actionList05 strong{ color: #23B7E5; display: block; margin-bottom: 12px;}
-.actionList05 .p01{ font-size: 20px; color: #fff; padding: 10px 0 0 0;}
+.actionList05 .p01{ font-size: 20px; color: #fff; padding: 5px 0 0 0;}
 .actionList05 .p01 span{ margin-right: 5px;}
 .actionList05 em{ float: right; color: #fff;}
-.actionList05 p{ float: left; width: 70%; color: #23B7E5;}
+.actionList05 p{ float: left; width: 65%; color: #23B7E5;}
 .midPart0301{ padding: 25px 0;}
 .midPart0301 .ttl09{ float: left; font-size: 18px; color: #22FCFE; font-weight: bold; width: 25%; padding: 35px 0 0 0; text-align: center;}
 .midPart0301 .ttl09:before{ content: ''; display: block; width: 45px; height: 47px; margin: 0 auto 15px auto; background: url("../images/ac_ico02.png") no-repeat; background-size:100%; }
@@ -353,14 +353,14 @@
 .midPart0302 .ttl10:before{ content: ''; display: block; width: 45px; height: 47px; margin: 0 auto 15px auto; background: url("../images/ac_ico03.png") no-repeat; background-size:100%; }
 .actionList07{ float: left;padding: 10px 25px 0 10px; width: 75%; height: 100%;}
 .actionList07 li{ float: left; width: 50%; height: 30%; font-size: 18px; color: #FF757A; font-weight: bold; padding: 10px 0;}
-.actionList08{ padding: 30px 0 15px 0; overflow: hidden;}
+.actionList08{ padding: 25px 0 10px 0; overflow: hidden;}
 .actionList08 li{ float: left; width: 33%; text-align: center;}
-.actionList08 li strong{ display: block; font-size: 18px; color: #23B7E5; margin-bottom: 10px;}
+.actionList08 li strong{ display: block; font-size: 18px; color: #23B7E5; margin-bottom: 5px;}
 .actionList08 li img{ margin-bottom: 10px;}
 .actionList08 li span{ display: block; font-size: 18px; font-weight: bold;}
 .txt_gray{ color: #979797; }
 .txt_gblue{ color: #50E3C2 ; }
-.actionBox01{background: rgba(35,183,229,0.20);border: 1px solid #23B7E5; padding: 10px 20px; margin: 0 25px; height: 40%;}
+.actionBox01{background: rgba(35,183,229,0.20);border: 1px solid #23B7E5; padding: 10px 20px; margin: 0 25px; height: 38%;}
 .actionT02{ color: #22FCFE; font-size: 18px;margin-bottom:10px; line-height: 25px;}
 .actionT02:before{ content: ''; float: left; width: 27px;height: 26px; background: url("../images/ac_ico01.png") no-repeat; background-size:100%; margin-right: 12px; }
 .actionBox01 .mess01{ height: 70%; width: 100%;}
@@ -368,7 +368,7 @@
 .actionBox01 .mess01 li{ color: #23B7E5; font-size: 16px; line-height: 26px;}
 .pieBox{ float: left; width: 65%; height: 100%;}
 .pieBox li{ float: left; text-align: center; width:19%; margin-right: 1%; height: 100%; background: rgba(1,15,26,0.80);border: 1px solid #117491;box-shadow: inset 0 0 22px 0 #117491;}
-.pieBox li a{ display: block; height: 100%; padding: 30px 0 0 0;}
+.pieBox li a{ display: block; height: 100%; padding: 30px 0 0 0; text-decoration: none;}
 .pieBox li a:hover,.pieBox li a:active{background: rgba(12,173,242,0.17);border: 0 solid #23B7E5;box-shadow: inset 0 0 6px 0 #0CADF2;}
 .pieBox li strong{ font-size: 22px; color: #fff; display: block; margin-bottom: 5px;}
 .pieBox li em{ font-size: 12px; color: #7ED321; margin-bottom: 20px; display: block;}
@@ -381,11 +381,11 @@
 .actionBox02 .mess01 ul { margin: 0; line-height: 26px;}
 .actionBox02 .mess01 li{ color: #23B7E5; font-size: 16px; line-height: 26px;}
 .pieCon{ width: 63px; height: 110px;  margin:0 auto; position: relative;  background: url("../images/zhuzi-1.png") no-repeat; background-size:100% 100%; margin-bottom: 15px; }
-.pieConIn{ width: 51px; height: 110px; margin-left: 6px;  padding-bottom: 7px; background: url("../images/zhuzi-4.png") no-repeat left bottom; }
+.pieConIn{ width: 51px; height: 110px; margin-left: 6px;  padding-bottom: 8px; background: url("../images/zhuzi-4.png") no-repeat left bottom; }
 .pieConIn01{ position: absolute; left:0; bottom: 0; z-index: 100;  background: url("../images/zhuzi-5.png") no-repeat left top; margin-top: 10px;}
 .pieConIn02{ height: 100%; position: relative;}
 .selectBox{ padding: 27px 0 0 27px;}
-.flowBox{ padding: 0 20px; height: 80%;}
+.flowBox{ padding: 0 10px; height: 80%;}
 .flowImg{ width: 100%; height: 100%;}
 .flowImg th,.flowImg td{  font-size: 14px; text-align: center;}
 .flowImg td{ padding: 0 2px}

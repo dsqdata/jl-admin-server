@@ -22,6 +22,6 @@ public interface YndpXxfgRepository extends BaseRepository<YndpThreePageSchool, 
      * @date 2020/3/9
      */
     @Query(nativeQuery = true, value = "select * from yndp_three_page_school where DATE_FORMAT(date, 'Y%m%d') = DATE_FORMAT(?1, 'Y%m%d')  ORDER BY date desc limit 1")
-    YndpThreePageSchool getXxfgList(String data);
+    YndpThreePageSchool getXxfgList(String date);
 
 }

@@ -9,8 +9,10 @@
     <script type="text/javascript" src="component/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="component/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <script type="text/javascript" src="component/echarts/echarts.js"></script>
-
     <script type="text/javascript" src="static/js/jquery.ajax.js"></script>
+    <script type="text/javascript" src="src/js/bottom.js"></script>
+    <script type="text/javascript" src="static/js/template-web.js"></script>
+
 
 
 
@@ -170,10 +172,10 @@
                 <div class="flowBox">
                     <table class="flowImg">
                         <colgroup>
-                            <col width="24%" />
+                            <col width="26%" />
                             <col width="" />
-                            <col width="16%" />
-                            <col width="38%" />
+                            <col width="18%" />
+                            <col width="32%" />
                         </colgroup>
                         <tr>
                             <td rowspan="7" class="bg01">
@@ -289,16 +291,18 @@
                 <h2 class="ttl07Box">
                     <span class="ttl07Bg01"><span class="ttl07Bg02">企业复工复产</span></span>
                 </h2>
-                <div class="clearfix actionBox03">
+                <div class="clearfix actionBox03" >
+                <div id="orgBoxQyfgfc">
+                    <script id="tpl-orgBoxQyfgfc" type="text/html">
                     <ul class="pieBox">
                         <li>
                             <a href="javascript:;" data-toggle="modal" data-target="#barWin01">
-                            <strong>82%</strong>
-                            <em>复工率</em>
+                            <strong>{{data1}}</strong>
+                                <em>复工率</em>
                             <div class="pieCon">
                                 <div class="pieConIn">
                                     <div class="pieConIn02">
-                                        <div class="pieConIn01" style="height: 90%; width: 100%;">
+                                        <div class="pieConIn01" style="height:{{data1}}; width: 100%;">
 
                                         </div>
                                     </div>
@@ -309,94 +313,106 @@
                         </li>
                         <li>
                             <a href="javascript:;" data-toggle="modal" data-target="#barWin02">
-                                <strong>82%</strong>
+                                <strong>{{data2}}</strong>
                                 <em>复工率</em>
                                 <div class="pieCon">
                                     <div class="pieConIn">
                                         <div class="pieConIn02">
-                                            <div class="pieConIn01" style="height: 90%; width: 100%;">
+                                            <div class="pieConIn01" style="height: {{data2}}; width: 100%;">
 
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <span>工业企业</span>
+                                <span>建筑工程</span>
                             </a>
                         </li>
                         <li>
                             <a href="javascript:;" data-toggle="modal" data-target="#barWin03">
-                                <strong>82%</strong>
+                                <strong>{{data3}}</strong>
                                 <em>复工率</em>
                                 <div class="pieCon">
                                     <div class="pieConIn">
                                         <div class="pieConIn02">
-                                            <div class="pieConIn01" style="height: 25%; width: 100%;">
+                                            <div class="pieConIn01" style="height: {{data3}}; width: 100%;">
 
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <span>工业企业</span>
+                                <span>规模以上服务业</span>
                             </a>
                         </li>
                         <li>
                             <a href="javascript:;" data-toggle="modal" data-target="#barWin04">
-                                <strong>82%</strong>
+                                <strong>{{data4}}</strong>
                                 <em>复工率</em>
                                 <div class="pieCon">
                                     <div class="pieConIn">
                                         <div class="pieConIn02">
-                                            <div class="pieConIn01" style="height: 40%; width: 100%;">
+                                            <div class="pieConIn01" style="height: {{data4}}; width: 100%;">
 
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <span>工业企业</span>
+                                <span>物流企业</span>
                             </a>
                         </li>
                         <li>
                             <a href="javascript:;" data-toggle="modal" data-target="#barWin05">
-                                <strong>82%</strong>
+                                <strong>{{data5}}</strong>
                                 <em>复工率</em>
                                 <div class="pieCon">
                                     <div class="pieConIn">
                                         <div class="pieConIn02">
-                                            <div class="pieConIn01" style="height: 90%; width: 100%;">
+                                            <div class="pieConIn01" style="height: {{data5}}; width: 100%;">
 
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <span>工业企业</span>
+                                <span>经营企业</span>
                             </a>
                         </li>
                     </ul>
-                    <div  class="actionBox02">
+                    </script>
+                    </div>
+                    <div  class="actionBox02" id="orgBoxDcz1">
                         <h3 class="actionT03">督导组工作开展</h3>
-                        <ul class="mess01">
-                            <li>1、云南白药集团健康产品有限公司、昆明锅炉有限责任公司、昆明云内动力股份有限公司、云南CY集团有限公司、昆明华润燃气有限公司、一心堂药业集团股份有限公司、中国石油天然气股份有限公司昆明销售分公司呈贡北加油站主站、中国石油天然气股份有限公司昆明销售分公司呈贡北加油站副站、云南中升星辉汽车销售服务有限公司，目前已按要求进行复工复产，各项疫情防控工作正常开展。
-                                清水社区已复工复产2家企业，高坡社区已复产复工76家，其中规模以上企业16家，阿拉社区已复工</li>
+                        <script id="tpl-orgBoxDcz1" type="text/html">
+                            <h3 class="actionT03">督导组工作开展</h3>
+                        <ul class="mess01" id="mess02">
+                            <li>{{content==null?'-':content}}</li>
                         </ul>
+                        </script>
                     </div>
                 </div>
             </div>
-            <div class="btmPart02 posT">
+            <div class="btmPart02 posT" >
+                <div  id="orgBoxXxfx">
+                <script id="tpl-orgBoxXxfx" type="text/html">
                 <h2 class="ttl07Box">
                     <span class="ttl07Bg01"><span class="ttl07Bg02">学校复学情况</span></span>
                 </h2>
 
                 <ul class="actionList08">
-                    <li><strong>各学校</strong> <img src="src/images/ac_img02.png" style="height: 75px;" alt=""><span class="txt_gray">未开学</span></li>
-                    <li><strong>幼儿园</strong><img src="src/images/ac_img03.png" style="height: 75px;" alt=""><span class="txt_gray">未开学</span></li>
-                    <li><strong>培训机构</strong><img src="src/images/ac_img04.png" style="height: 75px;" alt=""><span class="txt_gblue">已开学</span></li>
+                    <li><strong>各学校</strong> <img src="src/images/ac_img02.png" style="height: 75px;" alt=""> <% if (school=='未开学') { %><span class="txt_gray"><% } else { %><span class="txt_gblue"><% } %>{{school==null?'-':school}}</span></li>
+                    <li><strong>幼儿园</strong><img src="src/images/ac_img03.png" style="height: 75px;" alt="">  <% if (kindergarten=='未开学') { %><span class="txt_gray"><% } else { %><span class="txt_gblue"><% } %>{{kindergarten==null?'-':kindergarten}}</span></li>
+                    <li><strong>培训机构</strong><img src="src/images/ac_img04.png" style="height: 75px;" alt=""> <% if (training=='未开学') { %><span class="txt_gray"><% } else { %><span class="txt_gblue"><% } %>{{training==null?'-':training}}</span></li>
                 </ul>
-                <div class="actionBox01">
-                    <h3 class="actionT02">督导组工作开展</h3>
-                    <ul class="mess01">
-                        <li>1、经开三中、航天中学、经开四中各类消杀防护物资储备、疫情防控工作正常开展。</li>
-                    </ul>
+                </script>
                 </div>
+                <div class="actionBox01" id="orgBoxDcz2">
+                    <h3 class="actionT02">督导组工作开展</h3>
+                    <script id="tpl-orgBoxDcz2" type="text/html">
+                     <h3 class="actionT02">督导组工作开展</h3>
+                    <ul class="mess01" id="mess03">
+                        <li>{{content==null?'-':content}}</li>
+                    </ul>
+                    </script>
+                </div>
+
             </div>
 
         </div>
@@ -550,7 +566,6 @@
                 <h4 class="modal-title">固定检查点排查情况</h4>
             </div>
             <div class="modal-body">
-                弹出3-1
                 <div id="chartBar0401"  class="chartWinSty" ></div>
             </div>
 
@@ -566,7 +581,6 @@
                 <h4 class="modal-title">固定检查点排查情况</h4>
             </div>
             <div class="modal-body">
-                弹出3-2
                 <div id="chartBar0402"  class="chartWinSty" ></div>
             </div>
 
@@ -583,7 +597,6 @@
                 <h4 class="modal-title">固定检查点排查情况</h4>
             </div>
             <div class="modal-body">
-                弹出3-3
                 <div id="chartBar0403"  class="chartWinSty" ></div>
             </div>
 
@@ -681,7 +694,6 @@
 <script type="text/javascript" src="src/js/threeCommon.js"></script>
 
 <script>
-    //消息滚动
     $('.mess01').liMarquee({
         direction: 'up',
         scrolldelay:0,
