@@ -27,8 +27,4 @@ public class YndpThreePageCollectionService extends BaseService<YndpThreePageCol
         return YndpThreePageCollectionRepository.getYndpThreePageCollection(date);
     }
 
-    //根据日期查询之前所有日期的社区/村人员核查和信息采集
-    public List<YndpThreePageCollection> getYndpThreePageAllCollectionList(String date) {
-        return YndpThreePageCollectionRepository.getYndpThreePageAllCollectionList(date);
-    }
 }

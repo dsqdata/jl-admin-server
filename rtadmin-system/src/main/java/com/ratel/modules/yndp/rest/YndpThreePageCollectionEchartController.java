@@ -1,7 +1,7 @@
 package com.ratel.modules.yndp.rest;
 
-import com.ratel.modules.yndp.domain.YndpThreePageCollection;
-import com.ratel.modules.yndp.service.YndpThreePageCollectionService;
+import com.ratel.modules.yndp.domain.YndpThreePageCollectionEchart;
+import com.ratel.modules.yndp.service.YndpThreePageCollectionEchartService;
 import com.ratel.modules.yndp.util.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import java.util.List;
 
 /**
  * 社区/村人员核查和信息采集
@@ -22,23 +22,22 @@ import javax.servlet.http.HttpServletResponse;
  */
 @Api(tags = "第三屏：社区/村人员核查和信息采集 ")
 @RestController
-@RequestMapping("/api/yndp/Collection")
-public class YndpThreePageCollectionController {
+@RequestMapping("/api/yndp/CollectionEchart")
+public class YndpThreePageCollectionEchartController {
 
     @Autowired
-    YndpThreePageCollectionService YndpThreePageCollectionService;
+    YndpThreePageCollectionEchartService YndpThreePageCollectionEchartService;
 
     @ApiOperation("根据日期查询社区/村人员核查和信息采集 ")
-    @GetMapping(value = "/getYndpThreePageCollection")
-    public Result getYndpThreePageCollection(@RequestParam String date, HttpServletRequest request, HttpServletResponse response) {
+    @GetMapping(value = "/getYndpThreePageCollectionEchartList")
+    public Result getYndpThreePageCollectionEchartList(@RequestParam String date, HttpServletRequest request, HttpServletResponse response) {
 
-        YndpThreePageCollection yndpThreePageCollection = YndpThreePageCollectionService.getYndpThreePageCollection(date);
+        List<YndpThreePageCollectionEchart> YndpThreePageAllCollectionEchartList = YndpThreePageCollectionEchartService.getYndpThreePageCollectionEchartList(date);
         Result result = new Result();
         result.setCode(Result.SUCCESS_CODE);
-        result.setData(yndpThreePageCollection);
+        result.setData(YndpThreePageAllCollectionEchartList);
         result.setMessage("成功");
         return result;
     }
-
 
 }
