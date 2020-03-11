@@ -81,6 +81,18 @@
                                 <div class="ttlBox">
                                     <span>{{wgz}}</span><!--<span>赵赵赵3</span>-->
                                 </div>
+                                <dl class="wBox">
+                                    <dt>网格长</dt>
+<!--                                    <dd>李莉莉 13804308888</dd>-->
+<!--                                    <dd>李莉莉 13804308888</dd>-->
+                                    <% if (wgz !=null) { %>
+                                        {{each wgz.trim().split(/\s+/) itm i}}
+                                            <% if (i%2==0) { %>
+                                            <dd>{{wgz.trim().split(/\s+/)[i]}}&nbsp&nbsp{{wgz.trim().split(/\s+/)[i+1]}}</dd>
+                                            <% } %>
+                                        {{/each}}
+                                    <% } %>
+                                </dl>
                             </a>
                         </div>
                         <div class="orgConMid">
@@ -90,8 +102,22 @@
                                     <a href="#">
                                         <h4 class="ttl03">{{item.jgmc}}</h4>
                                         <div class="ttlBox01">
-                                            <span>{{item.wgz}}</span><!--<span>赵赵赵5</span><span>赵赵赵6</span>-->
+<!--                                            <span>{{item.wgz}}</span>-->
+                                            <span>{{item.wgz==null?'-':item.wgz.trim().split(/\s+/)[0]}}</span>
+                                            <span>{{item.wgz==null?'-':item.wgz.trim().split(/\s+/)[1]}}</span>
                                         </div>
+                                        <dl class="wBox">
+                                            <dt>网格长</dt>
+<!--                                            <dd>李莉莉 13804308888</dd>-->
+<!--                                            <dd>李莉莉 13804308888</dd>-->
+                                            <% if (item.wgz !=null) { %>
+                                            {{each item.wgz.trim().split(/\s+/) itm i}}
+                                                <% if (i%2==0) { %>
+                                                 <dd>{{item.wgz.trim().split(/\s+/)[i]}}&nbsp&nbsp{{item.wgz.trim().split(/\s+/)[i+1]}}</dd>
+                                                <% } %>
+                                            {{/each}}
+                                            <% } %>
+                                        </dl>
                                     </a>
                                 </li>
                                 {{/each}}
@@ -110,8 +136,22 @@
                             <a href="#">
                                 <h3 class="ttl02">{{jgmc}}</h3>
                                 <div class="ttlBox">
-                                    <span>{{wgz}}</span><!--<span>赵赵赵</span>-->
+<!--                                    <span>{{wgz}}</span>-->
+                                    <span>{{wgz==null?'-':wgz.trim().split(/\s+/)[0]}}</span>
+                                    <span>{{wgz==null?'-':wgz.trim().split(/\s+/)[1]}}</span>
                                 </div>
+                                <dl class="wBox">
+                                    <dt>网格长</dt>
+                                    <!--                                    <dd>李莉莉 13804308888</dd>-->
+                                    <!--                                    <dd>李莉莉 13804308888</dd>-->
+                                    <% if (wgz !=null) { %>
+                                    {{each wgz.trim().split(/\s+/) itm i}}
+                                    <% if (i%2==0) { %>
+                                    <dd>{{wgz.trim().split(/\s+/)[i]}}&nbsp&nbsp{{wgz.trim().split(/\s+/)[i+1]}}</dd>
+                                    <% } %>
+                                    {{/each}}
+                                    <% } %>
+                                </dl>
                             </a>
                         </div>
                         <div class="orgConMid">
@@ -121,8 +161,22 @@
                                     <a href="#">
                                         <h4 class="ttl03">{{item.jgmc}}</h4>
                                         <div class="ttlBox01">
-                                            <span>{{item.wgz}}</span><!--<span>赵赵赵</span><span>赵赵赵</span>-->
+<!--                                            <span>{{item.wgz}}</span>-->
+                                            <span>{{item.wgz==null?'-':item.wgz.trim().split(/\s+/)[0]}}</span>
+                                            <span>{{item.wgz==null?'-':item.wgz.trim().split(/\s+/)[1]}}</span>
                                         </div>
+                                        <dl class="wBox">
+                                            <dt>网格长</dt>
+                                            <!--                                            <dd>李莉莉 13804308888</dd>-->
+                                            <!--                                            <dd>李莉莉 13804308888</dd>-->
+                                            <% if (item.wgz !=null) { %>
+                                            {{each item.wgz.trim().split(/\s+/) itm i}}
+                                            <% if (i%2==0) { %>
+                                            <dd>{{item.wgz.trim().split(/\s+/)[i]}}&nbsp&nbsp{{item.wgz.trim().split(/\s+/)[i+1]}}</dd>
+                                            <% } %>
+                                            {{/each}}
+                                            <% } %>
+                                        </dl>
                                     </a>
                                 </li>
                                 {{/each}}
@@ -181,6 +235,23 @@
     var initOrgBox01 = function (data) {
         var html = template('tpl-orgBox01', data);
         document.getElementById('orgBox01').innerHTML = html;
+
+        $('.orgConLft a').hover(function () {
+                $(this).parent().find('.wBox').show();
+            },
+            function() {
+                $(this).parent().find('.wBox').hide();
+            }
+        )
+
+        $('.orgList01 li a').hover(function () {
+                $(this).parent().find('.wBox').show();
+            },
+            function() {
+                $(this).parent().find('.wBox').hide();
+            }
+        )
+
     }
     var initOrgBox02 = function (data) {
         var html = template('tpl-orgBox02', data);

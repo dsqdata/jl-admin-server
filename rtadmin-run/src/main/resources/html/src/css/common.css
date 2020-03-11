@@ -159,10 +159,6 @@
 .list01 li.li08:before{  background: url("../images/Shape8.png") no-repeat;  background-size:100%; }
 .list01 li.li09:before{  background: url("../images/Shape9.png") no-repeat;  background-size:100%; }
 .tbBox{ padding: 0 4%; height: 98%;}
-.tb01{ width: 100%; height: 94%; margin: 3% 0 0 0;border-collapse:separate;border-spacing:0 8px;}
-.tb01 th{ background: rgba(9,47,75,0.50);  text-align: center;  height: 15%; color: #23B7E5; font-size: 15px;}
-.tb01 td{background: rgba(9,47,75,0.50);   text-align: center;}
-
 .ycBox01{ height: 89%;}
 .ycBox02{ float: left; width: 36%; margin-left: 5%; background:url("../images/img01.png") no-repeat center bottom; background-size:100% 60%;  height: 100%; text-align: left; color: #ccffff; padding: 15px 0 0 0;}
 .list02{ float: left;  height: 100%; width: 53%; margin:5% 0 0 5%; }
@@ -408,6 +404,26 @@ dl,dt,dd{font-size: 14px;}
 .flowTxt01 span{ float: right;}
 .hand:hover{cursor: pointer;}
 .chartWinSty{width: 1180px; height: 500px;}
+
+.tb01Head{ margin-top: 3%; height:40px;background: rgba(9,47,75,0.50); margin-bottom: 5px;}
+.tb01Head .td01{ height: 100%;border-collapse:separate;border-spacing:0 8px; }
+.tb01Head th{ padding: 10px 0; text-align: center;}
+.tb01{ width: 100%; border-collapse:separate;}
+.tb01Body{ height: 210px; width: 100%; }
+.tb01Body .tb01{ height: 100%;border-spacing:0 8px;margin-top: -8px;}
+.tb01Body .tb01 th{ background: rgba(9,47,75,0.50);  text-align: center;  color: #23B7E5; font-size: 15px;}
+.tb01Body .tb01 td{background: rgba(9,47,75,0.50); height: 35px;  text-align: center;}
+
+.orgConLft .ttlBox{ font-size: 16px; font-weight: normal; padding: 13% 10px;}
+.orgConMid .ttlBox01{font-size: 14px; font-weight: normal;}
+
+
+.orgConLft{ position: relative;}
+.wBox{ display: none; position: absolute; z-index:1000;bottom:-10px; border: 1px solid #418195; background: rgba(0,0,0,0.5); padding: 15px 20px;}
+.wBox dt{ color: #f3e31b; font-size: 14px; margin-bottom: 5px;}
+.wBox dd{ color: #fff; font-size: 14px; margin-bottom: 3px;}
+.orgList01 li{ position: relative;}
+.orgList01 .wBox{padding: 5px 10px;bottom:-82px;background: rgba(0,0,0,0.9); width: 100%;}
 
 /*日期选择*/
 .form_date{
