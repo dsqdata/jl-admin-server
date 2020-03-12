@@ -79,7 +79,7 @@ function chartBar0104(rq4,lx4fgl,lx4fgs){
             },
                 {
                     type: 'value',
-                    name: '家      ',
+                    name: '      %',
                     min: 0,
                     nameTextStyle: {
                         color: "#21b0dd",

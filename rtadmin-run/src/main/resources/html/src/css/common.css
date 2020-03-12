@@ -539,3 +539,8 @@ a,a:hover{ text-decoration: none!important;}
 .nameList li span{ margin-right: 10px;}
 
 
+/*.datetimepicker thead tr:first-child th:hover, .datetimepicker tfoot th:hover{ background:#167499!important; }*/
+
+/*!* 滚动条 *!*/
+/*::-webkit-scrollbar{padding-left:1px; margin-left:1px; background:none; overflow:visible; width:8px; height: 8px; }*/
+/*::-webkit-scrollbar-thumb{ background-color:#115273; border: none; background-clip:padding-box;  min-height:15px; box-shadow:inset 1px 1px 0 #114bb1,inset 0 -1px 0 #114bb1 ,inset -1px -1px 0 #114bb1 ,inset 1px -1px 0 #114bb1; border-radius:5px;}*/

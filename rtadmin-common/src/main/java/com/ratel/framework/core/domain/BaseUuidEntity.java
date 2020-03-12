@@ -19,7 +19,7 @@ import java.io.Serializable;
  */
 @Getter
 @Access(AccessType.FIELD)
-@JsonInclude(Include.NON_EMPTY)
+@JsonInclude(Include.ALWAYS)
 @MappedSuperclass
 @AuditOverrides({@AuditOverride(forClass = BaseUuidEntity.class)})
 public abstract class BaseUuidEntity extends BaseEntity<String>  implements Serializable {
