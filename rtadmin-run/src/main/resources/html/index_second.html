@@ -48,9 +48,9 @@
                                 <span class="bgBtm01"></span>
                                 <span class="bgBtm02"></span>
                                 <div class="leftBox01In" style="text-align: left;">
-                                    <ul class="orgList02">
-                                        <li><strong>街道网格长</strong><span>{{jdwgz==null?'-': jdwgz.trim().split(/\s+/)[0]}}{{jdwgz==null?jdwgz: jdwgz.trim().split(/\s+/)[1]}}</span></li>
-                                        <li><strong>网格管理员</strong><span>{{jdwggly==null?'-':jdwggly.trim().split(/\s+/)[0]}}{{jdwggly==null?jdwggly:jdwggly.trim().split(/\s+/)[1]}}</span></li>
+                                    <ul class="orgList02" style="padding: 2px 1px;">
+                                        <li><strong>街道网格长</strong><span>{{jdwgz==null?'-': jdwgz.trim().split(/\s+/)[0]}}&nbsp;{{jdwgz==null?jdwgz: jdwgz.trim().split(/\s+/)[1]}}</span></li>
+                                        <li><strong>网格管理员</strong><span>{{jdwggly==null?'-':jdwggly.trim().split(/\s+/)[0]}}&nbsp;{{jdwggly==null?jdwggly:jdwggly.trim().split(/\s+/)[1]}}</span></li>
                                     </ul>
                                 </div>
                             </div>
@@ -61,15 +61,21 @@
                                 <span class="bgBtm01"></span>
                                 <span class="bgBtm02"></span>
                                 <div class="leftBox02In">
-                                    <ul class="orgList02">
+                                    <ul class="orgList02" style="padding: 2px 1px;">
                                         <% if (xjlx==1) { %>
-                                        <li><strong>社区网格长</strong><span>{{sqwgz==null?'-':sqwgz}}</span></li>
-                                        <li><strong>网格管理员</strong><span>{{sqwggly==null?'-':sqwggly}}</span></li>
-                                        <li><strong></strong><span></span></li>
+<!--                                        <li><strong>社区网格长</strong><span>{{sqwgz==null?'-':sqwgz}}</span></li>-->
+<!--                                        <li><strong>网格管理员</strong><span>{{sqwggly==null?'-':sqwggly}}</span></li>-->
+                                        <li><strong>社区网格长</strong><span>{{sqwgz==null?'-':sqwgz.trim().split(/\s+/)[0]}}&nbsp;{{sqwgz==null?'-':sqwgz.trim().split(/\s+/)[1]}}</span></li>
+                                        <li><strong>网格管理员</strong><span>{{sqwggly==null?'-':sqwggly.trim().split(/\s+/)[0]}}&nbsp;{{sqwggly==null?'-':sqwggly.trim().split(/\s+/)[1]}}</span></li>
                                         <% } else if (xjlx==2) { %>
-                                        <li><strong>社区网格长</strong><span>{{sqwgz==null?'-':sqwgz}}</span></li>
-                                        <li><strong>社区网格监督员</strong><span>{{sqwgjdy==null?'-':sqwgjdy}}</span></li>
-                                        <li><strong>网格员</strong><span>{{sqwggly==null?'-':sqwggly}}</span></li>
+<!--                                        <li><strong>社区网格长</strong><span>{{sqwgz==null?'-':sqwgz}}</span></li>-->
+<!--                                        <li><strong>社区网格监督员</strong><span>{{sqwgjdy==null?'-':sqwgjdy}}</span></li>-->
+<!--                                        <li><strong>网格员</strong><span>{{sqwggly==null?'-':sqwggly}}</span></li>-->
+
+                                        <li><strong>社区网格长</strong><span>{{sqwgz==null?'-':sqwgz.trim().split(/\s+/)[0]}}&nbsp;{{sqwgz==null?'-':sqwgz.trim().split(/\s+/)[1]}}</span></li>
+                                        <li><strong>社区网格监督员</strong><span>{{sqwgjdy==null?'-':sqwgjdy.trim().split(/\s+/)[0]}}&nbsp;{{sqwgjdy==null?'-':sqwggly.trim().split(/\s+/)[1]}}</span></li>
+                                        <li><strong>网格员</strong><span>{{sqwggly==null?'-':sqwggly.trim().split(/\s+/)[0]}}&nbsp;{{sqwggly==null?'-':sqwggly.trim().split(/\s+/)[1]}}</span></li>
+
                                         <% } else if (xjlx==3) { %>
 <!--                                        <li><strong>包保领导</strong><span>赵赵赵</span>13600000000</li>-->
 <!--                                        <li><strong>社区监督员</strong><span>赵赵赵</span>13600000000</li>-->
@@ -133,11 +139,12 @@
                                         <% if (xjlx==1) { %>
                                             <!--box1-->
                                                 <div class="orgConLft01">
-                                                    <a href="#">
+                                                    <a href="#" >
                                                         <h3 class="ttl02">{{item.wgmc}}</h3>
                                                         <div class="ttlBox">
-                                                            <ul class="orgList02 lineMore">
-                                                                <li><strong>网格管理员</strong><span>{{item.wggly==null?'-':item.wggly}}</span></li>
+                                                            <ul class="orgList02 lineMore" style="padding: 2px 1px;">
+<!--                                                                <li><strong>网格管理员</strong><span>{{item.wggly==null?'-':item.wggly}}</span></li>-->
+                                                                <li><strong>网格管理员</strong><span>{{item.wggly==null?'-':item.wggly.trim().split(/\s+/)[0]}}</span><span>{{item.wggly==null?'-':item.wggly.trim().split(/\s+/)[1]}}</span></li>
                                                                 <li><strong>小区</strong><span>{{item.xqnum==null?'-':item.xqnum}}个</span></li>
                                                                 <li><strong>居民户数</strong><span>{{item.jmzhs==null?'-':item.jmzhs}}户{{item.jmzrs==null?'-':item.jmzrs}}人</span></li>
                                                                 <li><strong>主干道</strong><span>{{item.zgdts==null?'-':item.zgdts}}条</span></li>
@@ -154,10 +161,11 @@
                                                         {{each item.children subItem j}}
                                                         <div class="orgList03In">
                                                             <h3 class="ttl05">{{subItem.jgmc==null?'-':subItem.jgmc}}<span>({{subItem.lds==null?'-':subItem.lds}}栋{{subItem.hs==null?'-':subItem.hs}}户{{subItem.zrs==null?'-':subItem.zrs}}人)</span></h3>
-                                                            <ul class="orgList02">
-<!--                                                                <li><strong>{{subItem.jgmc}}</strong><span>({{subItem.lds}}栋{{subItem.hs}}户{{subItem.zrs}}人)</span></li>-->
-                                                                <li><strong>网格长</strong><span>{{subItem.jgwgz==null?'-':subItem.jgwgz}}</span></li>
-                                                                <li><strong>网格管理员</strong><span>{{subItem.jgwggly==null?'-':subItem.jgwggly}}</span></li>
+                                                            <ul class="orgList02" style="padding: 2px 1px;">
+<!--                                                                <li><strong>网格长</strong><span>{{subItem.jgwgz==null?'-':subItem.jgwgz}}</span></li>-->
+<!--                                                                <li><strong>网格管理员</strong><span>{{subItem.jgwggly==null?'-':subItem.jgwggly}}</span></li> -->
+                                                                <li><strong>网格长</strong><span>{{subItem.jgwgz==null?'-':subItem.jgwgz.trim().split(/\s+/)[0]}}</span><span>{{subItem.jgwgz==null?'-':subItem.jgwgz.trim().split(/\s+/)[1]}}</span></li>
+                                                                <li><strong>网格管理员</strong><span>{{subItem.jgwggly==null?'-':subItem.jgwggly.trim().split(/\s+/)[0]}}</span><span>{{subItem.jgwggly==null?'-':subItem.jgwggly.trim().split(/\s+/)[1]}}</span></li>
                                                             </ul>
                                                         </div>
                                                         {{/each}}
@@ -170,10 +178,13 @@
                                                     <a href="#">
                                                         <h3 class="ttl02">{{item.wgmc==null?'-':item.wgmc}} &nbsp;<span>{{item.hs==null?'-':item.hs}}户{{item.rs==null?'-':item.rs}}人 </span></h3>
                                                         <div class="ttlBox">
-                                                            <ul class="orgList02 lineMore">
-                                                                <li><strong>网格监督员</strong><span>{{item.wljdy==null?'-':item.wljdy}}</span></li>
-                                                                <li><strong>网格长</strong><span>{{item.wgz==null?'-':item.wgz}}</span></li>
-                                                                <li><strong>网格员</strong><span>{{item.wgy==null?'-':item.wgy}}</span></li>
+                                                            <ul class="orgList02 lineMore" style="padding: 2px 1px;">
+<!--                                                                <li><strong>网格监督员</strong><span>{{item.wljdy==null?'-':item.wljdy}}</span></li>-->
+<!--                                                                <li><strong>网格长</strong><span>{{item.wgz==null?'-':item.wgz}}</span></li>-->
+<!--                                                                <li><strong>网格员</strong><span>{{item.wgy==null?'-':item.wgy}}</span></li>-->
+                                                                <li><strong>网格监督员</strong><span>{{item.wljdy==null?'-':item.wljdy.trim().split(/\s+/)[0]}}</span><span>{{item.wljdy==null?'-':item.wljdy.trim().split(/\s+/)[1]}}</span></li>
+                                                                <li><strong>网格长</strong><span>{{item.wgz==null?'-':item.wgz.trim().split(/\s+/)[0]}}</span><span>{{item.wgz==null?'-':item.wgz.trim().split(/\s+/)[1]}}</span></li>
+                                                                <li><strong>网格员</strong><span>{{item.wgy==null?'-':item.wgy.trim().split(/\s+/)[0]}}</span><span>{{item.wgy==null?'-':item.wgy.trim().split(/\s+/)[1]}}</span></li>
                                                             </ul>
                                                         </div>
                                                     </a>
@@ -198,7 +209,7 @@
                                         <% } else  { %>
                                             <!--box1-->
                                                 <div class="orgConLft01 ">
-                                                    <a href="#">
+                                                    <a href="#" >
                                                         <h3 class="ttl02">{{item.jgmc==null?'-':item.jgmc}} <span>{{item.gsgs==null?'-':item.gsgs}}</span></h3>
                                                         <div class="ttlBox">
                                                             <ul class="orgList02 lineMore">
@@ -539,6 +550,13 @@
 
         // $("#orgBox02").after(html);
         document.getElementById('orgBox02').innerHTML = html;
+    }
+
+    // 所有弹窗
+    function allModal(data,type){
+        console.log("~~~~~~~");
+        console.log(data);
+        console.log(type);
     }
 
 </script>

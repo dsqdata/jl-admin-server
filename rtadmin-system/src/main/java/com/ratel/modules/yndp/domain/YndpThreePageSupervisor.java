@@ -32,7 +32,7 @@ public class YndpThreePageSupervisor extends YndpBaseUuidEntity {
     /**
      * 工作开展内容描述
      */
-    @Column(name = "content ", columnDefinition = "VARCHAR(20) COMMENT '工作开展内容描述'")
+    @Column(name = "content", columnDefinition = "text(0) COMMENT '工作开展内容描述'")
     private String content ;
     /**
      * 扩展1

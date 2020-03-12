@@ -40,17 +40,17 @@
                 <script id="tpl-orgBoxDryqdt" type="text/html">
                     <ul class="actionList01">
                         <li>
-                            <strong>确诊病例</strong>
+                            <strong>现存确诊</strong>
                             <p class="actionList0101"><span>{{today_confirmed==null?'-':today_confirmed}}</span>例</p>
                             <p class="actionList0102 clearfix">累计<span>{{all_confirmed==null?'-':all_confirmed}}例</span></p>
                         </li>
                         <li>
-                            <strong>疑似病例</strong>
+                            <strong>现存疑似</strong>
                             <p class="actionList0101"><span>{{today_suspected==null?'-':today_suspected}}</span>例</p>
                             <p class="actionList0102">累计<span>{{all_suspected==null?'-':today_suspected}}例</span></p>
                         </li>
                         <li>
-                            <strong>密切接触者</strong>
+                            <strong>现存密切接触者</strong>
                             <p class="actionList0101"><span>{{today_dlose==null?'-':today_dlose}}</span>例</p>
                             <p class="actionList0102">累计 {{all_close==null?'-':all_close}}例<span class="txt_yellow">解除 {{relieve==null?'-':relieve}}例</span></p>
                         </li>
@@ -476,7 +476,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">发热门诊接触</h4>
+                <h4 class="modal-title">发热门诊接诊</h4>
             </div>
             <div class="modal-body">
                 <div id="situationChart" class="chartWinSty"></div>
