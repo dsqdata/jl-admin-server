@@ -18,6 +18,6 @@ public interface YndpThreePageCollectionEchartRepository extends BaseRepository<
     /**
      * 根据日期查询之前所有日期的社区/村人员核查和信息采集
      */
-    @Query(nativeQuery = true, value = "select * from yndp_three_page_collection_echart where date <= ?1 ")
+    @Query(nativeQuery = true, value = "select * from yndp_three_page_collection_echart where date <= ?1 ORDER BY date ASC")
     List<YndpThreePageCollectionEchart> getYndpThreePageCollectionEchartList(String date);
 }

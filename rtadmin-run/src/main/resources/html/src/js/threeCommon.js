@@ -19,7 +19,7 @@ $(function () {
         // endDate:"-1d" //小于当天的日期的设置  endDate: new Date() 今天的日期和以前的能选择
     }).on('changeDate',function(ev){
         selectTime = $("#datetimepicker").find("input").val();
-        checkDate(selectTime.replace(/-/g,""))
+        checkDate(selectTime.replace(/-/g,""));
     });
     $('#datetimepicker').datetimepicker('setDate', new Date(Date.parse(beforeDate.replace(/-/g,"/")))); //把要设置的默认值放入new Date()里面
 
@@ -41,6 +41,6 @@ $(function () {
         ThreePageLackList(date);
         ThreePageWorkstationList();
         ThreePageWorkstationTotal(date)
-
+        ThreePageCollectionEchartList(date)
     }
 });

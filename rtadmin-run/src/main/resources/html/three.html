@@ -663,8 +663,7 @@
                 <h4 class="modal-title">社区/村人员核查和信息采集情况</h4>
             </div>
             <div class="modal-body">
-                弹出4-1
-                <div id="chartLine0401"  class="chartWinSty" ></div>
+                <div id="chartBar0501"  class="chartWinSty" ></div>
             </div>
 
         </div>
@@ -679,8 +678,7 @@
                 <h4 class="modal-title">社区/村人员核查和信息采集情况</h4>
             </div>
             <div class="modal-body">
-                弹出4-2
-                <div id="chartLine0402"  class="chartWinSty" ></div>
+                <div id="chartBar0502"  class="chartWinSty" ></div>
             </div>
 
         </div>
@@ -695,8 +693,7 @@
                 <h4 class="modal-title">社区/村人员核查和信息采集情况</h4>
             </div>
             <div class="modal-body">
-                弹出4-3
-                <div id="chartLine0403" class="chartWinSty" ></div>
+                <div id="chartBar0503" class="chartWinSty" ></div>
             </div>
 
         </div>
@@ -711,8 +708,7 @@
                 <h4 class="modal-title">社区/村人员核查和信息采集情况</h4>
             </div>
             <div class="modal-body">
-                弹出4-4
-                <div id="chartLine0404"  class="chartWinSty"></div>
+                <div id="chartBar0504"  class="chartWinSty"></div>
             </div>
 
         </div>
@@ -720,10 +716,10 @@
 </div>
 
 <!--<script type="text/javascript" src="src/js/chartLine03.js"></script>-->
-<script type="text/javascript" src="src/js/chartLine0401.js"></script>
+<!--<script type="text/javascript" src="src/js/chartLine0401.js"></script>
 <script type="text/javascript" src="src/js/chartLine0402.js"></script>
 <script type="text/javascript" src="src/js/chartLine0403.js"></script>
-<script type="text/javascript" src="src/js/chartLine0404.js"></script>
+<script type="text/javascript" src="src/js/chartLine0404.js"></script>-->
 <script type="text/javascript" src="src/js/chartBar0101.js"></script>
 <script type="text/javascript" src="src/js/chartBar0102.js"></script>
 <script type="text/javascript" src="src/js/chartBar0103.js"></script>
@@ -735,6 +731,10 @@
 <script type="text/javascript" src="src/js/chartBar0402.js"></script>
 <script type="text/javascript" src="src/js/chartBar0403.js"></script>
 
+<script type="text/javascript" src="src/js/chartBar0501.js"></script>
+<script type="text/javascript" src="src/js/chartBar0502.js"></script>
+<script type="text/javascript" src="src/js/chartBar0503.js"></script>
+<script type="text/javascript" src="src/js/chartBar0504.js"></script>
 
 <script src="component/jquery.liMarquee.js"></script>
 <!--日期选择-->
@@ -770,10 +770,10 @@
 
         var sel1 = document.getElementById('work');
         sel1.onchange = function(){
-            var index = sel1.selectedIndex;
+           /* var index = sel1.selectedIndex;
             console.log(sel1.options[index].value);
-            workid = sel1.options[index].value;
-            WorkstationTotal(selectTime.replace(/-/g,""),workid);
+            workid = sel1.options[index].value;*/
+            ThreePageWorkstationTotal(selectTime.replace(/-/g,""));
         }
 
     });
