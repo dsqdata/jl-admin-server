@@ -27,4 +27,8 @@ public class YndpQyfgfcService extends BaseService<YndpThreePageRework, String> 
     public List<YndpThreePageRework> getQyfgfcList(String date) {
         return yndpQyfgfcRepository.getQyfgfcList(date);
     }
+
+    public List<YndpThreePageRework> getQyfgfcEchartList(String date) {
+        return yndpQyfgfcRepository.getQyfgfcEchartList(date);
+    }
 }

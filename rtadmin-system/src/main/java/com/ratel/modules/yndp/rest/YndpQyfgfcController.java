@@ -43,4 +43,16 @@ public class YndpQyfgfcController {
     }
 
 
+    @ApiOperation("根据日期查询出企业复工复产情况选定日期之前的Echart列表")
+    @GetMapping(value = "/getQyfgfcEchartList")
+    public Result getQyfgfcEchartList(@RequestParam String date,HttpServletRequest request, HttpServletResponse response) {
+
+        // 1. 根据所选择的机构ID查询出列表
+        List<YndpThreePageRework> yndpQyfgfcEchartList = yndpQyfgfcService.getQyfgfcEchartList(date);
+        Result result = new Result();
+        result.setCode(Result.SUCCESS_CODE);
+        result.setData(yndpQyfgfcEchartList);
+        result.setMessage("成功");
+        return result;
+    }
 }

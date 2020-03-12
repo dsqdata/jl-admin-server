@@ -28,6 +28,7 @@ $(function () {
         getXxfgList(date)
         getDcgzList(date)
         getQyfgfcList(date)
+        getQyfgfcEchartList(date)
         getGdjcpcEList(date)
         // 当日疫情动态
         querySituation(date);

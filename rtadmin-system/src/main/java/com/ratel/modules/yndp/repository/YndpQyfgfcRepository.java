@@ -24,4 +24,12 @@ public interface YndpQyfgfcRepository extends BaseRepository<YndpThreePageRework
     @Query(nativeQuery = true, value = "select * from yndp_three_page_rework where DATE_FORMAT(date, 'Y%m%d') = DATE_FORMAT(?1, 'Y%m%d')  ORDER BY date desc limit 5")
     List<YndpThreePageRework> getQyfgfcList(String date);
 
+    /**
+     * 企业复工复产情况选定日期之前的Echart列表
+     * @author GXP
+     * @date 2020/3/9
+     */
+    @Query(nativeQuery = true, value = "select * from yndp_three_page_rework where DATE_FORMAT(date, 'Y%m%d') <= DATE_FORMAT(?1, 'Y%m%d')  ORDER BY date asc")
+    List<YndpThreePageRework> getQyfgfcEchartList(String date);
+
 }
