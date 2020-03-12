@@ -130,19 +130,19 @@
                     </ul>
 
                 <div class="midBox01in">
-                    <div class="mapMessbox">
+                    <!--<div class="mapMessbox">
                         <div class="mapMess">
                             <ul>
                                 {{each a item i}}
                                 <li><span>{{item.sjfssj}}</span>{{item.sj}}</li>
                                 {{/each}}
-                             <!--   <li><span>2020/02/20 15:00:00</span>昆经开洛羊街道259号世贸大厦 有一市民未佩戴口罩</li>
+                             &lt;!&ndash;   <li><span>2020/02/20 15:00:00</span>昆经开洛羊街道259号世贸大厦 有一市民未佩戴口罩</li>
                                 <li><span>2020/02/20 15:00:00</span>昆经开洛羊街道259号世贸大厦 有一市民未佩戴口罩</li>
                                 <li><span>2020/02/20 15:00:00</span>昆经开洛羊街道259号世贸大厦 有一市民未佩戴口罩</li>
-                                <li><span>2020/02/20 15:00:00</span>昆经开洛羊街道259号世贸大厦 有一市民未佩戴口罩</li>-->
+                                <li><span>2020/02/20 15:00:00</span>昆经开洛羊街道259号世贸大厦 有一市民未佩戴口罩</li>&ndash;&gt;
                             </ul>
                         </div>
-                    </div>
+                    </div>-->
                    <ul class="mapTab">
                         <li><a href="javascript:void(0)" class="hover" onclick="searchMap('1','{{jgId}}','{{jgName}}')" id="btn01">现存确诊</a></li>
                         <li><a href="javascript:void(0)" onclick="searchMap('2','{{jgId}}','{{jgName}}')" id="btn02">累计确诊</a></li>
@@ -346,6 +346,8 @@
     }
 
     function searchMap(type,jgId,jgName) {//初始化-资源配置
+        console.log("type==="+type);
+        debugger;
         if(type === 1 || type === '1' ){
             $("#btn02").removeClass('hover')
             $("#btn01").addClass('hover')

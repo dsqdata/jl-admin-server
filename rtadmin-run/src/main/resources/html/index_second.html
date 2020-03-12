@@ -269,6 +269,8 @@
              }else if(data.xjlx==='2'){
                  type = "村改居";
                  title =  res.data.sjjg.jgmc +data.jgmc+ " ("+type+")";
+             }else if(data.xjlx==null){
+                 title=res.data.sjjg.jgmc +data.jgmc;
              }else{
                  type="行业领域";
                  title = data.jgmc+ " ("+type+")";
