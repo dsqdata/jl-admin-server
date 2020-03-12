@@ -21,7 +21,7 @@
         <div id="header"></div>
         <script id="tpl-header" type="text/html">
             <h1></h1>
-            <p class="txtP">{{title}}</p>
+            <p class="txtP" style="left:600px">{{title}}</p>
         </script>
         <div id="container" class="clearfix posT">
             <span class="arrowMid"></span>
@@ -49,8 +49,8 @@
                                 <span class="bgBtm02"></span>
                                 <div class="leftBox01In" style="text-align: left;">
                                     <ul class="orgList02">
-                                        <li><strong>街道网格长</strong><span>{{jdwgz==null?'-': jdwgz.trim().split(/\s+/)[0]}}</span>{{jdwgz==null?jdwgz: jdwgz.trim().split(/\s+/)[1]}}</li>
-                                        <li><strong>网格管理员</strong><span>{{jdwggly==null?'-':jdwggly.trim().split(/\s+/)[0]}}</span>{{jdwggly==null?jdwggly:jdwggly.trim().split(/\s+/)[1]}}</li>
+                                        <li><strong>街道网格长</strong><span>{{jdwgz==null?'-': jdwgz.trim().split(/\s+/)[0]}}{{jdwgz==null?jdwgz: jdwgz.trim().split(/\s+/)[1]}}</span></li>
+                                        <li><strong>网格管理员</strong><span>{{jdwggly==null?'-':jdwggly.trim().split(/\s+/)[0]}}{{jdwggly==null?jdwggly:jdwggly.trim().split(/\s+/)[1]}}</span></li>
                                     </ul>
                                 </div>
                             </div>
@@ -255,6 +255,7 @@
     </div>
 
 <script>
+
     var sjjg = "";
     var initTitle = function (data) {
         var title = ""
@@ -264,13 +265,13 @@
             sjjg=res.data.sjjg.jgmc;
              if(data.xjlx==='1'){
                 type = "城市";
-                 title = "云南省自贸区昆明片区（昆明经开区） " + res.data.sjjg.jgmc +data.jgmc+ " ("+type+") "+ "社区网格化管理服务分布图";
+                 title =  res.data.sjjg.jgmc +data.jgmc+ " ("+type+")";
              }else if(data.xjlx==='2'){
                  type = "村改居";
-                 title = "云南省自贸区昆明片区（昆明经开区） " + res.data.sjjg.jgmc +data.jgmc+ " ("+type+") "+ "社区网格化管理服务分布图";
+                 title =  res.data.sjjg.jgmc +data.jgmc+ " ("+type+")";
              }else{
                  type="行业领域";
-                 title = "云南省自贸区昆明片区（昆明经开区） " +data.jgmc+ " ("+type+") "+ "社区网格化管理服务分布图";
+                 title = data.jgmc+ " ("+type+")";
              }
 
 
