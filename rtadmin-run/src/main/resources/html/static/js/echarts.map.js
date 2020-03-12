@@ -762,7 +762,7 @@ echarts.extendsMap = function (id, opt) {
         }
     });
 
-    chart.setMap = function (mapName) {
+    chart.setMap = function (mapName,subMapName,call) {
         var _self = this;
         // if (mapName.indexOf('区') < 0) mapName = mapName + '区';
         var citySource = cityMap[mapName];
@@ -774,6 +774,8 @@ echarts.extendsMap = function (id, opt) {
                 echarts.registerMap(mapName, response);
                 handleEvents.resetOption(_self, option, mapName);
                 handleEvents.setData(_self,option,mapName)
+                if(call)
+                    call(subMapName)
             });
         }
         // handleEvents.resetOption(this, option, mapName);
