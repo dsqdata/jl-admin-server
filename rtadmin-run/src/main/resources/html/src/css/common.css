@@ -419,11 +419,12 @@ dl,dt,dd{font-size: 14px;}
 
 
 .orgConLft{ position: relative;}
-.wBox{ display: none; position: absolute; z-index:1000;bottom:-10px; border: 1px solid #418195; background: rgba(0,0,0,0.5); padding: 15px 20px;}
+.wBox{ display: none; position: absolute; z-index:1000;top:78px; border: 1px solid #418195; background: rgba(0,0,0,0.5); padding: 15px 20px;}
 .wBox dt{ color: #f3e31b; font-size: 14px; margin-bottom: 5px;}
 .wBox dd{ color: #fff; font-size: 14px; margin-bottom: 3px;}
 .orgList01 li{ position: relative;}
-.orgList01 .wBox{padding: 5px 10px;bottom:-82px;background: rgba(0,0,0,0.9); width: 100%;}
+.orgList01 .wBox{padding: 5px 10px;background: rgba(0,0,0,0.9); width: 100%;}
+.orgConLft .wBox{ top:185px;}
 
 /*日期选择*/
 .form_date{
