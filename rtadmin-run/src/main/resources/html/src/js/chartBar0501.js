@@ -99,7 +99,7 @@ function chartBar0501(rq,ext1,ext2,ext3,ext4){
                     smooth:0.5,
                     itemStyle: {
                         normal: {
-                            color: "#50e3c2",  // 会设置点和线的颜色，所以需要下面定制 line
+                            color: "#f8e71c",  // 会设置点和线的颜色，所以需要下面定制 line
                             borderWidth: 8,
                             borderColor: "rgba(255,255,255,0.5)"
                         }
