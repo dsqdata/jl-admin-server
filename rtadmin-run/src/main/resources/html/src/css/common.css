@@ -20,7 +20,7 @@
 .ttlBox span{ margin: 0 5px;}
 .orgTb01{ width: 100%; height: 100%;}
 .orgTb01 td{ width: 20%; border: 1px solid #fff; }
-.orgList01{ height: 100%; overflow-y: auto; padding: 2% 0 0 2%;}
+.orgList01{ height: 100%; padding: 2% 0 0 2%;}
 .orgList01 li{ height: 30%; margin-bottom: 7px;  width: 18%; float: left; margin-right: 2%;}
 .ttl03{ height: 30px;  color: #fff; font-size: 16px; font-weight: bold; padding: 0 0 0 80px; }
 .ttlBox01{ height: calc(100% - 30px); font-weight: bold; text-align: center; padding: 5% 0; }
