@@ -125,38 +125,33 @@ function getQyfgfcEchartList(date) {
     var data4='0';
     var data5='0';
 
-    $.axget("/api/yndp/qyfgfc/getQyfgfcEchartList?date="+date,function (res) {
+    $.axget("/api/yndp/ReworkEchart/getYndpThreePageReworkEchartList?date="+date,function (res) {
         if(res.data){
             for(var i=0;i<res.data.length;i++){
 
-                if(res.data[i].ext3==2){
+                if(res.data[i].type==2){
                     rq2.push(res.data[i].date);
-                    data2=percentNum2(res.data[i].ext2,res.data[i].ext1);
-                    lx2fgl.push(data2);
-                    lx2fgs.push(res.data[i].ext2);
+                    lx2fgl.push(Math.round(100*res.data[i].ext3));
+                    lx2fgs.push(res.data[i].ext1);
                 }
-                if(res.data[i].ext3==3){
+                if(res.data[i].type==3){
                     rq3.push(res.data[i].date);
-                    data3=percentNum2(res.data[i].ext2,res.data[i].ext1);
-                    lx3fgl.push(data3);
-                    lx3fgs.push(res.data[i].ext2);
+                    lx3fgl.push(Math.round(100*res.data[i].ext3));
+                    lx3fgs.push(res.data[i].ext1);
                 }
-                if(res.data[i].ext3==4){
+                if(res.data[i].type==4){
                     rq4.push(res.data[i].date);
-                    data4=percentNum2(res.data[i].ext2,res.data[i].ext1);
-                    lx4fgl.push(data4);
-                    lx4fgs.push(res.data[i].ext2);
+                    lx4fgl.push(Math.round(100*res.data[i].ext3));
+                    lx4fgs.push(res.data[i].ext1);
                 }
-                if(res.data[i].ext3==5){
+                if(res.data[i].type==5){
                     rq5.push(res.data[i].date);
-                    data5=percentNum2(res.data[i].ext2,res.data[i].ext1);
-                    lx5fgl.push(data5);
-                    lx5fgs.push(res.data[i].ext2);
+                    lx5fgl.push(Math.round(100*res.data[i].ext3));
+                    lx5fgs.push(res.data[i].ext1);
                 }
 
             }
         }
-
         chartBar0102(rq2,lx2fgl,lx2fgs);
         chartBar0103(rq3,lx3fgl,lx3fgs);
         chartBar0104(rq4,lx4fgl,lx4fgs);
@@ -191,8 +186,4 @@ function getGdjcpcEList(date) {
 
 function percentNum(num,num2) {
     return (Math.round(num / num2 * 10000) / 100.00 + "%")
-}//小数点后两位百分比
-
-function percentNum2(num,num2) {
-    return (Math.round(num / num2 * 10000) / 100.00)
 }//小数点后两位百分比
