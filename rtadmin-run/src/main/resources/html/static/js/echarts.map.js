@@ -796,6 +796,12 @@ function setMyMapChartData(data,name) {
         var temp = !item.ljqzs ? 0 :item.ljqzs
         td.push({name:item.jgmc,value:temp })
     }
+    var alnum='';
+    var lynum='';
+    if(data!=null&&data.length>1){
+        alnum=data[0].yqlkrs;
+        lynum=data[1].yqlkrs;
+    }
 
     myMapOp.series[1].data = []
     myMapOp.series[2].data = []
@@ -803,6 +809,8 @@ function setMyMapChartData(data,name) {
     myMapChart.setOption(myMapOp, true);
     myMapOp.series[6].data =  td
 
+    console.log(data)
+    console.log(map['阿拉街道'])
     if (name === '经开区') {
         var al = !!map['阿拉街道'] ? map['阿拉街道'] : 0
         var ly = !!map['洛羊街道'] ? map['洛羊街道'] : 0
@@ -811,7 +819,7 @@ function setMyMapChartData(data,name) {
             visualMap: false,
             username: "阿拉街道",
             address: "疫区来昆人数",
-            number: al + "人",
+            number: alnum==null ||alnum==""?0:alnum+ "人",
             value: [102.85494405299998, 24.998903901328593]
         }];
         myMapOp.series[2].data = [{
@@ -819,7 +827,7 @@ function setMyMapChartData(data,name) {
             visualMap: false,
             username: "洛羊街道",
             address: "疫区来昆人数",
-            number: ly + "人",
+            number: lynum==null||lynum==""?0:lynum + "人",
             value: [102.85494405299998, 24.946454769999982]
         }];
     }
