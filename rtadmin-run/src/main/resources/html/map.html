@@ -228,8 +228,8 @@
                         <li>
                             <div class="liBg">
                             <strong>微信群数量</strong>
-                            <p class="color01"><em>累计</em>{{wxqsllj}}人</p>
-                            <p class="color02"><em>新增</em>{{wxqslxz}}人</p>
+                            <p class="color01"><em>累计</em>{{wxqsllj}}个</p>
+                            <p class="color02"><em>新增</em>{{wxqslxz}}个</p>
                             </div>
                         </li>
                         <li>
@@ -239,8 +239,8 @@
                         </li>
                         <li>
                             <strong>微信群覆盖率</strong>
-                            <p class="color01"><i></i><em>累计</em>{{fxqfgllj}}人</p>
-                            <p class="color02"><i></i><em>新增</em>{{fxqfglxz}}人</p>
+                            <p class="color01"><i></i><em>累计</em>{{(fxqfgllj*100)}}%</p>
+                            <p class="color02"><i></i><em>新增</em>{{(fxqfglxz*100)}}%</p>
                         </li>
                     </ul>
                 </div>
@@ -511,6 +511,8 @@
     }
 
     var initOrgBox05 = function (data) {
+        console.log(22222222222)
+        console.log(data)
         var html = template('tpl-orgBox05', {
             ryzz: data
         });
