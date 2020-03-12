@@ -18,7 +18,7 @@ function chartBar0105(rq5,lx5fgl,lx5fgs){
                 }
             },
             legend: {
-                data: ['累计经营企业复工企业数量', '复工率'],
+                data: ['经营企业累计复工企业数量', '复工率'],
                 right: "2%",
                 top:'5%',
                 itemWidth: 25,
@@ -56,7 +56,7 @@ function chartBar0105(rq5,lx5fgl,lx5fgs){
             }],
             yAxis: [{
                 type: 'value',
-                name: '    %',
+                name: '(户)    ',
                 nameTextStyle: {
                     color: "#21b0dd",
                     fontSize: 18
@@ -75,11 +75,11 @@ function chartBar0105(rq5,lx5fgl,lx5fgs){
                     fontSize: 18,
                     color: "#21b0dd"
                 },
-                position: 'right',
+                position: 'left',
             },
                 {
                     type: 'value',
-                    name: '家      ',
+                    name: '      %',
                     min: 0,
                     nameTextStyle: {
                         color: "#21b0dd",
@@ -103,11 +103,11 @@ function chartBar0105(rq5,lx5fgl,lx5fgs){
                         }
                     },
 
-                    position: 'left'
+                    position: 'right'
                 }
             ],
             series: [{
-                name: '累计经营企业复工企业数量',
+                name: '经营企业累计复工企业数量',
                 type: 'bar',
                 smooth: true,
                 barWidth: 33,
