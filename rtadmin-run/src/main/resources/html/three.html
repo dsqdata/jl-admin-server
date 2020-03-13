@@ -254,7 +254,7 @@
                                     <dl class="flowList01 short pd0">
                                         <a href="javascript:;" data-toggle="modal" data-target="#flowWin02">
                                             <dt>入住留验</dt>
-                                            <dd class="clearfix">累计<span>{{all_checkin==null?'-':all_checkin}}</span></dd>
+                                            <dd class="clearfix">实有<span>{{all_checkin==null?'-':all_checkin}}</span></dd>
                                             <dd class="clearfix">新增<span>{{toady_checkin==null?'-':toady_checkin}}</span></dd>
                                         </a>
                                     </dl>
@@ -347,7 +347,7 @@
                     <script id="tpl-orgBoxQyfgfc" type="text/html">
                     <ul class="pieBox">
                         <li>
-                            <a href="javascript:;" data-toggle="modal" ><!--data-target="#barWin01"-->
+                            <a href="javascript:;" data-toggle="modal" data-target="#barWin01">
                             <strong>{{data1}}</strong>
                                 <em>复工率</em>
                             <div class="pieCon">
@@ -496,7 +496,6 @@
                 <h4 class="modal-title">留验站累计入住留验观察人数变化趋势</h4>
             </div>
             <div class="modal-body">
-                弹出1-1
                 <div id="chartBar0101"  class="chartWinSty"></div>
             </div>
 
@@ -570,38 +569,36 @@
 
 
 <!-- 留验站集中医学观察人员 -->
-<!--<div class="modal fade  mapWin" id="flowWin01" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade  mapWin" id="flowWin01" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">留验站集中医学观察人员</h4>
+                <h4 class="modal-title">留验站累计入住留验观察人数变化趋势</h4>
             </div>
             <div class="modal-body">
-                弹出2-1
                 <div id="chartBar02"  class="chartWinSty" ></div>
             </div>
 
         </div>
     </div>
-</div>-->
+</div>
 
 <!-- 留验站集中医学观察人员 -->
-<!--<div class="modal fade  mapWin" id="flowWin02" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade  mapWin" id="flowWin02" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">留验站集中医学观察人员</h4>
+                <h4 class="modal-title">留验站实有入住留验观察人数变化趋势</h4>
             </div>
             <div class="modal-body">
-                弹出2-2
                 <div id="chartBar03"  class="chartWinSty" ></div>
             </div>
 
         </div>
     </div>
-</div>-->
+</div>
 
 <!-- 固定检查点排查情况 -->
 <div class="modal fade  mapWin" id="checkWin01" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -721,8 +718,8 @@
 <script type="text/javascript" src="src/js/chartBar0103.js"></script>
 <script type="text/javascript" src="src/js/chartBar0104.js"></script>
 <script type="text/javascript" src="src/js/chartBar0105.js"></script>
-<!--<script type="text/javascript" src="src/js/chartBar02.js"></script>
-<script type="text/javascript" src="src/js/chartBar03.js"></script>-->
+<script type="text/javascript" src="src/js/chartBar02.js"></script>
+<script type="text/javascript" src="src/js/chartBar03.js"></script>
 <script type="text/javascript" src="src/js/chartBar0401.js"></script>
 <script type="text/javascript" src="src/js/chartBar0402.js"></script>
 <script type="text/javascript" src="src/js/chartBar0403.js"></script>

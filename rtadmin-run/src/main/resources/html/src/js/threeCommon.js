@@ -41,7 +41,8 @@ $(function () {
         ThreePageSupport(date);
         ThreePageLackList(date);
         ThreePageWorkstationList();
-        ThreePageWorkstationTotal(date)
-        ThreePageCollectionEchartList(date)
+        ThreePageWorkstationTotal(date);
+        ThreePageCollectionEchartList(date);
+        ThreePageWorkstationTotalList(date)
     }
 });

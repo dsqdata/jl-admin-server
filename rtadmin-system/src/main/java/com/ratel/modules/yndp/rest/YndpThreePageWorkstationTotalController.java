@@ -30,7 +30,7 @@ public class YndpThreePageWorkstationTotalController {
 
     @ApiOperation("根据日期和留验站ID查询留验站工作动态 ")
     @GetMapping(value = "/getYndpThreePageWorkstationTotal")
-    public Result getYndpThreePageWorkstationTotalList(@RequestParam String date, @RequestParam String workstation_id,HttpServletRequest request, HttpServletResponse response) {
+    public Result getYndpThreePageWorkstationTotal(@RequestParam String date, @RequestParam String workstation_id,HttpServletRequest request, HttpServletResponse response) {
 
         YndpThreePageWorkstationTotal yndpThreePageWorkstationTotal = YndpThreePageWorkstationTotalService.getYndpThreePageWorkstationTotal(date,workstation_id);
         Result result = new Result();
@@ -40,4 +40,15 @@ public class YndpThreePageWorkstationTotalController {
         return result;
     }
 
+    @ApiOperation("根据日期和留验站ID查询留验站工作动态Echart图 ")
+    @GetMapping(value = "/getYndpThreePageWorkstationTotalList")
+    public Result getYndpThreePageWorkstationTotalList(@RequestParam String date, HttpServletRequest request, HttpServletResponse response) {
+
+        List<YndpThreePageWorkstationTotal> yndpThreePageWorkstationTotalList = YndpThreePageWorkstationTotalService.getYndpThreePageWorkstationTotalList(date);
+        Result result = new Result();
+        result.setCode(Result.SUCCESS_CODE);
+        result.setData(yndpThreePageWorkstationTotalList);
+        result.setMessage("成功");
+        return result;
+    }
 }

@@ -21,4 +21,10 @@ public interface YndpThreePageWorkstationTotalRepository extends BaseRepository<
     @Query(nativeQuery = true, value = "select * from yndp_three_page_workstation_total where date = ?1 and workstation_id = ?2 limit 1")
     YndpThreePageWorkstationTotal getYndpThreePageWorkstationTotal(String date, String workstation_id);
 
+    /**
+     * 根据日期和留验站ID查询留验站工作动态Echart图
+     */
+    @Query(nativeQuery = true, value = "select * from yndp_three_page_workstation_total where date <= ?1 ORDER BY date ASC ")
+    List<YndpThreePageWorkstationTotal> getYndpThreePageWorkstationTotalList(String date);
+
 }

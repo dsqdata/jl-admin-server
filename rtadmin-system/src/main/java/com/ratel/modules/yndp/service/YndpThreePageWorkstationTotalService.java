@@ -25,4 +25,8 @@ public class YndpThreePageWorkstationTotalService extends BaseService<YndpThreeP
     public YndpThreePageWorkstationTotal getYndpThreePageWorkstationTotal(String date,String workstation_id) {
         return YndpThreePageWorkstationTotalRepository.getYndpThreePageWorkstationTotal(date,workstation_id);
     }
+
+    public List<YndpThreePageWorkstationTotal> getYndpThreePageWorkstationTotalList(String date) {
+        return YndpThreePageWorkstationTotalRepository.getYndpThreePageWorkstationTotalList(date);
+    }
 }

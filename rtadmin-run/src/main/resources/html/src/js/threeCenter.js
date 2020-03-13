@@ -108,9 +108,54 @@ function ThreePageWorkstationTotal(date) {
                 toady_checkin:null,hubei_checkin:null,other_checkin:null})
         }
     });
-
 }
 
+function ThreePageWorkstationTotalList(date){
+    var rq=[];
+    var today=[];
+    var todayin=[];
+
+    var wed1=[];
+    var wynzh1=[];
+    var wyngj1=[];
+    var yq1=[];
+
+    var wed2=[];
+    var wynzh2=[];
+    var wyngj2=[];
+    var yq2=[];
+
+    $.axget("/api/yndp/WorkstationTotal/getYndpThreePageWorkstationTotalList?date="+date, function (res) {
+        if(res.data){
+            for(var i=0;i<res.data.length;i++){
+                if(res.data[i].workstation_id==1){
+                    rq.push(res.data[i].date);
+                    today.push(res.data[i].today_count==null?0:res.data[i].today_count);
+                    todayin.push(res.data[i].toady_checkin==null?0:res.data[i].toady_checkin);
+                }
+                if(res.data[i].workstation_id==2){
+                    wed1.push(res.data[i].all_count==null?0:res.data[i].all_count);
+                    wed2.push(res.data[i].all_checkin==null?0:res.data[i].all_checkin);
+                }
+                if(res.data[i].workstation_id==3){
+                    wynzh1.push(res.data[i].all_count==null?0:res.data[i].all_count);
+                    wynzh2.push(res.data[i].all_checkin==null?0:res.data[i].all_checkin);
+                }
+                if(res.data[i].workstation_id==4){
+                    wyngj1.push(res.data[i].all_count==null?0:res.data[i].all_count);
+                    wyngj2.push(res.data[i].all_checkin==null?0:res.data[i].all_checkin);
+                }
+                if(res.data[i].workstation_id==5){
+                    yq1.push(res.data[i].all_count==null?0:res.data[i].all_count);
+                    yq2.push(res.data[i].all_checkin==null?0:res.data[i].all_checkin);
+                }
+            }
+        }
+
+        chartBar02(rq,today,wed1,wynzh1,wyngj1,yq1);
+        chartBar03(rq,todayin,wed2,wynzh2,wyngj2,yq2);
+    });
+}
 
 
 var initOrgBoxLack = function (data) {

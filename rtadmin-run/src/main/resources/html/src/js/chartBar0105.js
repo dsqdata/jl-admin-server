@@ -15,7 +15,9 @@ function chartBar0105(rq5,lx5fgl,lx5fgs){
                     shadowStyle: {
                         color: 'rgba(67,100,247,0.08)'
                     }
-                }
+                },
+                formatter: '{b}<ul><li style="color:#e55b5d;list-style-type:disc">{a0}:{c0}人</li>' +
+                    '<li style="color:#f5e665;list-style-type:disc">{a1}:{c1}%</li></ul>'
             },
             legend: {
                 data: ['经营企业累计复工企业数量', '复工率'],

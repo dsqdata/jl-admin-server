@@ -108,6 +108,13 @@ function getQyfgfcList(date) {
 }
 
 function getQyfgfcEchartList(date) {
+    var rq1=[];
+    var lx1fgl=[];
+    var lx1fgs=[];
+    var lx1gy=[];
+    var lx1sm=[];
+    var lx1fdc=[];
+    var lx1jz=[];
     var rq2=[];
     var lx2fgl=[];
     var lx2fgs=[];
@@ -120,38 +127,45 @@ function getQyfgfcEchartList(date) {
     var rq5=[];
     var lx5fgl=[];
     var lx5fgs=[];
-    var data2='0';
-    var data3='0';
-    var data4='0';
-    var data5='0';
 
     $.axget("/api/yndp/ReworkEchart/getYndpThreePageReworkEchartList?date="+date,function (res) {
         if(res.data){
             for(var i=0;i<res.data.length;i++){
+                if(res.data[i].type==1){
+                    rq1.push(res.data[i].date);
+                    lx1fgl.push(Math.round(100*(res.data[i].ext3==null?0:res.data[i].ext3)));
+                    lx1fgs.push(res.data[i].ext1==null?0:res.data[i].ext1);
+                    lx1gy.push(res.data[i].ext4==null?0:res.data[i].ext4);
+                    lx1sm.push(res.data[i].ext5==null?0:res.data[i].ext5);
+                    lx1fdc.push(res.data[i].ext6==null?0:res.data[i].ext6);
+                    lx1jz.push(res.data[i].ext7==null?0:res.data[i].ext7);
+                }
+
 
                 if(res.data[i].type==2){
                     rq2.push(res.data[i].date);
-                    lx2fgl.push(Math.round(100*res.data[i].ext3));
-                    lx2fgs.push(res.data[i].ext1);
+                    lx2fgl.push(Math.round(100*(res.data[i].ext3==null?0:res.data[i].ext3)));
+                    lx2fgs.push(res.data[i].ext1==null?0:res.data[i].ext1);
                 }
                 if(res.data[i].type==3){
                     rq3.push(res.data[i].date);
-                    lx3fgl.push(Math.round(100*res.data[i].ext3));
-                    lx3fgs.push(res.data[i].ext1);
+                    lx3fgl.push(Math.round(100*(res.data[i].ext3==null?0:res.data[i].ext3)));
+                    lx3fgs.push(res.data[i].ext1==null?0:res.data[i].ext1);
                 }
                 if(res.data[i].type==4){
                     rq4.push(res.data[i].date);
-                    lx4fgl.push(Math.round(100*res.data[i].ext3));
-                    lx4fgs.push(res.data[i].ext1);
+                    lx4fgl.push(Math.round(100*(res.data[i].ext3==null?0:res.data[i].ext3)));
+                    lx4fgs.push(res.data[i].ext1==null?0:res.data[i].ext1);
                 }
                 if(res.data[i].type==5){
                     rq5.push(res.data[i].date);
-                    lx5fgl.push(Math.round(100*res.data[i].ext3));
-                    lx5fgs.push(res.data[i].ext1);
+                    lx5fgl.push(Math.round(100*(res.data[i].ext3==null?0:res.data[i].ext3)));
+                    lx5fgs.push(res.data[i].ext1==null?0:res.data[i].ext1);
                 }
 
             }
         }
+        chartBar0101(rq1,lx1fgl,lx1fgs,lx1gy,lx1sm,lx1fdc,lx1jz);
         chartBar0102(rq2,lx2fgl,lx2fgs);
         chartBar0103(rq3,lx3fgl,lx3fgs);
         chartBar0104(rq4,lx4fgl,lx4fgs);
