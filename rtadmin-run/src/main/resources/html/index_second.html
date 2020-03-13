@@ -179,15 +179,17 @@
                                         <div class="orgList03 clearfix">
                                             {{each item.children subItem j}}
                                             <div class="orgList03In">
-                                                <h3 class="ttl05">{{subItem.jgmc==null?'-':subItem.jgmc}}<span>({{subItem.lds==null?'-':subItem.lds}}栋{{subItem.hs==null?'-':subItem.hs}}户{{subItem.zrs==null?'-':subItem.zrs}}人)</span></h3>
-                                                <ul class="orgList02">
-                                                    <!--                                                                <li><strong>网格长</strong><span>{{subItem.jgwgz==null?'-':subItem.jgwgz}}</span></li>-->
-                                                    <!--                                                                <li><strong>网格管理员</strong><span>{{subItem.jgwggly==null?'-':subItem.jgwggly}}</span></li> -->
-<!--                                                    <li><strong>网格长</strong><span>{{subItem.jgwgz==null?'-':subItem.jgwgz.trim().split(/\s+/)[0]}}</span><span>{{subItem.jgwgz==null?'-':subItem.jgwgz.trim().split(/\s+/)[1]}}</span></li>-->
-<!--                                                    <li><strong>网格管理员</strong><span>{{subItem.jgwggly==null?'-':subItem.jgwggly.trim().split(/\s+/)[0]}}</span><span>{{subItem.jgwggly==null?'-':subItem.jgwggly.trim().split(/\s+/)[1]}}</span></li>-->
-                                                    <li><strong>网格长</strong><span>{{subItem.jgwgz==null?'-':subItem.jgwgz.trim().split(/\s+/)[0]}}</span></li>
-                                                    <li><strong>网格管理员</strong><span>{{subItem.jgwggly==null?'-':subItem.jgwggly.trim().split(/\s+/)[0]}}</span></li>
-                                                </ul>
+                                                <a href="#" data-toggle="modal" onclick="allModal('{{subItem}}','wgcy_cs')">
+                                                    <h3 class="ttl05">{{subItem.jgmc==null?'-':subItem.jgmc}}<span>({{subItem.lds==null?'-':subItem.lds}}栋{{subItem.hs==null?'-':subItem.hs}}户{{subItem.zrs==null?'-':subItem.zrs}}人)</span></h3>
+                                                    <ul class="orgList02">
+                                                        <!--                                                                <li><strong>网格长</strong><span>{{subItem.jgwgz==null?'-':subItem.jgwgz}}</span></li>-->
+                                                        <!--                                                                <li><strong>网格管理员</strong><span>{{subItem.jgwggly==null?'-':subItem.jgwggly}}</span></li> -->
+                                                        <!--                                                    <li><strong>网格长</strong><span>{{subItem.jgwgz==null?'-':subItem.jgwgz.trim().split(/\s+/)[0]}}</span><span>{{subItem.jgwgz==null?'-':subItem.jgwgz.trim().split(/\s+/)[1]}}</span></li>-->
+                                                        <!--                                                    <li><strong>网格管理员</strong><span>{{subItem.jgwggly==null?'-':subItem.jgwggly.trim().split(/\s+/)[0]}}</span><span>{{subItem.jgwggly==null?'-':subItem.jgwggly.trim().split(/\s+/)[1]}}</span></li>-->
+                                                        <li><strong>网格长</strong><span>{{subItem.jgwgz==null?'-':subItem.jgwgz.trim().split(/\s+/)[0]}}</span></li>
+                                                        <li><strong>网格管理员</strong><span>{{subItem.jgwggly==null?'-':subItem.jgwggly.trim().split(/\s+/)[0]}}</span></li>
+                                                    </ul>
+                                                </a>
                                             </div>
                                             {{/each}}
                                         </div>
@@ -221,12 +223,14 @@
                                         <div class="orgList03 clearfix">
                                             {{each item.children subItem j}}
                                             <div class="orgList03In">
-                                                <h3 class="ttl05"><span></span></h3>
-                                                <ul class="orgList02">
-                                                    <li><strong>党员代表</strong><span>{{subItem.dydb==null?'-':subItem.dydb}}</span></li>
-                                                    <li><strong>联系电话</strong><span>{{subItem.lxdh==null?'-':subItem.lxdh}}</span></li>
-                                                    <li><strong>联系户数</strong><span>{{subItem.lxhs==null?'-':subItem.lxhs}}</span></li>
-                                                </ul>
+                                                <a href="#" data-toggle="modal" onclick="allModal('{{subItem}}','wgcy_cgj')">
+                                                    <h3 class="ttl05"><span></span></h3>
+                                                    <ul class="orgList02">
+                                                        <li><strong>党员代表</strong><span>{{subItem.dydb==null?'-':subItem.dydb}}</span></li>
+                                                        <li><strong>联系电话</strong><span>{{subItem.lxdh==null?'-':subItem.lxdh}}</span></li>
+                                                        <li><strong>联系户数</strong><span>{{subItem.lxhs==null?'-':subItem.lxhs}}</span></li>
+                                                    </ul>
+                                                </a>
                                             </div>
                                             {{/each}}
                                         </div>
@@ -442,7 +446,31 @@
                                 {{/each}}
                                 <% } %>
                             </ul>
+                        <% } else if (type=='wgcy_cs') { %>
+                            <h4 class="nameTit">网格长</h4>
+                            <ul class="nameList">
+                                <% if (data.jgwgz != null) { %>
+                                {{each data.jgwgz.trim().split(/\s+/) itm i}}
+                                <% if (i%2==0) { %>
+                                <li>{{data.jgwgz.trim().split(/\s+/)[i]}}&nbsp&nbsp{{data.jgwgz.trim().split(/\s+/)[i+1]}}</li>
+                                <% } %>
+                                {{/each}}
+                                <% } %>
+                            </ul>
+                            <h4 class="nameTit">网格管理员</h4>
+                            <ul class="nameList">
+                                <% if (data.jgwggly != null) { %>
+                                {{each data.jgwggly.trim().split(/\s+/) itm i}}
+                                <% if (i%2==0) { %>
+                                <li>{{data.jgwggly.trim().split(/\s+/)[i]}}&nbsp&nbsp{{data.jgwggly.trim().split(/\s+/)[i+1]}}</li>
+                                <% } %>
+                                {{/each}}
+                                <% } %>
+                            </ul>
+                        <% } else if (type=='wgcy_cgj') { %>
+
                         <% } %>
+
                         </script>
                     </div>
                 </div>

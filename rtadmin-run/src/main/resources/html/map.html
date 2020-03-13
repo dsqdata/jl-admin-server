@@ -285,34 +285,58 @@
                 <h2 class="mapTbox">
                     <span class="mapT01"><span class="mapTbg01">疫区来昆人员追踪</span></span>
                 </h2>
+
                 <div class="listTb">
                     <table class="tb02">
                         <colgroup>
-                            <col width="150" />
-                            <col width="*" />
-                            <col width="18%" />
+                            <col width="30%" />
+                            <col width="53%" />
+                            <col width="17%" />
                         </colgroup>
+                        <!--折线图-->
+                        <tr class="tbLine">
+                            <td colspan="3">
+                                <p class="tbLineTxt">总数 <strong>{{sumNum}}</strong><span>人</span></p >
+                                <div id="chartLine11" style=" height: 90px; width: 490px;"></div>
+                            </td>
+                        </tr>
+<!--                        <tr class="tbBar">-->
+<!--                            <th>总数</th>-->
+<!--                            <td><p class="lineBox"><span style="width: 0"></span></p ></td>-->
+<!--                            <td>12345人</td>-->
+<!--                        </tr>-->
+
                         {{each ryzz item i}}
                         <tr>
-                            <th>{{item.rylx}}</th>
 
                             <% if (item.rylx=='总数') { %>
-                             <% if (ryzz[0].rysl==0) { %>
-                            <td><p class="lineBox"> <span style="width: 0%"></span></p></td>
+                                    <% if (ryzz[0].rysl==0) { %>
+                                        <th>{{item.rylx}}</th>
+                                        <td><p class="lineBox"> <span style="width: 0%"></span></p></td>
+                                        <td>{{item.rysl}}</td>
+                                    <% } else { %>
+                                        <tr class="tbBar">
+                                            <th>{{item.rylx}}</th>
+                                            <td><p class="lineBox"> <span style="width: 100%"></span></p></td>
+                                            <td>{{item.rysl}}</td>
+                                        </tr>
+                                    <% } %>
                             <% } else { %>
-                            <td><p class="lineBox"> <span style="width: 100%"></span></p></td>
+                                    <% if (ryzz[0].rysl==0) { %>
+                                        <th>{{item.rylx}}</th>
+                                        <td><p class="lineBox"> <span style="width: 0%"></span></p></td>
+                                        <td>{{item.rysl}}</td>
+                                     <% } else { %>
+                                        <th>{{item.rylx}}</th>
+                                        <td><p class="lineBox"> <span style="width: {{(item.rysl/ ryzz[0].rysl)*100}}%"></span></p></td>
+                                        <td>{{item.rysl}}</td>
+                                     <% } %>
                             <% } %>
-                                         <% } else { %>
-                            <% if (ryzz[0].rysl==0) { %>
-                            <td><p class="lineBox"> <span style="width: 0%"></span></p></td>
-                            <% } else { %>
-                            <td><p class="lineBox"> <span style="width: {{(item.rysl/ ryzz[0].rysl)*100}}%"></span></p></td>
-                            <% } %>
-                                         <% } %>
 
-                            <td>{{item.rysl}}</td>
+
                         </tr>
                         {{/each}}
+
                     </table>
                 </div>
                 </script>
@@ -335,6 +359,7 @@
 <script type="text/javascript" src="src/js/chartPie02.js"></script>
 <script type="text/javascript" src="src/js/chartPie03.js"></script>
 <script type="text/javascript" src="src/js/chartPie04.js"></script>
+<!--<script type="text/javascript" src="src/js/chartLine11.js"></script>-->
 <script>
 
     var initTime = function (data) {
@@ -510,13 +535,125 @@
         document.getElementById('orgBox04').innerHTML = html;
     }
 
-    var initOrgBox05 = function (data) {
-        console.log(22222222222)
-        console.log(data)
+    var initOrgBox05 = function (data,sumChart) {
+
+        var MaxY = 1000000;
+        var sumArr = [];
+        var rqArr = [];
+        var sum = 0;
+        for (let i = 0; i < sumChart.length; i++) {
+            if(sumChart[i].rysl!=null){
+                sumArr.push(sumChart[i].rysl);
+                rqArr.push(sumChart[i].rq);
+                sum += parseInt(sumChart[i].rysl);
+            }
+        }
+
+        //获取Y轴最大值
+        MaxY =  Math.max.apply(null,sumArr);
+        if (MaxY==-Infinity){
+            MaxY=1000000;
+        }
+        // console.log("MaxY="+MaxY);
+        // console.log(sumArr);
+        // console.log(rqArr);
+        // console.log(sum);
+
+
         var html = template('tpl-orgBox05', {
-            ryzz: data
+            ryzz: data,
+            sumNum:sum
         });
         document.getElementById('orgBox05').innerHTML = html;
+
+
+        var myChart11 = echarts.init(document.getElementById('chartLine11'));
+        var option = {
+            color: ['#72d7e9', '#f5e665'],
+
+            tooltip: {
+                trigger: 'axis',
+                padding: [10, 10],
+                backgroundColor: 'rgba(0,0,0,0.7)',
+                extraCssText: 'border: 1px solid #422931',
+                formatter: '{b}<br/>{c}人'
+            },
+
+            grid: {
+                left: 0,
+                right: 30,
+                bottom:10,
+                top:10,
+                containLabel: true
+            },
+
+            xAxis: {
+                type: 'category',
+                // data: ['1001/01', '01/011010', '01/01', '01/01', '01/01', '01/01', '01/01' ,
+                //     '01/01', '01/01', '01/01', '01/01' ,'01/0101'],
+                data:rqArr,
+
+                axisLabel: {
+                    show: false,
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#0f526b'
+                    }
+                },
+                axisTick: {
+                    show: false,
+                },
+            },
+            yAxis: {
+                type: 'value',
+                min:0,
+                // max:20000,
+                max:MaxY+10000,
+                axisLabel: {
+                    show: false,
+                },
+                axisLine: {
+                    show: false,
+                },
+                axisTick: {
+                    show: false,
+                },
+                splitLine: {
+                    show: false,
+                    lineStyle: {
+                        color: '#112a2f',
+                        type: 'solid'
+                    }
+                },
+            },
+            series: [{
+                // name: '新增确诊',
+                type: 'line',
+                symbolSize: 4,
+                smooth:0.5,
+                itemStyle: {
+                    normal: {
+                        color: "#ff0944",  // 会设置点和线的颜色，所以需要下面定制 line
+                    }
+                },
+                // data: [10000, 18200, 12100, 15400, 11000, 20000, 19100,17400, 10000, 14300,
+                //     13100, 12300]
+                data: sumArr
+            },
+            ]
+        };
+        myChart11.setOption(option);
+
+
+        $('.tbBar').click(function () {
+            $('.tbLine').show();
+            $('.tbBar').hide();
+        })
+        $('.tbLine').click(function () {
+            $('.tbLine').hide();
+            $('.tbBar').show();
+        })
     }
 
     var initOrgBox06 = function (a,b,c,jgId,jgName) {
@@ -837,9 +974,17 @@
     }
 
     var initRyzz = function (jgId, jgName) {//初始化-疫区来昆人员追踪
-        $.axget("/api/yndp/yqlkryzz/getSameDay?jgId="+jgId, function (data) {
-            initOrgBox05(data)
+        var data = null;
+        var sumChart = null;
+        $.axget1("/api/yndp/yqlkryzz/getSameDay?jgId="+jgId,false, function (res) {
+            data = res;
         });
+
+        $.axget1("/api/yndp/yqlkryzz/getChartData?jgId="+jgId,false, function (resp) {
+            sumChart= resp.data;
+        });
+
+        initOrgBox05(data,sumChart);
     }
 
 

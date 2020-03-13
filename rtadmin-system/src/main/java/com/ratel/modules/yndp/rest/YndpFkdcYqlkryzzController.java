@@ -68,4 +68,15 @@ public class YndpFkdcYqlkryzzController {
         return yndpFkdcYqlkryzzList;
     }
 
+    @GetMapping(value = "/getChartData")
+    @ApiOperation("查询折线图数据")
+    public Result getChartData(@RequestParam String jgId) {
+        Result result = new Result();
+        result.setCode(Result.SUCCESS_CODE);
+        result.setData(yndpFkdcYqlkryzzService.getChartData(jgId));
+        result.setMessage("成功");
+        return result;
+    }
+
+
 }

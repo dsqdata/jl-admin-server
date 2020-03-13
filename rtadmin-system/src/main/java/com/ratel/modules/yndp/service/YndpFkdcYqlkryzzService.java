@@ -56,4 +56,7 @@ public class YndpFkdcYqlkryzzService extends BaseService<YndpFkdcYqlkryzz, Strin
         return yndpFkdcYqlkryzzRepository.getMaxDay();
     }
 
+    public List<YndpFkdcYqlkryzz> getChartData(String jgId) {
+        return yndpFkdcYqlkryzzRepository.getChartData(jgId);
+    }
 }

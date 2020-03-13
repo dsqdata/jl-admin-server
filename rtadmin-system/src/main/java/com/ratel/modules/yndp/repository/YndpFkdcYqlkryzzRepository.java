@@ -45,4 +45,8 @@ public interface YndpFkdcYqlkryzzRepository extends BaseRepository<YndpFkdcYqlkr
      */
     @Query(value = "SELECT * FROM yndp_fkdc_yqlkryzz WHERE DATE_FORMAT(rq, 'Y%m%d') = DATE_FORMAT(?1, 'Y%m%d') AND jgid= ?2 ORDER BY px",nativeQuery = true)
     List<YndpFkdcYqlkryzz> getSameDay(String data,String jgid);
+
+    // 查询echart数据
+    @Query(value = "select * FROM yndp_fkdc_yqlkryzz where  jgid=?1 and rylx='总数' ORDER BY rq asc",nativeQuery = true)
+    List<YndpFkdcYqlkryzz> getChartData(String jgId);
 }
