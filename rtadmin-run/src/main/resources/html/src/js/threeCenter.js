@@ -161,6 +161,13 @@ function ThreePageWorkstationTotalList(date){
 var initOrgBoxLack = function (data) {
     var html = template('tpl-orgBoxLack',{lacklist:data});
     document.getElementById('orgBoxLack').innerHTML = html;
+    //消息滚动
+    $('#jqwzMess').liMarquee({
+        direction: 'up',
+        scrolldelay:0,
+        scrollamount: 10
+
+    });
 }
 
 function ThreePageLackList(date) {

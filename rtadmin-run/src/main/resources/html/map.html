@@ -305,15 +305,15 @@
 <!--                            <td><p class="lineBox"><span style="width: 0"></span></p ></td>-->
 <!--                            <td>12345人</td>-->
 <!--                        </tr>-->
-
                         {{each ryzz item i}}
-                        <tr>
 
                             <% if (item.rylx=='总数') { %>
                                     <% if (ryzz[0].rysl==0) { %>
-                                        <th>{{item.rylx}}</th>
-                                        <td><p class="lineBox"> <span style="width: 0%"></span></p></td>
-                                        <td>{{item.rysl}}</td>
+                                        <tr class="tbBar">
+                                            <th>{{item.rylx}}</th>
+                                            <td><p class="lineBox"> <span style="width: 0%"></span></p></td>
+                                            <td>{{item.rysl}}</td>
+                                        </tr>
                                     <% } else { %>
                                         <tr class="tbBar">
                                             <th>{{item.rylx}}</th>
@@ -323,18 +323,22 @@
                                     <% } %>
                             <% } else { %>
                                     <% if (ryzz[0].rysl==0) { %>
+                        <tr>
                                         <th>{{item.rylx}}</th>
                                         <td><p class="lineBox"> <span style="width: 0%"></span></p></td>
                                         <td>{{item.rysl}}</td>
+                        </tr>
                                      <% } else { %>
+                        <tr>
                                         <th>{{item.rylx}}</th>
                                         <td><p class="lineBox"> <span style="width: {{(item.rysl/ ryzz[0].rysl)*100}}%"></span></p></td>
                                         <td>{{item.rysl}}</td>
+                        </tr>
                                      <% } %>
                             <% } %>
 
 
-                        </tr>
+
                         {{/each}}
 
                     </table>

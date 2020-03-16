@@ -66,7 +66,7 @@
                         <span class="bgBtm02"></span>
                         <div class="leftBox02In">
                             <a href="#" data-toggle="modal" onclick="allModal('{{jgTmp}}','leftThree')">
-                                <ul class="orgList02">
+                                <ul class="orgList02" style="height: 140px">
                                     <% if (jgTmp.xjlx==1) { %>
                                     <!--                                        <li><strong>社区网格长</strong><span>{{sqwgz==null?'-':sqwgz}}</span></li>-->
                                     <!--                                        <li><strong>网格管理员</strong><span>{{sqwggly==null?'-':sqwggly}}</span></li>-->
@@ -180,7 +180,8 @@
                                             {{each item.children subItem j}}
                                             <div class="orgList03In">
                                                 <a href="#" data-toggle="modal" onclick="allModal('{{subItem}}','wgcy_cs')">
-                                                    <h3 class="ttl05">{{subItem.jgmc==null?'-':subItem.jgmc}}<span>({{subItem.lds==null?'-':subItem.lds}}栋{{subItem.hs==null?'-':subItem.hs}}户{{subItem.zrs==null?'-':subItem.zrs}}人)</span></h3>
+<!--                                                <a href="#">-->
+                                                    <h3 class="ttl05" style="white-space:nowrap;text-overflow:ellipsis;overflow:hidden;padding:1px 15px;">{{subItem.jgmc==null?'-':subItem.jgmc}}<span>({{subItem.lds==null?'-':subItem.lds}}栋{{subItem.hs==null?'-':subItem.hs}}户{{subItem.zrs==null?'-':subItem.zrs}}人)</span></h3>
                                                     <ul class="orgList02">
                                                         <!--                                                                <li><strong>网格长</strong><span>{{subItem.jgwgz==null?'-':subItem.jgwgz}}</span></li>-->
                                                         <!--                                                                <li><strong>网格管理员</strong><span>{{subItem.jgwggly==null?'-':subItem.jgwggly}}</span></li> -->
@@ -224,9 +225,10 @@
                                             {{each item.children subItem j}}
                                             <div class="orgList03In">
                                                 <a href="#" data-toggle="modal" onclick="allModal('{{subItem}}','wgcy_cgj')">
+<!--                                                <a href="#">-->
                                                     <h3 class="ttl05"><span></span></h3>
                                                     <ul class="orgList02">
-                                                        <li><strong>党员代表</strong><span>{{subItem.dydb==null?'-':subItem.dydb}}</span></li>
+                                                        <li><strong>党员代表</strong><span>{{subItem.dydb==null?'-':subItem.dydb.trim().split(/\s+/)[0]}}</span></li>
                                                         <li><strong>联系电话</strong><span>{{subItem.lxdh==null?'-':subItem.lxdh}}</span></li>
                                                         <li><strong>联系户数</strong><span>{{subItem.lxhs==null?'-':subItem.lxhs}}</span></li>
                                                     </ul>
@@ -447,6 +449,7 @@
                                 <% } %>
                             </ul>
                         <% } else if (type=='wgcy_cs') { %>
+                            <h4 class="nameTit">{{data.jgmc}}</h4>
                             <h4 class="nameTit">网格长</h4>
                             <ul class="nameList">
                                 <% if (data.jgwgz != null) { %>
@@ -468,7 +471,16 @@
                                 <% } %>
                             </ul>
                         <% } else if (type=='wgcy_cgj') { %>
-
+                            <h4 class="nameTit">党员代表</h4>
+                            <ul class="nameList">
+                                <% if (data.dydb != null) { %>
+                                {{each data.dydb.trim().split(/\s+/) itm i}}
+                                <% if (i%2==0) { %>
+                                <li>{{data.dydb.trim().split(/\s+/)[i]}}&nbsp&nbsp{{data.dydb.trim().split(/\s+/)[i+1]}}</li>
+                                <% } %>
+                                {{/each}}
+                                <% } %>
+                            </ul>
                         <% } %>
 
                         </script>

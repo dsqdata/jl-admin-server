@@ -18,7 +18,17 @@ function querySituation(currentDate){
             padding: [10, 10],
             backgroundColor: 'rgba(0,0,0,0.7)',
             extraCssText: 'border: 1px solid #3d7787',
-            //formatter: "{b} <br> 合格率: {c}%"
+            formatter:function(params) {
+                var relVal = params[0].name;
+                for (var i = 0, l = params.length; i < l; i++) {
+                    if(i==0){
+                        relVal += '<br/>' + params[i].marker + params[i].seriesName + ' : ' + params[i].value+"次";
+                    }else{
+                        relVal += '<br/>' + params[i].marker + params[i].seriesName + ' : ' + params[i].value+"人";
+                    }
+                }
+                return relVal;
+            }
         },
         legend: {
             top:'5%',
