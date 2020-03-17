@@ -4,8 +4,7 @@ var myChart502 = echarts.init(document.getElementById('chartBar0502'));
 var myChart503 = echarts.init(document.getElementById('chartBar0503'));
 var myChart504 = echarts.init(document.getElementById('chartBar0504'));
 function chartBar0501(rq,ext1,ext2,ext3,ext4){
-    var x_data = rq,
-
+    var x_data = rq;
         option = {
             tooltip: {
                 trigger: 'axis',
@@ -17,6 +16,29 @@ function chartBar0501(rq,ext1,ext2,ext3,ext4){
                     shadowStyle: {
                         color: 'rgba(67,100,247,0.08)'
                     }
+                },
+                formatter:function(params) {
+                    var relVal = params[0].name;
+                    for (var i = 0, l = params.length; i < l; i++) {
+                        if(i==0){
+                            var pValue="";
+                            if(params[i].value==""||params[i].value==null){
+                                pValue="-";
+                            }else{
+                                pValue=params[i].value;
+                            }
+                            relVal += '<br/>' + params[i].marker + params[i].seriesName + ' : ' + pValue;
+                        }else{
+                           var pValue="";
+                            if(params[i].value==""||params[i].value==null){
+                                pValue="-";
+                            }else{
+                                pValue=params[i].value;
+                            }
+                            relVal += '<br/>' + params[i].marker + params[i].seriesName + ' : ' + pValue;
+                        }
+                    }
+                    return relVal;
                 }
             },
             legend: {
