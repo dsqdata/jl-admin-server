@@ -36,17 +36,18 @@
 #### 项目结构
 项目采用按功能分模块开发方式，将通用的配置放在公共模块，```system```模块为系统核心模块也是项目入口模块，```logging``` 模块为系统的日志模块，```tools``` 为第三方工具模块，包含了图床、邮件、七牛云、支付宝，```generator``` 为系统的代码生成模块
 
-- eladmin-common 公共模块
+- rtadmin-common 公共模块
     - annotation 为系统自定义注解
     - aspect 自定义注解的切面
     - base 提供了Entity、DTO基类和mapstruct的通用mapper
     - config 自定义权限实现、redis配置、swagger配置
     - exception 项目统一异常的处理
     - utils 系统通用工具类
-- eladmin-system 系统核心模块（系统启动入口）
+- rtadmin-system 系统核心模块
 	- config 配置跨域与静态资源，与数据权限
 	    - thread 线程池相关
 	- modules 系统相关模块(登录授权、系统监控、定时任务等)
-- eladmin-logging 系统日志模块
-- eladmin-tools 系统第三方工具模块
-- eladmin-generator 系统代码生成模块
+- rtadmin-logging 系统日志模块
+- rtadmin-tools 系统第三方工具模块
+- rtadmin-generator 系统代码生成模块
+- rtadmin-run  系统启动入口
