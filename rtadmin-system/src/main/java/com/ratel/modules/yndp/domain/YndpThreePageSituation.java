@@ -107,4 +107,62 @@ public class YndpThreePageSituation extends YndpBaseUuidEntity {
     @Column(name = "create_time", columnDefinition = "VARCHAR(20) COMMENT ' 创建时间'")
     private Date create_time;
 
+    /**
+     * 扩展4
+     */
+    @Column(name = "ext4", columnDefinition = "VARCHAR(20) COMMENT '扩展4'")
+    private String ext4;
+
+    /**
+     * 扩展5
+     */
+    @Column(name = "ext5", columnDefinition = "VARCHAR(20) COMMENT '扩展5'")
+    private String ext5;
+
+    /**
+     * 扩展6
+     */
+    @Column(name = "ext6", columnDefinition = "VARCHAR(20) COMMENT '扩展6'")
+    private String ext6;
+
+    /**
+     * 扩展7
+     */
+    @Column(name = "ext7", columnDefinition = "VARCHAR(20) COMMENT '扩展7'")
+    private String ext7;
+
+    /**
+     * 扩展8
+     */
+    @Column(name = "ext8", columnDefinition = "VARCHAR(20) COMMENT '扩展8'")
+    private String ext8;
+
+    /**
+     * 扩展9
+     */
+    @Column(name = "ext9", columnDefinition = "VARCHAR(20) COMMENT '扩展9'")
+    private String ext9;
+
+    /**
+     * 扩展10
+     */
+    @Column(name = "ext10", columnDefinition = "VARCHAR(20) COMMENT '扩展10'")
+    private String ext10;
+
+    /**
+     * 扩展11
+     */
+    @Column(name = "ext11", columnDefinition = "VARCHAR(20) COMMENT '扩展11'")
+    private String ext11;
+
+    /**
+     * 扩展12
+     */
+    @Column(name = "ext12", columnDefinition = "VARCHAR(20) COMMENT '扩展12'")
+    private String ext12;
+
+    @Override
+    public String getId() {
+        return null;
+    }
 }
