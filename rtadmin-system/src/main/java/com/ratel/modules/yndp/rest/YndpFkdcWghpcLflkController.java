@@ -31,9 +31,20 @@ public class YndpFkdcWghpcLflkController {
     @ApiOperation("根据机构ID查询出防控宣传列表")
     @GetMapping(value = "/getPcjlflkList")
     public Result getPcjlflkList(@RequestParam String jgId, HttpServletRequest request, HttpServletResponse response) {
-
         //1. 根据所选择的机构ID查询出列表
         List<YndpFkdcWghpcLflk> yndpFkdcWghpcLflkList = yndpFkdcWghpcLflkService.getPcjlflkList(jgId);
+        Result result = new Result();
+        result.setCode(Result.SUCCESS_CODE);
+        result.setData(yndpFkdcWghpcLflkList);
+        result.setMessage("成功");
+        return result;
+    }
+
+    @ApiOperation("根据机构ID查询出所有防控宣传列表")
+    @GetMapping(value = "/getPcjlflkListAll")
+    public Result getPcjlflkListAll(@RequestParam String jgId, HttpServletRequest request, HttpServletResponse response) {
+        //1. 根据所选择的机构ID查询出列表
+        List<YndpFkdcWghpcLflk> yndpFkdcWghpcLflkList = yndpFkdcWghpcLflkService.getPcjlflkListAll(jgId);
         Result result = new Result();
         result.setCode(Result.SUCCESS_CODE);
         result.setData(yndpFkdcWghpcLflkList);

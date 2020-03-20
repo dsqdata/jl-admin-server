@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>昆明经开区网格化管理服务组织架构</title>
+    <link rel="stylesheet" type="text/css" href="component/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="component/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="src/css/links.css">
+    <script type="text/javascript" src="component/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="component/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="static/js/jquery.ajax.js"></script>
+    <script type="text/javascript" src="static/js/template-web.js"></script>
+</head>
+<body>
+<div id="wrapper">
+    <div id="header">
+        <h1></h1>
+        <p class="group_txtP">云南省自贸区昆明片区（昆明经开区）疫情防控网格化管理工作图</p>
+    </div>
+    <div id="groupCon" class="clearfix">
+        <div class="group01" id="orgBox01">
+            <script id="tpl-orgBox01" type="text/html">
+                <h2 class="groupTtl01"></h2>
+                <div class="group0101">
+                    <h3 class="groupTtl03">组长</h3>
+                    <ul class="groupList01">
+<!--                        <li><em>陈泽宇</em>13566667777</li>-->
+<!--                        <li><em>嘉伟</em>13566667777</li>-->
+                        {{each yqgzldxzList[0].fitst_leader.trim().split('|||') item i}}
+                            {{each item.trim().split(',') subItm i}}
+                            <% if (i%2==0) { %>
+                             <li><em>{{item.trim().split(',')[i]}}</em>{{item.trim().split(',')[i+1]}}</li>
+                            <% } %>
+                            {{/each}}
+                         {{/each}}
+                    </ul>
+                </div>
+                <div class="group0102">
+                    <h3 class="groupTtl03">副组长</h3>
+                    <ul class="groupList01 messGroup">
+<!--                        <li><em>陈泽宇</em>13566667777</li>-->
+<!--                        <li><em>嘉伟</em>13566667777</li>-->
+                        {{each yqgzldxzList[0].second_leader.trim().split('|||') item i}}
+                            {{each item.trim().split(',') subItm i}}
+                            <% if (i%2==0) { %>
+                            <li><em>{{item.trim().split(',')[i]}}</em>{{item.trim().split(',')[i+1]}}</li>
+                            <% } %>
+                            {{/each}}
+                        {{/each}}
+                    </ul>
+                </div>
+                <div class="group0103">
+                    <h3 class="groupTtl03">成员</h3>
+                    <ul class="groupList01 messGroup">
+<!--                        <li><em>陈泽宇</em>13566667777</li>-->
+<!--                        <li><em>嘉伟</em>13566667777</li>-->
+                        {{each yqgzldxzList[0].member.trim().split('|||') item i}}
+                            {{each item.trim().split(',') subItm i}}
+                            <% if (i%2==0) { %>
+                            <li><em>{{item.trim().split(',')[i]}}</em>{{item.trim().split(',')[i+1]}}</li>
+                            <% } %>
+                            {{/each}}
+                        {{/each}}
+                    </ul>
+                </div>
+                <div class="group0104">
+                    <h3 class="groupTtl03">工作职责</h3>
+                    <ul class="groupList02 messGroup">
+<!--                        <li>承担领导交办的其他工作承担领导交办的他工作</li>-->
+<!--                        <li>承担领导交办的其他工作承担领导交办的其他工作承担领导交办的其他工作承担领导交办的其他工作</li>-->
+                        {{each yqgzldxzList[0].message.trim().split('|||') item i}}
+                         <li>{{item}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </script>
+        </div>
+        <div class="group01Bg"></div>
+        <div class="group02" id="orgBox02">
+            <script id="tpl-orgBox02" type="text/html">
+                <a href="index.html"><h2 class="groupTtl02" style="cursor:pointer;"></h2></a>
+                <div class="group0101">
+                    <h3 class="groupTtl03">指挥长</h3>
+                    <ul class="groupList01">
+<!--                        <li><em>陈泽宇</em>13566667777</li>-->
+<!--                        <li><em>嘉伟</em>13566667777</li>-->
+                        {{each zhbList[0].fitst_leader.trim().split('|||') item i}}
+                            {{each item.trim().split(',') subItm i}}
+                            <% if (i%2==0) { %>
+                            <li><em>{{item.trim().split(',')[i]}}</em>{{item.trim().split(',')[i+1]}}</li>
+                            <% } %>
+                            {{/each}}
+                        {{/each}}
+                    </ul>
+                </div>
+                <div class="group0102">
+                    <h3 class="groupTtl03">副指挥长</h3>
+                    <ul class="groupList01 messGroup">
+<!--                        <li><em>陈泽宇</em>13566667777</li>-->
+<!--                        <li><em>嘉伟</em>13566667777</li>-->
+                        {{each zhbList[0].second_leader.trim().split('|||') item i}}
+                            {{each item.trim().split(',') subItm i}}
+                            <% if (i%2==0) { %>
+                            <li><em>{{item.trim().split(',')[i]}}</em>{{item.trim().split(',')[i+1]}}</li>
+                            <% } %>
+                            {{/each}}
+                        {{/each}}
+                    </ul>
+                </div>
+                <div class="group0103">
+                    <h3 class="groupTtl03">成员</h3>
+                    <ul class="groupList01 messGroup">
+<!--                        <li><em>陈泽宇</em>13566667777</li>-->
+<!--                        <li><em>嘉伟</em>13566667777</li>-->
+                        {{each zhbList[0].member.trim().split('|||') item i}}
+                            {{each item.trim().split(',') subItm i}}
+                            <% if (i%2==0) { %>
+                            <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                            <% } %>
+                            {{/each}}
+                        {{/each}}
+                    </ul>
+                </div>
+                <div class="group0104">
+                    <h3 class="groupTtl03">工作职责</h3>
+                    <ul class="groupList02 messGroup">
+<!--                        <li>承担领导交办的其他工作承担领导交办的他工作</li>-->
+<!--                        <li>承担领导交办的其他工作承担领导交办的其他工作承担领导交办的其他工作承担领导交办的其他工作</li>-->
+                        {{each zhbList[0].message.trim().split('|||') item i}}
+                            <li>{{item}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </script>
+            </div>
+        <div class="group02Bg"></div>
+        <div class="group03">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs-left groupTab" role="tablist">
+                <li role="presentation" class="active"><a href="#tab01" class="g01" aria-controls="home" role="tab" data-toggle="tab">综合组（专班）</a></li>
+                <li role="presentation"><a href="#tab02" class="g02" aria-controls="profile" role="tab" data-toggle="tab">宣传组</a></li>
+                <li role="presentation"><a href="#tab03" class="g03" aria-controls="messages" role="tab" data-toggle="tab">疫情防空组</a></li>
+                <li role="presentation"><a href="#tab04" class="g04" aria-controls="settings" role="tab" data-toggle="tab">医疗救治组</a></li>
+                <li role="presentation"><a href="#tab05" class="g05" aria-controls="settings" role="tab" data-toggle="tab">交通管控组</a></li>
+                <li role="presentation"><a href="#tab06" class="g06" aria-controls="settings" role="tab" data-toggle="tab">教育防控组</a></li>
+                <li role="presentation"><a href="#tab07" class="g07" aria-controls="settings" role="tab" data-toggle="tab">文化旅游防控组</a></li>
+                <li role="presentation"><a href="#tab08" class="g08" aria-controls="settings" role="tab" data-toggle="tab">外事组</a></li>
+                <li role="presentation"><a href="#tab09" class="g09" aria-controls="settings" role="tab" data-toggle="tab">物资保障组</a></li>
+                <li role="presentation"><a href="#tab10" class="g10" aria-controls="settings" role="tab" data-toggle="tab">维稳组</a></li>
+                <li role="presentation"><a href="#tab11" class="g11" aria-controls="settings" role="tab" data-toggle="tab">督导组</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content groupTabcon">
+                    <!--综合组-->
+                    <div role="tabpanel" class="tab-pane active" id="tab01">
+                        <div class="groupBox01 posT">
+                            <ul class="pageTab">
+                                <li class="li01"><a href="#">1</a></li>
+                                <li class="li02"><a href="#">2</a></li>
+                            </ul>
+                            <div class="pageCon" id="orgBoxZhzzb">
+                                <script id="tpl-orgBoxZhzzb" type="text/html">
+                                    <div class="pageItem">
+                                        <h3 class="groupTtl03">组长</h3>
+                                        <div class="group0301">
+                                            <ul class="groupList01">
+    <!--                                            <li><em>陈泽宇</em>13566667777</li>-->
+    <!--                                            <li><em>嘉伟</em>13566667777</li>-->
+                                                {{each groupList.fitst_leader.trim().split('|||') item i}}
+                                                    {{each item.trim().split(',') subItm i}}
+                                                    <% if (i%2==0) { %>
+                                                    <li><em>{{item.trim().split(',')[i]}}</em>{{item.trim().split(',')[i+1]}}</li>
+                                                    <% } %>
+                                                    {{/each}}
+                                                {{/each}}
+
+                                            </ul>
+                                        </div>
+                                        <h3 class="groupTtl03">副组长</h3>
+                                        <div class="group0301">
+                                            <ul class="groupList01 messGroup">
+<!--                                                <li><em>陈泽宇</em>13566667777</li>-->
+<!--                                                <li><em>嘉伟</em>13566667777</li>-->
+                                                {{each groupList.second_leader.trim().split('|||') item i}}
+                                                    {{each item.trim().split(',') subItm i}}
+                                                    <% if (i%2==0) { %>
+                                                    <li><em>{{item.trim().split(',')[i]}}</em>{{item.trim().split(',')[i+1]}}</li>
+                                                    <% } %>
+                                                    {{/each}}
+                                                {{/each}}
+                                            </ul>
+                                        </div>
+                                        <h3 class="groupTtl03">成员</h3>
+                                        <div class="group0301">
+                                            <ul class="groupList01 messGroup">
+<!--                                                <li><em>陈泽宇</em>13566667777</li>-->
+<!--                                                <li><em>嘉伟</em>13566667777</li>-->
+                                                {{each groupList.member.trim().split('|||') item i}}
+                                                    {{each item.trim().split(',') subItm i}}
+                                                    <% if (i%2==0) { %>
+                                                    <li><em>{{item.trim().split(',')[i]}}</em>{{item.trim().split(',')[i+1]}}</li>
+                                                    <% } %>
+                                                    {{/each}}
+                                                {{/each}}
+                                            </ul>
+                                        </div>
+                                        <h3 class="groupTtl03">联络员</h3>
+                                        <div class="group0301">
+                                            <ul class="groupList01 messGroup">
+<!--                                                <li><em>陈泽宇</em>13566667777</li>-->
+<!--                                                <li><em>嘉伟</em>13566667777</li>-->
+                                                {{each groupList.contact_officer.trim().split('|||') item i}}
+                                                    {{each item.trim().split(',') subItm i}}
+                                                    <% if (i%2==0) { %>
+                                                    <li><em>{{item.trim().split(',')[i]}}</em>{{item.trim().split(',')[i+1]}}</li>
+                                                    <% } %>
+                                                    {{/each}}
+                                                {{/each}}
+                                            </ul>
+                                        </div>
+                                        <h3 class="groupTtl03">工作职责</h3>
+                                        <div class="group0302" >
+                                            <ul class="groupList02 messGroup">
+<!--                                                <li>承担领导交办的其他工作承担领导交办的其他工作承担领导交办的其他工作承担领导交办的其他工作承担领导交办的其他工作</li>-->
+<!--                                                <li>承担领导交办的其他工作承担领导交办的其他工作承担领导交办的其他工作承担领导交办的其他工作</li>-->
+                                                {{each groupList.message.trim().split('|||') item i}}
+                                                    {{each item.trim().split(',') subItm i}}
+                                                    <% if (i%2==0) { %>
+                                                    <li><em>{{item.trim().split(',')[i]}}</em>{{item.trim().split(',')[i+1]}}</li>
+                                                    <% } %>
+                                                    {{/each}}
+                                                {{/each}}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="pageItem">
+                                        <h3 class="groupTtl03">带班领导</h3>
+                                        <div class="group0303">
+                                            <ul class="groupList01 messGroup" >
+<!--                                                <li>徐春</li>-->
+<!--                                                <li>王刚</li>-->
+                                                {{each groupList.temp_leader.trim().split('|||') item i}}
+                                                    {{each item.trim().split(',') subItm i}}
+                                                    <% if (i%2==0) { %>
+                                                    <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                                    <% } %>
+                                                    {{/each}}
+                                                {{/each}}
+                                            </ul>
+                                        </div>
+                                        <h3 class="groupTtl03">一组</h3>
+                                        <div class="group0304">
+                                            <ul class="groupList01 messGroup">
+<!--                                                <li>商务和投促局 <span><em>陈泽宇</em>13566667777</span></li>-->
+<!--                                                <li>商务和投促局 <span><em>嘉伟</em>13566667777</span></li>-->
+                                                {{each groupList.first_group.trim().split('|||') item i}}
+                                                    {{each item.trim().split(',') subItm i}}
+                                                    <% if (i%3==0) { %>
+                                                    <li> {{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}&nbsp;{{item.trim().split(',')[i+2]}}</li>
+                                                    <% } %>
+                                                    {{/each}}
+                                                {{/each}}
+                                            </ul>
+                                        </div>
+                                        <h3 class="groupTtl03">二组</h3>
+                                        <div class="group0305" >
+                                            <ul class="groupList01 messGroup">
+<!--                                                <li>商务和投促局 <span><em>陈泽宇</em>13566667777</span></li>-->
+<!--                                                <li>商务和投促局 <span><em>嘉伟</em>13566667777</span></li>-->
+                                                {{each groupList.second_group.trim().split('|||') item i}}
+                                                    {{each item.trim().split(',') subItm i}}
+                                                    <% if (i%3==0) { %>
+                                                    <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}&nbsp;{{item.trim().split(',')[i+2]}}</li>
+                                                    <% } %>
+                                                    {{/each}}
+                                                {{/each}}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    <!--综合组 //-->
+                    <!--宣传组-->
+                    <div role="tabpanel" class="tab-pane" id="tab02">
+                        <div class="groupBox01" id="orgBoxXcz">
+                            <script id="tpl-orgBoxXcz" type="text/html">
+                                <h3 class="groupTtl03">组长</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.fitst_leader.trim().split('|||') item i}}
+                                            {{each item.trim().split(',') subItm i}}
+                                            <% if (i%2==0) { %>
+                                            <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                            <% } %>
+                                            {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">副组长</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.second_leader.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">成员</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.member.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">联络员</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.contact_officer.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">工作职责</h3>
+                                <div class="group0302">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.message.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                            </script>
+                        </div>
+                    </div>
+                    <!--宣传组 //-->
+                    <!--疫情防控组-->
+                    <div role="tabpanel" class="tab-pane" id="tab03">
+                        <div class="groupBox01" id="orgBoxYqfkz">
+                            <script id="tpl-orgBoxYqfkz" type="text/html">
+                                <h3 class="groupTtl03">组长</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.fitst_leader.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">副组长</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.second_leader.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">成员</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.member.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">联络员</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.contact_officer.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">工作职责</h3>
+                                <div class="group0302">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.message.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                            </script>
+                        </div>
+                    </div>
+                    <!--疫情防控组 //-->
+                    <!--医疗救治组-->
+                    <div role="tabpanel" class="tab-pane" id="tab04">
+                        <div class="groupBox01" id="orgBoxYlzlz">
+                            <script id="tpl-orgBoxYlzlz" type="text/html">
+                                <h3 class="groupTtl03">组长</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.fitst_leader.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">副组长</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.second_leader.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">成员</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.member.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">联络员</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.contact_officer.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">工作职责</h3>
+                                <div class="group0302">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.message.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                            </script>
+                        </div>
+                    </div>
+                    <!--医疗救治组 //-->
+                    <!--交通管控组-->
+                    <div role="tabpanel" class="tab-pane" id="tab05">
+                        <div class="groupBox01" id="orgBoxJtgkz">
+                            <script id="tpl-orgBoxJtgkz" type="text/html">
+                                <h3 class="groupTtl03">组长</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.fitst_leader.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">副组长</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.second_leader.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">成员</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.member.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">联络员</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.contact_officer.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">工作职责</h3>
+                                <div class="group0302">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.message.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                            </script>
+                        </div>
+                    </div>
+                    <!--交通管控组 //-->
+                    <!--教育防控组-->
+                    <div role="tabpanel" class="tab-pane" id="tab06">
+                        <div class="groupBox01" id="orgBoxJyfkz">
+                            <script id="tpl-orgBoxJyfkz" type="text/html">
+                                <h3 class="groupTtl03">组长</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.fitst_leader.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">副组长</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.second_leader.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">成员</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.member.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">联络员</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.contact_officer.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">工作职责</h3>
+                                <div class="group0302">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.message.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                            </script>
+                        </div>
+                    </div>
+                    <!--教育防控组 //-->
+                    <!--文化旅游防控组-->
+                    <div role="tabpanel" class="tab-pane" id="tab07">
+                        <div class="groupBox01" id="orgBoxWhlyfkz">
+                            <script id="tpl-orgBoxWhlyfkz" type="text/html">
+                                <h3 class="groupTtl03">组长</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.fitst_leader.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">副组长</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.second_leader.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">成员</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.member.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">联络员</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.contact_officer.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">工作职责</h3>
+                                <div class="group0302">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.message.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                            </script>
+                        </div>
+                    </div>
+                    <!--文化旅游防控组 //-->
+                    <!--外事组-->
+                    <div role="tabpanel" class="tab-pane" id="tab08">
+                        <div class="groupBox01" id="orgBoxWsz">
+                            <script id="tpl-orgBoxWsz" type="text/html">
+                                <h3 class="groupTtl03">组长</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.fitst_leader.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">副组长</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.second_leader.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">成员</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.member.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">联络员</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.contact_officer.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">工作职责</h3>
+                                <div class="group0302">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.message.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                            </script>
+                        </div>
+                    </div>
+                    <!--外事组 //-->
+                    <!--物资保障组-->
+                    <div role="tabpanel" class="tab-pane" id="tab09">
+                        <div class="groupBox01" id="orgBoxWzbz">
+                            <script id="tpl-orgBoxWzbz" type="text/html">
+                                <h3 class="groupTtl03">组长</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.fitst_leader.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">副组长</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.second_leader.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">成员</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.member.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">联络员</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.contact_officer.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">工作职责</h3>
+                                <div class="group0302">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.message.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                            </script>
+                        </div>
+                    </div>
+                    <!--物资保障组 //-->
+                    <!--维稳组-->
+                    <div role="tabpanel" class="tab-pane" id="tab10">
+                        <div class="groupBox01" id="orgBoxWwz">
+                            <script id="tpl-orgBoxWwz" type="text/html">
+                                <h3 class="groupTtl03">组长</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.fitst_leader.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">副组长</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.second_leader.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">成员</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.member.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">联络员</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.contact_officer.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">工作职责</h3>
+                                <div class="group0302">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.message.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                            </script>
+                        </div>
+                    </div>
+                    <!--维稳组 //-->
+                    <!--督导组-->
+                    <div role="tabpanel" class="tab-pane" id="tab11">
+                        <div class="groupBox01" id="orgBoxDdz">
+                            <script id="tpl-orgBoxDdz" type="text/html">
+                                <h3 class="groupTtl03">组长</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.fitst_leader.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">副组长</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.second_leader.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">成员</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.member.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">联络员</h3>
+                                <div class="group0301">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.contact_officer.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <h3 class="groupTtl03">工作职责</h3>
+                                <div class="group0302">
+                                    <ul class="groupList01 messGroup">
+                                        {{each groupList.message.trim().split('|||') item i}}
+                                        {{each item.trim().split(',') subItm i}}
+                                        <% if (i%2==0) { %>
+                                        <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
+                                        <% } %>
+                                        {{/each}}
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                            </script>
+                        </div>
+                    </div>
+                    <!--督导组 //-->
+
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+
+
+
+<script src="component/jquery.liMarquee.js"></script>
+<script>
+    //页码切换
+    var tab=$('.pageTab').find('li a');
+    var tabcon=$('.pageCon').find('.pageItem');
+    tab.each(function(i){
+        tabcon.eq(0).show();
+        tab.eq(0).addClass('active');
+        $(this).click(function(){
+            tab.removeClass('active');
+            tab.eq(i).addClass('active');
+            tabcon.hide();
+            tabcon.eq(i).show();
+        });
+    });
+    //消息滚动
+    $('.messGroup').liMarquee({
+        direction: 'up',
+        scrolldelay:0,
+        scrollamount: 10
+
+    });
+
+    $(document).ready(function () {
+
+        $.axget1("/api/yndp/leadingGroup/getLeadingGroup",false, function (res) {
+            initOrgBox01(res.data.yqgzldxzList);
+            initOrgBox02(res.data.zhbList);
+        });
+
+        // 1：外事组 2：综合组（专班）3：宣传组 4：疫情防控组 5：医疗治疗组  6：交通管控组 7：教育防控组 8：文化旅游防控组 9：物资保障组 10：维稳组 11：督导组
+        // selectDataForType('2');
+        $.axget1("/api/yndp/groupMsg/getGroupMsgAll",false,function (res) {
+            console.log("___^^__");
+            console.log(res.data);
+            for (let i = 0; i <res.data.length ; i++) {
+                if(res.data[i].type == '1'){// 1：外事组
+                   initOrgBoxWsz(res.data[i]);
+                }else if(res.data[i].type == '2'){//2：综合组（专班）
+                    initOrgBoxZhzzb(res.data[i]);
+                }else if(res.data[i].type == '3'){//3：宣传组
+                    initOrgBoxXcz(res.data[i]);
+                }else if(res.data[i].type == '4'){//4：疫情防控组
+                    initOrgBoxYqfkz(res.data[i]);
+                }else if(res.data[i].type == '5'){//5：医疗治疗组
+                    initOrgBoxYlzlz(res.data[i]);
+                }else if(res.data[i].type == '6'){//6：交通管控组
+                    initOrgBoxJtgkz(res.data[i]);
+                }else if(res.data[i].type == '7'){//7：教育防控组
+                    initOrgBoxJyfkz(res.data[i]);
+                }else if(res.data[i].type == '8'){//8：文化旅游防控组
+                    initOrgBoxWhlyfkz(res.data[i]);
+                }else if(res.data[i].type == '9'){//9：物资保障组
+                    initOrgBoxWzbz(res.data[i]);
+                }else if(res.data[i].type == '10'){//10：维稳组
+                    initOrgBoxWwz(res.data[i]);
+                }else if(res.data[i].type == '11'){//11：督导组
+                    initOrgBoxDdz(res.data[i]);
+                }
+            }
+
+            //页码切换
+            var tab=$('.pageTab').find('li a');
+            var tabcon=$('.pageCon').find('.pageItem');
+            tab.each(function(i){
+                tabcon.eq(0).show();
+                tab.eq(0).addClass('active');
+                $(this).click(function(){
+                    tab.removeClass('active');
+                    tab.eq(i).addClass('active');
+                    tabcon.hide();
+                    tabcon.eq(i).show();
+                });
+            });
+
+            //消息滚动
+            $('.messGroup').liMarquee({
+                direction: 'up',
+                scrolldelay:0,
+                scrollamount: 10
+
+            });
+
+
+        });
+
+
+    });
+
+
+
+
+
+    var initOrgBox01 = function (data) {
+        var html = template('tpl-orgBox01', {yqgzldxzList:data});
+        document.getElementById('orgBox01').innerHTML = html;
+        // //消息滚动
+        // $('.messGroup').liMarquee({
+        //     direction: 'up',
+        //     scrolldelay:0,
+        //     scrollamount: 10
+        //
+        // });
+    }
+
+    var initOrgBox02 = function (data) {
+        console.log(data);
+        var html = template('tpl-orgBox02', {zhbList:data});
+        document.getElementById('orgBox02').innerHTML = html;
+        // //消息滚动
+        // $('.messGroup').liMarquee({
+        //     direction: 'up',
+        //     scrolldelay:0,
+        //     scrollamount: 10
+        // });
+    }
+
+    // 1：外事组
+    var initOrgBoxWsz = function (data) {
+        var html = template('tpl-orgBoxWsz', {groupList:data});
+        document.getElementById('orgBoxWsz').innerHTML = html;
+    }
+    //2：综合组（专班）
+    var initOrgBoxZhzzb = function (data) {
+        console.log("综合组（专班）");
+        console.log(data);
+        var html = template('tpl-orgBoxZhzzb', {groupList:data});
+        document.getElementById('orgBoxZhzzb').innerHTML = html;
+    }
+    //3：宣传组
+    var initOrgBoxXcz = function (data) {
+        var html = template('tpl-orgBoxXcz', {groupList:data});
+        document.getElementById('orgBoxXcz').innerHTML = html;
+    }
+    //4：疫情防控组
+    var initOrgBoxYqfkz = function (data) {
+        var html = template('tpl-orgBoxYqfkz', {groupList:data});
+        document.getElementById('orgBoxYqfkz').innerHTML = html;
+    }
+    //5：医疗治疗组
+    var initOrgBoxYlzlz = function (data) {
+        var html = template('tpl-orgBoxYlzlz', {groupList:data});
+        document.getElementById('orgBoxYlzlz').innerHTML = html;
+    }
+    //6：交通管控组
+    var initOrgBoxJtgkz = function (data) {
+        var html = template('tpl-orgBoxJtgkz', {groupList:data});
+        document.getElementById('orgBoxJtgkz').innerHTML = html;
+    }
+    //7：教育防控组
+    var initOrgBoxJyfkz = function (data) {
+        var html = template('tpl-orgBoxJyfkz', {groupList:data});
+        document.getElementById('orgBoxJyfkz').innerHTML = html;
+    }
+    //8：文化旅游防控组
+    var initOrgBoxWhlyfkz = function (data) {
+        var html = template('tpl-orgBoxWhlyfkz', {groupList:data});
+        document.getElementById('orgBoxWhlyfkz').innerHTML = html;
+    }
+    //9：物资保障组
+    var initOrgBoxWzbz = function (data) {
+        var html = template('tpl-orgBoxWzbz', {groupList:data});
+        document.getElementById('orgBoxWzbz').innerHTML = html;
+    }
+    ////10：维稳组
+    var initOrgBoxWwz = function (data) {
+        var html = template('tpl-orgBoxWwz', {groupList:data});
+        document.getElementById('orgBoxWwz').innerHTML = html;
+    }
+    //11：督导组
+    var initOrgBoxDdz = function (data) {
+        var html = template('tpl-orgBoxDdz', {groupList:data});
+        document.getElementById('orgBoxDdz').innerHTML = html;
+    }
+
+
+</script>
+
+
+</body>
+</html>

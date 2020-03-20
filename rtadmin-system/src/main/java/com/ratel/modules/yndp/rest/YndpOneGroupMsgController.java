@@ -43,4 +43,15 @@ public class YndpOneGroupMsgController {
         return result;
     }
 
+    @ApiOperation("查询第一屏-各小组信息所有")
+    @GetMapping(value = "/getGroupMsgAll")
+    public Result getGroupMsgAll(HttpServletRequest request, HttpServletResponse response) {
+        List<YndpOneGroupMsg> yndpOneGroupMsgListAll = yndpOneGroupMsgService.getGroupMsgAll();
+        Result result = new Result();
+        result.setCode(Result.SUCCESS_CODE);
+        result.setData(yndpOneGroupMsgListAll);
+        result.setMessage("成功");
+        return result;
+    }
+
 }

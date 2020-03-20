@@ -21,10 +21,11 @@ function querySituation(currentDate){
             formatter:function(params) {
                 var relVal = params[0].name;
                 for (var i = 0, l = params.length; i < l; i++) {
+
                     if(i==0){
-                        relVal += '<br/>' + params[i].marker + params[i].seriesName + ' : ' + params[i].value+"次";
+                        relVal += '<br/>' + params[i].marker + params[i].seriesName + ' : ' + (params[i].value == null?'-':params[i].value)+"次";
                     }else{
-                        relVal += '<br/>' + params[i].marker + params[i].seriesName + ' : ' + params[i].value+"人";
+                        relVal += '<br/>' + params[i].marker + params[i].seriesName + ' : ' + (params[i].value == null?'-':params[i].value)+"人";
                     }
                 }
                 return relVal;

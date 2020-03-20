@@ -23,4 +23,8 @@ public interface YndpFkdcWghpcLflkRepository extends BaseRepository<YndpFkdcWghp
     @Query(nativeQuery = true, value = "select * from yndp_fkdc_wghpclflk where jgid = ?1  ORDER BY field5 desc limit 1")
     List<YndpFkdcWghpcLflk> getPcjlflkList(String jgId);
 
+
+    @Query(nativeQuery = true, value = "select * from yndp_fkdc_wghpclflk where jgid = ?1  ORDER BY field5 desc")
+    List<YndpFkdcWghpcLflk> getPcjlflkListAll(String jgId);
+
 }

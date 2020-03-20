@@ -19,4 +19,9 @@ public interface YndpOneGroupMsgRepository extends BaseRepository<YndpOneGroupMs
     @Query(nativeQuery = true, value = "select * from yndp_one_page_group_msg where type=?1")
     List<YndpOneGroupMsg> getGroupMsgByType(String type);
 
+
+    @Query(nativeQuery = true, value = "select * from yndp_one_page_group_msg")
+    List<YndpOneGroupMsg> getGroupMsgAll();
+
+
 }

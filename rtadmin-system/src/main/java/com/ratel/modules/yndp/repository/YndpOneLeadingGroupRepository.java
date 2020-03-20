@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 /**
- * 第一屏-应对疫情工作领导小组Repository
+ * 第一屏-应对疫情工作领导小组/指挥部 Repository
  * @author DDXS
  * @date 2020/3/17 15:56
  */

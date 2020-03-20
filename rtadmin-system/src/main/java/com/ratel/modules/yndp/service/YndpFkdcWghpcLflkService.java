@@ -27,4 +27,8 @@ public class YndpFkdcWghpcLflkService extends BaseService<YndpFkdcWghpcLflk, Str
     public List<YndpFkdcWghpcLflk> getPcjlflkList(String jgId) {
         return yndpFkdcWghpcLflkRepository.getPcjlflkList(jgId);
     }
+
+    public List<YndpFkdcWghpcLflk> getPcjlflkListAll(String jgId) {
+        return yndpFkdcWghpcLflkRepository.getPcjlflkListAll(jgId);
+    }
 }

@@ -24,4 +24,10 @@ public class YndpOneGroupMsgService extends BaseService<YndpOneGroupMsg, String>
     public List<YndpOneGroupMsg> getGroupMsgByType(String type) {
         return yndpOneGroupMsgRepository.getGroupMsgByType(type);
     }
+
+    public List<YndpOneGroupMsg> getGroupMsgAll() {
+        return yndpOneGroupMsgRepository.getGroupMsgAll();
+    }
+
+
 }

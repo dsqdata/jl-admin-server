@@ -18,7 +18,7 @@ public interface YndpThreePageLackRepository extends BaseRepository<YndpThreePag
     /**
      * 根据日期查询紧缺物资
      */
-    @Query(nativeQuery = true, value = "select * from yndp_three_page_lack where date = ?1 order by status desc ")
+    @Query(nativeQuery = true, value = "select * from yndp_three_page_lack where date = ?1 order by rank desc ")
     List<YndpThreePageLack> getYndpThreePageLackList(String date);
 
 }

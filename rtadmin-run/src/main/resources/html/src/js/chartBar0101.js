@@ -15,10 +15,10 @@ function chartBar0101(rq1,lx1fgl,lx1fgs,lx1gy,lx1sm,lx1fdc,lx1jz){
                         color: 'rgba(67,100,247,0.08)'
                     }
                 },
-                formatter: '{b}<ul><li style="color:#f84d77;list-style-type:disc">{a0}:{c0}人</li>' +
-                    '<li style="color:#29ccff;list-style-type:disc">{a1}:{c1}人</li>' +
-                    '<li style="color:#f8e71c;list-style-type:disc">{a2}:{c2}人</li>' +
-                    '<li style="color:#7ed321;list-style-type:disc">{a3}:{c3}人</li>' +
+                formatter: '{b}<ul><li style="color:#f84d77;list-style-type:disc">{a0}:{c0}个</li>' +
+                    '<li style="color:#29ccff;list-style-type:disc">{a1}:{c1}个</li>' +
+                    '<li style="color:#f8e71c;list-style-type:disc">{a2}:{c2}个</li>' +
+                    '<li style="color:#7ed321;list-style-type:disc">{a3}:{c3}个</li>' +
                     '<li style="color:#f5e665;list-style-type:disc">{a4}:{c4}%</li></ul>'
             },
             legend: {
