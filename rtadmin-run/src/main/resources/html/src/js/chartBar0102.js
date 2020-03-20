@@ -16,7 +16,7 @@ function chartBar0102(rq2,lx2fgl,lx2fgs){
                     color: 'rgba(67,100,247,0.08)'
                 }
             },
-            formatter: '{b}<ul><li style="color:#e55b5d;list-style-type:disc">{a0}:{c0}人</li>' +
+            formatter: '{b}<ul><li style="color:#e55b5d;list-style-type:disc">{a0}:{c0}个</li>' +
                 '<li style="color:#f5e665;list-style-type:disc">{a1}:{c1}%</li></ul>'
         },
         legend: {
