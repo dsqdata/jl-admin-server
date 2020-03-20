@@ -551,3 +551,78 @@ a,a:hover{ text-decoration: none!important;}
 /*!* 滚动条 *!*/
 /*::-webkit-scrollbar{padding-left:1px; margin-left:1px; background:none; overflow:visible; width:8px; height: 8px; }*/
 /*::-webkit-scrollbar-thumb{ background-color:#115273; border: none; background-clip:padding-box;  min-height:15px; box-shadow:inset 1px 1px 0 #114bb1,inset 0 -1px 0 #114bb1 ,inset -1px -1px 0 #114bb1 ,inset 1px -1px 0 #114bb1; border-radius:5px;}*/
+
+
+
+/*20200319*/
+#groupCon{ height: calc(100% - 140px); margin-top: 35px; }
+.group01{ float: left; width: 27%; height: 920px; background: url("../images/group_bg01.png") no-repeat left 25px; background-size:100%; }
+.groupTtl01{ height: 70px; background: url("../images/group_ttl01.png") no-repeat; background-size:100% 100%; }
+.group01Bg{ float: left; width: 133px; height: 100%; margin-left: -40px; background: url("../images/group_line1.png") no-repeat left 20px; background-size:100% }
+.group02{ float: left; width: 27%; height: 920px; background: url("../images/group_bg01.png") no-repeat left 25px; background-size:100%; margin-left: -45px;  }
+.groupTtl02{ height: 70px; background: url("../images/group_ttl02.png") no-repeat; background-size:100% 100%;}
+.group02Bg{ float: left; width: 100px; height: 100%; margin-left: -35px; background: url("../images/group_line3.png") no-repeat left 20px; background-size:100%; }
+.group03{ float: left; width: 40%; margin-left: -10px;height: 920px;}
+
+.group_txtP{ position: absolute;left:600px; top:35px; font-size: 18px; color: #23B7E5;background: url("../images/group_p.png") no-repeat; background-size:28px 28px; padding: 3px 0 7px 35px; }
+.groupTab{ float: left; width: 242px; height: 100%;}
+.groupTab li{ height: 9.2%; text-align: center; float: left; width: 242px;}
+.groupTab li a{ display: block; padding: 5px 15px 25px 15px; color: #fff; font-size: 18px; font-weight: bold;}
+.groupTab li a:hover{ font-size: 24px;padding: 0 15px 30px 15px;}
+.groupTab li.active a{font-size: 24px;padding: 0 15px 30px 15px;}
+.groupTabcon{ float: left; width: calc(100% - 222px);  height: 100%; margin-left: -20px;}
+.groupTab li a.g01{ background: url("../images/group_1.png") no-repeat; background-size:100%; }
+.groupTab li a.g02{ background: url("../images/group_2.png") no-repeat; background-size:100%; }
+.groupTab li a.g03{ background: url("../images/group_3.png") no-repeat; background-size:100%; }
+.groupTab li a.g04{ background: url("../images/group_4.png") no-repeat; background-size:100%; }
+.groupTab li a.g05{ background: url("../images/group_5.png") no-repeat; background-size:100%; }
+.groupTab li a.g06{ background: url("../images/group_6.png") no-repeat; background-size:100%; }
+.groupTab li a.g07{ background: url("../images/group_7.png") no-repeat; background-size:100%; }
+.groupTab li a.g08{ background: url("../images/group_8.png") no-repeat; background-size:100%; }
+.groupTab li a.g09{ background: url("../images/group_9.png") no-repeat; background-size:100%; }
+.groupTab li a.g10{ background: url("../images/group_10.png") no-repeat; background-size:100%; }
+.groupTab li a.g11{ background: url("../images/group_11.png") no-repeat; background-size:100%; }
+.gLine{ float: left;}
+.groupTabcon .tab-pane{ padding: 0 0 0 73px;}
+.groupBox01{  height: 900px; background: url("../images/group_bj.png") no-repeat; background-size:100% 100%; padding: 25px; }
+.groupTabcon #tab01{ background: url("../images/group_line2.png") no-repeat left 12px; background-size:69px 22px; }
+.groupTabcon #tab02{ background: url("../images/group_line2.png") no-repeat left 105px; background-size:69px 22px; }
+.groupTabcon #tab03{ background: url("../images/group_line2.png") no-repeat left 185px; background-size:69px 22px; }
+.groupTabcon #tab04{ background: url("../images/group_line2.png") no-repeat left 270px; background-size:69px 22px; }
+.groupTabcon #tab05{ background: url("../images/group_line2.png") no-repeat left 355px; background-size:69px 22px; }
+.groupTabcon #tab06{ background: url("../images/group_line2.png") no-repeat left 440px; background-size:69px 22px; }
+.groupTabcon #tab07{ background: url("../images/group_line2.png") no-repeat left 525px; background-size:69px 22px; }
+.groupTabcon #tab08{ background: url("../images/group_line2.png") no-repeat left 610px; background-size:69px 22px; }
+.groupTabcon #tab09{ background: url("../images/group_line2.png") no-repeat left 690px; background-size:69px 22px; }
+.groupTabcon #tab10{ background: url("../images/group_line2.png") no-repeat left 775px; background-size:69px 22px; }
+.groupTabcon #tab11{ background: url("../images/group_line2.png") no-repeat left 860px; background-size:69px 22px; }
+
+.groupTtl03{ font-size: 12px; margin-bottom: 15px; color: #39D8FF; background: url("../images/group_0.png") no-repeat;  padding: 4px 0 2px 45px; }
+
+.pageTab{position: absolute; right:30px; bottom: 30px; overflow: hidden;}
+.pageTab li{ float: left; width: 38px; height: 38px; text-indent: -5000px;margin-left: 25px;}
+.pageTab li a{ display: block;  width: 38px; height: 38px; }
+.pageTab .li01 a{ background: url("../images/group_p01.png") no-repeat; background-size:100% 100%; }
+.pageTab .li02 a{ background: url("../images/group_p02.png") no-repeat; background-size:100% 100%; }
+.pageTab .li01 a.active,.pageTab .li01 a:hover{background: url("../images/group_p01_on.png") no-repeat;background-size:100% 100%; }
+.pageTab .li02 a.active,.pageTab .li02 a:hover{background: url("../images/group_p02_on.png") no-repeat;background-size:100% 100%; }
+.pageCon{ height: 92%; }
+.pageItem{ display: none; height: 100%;}
+.groupList01{ font-size: 16px; font-weight: bold; padding: 0 0 0 15px; margin-bottom: 20px;}
+.groupList01 li{ margin-bottom: 6px; overflow: hidden; line-height: 22px;}
+.groupList01 li:before{ content: ''; display: block; float: left; width: 5px; height: 5px; background: #fff; margin-top: 8px; margin-right: 10px; border-radius: 5px;}
+.groupList01 li span{ float: right; text-align: left; width: 165px;}
+.groupList01 li em{ float: left; width: 55px;}
+.groupList02{ font-size: 16px; font-weight: bold; padding: 0 0 0 15px; margin-bottom: 20px;}
+.groupList02 li{ margin-bottom: 7px; padding: 0 0 0 15px; background: url("../images/group_circle.png") no-repeat 0 10px; line-height: 28px;}
+
+.group0101{ padding: 25px 20px 0 20px; height: 125px;}
+.group0102{padding: 25px 20px 0 20px; height: 250px;}
+.group0103{padding: 25px 20px 0 20px; height: 250px;}
+.group0104{padding: 25px 60px 0 20px; height: 180px;}
+.group0301{ height: 90px;}
+.group0302{ height: 300px}
+.group0303{ height: 80px;}
+.group0304{ height: 370px;}
+.group0305{ height: 290px;}
+.messGroup{ width: 100%; height: 75%;}
