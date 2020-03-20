@@ -354,8 +354,8 @@ a,a:hover{ text-decoration: none!important;}
 .midPart0302{padding: 25px 0;}
 .midPart0302 .ttl10{float: left; font-size: 18px; color: #FF757A; font-weight: bold; width: 25%; padding: 40px 0 0 0; text-align: center;}
 .midPart0302 .ttl10:before{ content: ''; display: block; width: 45px; height: 47px; margin: 0 auto 15px auto; background: url("../images/ac_ico03.png") no-repeat; background-size:100%; }
-.actionList07{ float: left;padding: 10px 25px 0 10px; width: 75%; height: 100%;}
-.actionList07 li{ float: left; width: 50%; height: 30%; font-size: 18px; color: #FF757A; font-weight: bold; padding: 10px 0;}
+.actionList07{ float: left; width: 75%; height: 100%;}
+.actionList07 li{ float: left; width: 50%;  font-size: 18px; color: #FF757A; font-weight: bold; padding: 10px 0;}
 .actionList08{ padding: 25px 0 10px 0; overflow: hidden;}
 .actionList08 li{ float: left; width: 33%; text-align: center;}
 .actionList08 li strong{ display: block; font-size: 18px; color: #23B7E5; margin-bottom: 5px;}
