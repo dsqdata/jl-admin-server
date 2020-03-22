@@ -51,33 +51,61 @@
             <!--物资保障-->
             <div class="sideBox02" id="orgBox02">
                 <script id="tpl-orgBox02" type="text/html">
-                <h2 class="mapTbox">
-                    <span class="mapT01"><span class="mapTbg01">物资保障</span></span>
-                </h2>
-                <div class="tbBox">
-                <table class="tb01" cellpadding="10">
-                    <tr>
-                        <th>序号</th>
-                        <th>日期</th>
-                        <th>物资</th>
-                        <th>入库</th>
-                        <th>发出</th>
-                        <th>结存</th>
-                        <th>备注</th>
-                    </tr>
-                    {{each wzbz item i}}
-                    <tr>
-                        <td>{{i+1}}</td>
-                        <td>{{!item.rq?'-':item.rq}}</td>
-                        <td>{{item.wz==null?'-':item.wz}}</td>
-                        <td>{{item.rk==null?'-':item.rk}}</td>
-                        <td>{{item.fc==null?'-':item.fc}}</td>
-                        <td>{{item.jc==null?'-':item.jc}}</td>
-                        <td>{{item.bz==null?'-':item.bz}}</td>
-                    </tr>
-                    {{/each}}
-                </table>
-                </div>
+                    <h2 class="mapTbox">
+                        <span class="mapT01"><span class="mapTbg01">物资保障</span></span>
+                    </h2>
+                    <div class="tbBox">
+                        <div class="tb01Head">
+                            <table class="tb01" cellpadding="10" >
+                                <colgroup>
+                                    <col width="10%" />
+                                    <col width="20%" />
+                                    <col width="*" />
+                                    <col width="13%" />
+                                    <col width="13%" />
+                                    <col width="13%" />
+                                    <col width="13%" />
+                                </colgroup>
+                                <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>日期</th>
+                                    <th>物资</th>
+                                    <th>入库</th>
+                                    <th>发出</th>
+                                    <th>结存</th>
+                                    <th>备注</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="tb01Body">
+                            <table class="tb01 mt0" cellpadding="10" >
+                                <colgroup>
+                                    <col width="10%" />
+                                    <col width="20%" />
+                                    <col width="*" />
+                                    <col width="13%" />
+                                    <col width="13%" />
+                                    <col width="13%" />
+                                    <col width="13%" />
+                                </colgroup>
+                                <tbody>
+                                {{each wzbz item i}}
+                                <tr>
+                                    <td>{{i+1}}</td>
+                                    <td>{{!item.rq?'-':item.rq}}</td>
+                                    <td>{{item.wz==null?'-':item.wz}}</td>
+                                    <td>{{item.rk==null?'-':item.rk}}</td>
+                                    <td>{{item.fc==null?'-':item.fc}}</td>
+                                    <td>{{item.jc==null?'-':item.jc}}</td>
+                                    <td>{{item.bz==null?'-':item.bz}}</td>
+                                </tr>
+                                {{/each}}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </script>
             </div>
             <!--物资保障 //-->
