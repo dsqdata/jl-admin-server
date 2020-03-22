@@ -19,7 +19,7 @@
     <div id="header"></div>
     <script id="tpl-header" type="text/html">
         <h1 class="h02"></h1>
-<!--        <h1></h1>-->
+        <!--        <h1></h1>-->
         <p class="txtP">数据更新时间 <span>{{sjgxsj}}</span></p>
     </script>
     <!--    <div id="header">-->
@@ -30,9 +30,9 @@
         <div class="sideCon">
             <!--资源配置-->
             <div class="sideBox01" id="orgBox01">
-            <script id="tpl-orgBox01" type="text/html">>
+                <script id="tpl-orgBox01" type="text/html">>
                 <h2 class="mapTbox">
-                   <span class="mapT01"><span class="mapTbg01">资源配置</span></span>
+                    <span class="mapT01"><span class="mapTbg01">资源配置</span></span>
                 </h2>
                 <ul class="list01">
                     <li class="li01"><div class="liBg"><p class="ln">网格长</p><strong>{{!wgz?'-':wgz}}</strong><span>人</span></div></li>
@@ -45,7 +45,7 @@
                     <li class="li08"><p class="ln">固定检查点</p><strong>{{gdjcd==null?'-':gdjcd}}</strong><span>个</span></li>
                     <li class="li09"><p class="ln">视频卡口</p><strong>{{spkk==null?'-':spkk}}</strong><span>个</span></li>
                 </ul>
-            </script>
+                </script>
             </div>
             <!--资源配置 //-->
             <!--物资保障-->
@@ -84,25 +84,25 @@
             <!--防控宣传-->
             <div class="sideBox03" id="orgBox03">
                 <script id="tpl-orgBox03" type="text/html">
-                <h2 class="mapTbox">
-                    <span class="mapT01"><span class="mapTbg01">防控宣传</span></span>
-                </h2>
-                <div class="ycBox01 clearfix">
-                    <div class="ycBox02">
-                        <p class="ycTxt01">{{szrc}}</p>
-                        <p class="ycTxt02">
-                            <% if (szrcjzr>0) { %>+ <% } %> {{szrcjzr}}<span>较昨日</span></p>
-                        <p class="ycTxt03">受众人次</p>
-                    </div>
+                    <h2 class="mapTbox">
+                        <span class="mapT01"><span class="mapTbg01">防控宣传</span></span>
+                    </h2>
+                    <div class="ycBox01 clearfix">
+                        <div class="ycBox02">
+                            <p class="ycTxt01">{{szrc}}</p>
+                            <p class="ycTxt02">
+                                <% if (szrcjzr>0) { %>+ <% } %> {{szrcjzr}}<span>较昨日</span></p>
+                            <p class="ycTxt03">受众人次</p>
+                        </div>
 
-                    <ul class="list02">
-                        <li class="lia01"><strong>发放宣传资料</strong><span>{{ffxczl}} 份 <em><% if (ffxczljzr>0) { %>+ <% } %>{{ffxczljzr}} <i>较昨日</i></em></span></li>
-                        <li class="lia02"><strong>微信群宣传</strong><span>{{wxqxc}} 份 <em><% if (wxqxcjzr>0) { %>+ <% } %>{{wxqxcjzr}} <i>较昨日</i></em></span></li>
-                        <li class="lia03"><strong>LED宣传</strong><span>{{ledxc}} 份 <em><% if (ledxcjzr>0) { %>+ <% } %>{{ledxcjzr}} <i>较昨日</i></em></span></li>
-                        <li class="lia04"><strong>发送短信</strong><span>{{fsdx}} 份 <em><% if (fsdxjzr>0) { %>+ <% } %>{{fsdxjzr}} <i>较昨日</i></em></span></li>
-                        <li class="lia05"><strong>其他</strong><span>{{qt}} 份 <em><% if (qtjzr>0) { %>+ <% } %>{{qtjzr}} <i>较昨日</i></em></span></li>
-                    </ul>
-                </div>
+                        <ul class="list02">
+                            <li class="lia01"><strong>发放宣传资料</strong><span>{{ffxczl}} 份 <em><% if (ffxczljzr>0) { %>+ <% } %>{{ffxczljzr}} <i>较昨日</i></em></span></li>
+                            <li class="lia02"><strong>微信群宣传</strong><span>{{wxqxc}} 份 <em><% if (wxqxcjzr>0) { %>+ <% } %>{{wxqxcjzr}} <i>较昨日</i></em></span></li>
+                            <li class="lia03"><strong>LED宣传</strong><span>{{ledxc}} 份 <em><% if (ledxcjzr>0) { %>+ <% } %>{{ledxcjzr}} <i>较昨日</i></em></span></li>
+                            <li class="lia04"><strong>发送短信</strong><span>{{fsdx}} 份 <em><% if (fsdxjzr>0) { %>+ <% } %>{{fsdxjzr}} <i>较昨日</i></em></span></li>
+                            <li class="lia05"><strong>其他</strong><span>{{qt}} 份 <em><% if (qtjzr>0) { %>+ <% } %>{{qtjzr}} <i>较昨日</i></em></span></li>
+                        </ul>
+                    </div>
                 </script>
             </div>
             <!--防控宣传-->
@@ -113,13 +113,13 @@
             <div class="midBox01" >
                 <div id="orgBox06" style="height:100%"></div>
                 <script id="tpl-orgBox06" type="text/html">
-                <h2 class="mapTbox">
-                    <span class="mapT01"><span class="mapTbg01">网格化管理区划图</span></span>
-                </h2>
-                <span class="greenBg01"></span>
-                <span class="greenBg02"></span>
-                <span class="greenBg03"></span>
-                <span class="greenBg04"></span>
+                    <h2 class="mapTbox">
+                        <span class="mapT01"><span class="mapTbg01">网格化管理区划图</span></span>
+                    </h2>
+                    <span class="greenBg01"></span>
+                    <span class="greenBg02"></span>
+                    <span class="greenBg03"></span>
+                    <span class="greenBg04"></span>
                     <ul class="mapTxt">
                         <li><span><em><% if (b.xcqzjzr>0) { %>+ <% } %>{{b.xcqzjzr==null?'-':b.xcqzjzr}}</em>较昨日</span><strong>{{b.xcqz==null?'-':b.xcqz}}</strong>现存确诊</li>
                         <li><span><em><% if (b.ljqzjzr>0) { %>+ <% } %>{{b.ljqzjzr==null?'-':b.ljqzjzr}}</em>较昨日</span><strong>{{b.ljqz==null?'-':b.ljqz}}</strong>累计确诊</li>
@@ -129,25 +129,25 @@
                         <li><span><em><% if (b.ljzyjzr>0) { %>+ <% } %>{{b.ljzyjzr==null?'-':b.ljzyjzr}}</em>较昨日</span><strong>{{b.ljzy==null?'-':b.ljzy}}</strong>累计治愈</li>
                     </ul>
 
-                <div class="midBox01in">
-                    <!--<div class="mapMessbox">
-                        <div class="mapMess">
-                            <ul>
-                                {{each a item i}}
-                                <li><span>{{item.sjfssj}}</span>{{item.sj}}</li>
-                                {{/each}}
-                             &lt;!&ndash;   <li><span>2020/02/20 15:00:00</span>昆经开洛羊街道259号世贸大厦 有一市民未佩戴口罩</li>
-                                <li><span>2020/02/20 15:00:00</span>昆经开洛羊街道259号世贸大厦 有一市民未佩戴口罩</li>
-                                <li><span>2020/02/20 15:00:00</span>昆经开洛羊街道259号世贸大厦 有一市民未佩戴口罩</li>
-                                <li><span>2020/02/20 15:00:00</span>昆经开洛羊街道259号世贸大厦 有一市民未佩戴口罩</li>&ndash;&gt;
-                            </ul>
-                        </div>
-                    </div>-->
-                   <ul class="mapTab">
-                        <li><a href="javascript:void(0)" class="hover" onclick="searchMap('1','{{jgId}}','{{jgName}}')" id="btn01">现存确诊</a></li>
-                        <li><a href="javascript:void(0)" onclick="searchMap('2','{{jgId}}','{{jgName}}')" id="btn02">累计确诊</a></li>
-                    </ul>
-                </div>
+                    <div class="midBox01in">
+                        <!--<div class="mapMessbox">
+                            <div class="mapMess">
+                                <ul>
+                                    {{each a item i}}
+                                    <li><span>{{item.sjfssj}}</span>{{item.sj}}</li>
+                                    {{/each}}
+                                 &lt;!&ndash;   <li><span>2020/02/20 15:00:00</span>昆经开洛羊街道259号世贸大厦 有一市民未佩戴口罩</li>
+                                    <li><span>2020/02/20 15:00:00</span>昆经开洛羊街道259号世贸大厦 有一市民未佩戴口罩</li>
+                                    <li><span>2020/02/20 15:00:00</span>昆经开洛羊街道259号世贸大厦 有一市民未佩戴口罩</li>
+                                    <li><span>2020/02/20 15:00:00</span>昆经开洛羊街道259号世贸大厦 有一市民未佩戴口罩</li>&ndash;&gt;
+                                </ul>
+                            </div>
+                        </div>-->
+                        <ul class="mapTab">
+                            <li><a href="javascript:void(0)" class="hover" onclick="searchMap('1','{{jgId}}','{{jgName}}')" id="btn01">现存确诊</a></li>
+                            <li><a href="javascript:void(0)" onclick="searchMap('2','{{jgId}}','{{jgName}}')" id="btn02">累计确诊</a></li>
+                        </ul>
+                    </div>
                 </script>
 
                 <div id="chart-panel"></div>
@@ -162,9 +162,9 @@
 
                     <div role="tabpanel" class="tab-pane active" id="tab01">
 
-                            <h2 class="mapTbox01">
+                        <h2 class="mapTbox01">
                             <span class="mapT01"><span class="mapTbg01">疫情新增趋势图</span></span>
-                            </h2>
+                        </h2>
 
                         <div id="chartLine01" class="chartSty01"></div>
 
@@ -212,37 +212,37 @@
             <!--网格化排查及联防联控-->
             <div class="sideBox01" id="orgBox04">
                 <script id="tpl-orgBox04" type="text/html">
-                <h2 class="mapTbox">
-                    <span class="mapT01"><span class="mapTbg01">网格化排查及联防联控</span></span>
-                </h2>
-                <div class="ycBox03">
-                    <ul class="ycBox0301">
-                        <li>
-                            <div class="liBg">
-                            <strong>发动参加排查人员总数</strong>
-                            <p class="color01"><em>累计</em>{{fdcjpcryzslj}}人</p>
-                            <p class="color02"><em>新增</em>{{fdcjpcryzsxz}}人</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="liBg">
-                            <strong>微信群数量</strong>
-                            <p class="color01"><em>累计</em>{{wxqsllj}}个</p>
-                            <p class="color02"><em>新增</em>{{wxqslxz}}个</p>
-                            </div>
-                        </li>
-                        <li>
-                            <strong>排查总人数</strong>
-                            <p class="color01"><i></i><em>累计</em>{{pczrslj}}人</p>
-                            <p class="color02"><i></i><em>新增</em>{{pczrsxz}}人</p>
-                        </li>
-                        <li>
-                            <strong>微信群覆盖率</strong>
-                            <p class="color01"><i></i><em>累计</em>{{(fxqfgllj*100)}}%</p>
-                            <p class="color02"><i></i><em>新增</em>{{(fxqfglxz*100)}}%</p>
-                        </li>
-                    </ul>
-                </div>
+                    <h2 class="mapTbox">
+                        <span class="mapT01"><span class="mapTbg01">网格化排查及联防联控</span></span>
+                    </h2>
+                    <div class="ycBox03">
+                        <ul class="ycBox0301">
+                            <li>
+                                <div class="liBg">
+                                    <strong>发动参加排查人员总数</strong>
+                                    <p class="color01"><em>累计</em>{{fdcjpcryzslj}}人</p>
+                                    <p class="color02"><em>新增</em>{{fdcjpcryzsxz}}人</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="liBg">
+                                    <strong>微信群数量</strong>
+                                    <p class="color01"><em>累计</em>{{wxqsllj}}个</p>
+                                    <p class="color02"><em>新增</em>{{wxqslxz}}个</p>
+                                </div>
+                            </li>
+                            <li>
+                                <strong>排查总人数</strong>
+                                <p class="color01"><i></i><em>累计</em>{{pczrslj}}人</p>
+                                <p class="color02"><i></i><em>新增</em>{{pczrsxz}}人</p>
+                            </li>
+                            <li>
+                                <strong>微信群覆盖率</strong>
+                                <p class="color01"><i></i><em>累计</em>{{(fxqfgllj*100)}}%</p>
+                                <p class="color02"><i></i><em>新增</em>{{(fxqfglxz*100)}}%</p>
+                            </li>
+                        </ul>
+                    </div>
                 </script>
             </div>
             <!--网格化排查及联防联控 //-->
@@ -281,67 +281,67 @@
             <!--疫区来昆人员追踪-->
             <div class="sideBox03" id="orgBox05">
                 <script id="tpl-orgBox05" type="text/html">
-                <h2 class="mapTbox">
-                    <span class="mapT01"><span class="mapTbg01">疫区来昆人员追踪</span></span>
-                </h2>
+                    <h2 class="mapTbox">
+                        <span class="mapT01"><span class="mapTbg01">疫区来昆人员追踪</span></span>
+                    </h2>
 
-                <div class="listTb">
-                    <table class="tb02">
-                        <colgroup>
-                            <col width="30%" />
-                            <col width="53%" />
-                            <col width="17%" />
-                        </colgroup>
-                        <!--折线图-->
-                        <tr class="tbLine">
-                            <td colspan="3">
-                                <p class="tbLineTxt">总数 <strong>{{sumNum}}</strong><span>人</span></p >
-                                <div id="chartLine11" style=" height: 90px; width: 490px;"></div>
-                            </td>
-                        </tr>
-<!--                        <tr class="tbBar">-->
-<!--                            <th>总数</th>-->
-<!--                            <td><p class="lineBox"><span style="width: 0"></span></p ></td>-->
-<!--                            <td>12345人</td>-->
-<!--                        </tr>-->
-                        {{each ryzz item i}}
+                    <div class="listTb">
+                        <table class="tb02">
+                            <colgroup>
+                                <col width="30%" />
+                                <col width="53%" />
+                                <col width="17%" />
+                            </colgroup>
+                            <!--折线图-->
+                            <tr class="tbLine">
+                                <td colspan="3">
+                                    <p class="tbLineTxt">总数 <strong>{{sumNum}}</strong><span>人</span></p >
+                                    <div id="chartLine11" style=" height: 90px; width: 490px;"></div>
+                                </td>
+                            </tr>
+                            <!--                        <tr class="tbBar">-->
+                            <!--                            <th>总数</th>-->
+                            <!--                            <td><p class="lineBox"><span style="width: 0"></span></p ></td>-->
+                            <!--                            <td>12345人</td>-->
+                            <!--                        </tr>-->
+                            {{each ryzz item i}}
 
                             <% if (item.rylx=='总数') { %>
-                                    <% if (ryzz[0].rysl==0) { %>
-                                        <tr class="tbBar">
-                                            <th>{{item.rylx}}</th>
-                                            <td><p class="lineBox"> <span style="width: 0%"></span></p></td>
-                                            <td>{{item.rysl}}</td>
-                                        </tr>
-                                    <% } else { %>
-                                        <tr class="tbBar">
-                                            <th>{{item.rylx}}</th>
-                                            <td><p class="lineBox"> <span style="width: 100%"></span></p></td>
-                                            <td>{{item.rysl}}</td>
-                                        </tr>
-                                    <% } %>
+                            <% if (ryzz[0].rysl==0) { %>
+                            <tr class="tbBar">
+                                <th>{{item.rylx}}</th>
+                                <td><p class="lineBox"> <span style="width: 0%"></span></p></td>
+                                <td>{{item.rysl}}</td>
+                            </tr>
                             <% } else { %>
-                                    <% if (ryzz[0].rysl==0) { %>
-                        <tr>
-                                        <th>{{item.rylx}}</th>
-                                        <td><p class="lineBox"> <span style="width: 0%"></span></p></td>
-                                        <td>{{item.rysl}}</td>
-                        </tr>
-                                     <% } else { %>
-                        <tr>
-                                        <th>{{item.rylx}}</th>
-                                        <td><p class="lineBox"> <span style="width: {{(item.rysl/ ryzz[0].rysl)*100}}%"></span></p></td>
-                                        <td>{{item.rysl}}</td>
-                        </tr>
-                                     <% } %>
+                            <tr class="tbBar">
+                                <th>{{item.rylx}}</th>
+                                <td><p class="lineBox"> <span style="width: 100%"></span></p></td>
+                                <td>{{item.rysl}}</td>
+                            </tr>
+                            <% } %>
+                            <% } else { %>
+                            <% if (ryzz[0].rysl==0) { %>
+                            <tr>
+                                <th>{{item.rylx}}</th>
+                                <td><p class="lineBox"> <span style="width: 0%"></span></p></td>
+                                <td>{{item.rysl}}</td>
+                            </tr>
+                            <% } else { %>
+                            <tr>
+                                <th>{{item.rylx}}</th>
+                                <td><p class="lineBox"> <span style="width: {{(item.rysl/ ryzz[0].rysl)*100}}%"></span></p></td>
+                                <td>{{item.rysl}}</td>
+                            </tr>
+                            <% } %>
                             <% } %>
 
 
 
-                        {{/each}}
+                            {{/each}}
 
-                    </table>
-                </div>
+                        </table>
+                    </div>
                 </script>
             </div>
             <!--疫区来昆人员追踪 //-->
@@ -411,8 +411,13 @@
                 wzbz: [{}, {}, {}, {}, {}]
             });
             document.getElementById('orgBox02').innerHTML = html;
-
         }
+        $('.tb01Body').liMarquee({
+            direction: 'up',
+            scrolldelay:0,
+            scrollamount: 10
+
+        });
 
     }
 
@@ -499,32 +504,32 @@
         var pczrsxz ='-';
         var fxqfgllj ='-';
         var fxqfglxz ='-';
-       if(data!=null && data!=""&&data.length>0){
-           if(data[0].fdcjpcryzslj!=null && data[0].fdcjpcryzslj!=""){
-               fdcjpcryzslj=data[0].fdcjpcryzslj;
-           }
-           if(data[0].fdcjpcryzsxz!=null && data[0].fdcjpcryzsxz!=""){
-               fdcjpcryzsxz=data[0].fdcjpcryzsxz;
-           }
-           if(data[0].wxqsllj!=null && data[0].wxqsllj!=""){
-               wxqsllj=data[0].wxqsllj;
-           }
-           if(data[0].wxqslxz!=null && data[0].wxqslxz!=""){
-               wxqslxz=data[0].wxqslxz;
-           }
-           if(data[0].pczrslj!=null && data[0].pczrslj!=""){
-               pczrslj=data[0].pczrslj;
-           }
-           if(data[0].pczrsxz!=null && data[0].pczrsxz!=""){
-               pczrsxz=data[0].pczrsxz;
-           }
-           if(data[0].fxqfgllj!=null && data[0].fxqfgllj!=""){
-               fxqfgllj=data[0].fxqfgllj;
-           }
-           if(data[0].fxqfglxz!=null && data[0].fxqfglxz!=""){
-               fxqfglxz=data[0].fxqfglxz;
-           }
-       }
+        if(data!=null && data!=""&&data.length>0){
+            if(data[0].fdcjpcryzslj!=null && data[0].fdcjpcryzslj!=""){
+                fdcjpcryzslj=data[0].fdcjpcryzslj;
+            }
+            if(data[0].fdcjpcryzsxz!=null && data[0].fdcjpcryzsxz!=""){
+                fdcjpcryzsxz=data[0].fdcjpcryzsxz;
+            }
+            if(data[0].wxqsllj!=null && data[0].wxqsllj!=""){
+                wxqsllj=data[0].wxqsllj;
+            }
+            if(data[0].wxqslxz!=null && data[0].wxqslxz!=""){
+                wxqslxz=data[0].wxqslxz;
+            }
+            if(data[0].pczrslj!=null && data[0].pczrslj!=""){
+                pczrslj=data[0].pczrslj;
+            }
+            if(data[0].pczrsxz!=null && data[0].pczrsxz!=""){
+                pczrsxz=data[0].pczrsxz;
+            }
+            if(data[0].fxqfgllj!=null && data[0].fxqfgllj!=""){
+                fxqfgllj=data[0].fxqfgllj;
+            }
+            if(data[0].fxqfglxz!=null && data[0].fxqfglxz!=""){
+                fxqfglxz=data[0].fxqfglxz;
+            }
+        }
         var html = template('tpl-orgBox04',{
             fdcjpcryzslj: fdcjpcryzslj,
             fdcjpcryzsxz: fdcjpcryzsxz,
@@ -698,14 +703,14 @@
 
     var initWzbz = function (jgId, jgName) {//初始化-物资保障
         $.axget("/api/yndp/wzbz/findWzbzListByJgId?jgId="+jgId, function (res) {
-        initOrgBox02(res.data)
-        // console.log("物资保障"+res.data)
+            initOrgBox02(res.data)
+            // console.log("物资保障"+res.data)
         });
     }
 
     var initFkxc = function (jgId, jgName) {//初始化-防控宣传
         $.axget("/api/yndp/fkxc/getFkxcList?jgId="+jgId, function (res) {
-                initOrgBox03(res.data)
+            initOrgBox03(res.data)
         });
     }
 
@@ -833,6 +838,7 @@
             $("#tab08").hide();
             $("#tab09").hide();
         }
+        // 3登记在册
         $.axget("/api/yndp/zdrymp/getZdrympData?jgid="+jgId+"&zdrylx=3", function (res) {
             var pie01rs =0
             var pie01xzrs = 0
@@ -866,6 +872,7 @@
                 ]
             });
         });
+        // 4公安检查点排查人员
         $.axget("/api/yndp/zdrymp/getZdrympData?jgid="+jgId+"&zdrylx=4", function (res) {
             var pie01rs =0
             var pie01xzrs = 0
@@ -899,7 +906,7 @@
                 ]
             });
         });
-
+        //1 特殊人群
         $.axget("/api/yndp/zdrymp/getZdrympData?jgid="+jgId+"&zdrylx=1", function (res) {
             var pie01rs =0
             var pie01xzrs = 0
@@ -933,6 +940,7 @@
                 ]
             });
         });
+        // 2 入住留验点人员
         $.axget("/api/yndp/zdrymp/getZdrympData?jgid="+jgId+"&zdrylx=2", function (res) {
             var pie01rs =0
             var pie01xzrs = 0
@@ -1131,7 +1139,7 @@
         // initHtml(jgId, jgName)
 
         $.axget1("/api/yndp/glgz/getJgId?jgmc="+ '区疫情防控指挥部',false, function (res) {
-            initHtml(res.data.id, '经开区')
+            initHtml(res.data.id, '经开区',res.data.jglx)
         });
 
     });
