@@ -49,11 +49,16 @@ function ThreePageInvestigation(date) {
 var initOrgBoxSupport = function (data) {
     var html = template('tpl-orgBoxSupport',data);
     document.getElementById('orgBoxSupport').innerHTML = html;
+    var htmlModel = template('tpl-material_supply',data);
+    document.getElementById('material_supply').innerHTML = htmlModel;
 }
 
 function ThreePageSupport(date) {
     $.axget("/api/yndp/Support/getYndpThreePageSupport?date="+date, function (res) {
         if(res.data){
+                /*res.data.ext1=res.data.ext1.trim().split("|||");
+                res.data.ext2=res.data.ext2.trim().split("|||");
+                res.data.ext3=res.data.ext3.trim().split("|||");*/
             initOrgBoxSupport(res.data)
         }else{
             initOrgBoxSupport({living:null,prevention:null,capital:null})

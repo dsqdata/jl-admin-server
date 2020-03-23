@@ -43,6 +43,8 @@
                             <strong>现存确诊</strong>
                             <p class="actionList0101"><span>{{today_confirmed==null?'-':today_confirmed}}</span>例</p>
                             <p class="actionList0102 clearfix">累计<span>{{all_confirmed==null?'-':all_confirmed}}例</span></p>
+                            <!--<p class="actionList0102 clearfix">截止今日累计<span>{{ext1==null?'-':ext1}}例</span></p>-->
+
                         </li>
                         <li>
                             <strong>现存疑似</strong>
@@ -110,6 +112,11 @@
                                     <p class="clearfix"><strong>昨日推送</strong><span><em>{{third_yesterday==''?'--':third_yesterday}}</em>个</span></p>
                                     <p class="clearfix"><strong>涉经开区</strong><span><em>{{third_jkq==''?'--':third_jkq}}</em>个</span></p>
                                 </li>
+                               <!-- <li>
+                                    <p class="clearfix"><strong class="sttl01">第四类</strong><span class="txt_green"><i></i>{{ext3==''?'&#45;&#45;':ext3}}</span></p>
+                                    <p class="clearfix"><strong>昨日推送</strong><span><em>{{ext1==''?'&#45;&#45;':ext1}}</em>个</span></p>
+                                    <p class="clearfix"><strong>涉经开区</strong><span><em>{{ext2==''?'&#45;&#45;':ext2}}</em>个</span></p>
+                                </li>-->
                             </ul>
                         </script>
                     </div>
@@ -288,6 +295,7 @@
                 </h2>
                 <div class="midPart0301 clearfix" id="orgBoxSupport">
                     <script id="tpl-orgBoxSupport" type="text/html">
+                        <a href="javascript:;" data-toggle="modal" data-target="#material_supply">
                         <h3 class="ttl09">物资保供</h3>
                         <ul class="actionList06">
                             <% if (living=='正常') { %>
@@ -318,6 +326,7 @@
                             <li>资金保障<span>{{capital==null?'--':capital}}</span></li>
                             <% } %>
                         </ul>
+                        </a>
                     </script>
                 </div>
                 <div class="midPart0302 clearfix" id="orgBoxLack">
@@ -348,6 +357,7 @@
                     <ul class="pieBox">
                         <li>
                             <a href="javascript:;" data-toggle="modal" data-target="#barWin01">
+                           <!-- <p>规上企业{{data101==null?'-':data101}}</p> <p>已复工{{data102==null?'-':data102}}</p>-->
                             <strong>{{data1}}</strong>
                                 <em>复工率</em>
                             <div class="pieCon">
@@ -707,6 +717,38 @@
 
         </div>
     </div>
+</div>
+
+<!-- 物资保供 -->
+<div class="modal fade  mapWin" id="material_supply" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <script id="tpl-material_supply" type="text/html">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 style="text-align: center">物资保供</h4>
+            </div>
+
+            <% if (ext1 !=null) { %>
+            {{each ext1.trim().split(/\s+/) itm i}}
+            <dd>{{ext1.trim().split(/\s+/)[i]}}</dd>
+            {{/each}}
+            <% } %>
+
+            <% if (ext2 !=null) { %>
+            {{each ext2.trim().split(/\s+/) itm i}}
+            <dd>{{ext2.trim().split(/\s+/)[i]}}</dd>
+            {{/each}}
+            <% } %>
+            <% if (ext3 !=null) { %>
+            {{each ext3.trim().split(/\s+/) itm i}}
+            <dd>{{ext3.trim().split(/\s+/)[i]}}</dd>
+            {{/each}}
+            <% } %>
+
+        </div>
+    </div>
+    </script>
 </div>
 
 <!--<script type="text/javascript" src="src/js/chartLine03.js"></script>-->

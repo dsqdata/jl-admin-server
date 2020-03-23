@@ -31,13 +31,23 @@ var initOrgBoxDcz2 = function (data) {
 }
 
 
-var initOrgBoxQyfgfc = function (data1,data2,data3,data4,data5) {
+var initOrgBoxQyfgfc = function (data1,data2,data3,data4,data5,data101,data102,data201,data202,data301,data302,data401,data402,data501,data502) {
     var html = template('tpl-orgBoxQyfgfc',{
         data1: data1,
         data2: data2,
         data3: data3,
         data4: data4,
-        data5: data5
+        data5: data5,
+        data101:data101,
+        data102:data102,
+        data201:data201,
+        data202:data202,
+        data301:data301,
+        data302:data302,
+        data401:data401,
+        data402:data402,
+        data501:data501,
+        data502:data502
     });
     document.getElementById('orgBoxQyfgfc').innerHTML = html;
 }
@@ -81,29 +91,49 @@ function getQyfgfcList(date) {
     var data3='-';
     var data4='-';
     var data5='-';
+    var data101='-';
+    var data102='-';
+    var data201='-';
+    var data202='-';
+    var data301='-';
+    var data302='-';
+    var data401='-';
+    var data402='-';
+    var data501='-';
+    var data502='-';
 
     $.axget("/api/yndp/qyfgfc/getQyfgfcList?date="+date,function (res) {
         if(res.data){
           for(var i=0;i<res.data.length;i++){
                 if(res.data[i].ext3==1){
                     data1=percentNum(res.data[i].ext2,res.data[i].ext1);
+                    data101=res.data[i].ext1;
+                    data102=res.data[i].ext2;
                 }
                   if(res.data[i].ext3==2){
                       data2=percentNum(res.data[i].ext2,res.data[i].ext1);
+                      data201=res.data[i].ext1;
+                      data202=res.data[i].ext2;
                   }
                   if(res.data[i].ext3==3){
                       data3=percentNum(res.data[i].ext2,res.data[i].ext1);
+                      data301=res.data[i].ext1;
+                      data302=res.data[i].ext2;
                   }
                   if(res.data[i].ext3==4){
                       data4=percentNum(res.data[i].ext2,res.data[i].ext1);
+                      data401=res.data[i].ext1;
+                      data402=res.data[i].ext2;
                   }
                   if(res.data[i].ext3==5){
                       data5=percentNum(res.data[i].ext2,res.data[i].ext1);
+                      data501=res.data[i].ext1;
+                      data502=res.data[i].ext2;
                   }
 
           }
         }
-        initOrgBoxQyfgfc(data1,data2,data3,data4,data5)
+        initOrgBoxQyfgfc(data1,data2,data3,data4,data5,data101,data102,data201,data202,data301,data302,data401,data402,data501,data502)
     });
 }
 
