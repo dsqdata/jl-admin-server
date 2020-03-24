@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ratel.modules.yndp.mapper.YndpFourSchoolMsgMapper">
+
+    <select id="getYndpFourSchoolMsgList" resultType="com.ratel.modules.yndp.domain.YndpFourSchoolMsg">
+        SELECT
+            b.date,
+            sum(b.ext11) ext11,
+            sum(b.ext12) ext12,
+            sum(b.ext13) ext13,
+            sum(b.ext14) ext14,
+            sum(b.ext15) ext15,
+            sum(b.ext21) ext21,
+            sum(b.ext22) ext22,
+            sum(b.ext23) ext23,
+            sum(b.ext24) ext24,
+            sum(b.ext25) ext25,
+            sum(b.ext26) ext26,
+            sum(b.ext27) ext27,
+            sum(b.ext31) ext31,
+            sum(b.ext32) ext32,
+            sum(b.ext33) ext33,
+            sum(b.ext34) ext34
+        FROM
+          yndp_four_school a
+        INNER JOIN yndp_four_school_msg b ON a.id = b.school_id
+        WHERE
+          ${date} >= b.date
+          AND b.school_id = ${school_id}
+          AND b.type = ${type}
+        GROUP BY
+          b.date,
+          b.school_id,
+          b.type
+    </select>
+
+    <select id="getAllPeopleMsgList" resultType="com.ratel.modules.yndp.domain.YndpFourSchoolMsg">
+        SELECT
+            b.date,
+            b.school_id,
+            sum(b.ext11) ext11,
+            sum(b.ext12) ext12,
+            sum(b.ext13) ext13,
+            sum(b.ext14) ext14,
+            sum(b.ext15) ext15,
+            sum(b.ext21) ext21,
+            sum(b.ext22) ext22,
+            sum(b.ext23) ext23,
+            sum(b.ext24) ext24,
+            sum(b.ext25) ext25,
+            sum(b.ext26) ext26,
+            sum(b.ext27) ext27,
+            sum(b.ext31) ext31,
+            sum(b.ext32) ext32,
+            sum(b.ext33) ext33,
+            sum(b.ext34) ext34
+        FROM
+          yndp_four_school a
+        INNER JOIN yndp_four_school_msg b ON a.id = b.school_id
+        WHERE
+          ${date} = b.date
+          AND b.school_id = ${school_id}
+        GROUP BY
+          b.date,
+          b.school_id
+    </select>
+
+    <select id="getAllSchoolMsgList" resultType="com.ratel.modules.yndp.domain.YndpFourSchoolMsg">
+        SELECT
+            b.date,
+            sum(b.ext11) ext11,
+            sum(b.ext12) ext12,
+            sum(b.ext13) ext13,
+            sum(b.ext14) ext14,
+            sum(b.ext15) ext15,
+            sum(b.ext21) ext21,
+            sum(b.ext22) ext22,
+            sum(b.ext23) ext23,
+            sum(b.ext24) ext24,
+            sum(b.ext25) ext25,
+            sum(b.ext26) ext26,
+            sum(b.ext27) ext27,
+            sum(b.ext31) ext31,
+            sum(b.ext32) ext32,
+            sum(b.ext33) ext33,
+            sum(b.ext34) ext34
+        FROM
+          yndp_four_school a
+        INNER JOIN yndp_four_school_msg b ON a.id = b.school_id
+        WHERE
+          ${date} >= b.date
+          AND b.type = ${type}
+        GROUP BY
+          b.date,
+          b.type
+    </select>
+</mapper>
