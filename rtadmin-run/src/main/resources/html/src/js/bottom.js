@@ -21,7 +21,6 @@ var initOrgBoxDcz2 = function (data) {
     var html = template('tpl-orgBoxDcz2', data);
     document.getElementById('orgBoxDcz2').innerHTML = html;
     //消息滚动
-    //消息滚动
     $('#mess03').liMarquee({
         direction: 'up',
         scrolldelay:0,
@@ -68,13 +67,13 @@ function getXxfgList(date) {
 
 
 function getDcgzList(date) {
-    $.axget("/api/yndp/dcgz/getDcgzList?type=1&date="+date, function (res) {
-        if(res.data){
-            initOrgBoxDcz1(res.data)
-        }else{
-            initOrgBoxDcz1({content:null})
-        }
-    });
+    // $.axget("/api/yndp/dcgz/getDcgzList?type=1&date="+date, function (res) {
+    //     if(res.data){
+    //         initOrgBoxDcz1(res.data)
+    //     }else{
+    //         initOrgBoxDcz1({content:null})
+    //     }
+    // });
 
     $.axget("/api/yndp/dcgz/getDcgzList?type=2&date="+date, function (res) {
         if(res.data){

@@ -25,7 +25,7 @@ $(function () {
 
 
     function checkDate(date){
-        getXxfgList(date)
+        // getXxfgList(date)
         getDcgzList(date)
         getQyfgfcList(date)
         getQyfgfcEchartList(date)

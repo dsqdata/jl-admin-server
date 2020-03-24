@@ -268,7 +268,7 @@ a,a:hover{ text-decoration: none!important;}
 .topPart .ttl06{top:20%;}
 .midPart .ttl06{top:30%;}
 .btmPart .ttl06{top:30%;}
-.topPart01{ height: 100%; width: 72%; float: left; margin-right: 10px;background-image: linear-gradient(to right, rgba(15,129,179,0.7), rgba(15,129,179,0.9),rgba(10,242,182,0.8));border: 1px solid #23B7E5;box-shadow: inset 0 2px 11px 0 rgba(0,0,0,0.50);}
+.topPart01{ height: 100%; width: 72%; float: left; margin-right: 10px;}
 .topPart02{ height: 100%; width: calc(28% - 10px); float: left;background: rgba(1,15,26,0.80) url("../images/ac_img01.png") no-repeat 95% bottom; background-size:25%; padding:10px 140px 10px 25px;border: 1px solid #117491;box-shadow: inset 0 0 22px 0 #117491;}
 .midPart01{ height: 100%; width: calc(36% - 10px); margin-right: 10px; float: left;background: rgba(1,15,26,0.80);border: 1px solid #117491;box-shadow: inset 0 0 22px 0 #117491;}
 .midPart02{ height: 100%; width: 36%; float: left; margin-right: 10px;background: rgba(1,15,26,0.80);border: 1px solid #117491;box-shadow: inset 0 0 22px 0 #117491;}
@@ -282,18 +282,35 @@ a,a:hover{ text-decoration: none!important;}
 .midPart0301{background: rgba(1,15,26,0.80);border: 1px solid #117491;box-shadow: inset 0 0 22px 0 #117491; height: calc(51% - 10px); margin-bottom: 10px;}
 .midPart0302{background: rgba(39,1,1,0.64);border: 1px solid rgba(255,89,89,0.52);box-shadow: inset 0 0 22px 0 rgba(255,89,89,0.91); height: 49%;}
 
-.actionList01{ overflow: hidden; height: 100%; padding: 20px 0 0 40px;}
-.actionList01 li{ float: left; font-size: 16px; padding: 0 5px; height: 100%; width: 19%; text-align: center; background: url("../images/ac_line01.png") no-repeat right 10px;}
-.actionList01 strong{ font-size: 22px; font-weight: bold; display: block;  margin-bottom: 5px;}
+.actionList01{ overflow: hidden; height: 100%; margin-left: -8px; }
+.actionList01 li{ float: left; font-size: 16px; padding: 15px 10px;margin-left: 8px; height: 100%; width: calc(19% - 9px); text-align: center; background-image: linear-gradient(to right, rgba(15,129,179,0.7), rgba(15,129,179,0.9),rgba(10,242,182,0.8));border: 1px solid #23B7E5;box-shadow: inset 0 2px 11px 0 rgba(0,0,0,0.50);}
+.actionList01 strong{ font-size: 17px; font-weight: bold; display: block;  margin-bottom: 5px;}
 .actionList0101{ font-size: 20px; margin-bottom: 10px;}
 .actionList0101 span{ font-size: 28px; margin-right: 5px;}
-.actionList0102{background: rgba(255,255,255,0.20); line-height:40px; text-align: left; padding: 0 10px; font-weight: bold;}
+.actionList0102{background: rgba(255,255,255,0.20); line-height:24px; font-size: 12px;  margin-bottom: 5px; text-align: left; padding: 0 10px; font-weight: bold;}
 .actionList0102 span{ float: right;}
 .txt_yellow{ color: #F8E71C;}
-.actionList01 li.li01{ width: 21%;}
+.actionList01 li.li01{ width: 15%; padding: 15px 10px 0 40px;}
+.actionList01 li.li02{ width: 13%;}
+.actionList01 li.li03{ width: 19.666%;}
+.actionList01 li.li04{ width: 15%;}
+.actionList01 li.li05{ width: 34.3%;}
+.boxLi0501{ float: left; width: 35%; margin-right: 5%;}
+.boxLi0502{ float: left; width: 60%;}
 .actionT01{ color: #22FCFE; font-size: 18px;margin-bottom:10px; line-height: 25px;}
 .actionT01:before{ content: ''; float: left; width: 27px;height: 26px; background: url("../images/ac_ico01.png") no-repeat; background-size:100%; margin-right: 12px; }
 .actionList02{ color: #23B7E5; font-size: 16px;}
+.actionD01{ margin-bottom: 5px; background: rgba(255,255,255,0.20); }
+.actionD01 dt{ float: left;font-size: 12px;line-height: 24px;  width: 35%; text-align: left; padding: 0 0 0 10px;}
+.actionD01 dd{ float: left;font-size: 12px;line-height: 24px;  font-weight: bold; width: 15%;}
+.actionD02{ margin-bottom: 5px; background: rgba(255,255,255,0.20); }
+.actionD02 dt{ float: left;font-size: 12px;line-height: 24px;  width: 28%; text-align: left; padding: 0 0 0 10px;}
+.actionD02 .dt01{width: 38%; }
+.actionD02 dd{ float: left;font-size: 12px;line-height: 24px;  font-weight: bold; width: 18%;}
+.actionD02 .dd01{width: 15%; }
+.actionD02.btxt{ background: none; padding: 11px 0 10px 0;}
+.actionD02.btxt dt{ font-size: 14px;}
+.actionD02.btxt dd{ font-size: 14px;}
 .topPart02 .mess01{ height: 72%; width: 100%;}
 .topPart02 .mess01 ul { margin: 0; line-height: 26px;}
 .midPart0101{ float: left; width: 30%; height: 100%; background: url("../images/ac_line03.png") no-repeat right 30px; padding: 0 12px;}
@@ -301,14 +318,16 @@ a,a:hover{ text-decoration: none!important;}
 .midPart0103{ float: left; width: 33%; height: 100%;padding: 0 12px;}
 .midPart01in{ height: 100%; padding: 40px 15px 20px 40px;}
 .ttl08{ color: #22FCFE; font-size: 14px; margin-bottom: 5px; text-align: center; font-weight: bold;}
-.actionList03{ height: 100%;}
-.actionList03 li{ background: url("../images/ac_line02.png") repeat-x left bottom; height: 33%; padding: 20px 0; line-height: 24px; }
+.actionList03{ height: 100%; padding: 15px 0 0 0;}
+.actionList03 li{ background: url("../images/ac_line02.png") repeat-x left bottom; padding: 10px 0 0 0; height: 24%;  line-height: 18px; }
 .actionList03 li p{ margin-bottom: 5px;}
 .actionList03 li:last-child{ background: none;}
-.actionList03 li strong{ color: #23B7E5; font-size: 16px;}
-.actionList03 .sttl01{ color: #22FCFE; font-size: 14px;}
+.actionList03 li strong{ color: #23B7E5; }
+.actionList03 li a{ color: #23B7E5; }
+.actionList03 .sttl01{ color: #22FCFE; font-size: 14px; position: relative;}
+.actionList03 .sttl01 span{ display: none; position: absolute; top:20px; left:0; min-width: 250px; padding: 5px 10px;background: rgba(0,0,0,0.40);border: 1px solid #50E3C2;box-shadow: 4px 4px 8px 0 rgba(0,0,0,0.30);}
 .actionList03 span{ float: right;}
-.actionList03 em{ font-size: 18px; font-weight: bold; margin-right: 5px;}
+.actionList03 em{ font-size: 16px; font-weight: bold; margin-right: 5px;}
 .mb5{ margin-bottom: 5px;}
 .mb10{ margin-bottom: 10px;}
 .actionList03 .txt_green{ font-size: 12px; color: #7ED321;}
@@ -371,10 +390,11 @@ a,a:hover{ text-decoration: none!important;}
 .actionBox01 .mess01 li{ color: #23B7E5; font-size: 16px; line-height: 26px;}
 .pieBox{ float: left; width: 65%; height: 100%;}
 .pieBox li{ float: left; text-align: center; width:19%; margin-right: 1%; height: 100%; background: rgba(1,15,26,0.80);border: 1px solid #117491;box-shadow: inset 0 0 22px 0 #117491;}
-.pieBox li a{ display: block; height: 100%; padding: 30px 0 0 0; text-decoration: none;}
+.pieBox li a{ display: block; height: 100%; padding: 10px 0 0 0; text-decoration: none;}
 .pieBox li a:hover,.pieBox li a:active{background: rgba(12,173,242,0.17);border: 0 solid #23B7E5;box-shadow: inset 0 0 6px 0 #0CADF2;}
-.pieBox li strong{ font-size: 22px; color: #fff; display: block; margin-bottom: 5px;}
-.pieBox li em{ font-size: 12px; color: #7ED321; margin-bottom: 20px; display: block;}
+.pieBox li strong{ font-size: 18px; color: #23B7E5; display: block; margin-bottom: 10px;}
+.pieTxt02{ color: #fff; font-size: 18px; font-weight: bold; margin-bottom: 10px;}
+.pieTxt02 em{ font-size: 12px; color: #23B7E5; margin-left: 10px;}
 .pieBox li span{ font-size: 16px; font-weight: bold; text-decoration: none; color: #23B7E5 ;}
 .actionBox02{ float: left; width: 35%; padding:15px;background: rgba(35,183,229,0.20);border: 1px solid #23B7E5; height: 100%;}
 .actionBox03{ height: 100%; padding: 30px 15px 20px 40px;}
@@ -383,10 +403,14 @@ a,a:hover{ text-decoration: none!important;}
 .actionBox02 .mess01{ height: 85%; width: 100%;}
 .actionBox02 .mess01 ul { margin: 0; line-height: 26px;}
 .actionBox02 .mess01 li{ color: #23B7E5; font-size: 16px; line-height: 26px;}
-.pieCon{ width: 63px; height: 110px;  margin:0 auto; position: relative;  background: url("../images/zhuzi-1.png") no-repeat; background-size:100% 100%; margin-bottom: 15px; }
-.pieConIn{ width: 51px; height: 110px; margin-left: 6px;  padding-bottom: 8px; background: url("../images/zhuzi-4.png") no-repeat left bottom; }
-.pieConIn01{ position: absolute; left:0; bottom: 0; z-index: 100;  background: url("../images/zhuzi-5.png") no-repeat left top; margin-top: 10px;}
+.pieCon{ width: 90px; height: 98px;  margin:0 auto; position: relative;  background: url("../images/zhuzi1.png") no-repeat; background-size:100% 100%; margin-bottom: 15px; }
+.pieConIn{ width: 76px; height: 98px; margin-left: 7px;  padding-bottom: 8px; background: url("../images/zhuzi2.png") no-repeat left bottom; background-size:100% 20px; }
+.pieConIn01{ position: absolute; left:0; bottom: 0; z-index: 100;  background: url("../images/zhuzi3.png") no-repeat left top; background-size:100%;  margin-top: 10px;}
 .pieConIn02{ height: 100%; position: relative;}
+.pieTxt01{background: rgba(35,183,229,0.19); font-size: 14px; padding: 3px 10px; margin: 0 15px 5px 15px; text-align: left; color: #23B7E5; font-weight: bold;}
+.pieTxt01 span{ float: right; font-size: 14px!important; }
+.pieTxt01 em{ margin-right: 10px; color: #7ED321;}
+.pieTxt01 em.txt_yellow{ color: #F8E71C;}
 .selectBox{ padding: 27px 0 0 27px;}
 .flowBox{ padding: 0 10px; height: 80%;}
 .flowImg{ width: 100%; height: 100%;}
@@ -432,6 +456,14 @@ dl,dt,dd{font-size: 14px;}
 .orgList01 li{ position: relative;}
 .orgList01 .wBox{padding: 5px 10px;background: rgba(0,0,0,0.9); width: 100%;}
 .orgConLft .wBox{ top:185px;}
+
+.btn_i{ position: absolute; right: 15px; top:15px; display: block; width: 18px; height: 18px; background: url("../images/icon_i.png") no-repeat; background-size:100% 100%; }
+.iBox{ position: absolute; display: none; width: 435px; z-index: 1000; padding:20px 18px; right:15px; top:40px;background: rgba(0,0,0,0.80);border: 1px solid #50E3C2;box-shadow: 4px 4px 8px 0 rgba(0,0,0,0.30);}
+.iTtl{ font-size: 12px; font-weight: bold; margin-bottom: 12px;}
+.iTtl span{ background: #319482; padding: 2px 10px;}
+.iList{ margin-bottom: 20px;}
+.iList li{ line-height: 24px; margin-bottom: 5px; background: url("../images/icon_circle.png") no-repeat 2px 9px; padding: 0 0 0 18px;}
+.iList .txt_yellow{ font-size: 16px;}
 
 /*日期选择*/
 .form_date{
@@ -626,3 +658,9 @@ a,a:hover{ text-decoration: none!important;}
 .group0304{ height: 370px;}
 .group0305{ height: 290px;}
 .messGroup{ width: 100%; height: 75%;}
+
+
+/*1 2 变更*/
+.btmPart01n{ height: 100%; width: 100%; background: rgba(1,15,26,0.80);border: 1px solid #117491;box-shadow: inset 0 0 22px 0 #117491;}
+.btmPart01n .pieBox{ width: 72.666%;}
+.btmPart01n .actionBox02{ width: 26.444%;}

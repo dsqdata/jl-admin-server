@@ -2,6 +2,13 @@
 var initOrgBoxCheck = function (data) {
     var html = template('tpl-orgBoxCheck', data);
     document.getElementById('orgBoxCheck').innerHTML = html;
+    $('.actionList03 .sttl01').hover(
+        function () {
+            $(this).find('span').show()
+        },
+        function () {
+            $(this).find('span').hide()
+        });
 }
 
 function ThreePageCheck(date) {

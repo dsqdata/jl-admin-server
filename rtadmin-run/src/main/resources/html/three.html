@@ -39,32 +39,67 @@
             <div class="topPart01" id="orgBoxDryqdt">
                 <script id="tpl-orgBoxDryqdt" type="text/html">
                     <ul class="actionList01">
-                        <li>
+                        <li class="li01">
                             <strong>现存确诊</strong>
                             <p class="actionList0101"><span>{{today_confirmed==null?'-':today_confirmed}}</span>例</p>
-                            <p class="actionList0102 clearfix">累计<span>{{all_confirmed==null?'-':all_confirmed}}例</span></p>
-                            <!--<p class="actionList0102 clearfix">截止今日累计<span>{{ext1==null?'-':ext1}}例</span></p>-->
-
+                            <p class="actionList0102 clearfix">当日累计<span>{{all_confirmed==null?'-':all_confirmed}}例</span></p>
+                            <p class="actionList0102 clearfix">截止今日累计<span>{{ext1==null?'-':ext1}}例</span></p>
                         </li>
-                        <li>
+                        <li class="li02">
                             <strong>现存疑似</strong>
                             <p class="actionList0101"><span>{{today_suspected==null?'-':today_suspected}}</span>例</p>
-                            <p class="actionList0102">累计<span>{{all_suspected==null?'-':today_suspected}}例</span></p>
+                            <p class="actionList0102">当日累计<span>{{all_suspected==null?'-':all_suspected}}例</span></p>
+                            <p class="actionList0102">截止今日累计<span>{{ext2==null?'-':ext2}}例</span></p>
                         </li>
-                        <li>
+                        <li class="li03">
                             <strong>现存密切接触者</strong>
                             <p class="actionList0101"><span>{{today_dlose==null?'-':today_dlose}}</span>例</p>
-                            <p class="actionList0102">累计 {{all_close==null?'-':all_close}}例<span class="txt_yellow">解除 {{relieve==null?'-':relieve}}例</span></p>
+                            <dl class="actionD01 clearfix">
+                                <dt>当日累计</dt>
+                                <dd>{{all_close==null?'-':all_close}}例</dd>
+                                <dt class="txt_yellow">当日解除</dt>
+                                <dd class="txt_yellow">{{relieve==null?'-':relieve}}例</dd>
+                            </dl>
+                            <dl class="actionD01 clearfix">
+                                <dt>截至今日累计</dt>
+                                <dd>{{ext3==null?'-':ext3}}例</dd>
+                                <dt class="txt_yellow">截至今日解除</dt>
+                                <dd class="txt_yellow">{{ext4==null?'-':ext4}}例</dd>
+                            </dl>
                         </li>
-                        <li class="li01">
+                        <li class="li04">
                             <strong>留站集中医学观察</strong>
                             <p class="actionList0101"><span>{{observation==null?'-':observation}}</span>人</p>
-                            <p class="actionList0102">健康状况<span>{{observation_status==null?'-':observation_status}}</span></p>
+                            <p class="actionList0102">当日累计<span>{{ext12==null?'-':ext12}}例</span></p>
+                            <p class="actionList0102">截至今日累计<span>{{ext5==null?'-':ext5}}例</span></p>
                         </li>
-                        <li class="li01 hand" data-toggle="modal" data-target="#myModal">
-                            <strong>发热门诊接诊</strong>
-                            <p class="actionList0101"><span>{{today_receive==null?'-':today_receive}}</span>人次</p>
-                            <p class="actionList0102">复诊 {{today_further==null?'-':today_further}}人<span>隔离观察治疗 {{today_quarantine==null?'-':today_quarantine}}人</span></p>
+                        <li class="li05" data-toggle="modal" data-target="#myModal">
+                            <strong>发热门诊</strong>
+                            <div class="boxLi0501">
+                                <p class="actionList0101"><span>{{today_receive==null?'-':today_receive}}</span>人次</p>
+                                <p class="actionList0102">当日累计<span>{{ext6==null?'-':ext6}}例</span></p>
+                                <p class="actionList0102">截至今日累计<span>{{ext9==null?'-':ext9}}例</span></p>
+                            </div>
+                            <div class="boxLi0502">
+                                <dl class="actionD02 btxt clearfix">
+                                    <dt>其中复诊</dt>
+                                    <dd> {{today_further==null?'-':today_further}}人</dd>
+                                    <dt class="dt01">隔离观察治疗</dt>
+                                    <dd class="dd01">{{today_quarantine==null?'-':today_quarantine}}人</dd>
+                                </dl>
+                                <dl class="actionD02 clearfix">
+                                    <dt>其中复诊</dt>
+                                    <dd>{{ext7==null?'-':ext7}}人</dd>
+                                    <dt class="dt01">隔离观察治疗</dt>
+                                    <dd class="dd01">{{ext8==null?'-':ext8}}人</dd>
+                                </dl>
+                                <dl class="actionD02 clearfix">
+                                    <dt>其中复诊</dt>
+                                    <dd>{{ext10==null?'-':ext10}}人</dd>
+                                    <dt class="dt01">隔离观察治疗</dt>
+                                    <dd class="dd01">{{ext11==null?'-':ext11}}人</dd>
+                                </dl>
+                            </div>
                         </li>
                     </ul>
                 </script>
@@ -98,25 +133,44 @@
                             <h3 class="ttl08">三类重点目标人群核查</h3>
                             <ul class="actionList03">
                                 <li>
-                                    <p class="clearfix"><strong class="sttl01">第一类</strong><span class="txt_green"><i></i>{{first_status==''?'--':first_status}}</span></p>
+                                    <p class="clearfix">
+                                        <a href="#" class="sttl01">第一类 <span>确诊的新型冠状病毒感染的肺炎患者</span></a>
+                                        {{if first_status=='核查中'}}
+                                            <span class="txt_yellow"><i></i>{{first_status==''?'--':first_status}}</span>
+                                        {{else}}
+                                            <span class="txt_green"><i></i>{{first_status==''?'--':first_status}}</span>
+                                        {{/if}}
+                                    </p>
                                     <p class="clearfix"><strong>昨日推送</strong><span><em>{{first_yesterday==''?'--':first_yesterday}}</em>个</span></p>
                                     <p class="clearfix"><strong>涉经开区</strong><span><em>{{first_jkq==''?'--':first_jkq}}</em>个</span></p>
                                 </li>
                                 <li>
-                                    <p class="clearfix"><strong class="sttl01">第二类</strong><span class="txt_yellow"><i></i>{{second_status==''?'--':second_status}}</span></p>
+                                    <p class="clearfix"><a href="#" class="sttl01">第二类 <span>疑似的新型冠状病毒感染的肺炎患者</span></a>
+                                        {{if second_status=='核查中'}}
+                                            <span class="txt_yellow"><i></i>{{second_status==''?'--':second_status}}</span>
+                                        {{else}}
+                                            <span class="txt_green"><i></i>{{second_status==''?'--':second_status}}</span>
+                                        {{/if}}
+                                    </p>
                                     <p class="clearfix"><strong>昨日推送</strong><span><em>{{second_yesterday==''?'--':second_yesterday}}</em>个</span></p>
                                     <p class="clearfix"><strong>涉经开区</strong><span><em>{{second_jkq==''?'--':second_jkq}}</em>个</span></p>
                                 </li>
                                 <li>
-                                    <p class="clearfix"><strong class="sttl01">第三类</strong><span class="txt_green"><i></i>{{third_status==''?'--':third_status}}</span></p>
+                                    <p class="clearfix"><a href="#" class="sttl01">第三类 <span>无法明确排除新型冠状病毒感染肺炎可能的发热患者</span></a>
+                                        {{if third_status=='核查中'}}
+                                        <span class="txt_yellow"><i></i>{{third_status==''?'--':third_status}}</span>
+                                        {{else}}
+                                        <span class="txt_green"><i></i>{{third_status==''?'--':third_status}}</span>
+                                        {{/if}}
+                                    </p>
                                     <p class="clearfix"><strong>昨日推送</strong><span><em>{{third_yesterday==''?'--':third_yesterday}}</em>个</span></p>
                                     <p class="clearfix"><strong>涉经开区</strong><span><em>{{third_jkq==''?'--':third_jkq}}</em>个</span></p>
                                 </li>
-                               <!-- <li>
-                                    <p class="clearfix"><strong class="sttl01">第四类</strong><span class="txt_green"><i></i>{{ext3==''?'&#45;&#45;':ext3}}</span></p>
-                                    <p class="clearfix"><strong>昨日推送</strong><span><em>{{ext1==''?'&#45;&#45;':ext1}}</em>个</span></p>
-                                    <p class="clearfix"><strong>涉经开区</strong><span><em>{{ext2==''?'&#45;&#45;':ext2}}</em>个</span></p>
-                                </li>-->
+                                <li>
+                                    <p class="clearfix"><a href="#" class="sttl01">第四类 <span>确诊患者的密切接触者</span></a><span class="txt_green"><i></i>{{ext3==''?'--':ext3}}</span></p>
+                                    <p class="clearfix"><strong>昨日推送</strong><span><em>{{ext1==''?'--':ext1}}</em>个</span></p>
+                                    <p class="clearfix"><strong>涉经开区</strong><span><em>{{ext2==''?'--':ext2}}</em>个</span></p>
+                                </li>
                             </ul>
                         </script>
                     </div>
@@ -293,9 +347,41 @@
                 <h2 class="ttl07Box">
                     <span class="ttl07Bg01"><span class="ttl07Bg02">物资保障工作</span></span>
                 </h2>
+                <a href="javascript:;" class="btn_i"></a>
+                <div class="iBox"  id="material_supply">
+                    <script id="tpl-material_supply" type="text/html">
+                        <h3 class="iTtl"><span>生活物资</span></h3>
+                        <ul class="iList">
+<!--                            <li> 三个大型商超供应<span class="txt_yellow">正常</span>，无断档脱销情况，营业加油站供应<span class="txt_yellow">正常</span>，今日无异常情况。</li>-->
+                            <% if (ext1 !=null) { %>
+                                {{each ext1.trim().split('|||') itm i}}
+                                    <li>{{ext1.trim().split('|||')[i]}}</li>
+                                {{/each}}
+                            <% } %>
+                        </ul>
+                        <h3 class="iTtl"><span>防疫物资</span></h3>
+                        <ul class="iList">
+<!--                            <li>云南奥斯迪实业有限公司制衣厂2月23日生产<span class="txt_yellow">9700只口罩</span>，累计生产<span class="txt_yellow">154100只</span>。</li>-->
+                            <% if (ext2 !=null) { %>
+                                {{each ext2.trim().split('|||') itm i}}
+                                    <li>{{ext2.trim().split('|||')[i]}}</li>
+                                {{/each}}
+                            <% } %>
+                        </ul>
+                        <h3 class="iTtl"><span>资金保障</span></h3>
+                        <ul class="iList">
+<!--                            <li>资金下达情况：财政分局共计下达<span class="txt_yellow">920万元</span>至疫情防控指挥部，实际<span class="txt_yellow">已支出382.92万元</span>,经发局未购买到测温枪，退款<span class="txt_yellow">13万元。</span></li>-->
+<!--                            <li>企业及个人捐款情况： 截止2月23日收到<span class="txt_yellow">捐款累计480,500元</span>，已全部存于经开区慈善协会账户。</li>-->
+                            <% if (ext3 !=null) { %>
+                                {{each ext3.trim().split('|||') itm i}}
+                                 <li>{{ext3.trim().split('|||')[i]}}</li>
+                                {{/each}}
+                            <% } %>
+                        </ul>
+                    </script>
+                </div>
                 <div class="midPart0301 clearfix" id="orgBoxSupport">
                     <script id="tpl-orgBoxSupport" type="text/html">
-                        <a href="javascript:;" data-toggle="modal" data-target="#material_supply">
                         <h3 class="ttl09">物资保供</h3>
                         <ul class="actionList06">
                             <% if (living=='正常') { %>
@@ -345,135 +431,250 @@
                 </div>
             </div>
         </div>
+<!--        <div class="btmPart clearfix">-->
+<!--            <h2 class="ttl06"><span>辖区<br />复工<br />复产<br />工作<br />情况</span></h2>-->
+<!--            <div class="btmPart01 posT">-->
+<!--                <h2 class="ttl07Box">-->
+<!--                    <span class="ttl07Bg01"><span class="ttl07Bg02">企业复工复产</span></span>-->
+<!--                </h2>-->
+<!--                <div class="clearfix actionBox03" >-->
+<!--                <span id="orgBoxQyfgfc">-->
+<!--                    <script id="tpl-orgBoxQyfgfc" type="text/html">-->
+<!--                    <ul class="pieBox">-->
+<!--                        <li>-->
+<!--                            <a href="javascript:;" data-toggle="modal" data-target="#barWin01">-->
+<!--                           &lt;!&ndash; <p>规上企业{{data101==null?'-':data101}}</p> <p>已复工{{data102==null?'-':data102}}</p>&ndash;&gt;-->
+<!--                            <strong>{{data1}}</strong>-->
+<!--                                <em>复工率</em>-->
+<!--                            <div class="pieCon">-->
+<!--                                <div class="pieConIn">-->
+<!--                                    <div class="pieConIn02">-->
+<!--                                        <div class="pieConIn01" style="height:{{data1}}; width: 100%;">-->
+
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <span>工业企业</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="javascript:;" data-toggle="modal" data-target="#barWin02">-->
+<!--                                <strong>{{data2}}</strong>-->
+<!--                                <em>复工率</em>-->
+<!--                                <div class="pieCon">-->
+<!--                                    <div class="pieConIn">-->
+<!--                                        <div class="pieConIn02">-->
+<!--                                            <div class="pieConIn01" style="height: {{data2}}; width: 100%;">-->
+
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <span>建筑工程</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="javascript:;" data-toggle="modal" data-target="#barWin03">-->
+<!--                                <strong>{{data3}}</strong>-->
+<!--                                <em>复工率</em>-->
+<!--                                <div class="pieCon">-->
+<!--                                    <div class="pieConIn">-->
+<!--                                        <div class="pieConIn02">-->
+<!--                                            <div class="pieConIn01" style="height: {{data3}}; width: 100%;">-->
+
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <span>规模以上服务业</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="javascript:;" data-toggle="modal" data-target="#barWin04">-->
+<!--                                <strong>{{data4}}</strong>-->
+<!--                                <em>复工率</em>-->
+<!--                                <div class="pieCon">-->
+<!--                                    <div class="pieConIn">-->
+<!--                                        <div class="pieConIn02">-->
+<!--                                            <div class="pieConIn01" style="height: {{data4}}; width: 100%;">-->
+
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <span>物流企业</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                           <a href="javascript:;" data-toggle="modal" data-target="#barWin05">-->
+<!--                                <strong>{{data5}}</strong>-->
+<!--                                <em>复工率</em>-->
+<!--                                <div class="pieCon">-->
+<!--                                    <div class="pieConIn">-->
+<!--                                        <div class="pieConIn02">-->
+<!--                                            <div class="pieConIn01" style="height: {{data5}}; width: 100%;">-->
+
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <span>经营企业</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                    </script>-->
+<!--                    </span>-->
+<!--                    <div  class="actionBox02" id="orgBoxDcz1">-->
+<!--                        <h3 class="actionT03">督导组工作开展</h3>-->
+<!--                        <script id="tpl-orgBoxDcz1" type="text/html">-->
+<!--                            <h3 class="actionT03">督导组工作开展</h3>-->
+<!--                        <ul class="mess01" id="mess02">-->
+<!--                            <li>{{content==null?'暂无消息':content}}</li>-->
+<!--                        </ul>-->
+<!--                        </script>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="btmPart02 posT" >-->
+<!--                <span  id="orgBoxXxfx">-->
+<!--                <script id="tpl-orgBoxXxfx" type="text/html">-->
+<!--                <h2 class="ttl07Box">-->
+<!--                    <span class="ttl07Bg01"><span class="ttl07Bg02">学校复学情况</span></span>-->
+<!--                </h2>-->
+
+<!--                <ul class="actionList08">-->
+<!--                    <li><strong>各学校</strong> <img src="src/images/ac_img02.png" style="height: 75px;" alt=""> <% if (school=='未开学') { %><span class="txt_gray"><% } else { %><span class="txt_gblue"><% } %>{{school==null?'-':school}}</span></li>-->
+<!--                    <li><strong>幼儿园</strong><img src="src/images/ac_img03.png" style="height: 75px;" alt="">  <% if (kindergarten=='未开学') { %><span class="txt_gray"><% } else { %><span class="txt_gblue"><% } %>{{kindergarten==null?'-':kindergarten}}</span></li>-->
+<!--                    <li><strong>培训机构</strong><img src="src/images/ac_img04.png" style="height: 75px;" alt=""> <% if (training=='未开学') { %><span class="txt_gray"><% } else { %><span class="txt_gblue"><% } %>{{training==null?'-':training}}</span></li>-->
+<!--                </ul>-->
+<!--                </script>-->
+<!--                </span>-->
+<!--                <div class="actionBox01" id="orgBoxDcz2">-->
+<!--                    <h3 class="actionT02">督导组工作开展</h3>-->
+<!--                    <script id="tpl-orgBoxDcz2" type="text/html">-->
+<!--                     <h3 class="actionT02">督导组工作开展</h3>-->
+<!--                    <ul class="mess01" id="mess03">-->
+<!--                        <li>{{content==null?'暂无消息':content}}</li>-->
+<!--                    </ul>-->
+<!--                    </script>-->
+<!--                </div>-->
+
+<!--            </div>-->
+
+<!--        </div>-->
         <div class="btmPart clearfix">
             <h2 class="ttl06"><span>辖区<br />复工<br />复产<br />工作<br />情况</span></h2>
-            <div class="btmPart01 posT">
+            <div class="btmPart01n posT">
                 <h2 class="ttl07Box">
                     <span class="ttl07Bg01"><span class="ttl07Bg02">企业复工复产</span></span>
                 </h2>
-                <div class="clearfix actionBox03" >
-                <span id="orgBoxQyfgfc">
-                    <script id="tpl-orgBoxQyfgfc" type="text/html">
-                    <ul class="pieBox">
-                        <li>
-                            <a href="javascript:;" data-toggle="modal" data-target="#barWin01">
-                           <!-- <p>规上企业{{data101==null?'-':data101}}</p> <p>已复工{{data102==null?'-':data102}}</p>-->
-                            <strong>{{data1}}</strong>
-                                <em>复工率</em>
-                            <div class="pieCon">
-                                <div class="pieConIn">
-                                    <div class="pieConIn02">
-                                        <div class="pieConIn01" style="height:{{data1}}; width: 100%;">
+                <div class="clearfix actionBox03">
+                  <span id="orgBoxQyfgfc">
+                      <script id="tpl-orgBoxQyfgfc" type="text/html">
+                        <ul class="pieBox">
+                            <li>
+                                <a href="javascript:;" data-toggle="modal" data-target="#barWin01">
+                                    <strong>工业企业</strong>
+                                    <p class="pieTxt02">{{data1}}<em>复工率</em></p>
+                                    <div class="pieCon">
+                                        <div class="pieConIn">
+                                            <div class="pieConIn02">
+                                                <div class="pieConIn01" style="height: 30%; width: 100%;">
 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <span>工业企业</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" data-toggle="modal" data-target="#barWin02">
-                                <strong>{{data2}}</strong>
-                                <em>复工率</em>
-                                <div class="pieCon">
-                                    <div class="pieConIn">
-                                        <div class="pieConIn02">
-                                            <div class="pieConIn01" style="height: {{data2}}; width: 100%;">
-
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <span>建筑工程</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" data-toggle="modal" data-target="#barWin03">
-                                <strong>{{data3}}</strong>
-                                <em>复工率</em>
-                                <div class="pieCon">
-                                    <div class="pieConIn">
-                                        <div class="pieConIn02">
-                                            <div class="pieConIn01" style="height: {{data3}}; width: 100%;">
+                                    <p class="pieTxt01">规上企业 <span><em>{{data101==null?'-':data101}}</em>户</span></p>
+                                    <p class="pieTxt01">已复工 <span><em class="txt_yellow">{{data102==null?'-':data102}}</em>户</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" data-toggle="modal" data-target="#barWin02">
+                                    <strong>建筑工程</strong>
+                                    <p class="pieTxt02">{{data2}}<em>复工率</em></p>
+                                    <div class="pieCon">
+                                        <div class="pieConIn">
+                                            <div class="pieConIn02">
+                                                <div class="pieConIn01" style="height: 100%; width: 100%;">
 
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <span>规模以上服务业</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" data-toggle="modal" data-target="#barWin04">
-                                <strong>{{data4}}</strong>
-                                <em>复工率</em>
-                                <div class="pieCon">
-                                    <div class="pieConIn">
-                                        <div class="pieConIn02">
-                                            <div class="pieConIn01" style="height: {{data4}}; width: 100%;">
+                                    <p class="pieTxt01">规上企业 <span><em>{{data201==null?'-':data201}}</em>户</span></p>
+                                    <p class="pieTxt01">已复工 <span><em class="txt_yellow">{{data202==null?'-':data202}}</em>户</span></p>
+                                </a>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" data-toggle="modal" data-target="#barWin03">
+                                    <strong>规模以上服务业</strong>
+                                    <p class="pieTxt02">{{data3}}<em>复工率</em></p>
+                                    <div class="pieCon">
+                                        <div class="pieConIn">
+                                            <div class="pieConIn02">
+                                                <div class="pieConIn01" style="height: 90%; width: 100%;">
 
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <span>物流企业</span>
-                            </a>
-                        </li>
-                        <li>
-                           <a href="javascript:;" data-toggle="modal" data-target="#barWin05">
-                                <strong>{{data5}}</strong>
-                                <em>复工率</em>
-                                <div class="pieCon">
-                                    <div class="pieConIn">
-                                        <div class="pieConIn02">
-                                            <div class="pieConIn01" style="height: {{data5}}; width: 100%;">
+                                    <p class="pieTxt01">规上企业 <span><em>{{data301==null?'-':data301}}</em>户</span></p>
+                                    <p class="pieTxt01">已复工 <span><em class="txt_yellow">{{data302==null?'-':data302}}</em>户</span></p>
+                                </a>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" data-toggle="modal" data-target="#barWin04">
+                                    <strong>物流企业</strong>
+                                    <p class="pieTxt02">{{data4}}<em>复工率</em></p>
+                                    <div class="pieCon">
+                                        <div class="pieConIn">
+                                            <div class="pieConIn02">
+                                                <div class="pieConIn01" style="height: 90%; width: 100%;">
 
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <span>经营企业</span>
-                            </a>
-                        </li>
-                    </ul>
+                                    <p class="pieTxt01">规上企业 <span><em>{{data401==null?'-':data401}}</em>户</span></p>
+                                    <p class="pieTxt01">已复工 <span><em class="txt_yellow">{{data402==null?'-':data402}}</em>户</span></p>
+                                </a>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" data-toggle="modal" data-target="#barWin05">
+                                    <strong>经营企业</strong>
+                                    <p class="pieTxt02">{{data5}}<em>复工率</em></p>
+                                    <div class="pieCon">
+                                        <div class="pieConIn">
+                                            <div class="pieConIn02">
+                                                <div class="pieConIn01" style="height: 90%; width: 100%;">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="pieTxt01">规上企业 <span><em>{{data501==null?'-':data501}}</em>户</span></p>
+                                    <p class="pieTxt01">已复工 <span><em class="txt_yellow">{{data502==null?'-':data502}}</em>户</span></p>
+                                </a>
+                                </a>
+                            </li>
+                        </ul>
                     </script>
                     </span>
-                    <div  class="actionBox02" id="orgBoxDcz1">
+                    <div  class="actionBox02" id="orgBoxDcz2">
                         <h3 class="actionT03">督导组工作开展</h3>
-                        <script id="tpl-orgBoxDcz1" type="text/html">
-                            <h3 class="actionT03">督导组工作开展</h3>
-                        <ul class="mess01" id="mess02">
+                        <script id="tpl-orgBoxDcz2" type="text/html">
+                        <h3 class="actionT03">督导组工作开展</h3>
+                        <ul class="mess01" id="mess03">
                             <li>{{content==null?'暂无消息':content}}</li>
                         </ul>
                         </script>
                     </div>
                 </div>
-            </div>
-            <div class="btmPart02 posT" >
-                <span  id="orgBoxXxfx">
-                <script id="tpl-orgBoxXxfx" type="text/html">
-                <h2 class="ttl07Box">
-                    <span class="ttl07Bg01"><span class="ttl07Bg02">学校复学情况</span></span>
-                </h2>
-
-                <ul class="actionList08">
-                    <li><strong>各学校</strong> <img src="src/images/ac_img02.png" style="height: 75px;" alt=""> <% if (school=='未开学') { %><span class="txt_gray"><% } else { %><span class="txt_gblue"><% } %>{{school==null?'-':school}}</span></li>
-                    <li><strong>幼儿园</strong><img src="src/images/ac_img03.png" style="height: 75px;" alt="">  <% if (kindergarten=='未开学') { %><span class="txt_gray"><% } else { %><span class="txt_gblue"><% } %>{{kindergarten==null?'-':kindergarten}}</span></li>
-                    <li><strong>培训机构</strong><img src="src/images/ac_img04.png" style="height: 75px;" alt=""> <% if (training=='未开学') { %><span class="txt_gray"><% } else { %><span class="txt_gblue"><% } %>{{training==null?'-':training}}</span></li>
-                </ul>
-                </script>
-                </span>
-                <div class="actionBox01" id="orgBoxDcz2">
-                    <h3 class="actionT02">督导组工作开展</h3>
-                    <script id="tpl-orgBoxDcz2" type="text/html">
-                     <h3 class="actionT02">督导组工作开展</h3>
-                    <ul class="mess01" id="mess03">
-                        <li>{{content==null?'暂无消息':content}}</li>
-                    </ul>
-                    </script>
-                </div>
-
             </div>
 
         </div>
@@ -719,37 +920,7 @@
     </div>
 </div>
 
-<!-- 物资保供 -->
-<div class="modal fade  mapWin" id="material_supply" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <script id="tpl-material_supply" type="text/html">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 style="text-align: center">物资保供</h4>
-            </div>
 
-            <% if (ext1 !=null) { %>
-            {{each ext1.trim().split(/\s+/) itm i}}
-            <dd>{{ext1.trim().split(/\s+/)[i]}}</dd>
-            {{/each}}
-            <% } %>
-
-            <% if (ext2 !=null) { %>
-            {{each ext2.trim().split(/\s+/) itm i}}
-            <dd>{{ext2.trim().split(/\s+/)[i]}}</dd>
-            {{/each}}
-            <% } %>
-            <% if (ext3 !=null) { %>
-            {{each ext3.trim().split(/\s+/) itm i}}
-            <dd>{{ext3.trim().split(/\s+/)[i]}}</dd>
-            {{/each}}
-            <% } %>
-
-        </div>
-    </div>
-    </script>
-</div>
 
 <!--<script type="text/javascript" src="src/js/chartLine03.js"></script>-->
 <!--<script type="text/javascript" src="src/js/chartLine0401.js"></script>
@@ -812,6 +983,24 @@
             ThreePageWorkstationTotal(selectTime.replace(/-/g,""));
         }
 
+    });
+
+    $('.actionList03 .sttl01').hover(
+        function () {
+            $(this).find('span').show()
+        },
+        function () {
+            $(this).find('span').hide()
+        });
+
+
+    $(".midPart03 .btn_i").click(function (){
+        var flag = $(".iBox").is(":hidden");
+        if(flag){
+            $(".iBox").show();
+        }else{
+            $(".iBox").hide();
+        }
     });
 </script>
 </body>

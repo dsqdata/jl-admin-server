@@ -173,8 +173,6 @@ function querySituation(currentDate){
     situationChart.setOption(option);
     // 查询出发热门诊接触弹出echart数据
     $.axget("/api/yndp/situation/getReceive?date="+currentDate, function (res) {
-        console.log("======");
-        console.log(res.data);
         var MaxY = 100;
         var xArr = [];
         var jzrcArr=[];
@@ -197,8 +195,6 @@ function querySituation(currentDate){
         var r = allSumArr.filter(function (s) {
             return s && s.trim(); // 注：IE9(不包含IE9)以下的版本没有trim()方法
         });
-        console.log("#####");
-        console.log(r);
         //获取Y轴最大值
          MaxY =  Math.max.apply(null,r);
          if (MaxY==-Infinity){

@@ -185,7 +185,7 @@
                                                 {{each groupList.second_leader.trim().split('|||') item i}}
                                                     {{each item.trim().split(',') subItm i}}
                                                     <% if (i%2==0) { %>
-                                                    <li><em>{{item.trim().split(',')[i]}}</em>{{item.trim().split(',')[i+1]}}</li>
+                                                    <li>{{item.trim().split(',')[i]}}&nbsp;{{item.trim().split(',')[i+1]}}</li>
                                                     <% } %>
                                                     {{/each}}
                                                 {{/each}}
