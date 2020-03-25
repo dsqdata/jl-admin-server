@@ -16,6 +16,9 @@ $(function() {
                     color: 'rgba(67,100,247,0.08)'
                 }
             },
+            textStyle : {
+                fontSize: 12
+            },
             formatter:function(params) {
                 var relVal = params[0].name;
                 for (var i = 0;i< params.length; i++) {
@@ -31,36 +34,38 @@ $(function() {
         },
         legend: {
             data: ['男性', '女性'],
-            right: "2%",
+            right: "10",
             top: '5%',
             itemWidth: 25,
-            itemHeight: 15,
+            itemHeight: 10,
             itemGap: 20,
             textStyle: {
                 fontSize: 12,
                 color: '#1d97c0'
-            },
-
+            }
         },
         grid: {
             top: '24%',
             left: '3%',
             right: '4%',
-
             containLabel: true
         },
         xAxis: [{
             axisLabel: {
-                show:true,
                 color: '#22b3e0',
                 fontSize: 12,
-                rotate: 30,
-                showMaxLabel: true,
+                rotate: 30
             },
-            axisTick: {
-                show: false,
+            axisLine: {
+                lineStyle: {
+                    color: '#464f57'
+                }
             },
             type: 'category',
+            axisTick: {
+                show: false,
+                alignWithLabel: true
+            },
             data: x_data
         }],
         yAxis: [{
@@ -68,22 +73,30 @@ $(function() {
             name: '(人)   ',
             nameTextStyle: {
                 color: "#21b0dd",
+
                 fontSize: 12
             },
-            scale: true,
+            axisTick: {
+                show: false
+            },
             axisLabel: {
                 color: '#22b3e0',
                 fontSize: 12
             },
-            splitLine: {
-                show: true
-            },
             axisLine: {
-                show: false
+                lineStyle: {
+                    color: '#464f57'
+                }
             },
-                position: 'left',
+
+            splitLine: {
+                show: false,
+                lineStyle: {
+                    color: '#112a2f',
+                    type: 'solid'
+                }
             }
-        ],
+        }],
         series: [{
             name: '男性',
             type: 'bar',
@@ -112,7 +125,6 @@ $(function() {
                         color: 'rgba(248,142,31,0.4)',
                         borderColor: '#f8a681'
                     }
-
                 },
                 data: line_data1
             }

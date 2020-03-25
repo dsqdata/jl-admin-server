@@ -1,4 +1,5 @@
 $(function() {
+
     var x_data = ['2002/01/29', '2002/01/29', '2002/01/29', '2002/01/29', '2002/01/29', '2002/01/29'],
         bar_data = ["88", "77", "80", "90", "50", "36"],
         line_data = ["0", "20", "40", "60", "20", "10"],
@@ -18,6 +19,9 @@ $(function() {
                     color: 'rgba(67,100,247,0.08)'
                 }
             },
+            textStyle : {
+                fontSize: 12
+            },
             formatter:function(params) {
                 var relVal = params[0].name;
                 for (var i = 0, l = params.length; i < l; i++) {
@@ -33,15 +37,15 @@ $(function() {
         },
         legend: {
             data: ['疫区来昆游客', '务工返昆', '上学返昆', '近期到过疫区', '其他'],
-            right: "2%",
+            right: "10",
             top: '5%',
             itemWidth: 25,
-            itemHeight: 15,
+            itemHeight: 10,
             itemGap: 20,
             textStyle: {
                 fontSize: 12,
                 color: '#1d97c0'
-            },
+            }
 
         },
         grid: {
@@ -52,17 +56,15 @@ $(function() {
             containLabel: true
         },
         xAxis: [{
-            axisLine: {
-                lineStyle: {
-                    color: '#14688b'
-                }
-            },
             axisLabel: {
-                show:true,
                 color: '#22b3e0',
                 fontSize: 12,
-                rotate: 30,
-                showMaxLabel: true,
+                rotate: 30
+            },
+            axisLine: {
+                lineStyle: {
+                    color: '#464f57'
+                }
             },
             type: 'category',
             axisTick: {
@@ -76,21 +78,29 @@ $(function() {
             name: '(人)   ',
             nameTextStyle: {
                 color: "#21b0dd",
+
                 fontSize: 12
             },
-            splitLine: {
-                show: true
+            axisTick: {
+                show: false
+            },
+            axisLabel: {
+                color: '#22b3e0',
+                fontSize: 12
             },
             axisLine: {
                 lineStyle: {
                     color: '#464f57'
                 }
             },
-            axisLabel: {
-                fontSize: 12,
-                color: "#21b0dd"
-            },
-            position: 'left'
+
+            splitLine: {
+                show: false,
+                lineStyle: {
+                    color: '#112a2f',
+                    type: 'solid'
+                }
+            }
         }
         ],
         series: [{
@@ -99,11 +109,11 @@ $(function() {
             stack: '排查特殊人群情况',
             smooth: true,
             barWidth: 33,
-            yAxisIndex: 0,
+
             itemStyle: {
                 normal: {
-                    color: 'rgba(61,248,5,0.4)',
-                    borderColor: '#13e512'
+                    color:'rgba(248,77,119, 0.4)',
+                    borderColor:'#f84d77'
                 }
 
             },
@@ -115,11 +125,11 @@ $(function() {
                 stack: '排查特殊人群情况',
                 smooth: true,
                 barWidth: 33,
-                yAxisIndex: 0,
+
                 itemStyle: {
                     normal: {
-                        color: 'rgba(254,255,12,0.4)',
-                        borderColor: '#ffde03'
+                        color:'rgba(41,204,255, 0.4)',
+                        borderColor:'#29ccff'
                     }
 
                 },
@@ -131,11 +141,11 @@ $(function() {
                 stack: '排查特殊人群情况',
                 smooth: true,
                 barWidth: 33,
-                yAxisIndex: 0,
+
                 itemStyle: {
                     normal: {
-                        color: 'rgba(11,248,223,0.4)',
-                        borderColor: '#1af8f7'
+                        color:'rgba(248,231,28, 0.4)',
+                        borderColor:'#f8e71c'
                     }
 
                 },
@@ -147,11 +157,11 @@ $(function() {
                 stack: '排查特殊人群情况',
                 smooth: true,
                 barWidth: 33,
-                yAxisIndex: 0,
+
                 itemStyle: {
                     normal: {
-                        color: 'rgba(26,66,245,0.4)',
-                        borderColor: '#0614f8'
+                        color:'rgba(126,211,33, 0.4)',
+                        borderColor:'#7ed321'
                     }
 
                 },
@@ -166,16 +176,35 @@ $(function() {
                 // smooth: 0.5,
                 smooth: true,
                 barWidth: 33,
-                yAxisIndex: 0,
+
                 itemStyle: {
                     normal: {
                         color:  "rgba(245,160,25,0.5)",  // 会设置点和线的颜色，所以需要下面定制 line
                         borderColor: '#f8b709'
                     }
                 },
-                yAxisIndex:0,
+
                 data: line_data
             }
+            /*,
+            {
+                name: '柱子',
+                type: 'bar',
+                barGap: '-100%',
+                barWidth: 33,
+                label: {
+                    normal: {
+                        color: '#072338'
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        color: '#072338',
+                    }
+                },
+                z: -12,
+                data: [300, 300, 300, 300, 300, 300]
+            }*/
         ]
     }
     secondPctsrqqkBar.setOption(option);

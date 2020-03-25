@@ -1,5 +1,4 @@
 $(function(){
-
     option = {
         title: [
             {
@@ -70,28 +69,24 @@ $(function(){
                             }
                             return str
                         },
-
-
-
                     rich: {
                         a: {
-                            fontSize: 12,
-
+                            fontSize: 11,
                             align: 'left',
-                            padding: 4
+                            // padding: 6
                         },
                         b: {
                             fontSize: 11,
                             color: '#fff',
                             fontWeight:'700',
                             align: 'left',
-                            padding: [1,10,1,0]
+                            // padding: [1,10,1,0]
                         },
                         c:{
                             fontSize: 11,
                             color: '#fff',
                             align: 'left',
-                            padding: [3,0]
+                            // padding: [3,0]
                         },
                         circle01:{
                             backgroundColor: "#f3ce30",
@@ -128,7 +123,6 @@ $(function(){
                             height: 9 ,
                             borderRadius: 9
                         },
-
                     },
                     textStyle: {
                         color: '#029aff'
@@ -137,7 +131,6 @@ $(function(){
             },
             labelLine: {
                 normal: {
-
                     smooth: 0.2,
                     length: 10,
                     length2: 20

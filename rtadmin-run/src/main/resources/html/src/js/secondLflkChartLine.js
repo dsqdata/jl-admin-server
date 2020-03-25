@@ -5,6 +5,9 @@ $(function(){
 
         tooltip: {
             trigger: 'axis',
+            textStyle : {
+                fontSize: 12
+            },
             formatter:function(params) {
                 var relVal = params[0].name;
                 for (var i = 0;i < params.length;  i++) {
@@ -36,14 +39,11 @@ $(function(){
 
         xAxis: {
             type: 'category',
-            boundaryGap: false,
             data: ['01/02','01/03','01/04','01/05','01/06','01/07'],
             axisLabel: {
-                show:true,
                 color: '#22b3e0',
                 fontSize: 12,
-                rotate: 30,
-                showMaxLabel: true,
+                rotate: 30
             },
             axisLine: {
                 lineStyle: {
@@ -52,14 +52,14 @@ $(function(){
             },
             axisTick: {
                 show: false,
-            },
+            }
 
         },
         yAxis : [{
                 name: '(个)',
                 type: 'value',
                 nameTextStyle: {
-                    color: '#22b3e0'
+                color: '#22b3e0'
                 },
                 scale: true,
                 axisLabel: {
@@ -69,6 +69,16 @@ $(function(){
                 axisLine: {
                     lineStyle: {
                         color: '#464f57'
+                    }
+                },
+                axisTick: {
+                    show: false,
+                },
+                splitLine: {
+                    show: false,
+                    lineStyle: {
+                        color: '#112a2f',
+                        type: 'solid'
                     }
                 }
              },
@@ -90,6 +100,16 @@ $(function(){
                     lineStyle: {
                         color: '#464f57'
                     }
+                },
+                axisTick: {
+                    show: false,
+                },
+                splitLine: {
+                    show: false,
+                    lineStyle: {
+                        color: '#112a2f',
+                        type: 'solid'
+                    }
                 }
             }],
         series: [
@@ -102,7 +122,7 @@ $(function(){
                         smooth:0.5,
                         itemStyle: {
                             normal: {
-                                color: "#e9323b",  // 会设置点和线的颜色，所以需要下面定制 line
+                                color: "#fb5858",  // 会设置点和线的颜色，所以需要下面定制 line
                                 borderWidth: 8,
                                 borderColor: "rgba(255,255,255,0.2)"  // 点边线的颜色
                             }

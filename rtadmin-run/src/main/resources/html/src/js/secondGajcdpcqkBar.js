@@ -16,6 +16,9 @@ $(function() {
                     color: 'rgba(67,100,247,0.08)'
                 }
             },
+            textStyle : {
+                fontSize: 12
+            },
             formatter:function(params) {
                 var relVal = params[0].name;
                 for (var i = 0, l = params.length; i < l; i++) {
@@ -31,36 +34,32 @@ $(function() {
         },
         legend: {
             data: ['正常', '异常'],
-            right: "2%",
+            right: "10",
             top: '5%',
             itemWidth: 25,
-            itemHeight: 15,
+            itemHeight: 10,
             itemGap: 20,
             textStyle: {
                 fontSize: 12,
                 color: '#1d97c0'
-            },
-
+            }
         },
         grid: {
             top: '24%',
             left: '3%',
             right: '4%',
-
             containLabel: true
         },
         xAxis: [{
-            axisLine: {
-                lineStyle: {
-                    color: '#14688b'
-                }
-            },
             axisLabel: {
-                show:true,
                 color: '#22b3e0',
                 fontSize: 12,
-                rotate: 30,
-                showMaxLabel: true
+                rotate: 30
+            },
+            axisLine: {
+                lineStyle: {
+                    color: '#464f57'
+                }
             },
             type: 'category',
             axisTick: {
@@ -71,28 +70,32 @@ $(function() {
         }],
         yAxis: [{
             type: 'value',
-            // min:1,
-            // max:100000,
             name: '(人)   ',
             nameTextStyle: {
                 color: "#21b0dd",
+
                 fontSize: 12
-            },
-            splitLine: {
-                show: true
             },
             axisTick: {
                 show: false
             },
-            axisLine: {
-
-                show: false
-            },
             axisLabel: {
-                fontSize: 12,
-                color: "#21b0dd"
+                color: '#22b3e0',
+                fontSize: 12
             },
-            position: 'left',
+            axisLine: {
+                lineStyle: {
+                    color: '#464f57'
+                }
+            },
+
+            splitLine: {
+                show: false,
+                lineStyle: {
+                    color: '#112a2f',
+                    type: 'solid'
+                }
+            }
         }
         ],
         series: [{
@@ -104,10 +107,9 @@ $(function() {
             yAxisIndex: 0,
             itemStyle: {
                 normal: {
-                    color: 'rgba(6,20,248,0.4)',
-                    borderColor: '#1a13e5'
+                    color:'rgba(41,204,255, 0.4)',
+                    borderColor:'#29ccff'
                 }
-
             },
             data: line_data
         },
@@ -120,8 +122,8 @@ $(function() {
                 yAxisIndex: 0,
                 itemStyle: {
                     normal: {
-                        color: 'rgba(248,142,31,0.4)',
-                        borderColor: '#f8a681'
+                        color:'rgba(248,231,28, 0.4)',
+                        borderColor:'#f8e71c'
                     }
                 },
                 data: line_data1
