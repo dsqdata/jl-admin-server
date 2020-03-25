@@ -18,11 +18,18 @@ $(function() {
                     color: 'rgba(67,100,247,0.08)'
                 }
             },
-            formatter: '{b}<ul><li style="color:#13e512;list-style-type:disc">{a0}:{c0}个</li>' +
-                '<li style="color:#ffde03;list-style-type:disc">{a1}:{c1}个</li>' +
-                '<li style="color:#1af8f7;list-style-type:disc">{a2}:{c2}个</li>' +
-                '<li style="color:#0614f8;list-style-type:disc">{a3}:{c3}个</li>' +
-                '<li style="color:#f8b709;list-style-type:disc">{a4}:{c4}%</li></ul>'
+            formatter:function(params) {
+                var relVal = params[0].name;
+                for (var i = 0, l = params.length; i < l; i++) {
+
+                    if(i==0){
+                        relVal += '<br/>' + params[i].marker + params[i].seriesName + ' : ' + (params[i].value == null?'-':params[i].value)+"人";
+                    }else{
+                        relVal += '<br/>' + params[i].marker + params[i].seriesName + ' : ' + (params[i].value == null?'-':params[i].value)+"人";
+                    }
+                }
+                return relVal;
+            }
         },
         legend: {
             data: ['疫区来昆游客', '务工返昆', '上学返昆', '近期到过疫区', '其他'],
@@ -32,7 +39,7 @@ $(function() {
             itemHeight: 15,
             itemGap: 20,
             textStyle: {
-                fontSize: 18,
+                fontSize: 12,
                 color: '#1d97c0'
             },
 
@@ -51,8 +58,11 @@ $(function() {
                 }
             },
             axisLabel: {
-                fontSize: 18,
-                color: "#21b0dd"
+                show:true,
+                color: '#22b3e0',
+                fontSize: 12,
+                rotate: 30,
+                showMaxLabel: true,
             },
             type: 'category',
             axisTick: {
@@ -66,52 +76,22 @@ $(function() {
             name: '(人)   ',
             nameTextStyle: {
                 color: "#21b0dd",
-                fontSize: 18
+                fontSize: 12
             },
             splitLine: {
-                show: false
-            },
-            axisTick: {
-                show: false
+                show: true
             },
             axisLine: {
-
-                show: false
+                lineStyle: {
+                    color: '#464f57'
+                }
             },
             axisLabel: {
-                fontSize: 18,
+                fontSize: 12,
                 color: "#21b0dd"
             },
-            position: 'left',
-        },
-            {
-                type: 'value',
-                name: '      %',
-                min: 0,
-                nameTextStyle: {
-                    color: "#21b0dd",
-                    fontSize: 18
-                },
-                axisTick: {
-                    show: false
-                },
-                axisLine: {
-                    lineStyle: {
-                        color: '#14688b'
-                    }
-                },
-                axisLabel: {
-                    fontSize: 18,
-                    color: "#21b0dd"
-                },
-                splitLine: {
-                    lineStyle: {
-                        color: "#13688a"
-                    }
-                },
-
-                position: 'right'
-            }
+            position: 'left'
+        }
         ],
         series: [{
             name: '疫区来昆游客',
@@ -193,31 +173,9 @@ $(function() {
                         borderColor: '#f8b709'
                     }
                 },
-                yAxisIndex: 1,
+                yAxisIndex:0,
                 data: line_data
             }
-            // ,
-            // {
-            //     name: '柱子',
-            //     type: 'bar',
-            //     barGap: '-100%',
-            //     barWidth: 33,
-            //     label: {
-            //         normal: {
-            //             color: '#072338'
-            //         }
-            //     },
-            //     tooltip: {
-            //         show: false
-            //     },
-            //     itemStyle: {
-            //         normal: {
-            //             color: '#072338',
-            //         }
-            //     },
-            //     z: -12,
-            //     data: [100, 100, 100, 100, 100, 100]
-            // }
         ]
     }
     secondPctsrqqkBar.setOption(option);

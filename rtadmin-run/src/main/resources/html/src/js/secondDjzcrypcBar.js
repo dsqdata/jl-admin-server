@@ -7,7 +7,6 @@ $(function() {
     option = {
         tooltip: {
             trigger: 'axis',
-            padding: [10, 10],
             backgroundColor: 'rgba(0,0,0,0.7)',
             extraCssText: 'border: 1px solid #3d7787',
             axisPointer: {
@@ -15,37 +14,48 @@ $(function() {
                 shadowStyle: {
                     color: 'rgba(67,100,247,0.08)'
                 }
+            },
+            formatter:function(params) {
+                var relVal = params[0].name;
+                for (var i = 0; i < params.length; i++) {
+
+                    if(i==0){
+                        relVal += '<br/>' + params[i].marker + params[i].seriesName + ' : ' + (params[i].value == null?'-':params[i].value)+"人";
+                    }else{
+                        relVal += '<br/>' + params[i].marker + params[i].seriesName + ' : ' + (params[i].value == null?'-':params[i].value)+"人";
+                    }
+                }
+                return relVal;
             }
         },
         legend: {
             data: ['来昆游客', '务工求学回昆人员', '近期到过疫区人员'],
-            right: "2%",
-            top: '5%',
-            itemWidth: 25,
-            itemHeight: 15,
-            itemGap: 20,
+            top:'5%',
+            right:'10',
             textStyle: {
-                fontSize: 18,
-                color: '#1d97c0'
-            },
+                fontSize: 12,
+                color: '#20E0D9'
+            }
 
         },
         grid: {
             top: '24%',
             left: '3%',
             right: '4%',
-
             containLabel: true
         },
         xAxis: [{
+            axisLabel: {
+                show:true,
+                color: '#22b3e0',
+                fontSize: 12,
+                rotate: 30,
+                showMaxLabel: true,
+            },
             axisLine: {
                 lineStyle: {
                     color: '#14688b'
                 }
-            },
-            axisLabel: {
-                fontSize: 18,
-                color: "#21b0dd"
             },
             type: 'category',
             axisTick: {
@@ -55,55 +65,27 @@ $(function() {
             data: x_data
         }],
         yAxis: [{
-            type: 'value',
-            name: '(人)   ',
-            nameTextStyle: {
-                color: "#21b0dd",
-                fontSize: 18
-            },
-            splitLine: {
-                show: false
-            },
-            axisTick: {
-                show: false
-            },
-            axisLine: {
-
-                show: false
-            },
-            axisLabel: {
-                fontSize: 18,
-                color: "#21b0dd"
-            },
-            position: 'left',
-        },
-            {
                 type: 'value',
-                name: '      %',
-                min: 0,
+                name: '(人)   ',
                 nameTextStyle: {
                     color: "#21b0dd",
-                    fontSize: 18
+                    fontSize: 12
+                },
+                splitLine: {
+                    show: true
                 },
                 axisTick: {
                     show: false
                 },
                 axisLine: {
-                    lineStyle: {
-                        color: '#14688b'
-                    }
+
+                    show: false
                 },
                 axisLabel: {
-                    fontSize: 18,
-                    color: "#21b0dd"
+                    color: '#22b3e0',
+                    fontSize: 12
                 },
-                splitLine: {
-                    lineStyle: {
-                        color: "#13688a"
-                    }
-                },
-
-                position: 'right'
+                position: 'left',
             }
         ],
         series: [{

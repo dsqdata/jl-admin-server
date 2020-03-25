@@ -4,8 +4,18 @@ $(function(){
         color: ['#72d7e9', '#f5e665'],
 
         tooltip: {
-            trigger: 'axis'
-            //formatter: "{b} <br> 合格率: {c}%"
+            trigger: 'axis',
+            formatter:function(params) {
+                var relVal = params[0].name;
+                for (var i = 0;i < params.length;  i++) {
+                    if(i==2){
+                        relVal += '<br/>' + params[i].marker + params[i].seriesName + ' : ' + (params[i].value == null?'-':parseFloat((params[i].value*100).toFixed(10)))+"%";
+                    }else{
+                        relVal += '<br/>' + params[i].marker + params[i].seriesName + ' : ' + (params[i].value == null?'-':params[i].value)+"个";
+                    }
+                }
+                return relVal;
+            }
         },
         legend: {
             top:'5%',
@@ -45,45 +55,9 @@ $(function(){
             },
 
         },
-        // yAxis: [{
-        //     name: '个',
-        //     type: 'value',//左边的y轴
-        //     nameTextStyle: {
-        //         color: '#22b3e0'
-        //     },
-        //     scale: true,
-        //     axisLabel: {
-        //         color: '#22b3e0',
-        //         fontSize: 12
-        //     },
-        //     axisLine: {
-        //         lineStyle: {
-        //             color: '#464f57'
-        //         }
-        //     }
-        // }, {
-        //     name: '%',
-        //     type: 'value',//右边第一个y轴
-        //     nameTextStyle: {
-        //         color: '#22b3e0'
-        //     },
-        //     scale: true,
-        //     axisLabel: {
-        //         color: '#22b3e0',
-        //         fontSize: 12
-        //     },
-        //     axisLine: {
-        //         lineStyle: {
-        //             color: '#464f57'
-        //         }
-        //     }
-        // }],
         yAxis : [{
-                name: '个',
+                name: '(个)',
                 type: 'value',
-                // min: 0,
-                // max: 400,
-                // interval: 50,
                 nameTextStyle: {
                     color: '#22b3e0'
                 },
@@ -100,9 +74,9 @@ $(function(){
              },
             {
                 name: '%',
-                type: 'value',
-                axisLabel: {
-                    formatter: '{value} %'
+                 axisLabel: {
+                     show: true,
+                    formatter: '{value} %'//以百分比显示
                 },
                 nameTextStyle: {
                     color: '#22b3e0'
@@ -138,7 +112,7 @@ $(function(){
                     {
                         name: '微信群总量',
                         type: 'line',
-                        yAxisIndex: 1,
+                        yAxisIndex: 0,
                         symbol: "circle",      // 默认是空心圆（中间是白色的），改成实心圆
                         symbolSize: 8,
                         smooth:0.5,

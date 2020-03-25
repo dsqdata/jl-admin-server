@@ -187,15 +187,11 @@
                 <!-- Tab panes -->
 
                 <div class="tab-content">
-
                     <div role="tabpanel" class="tab-pane active" id="tab01">
-
                         <h2 class="mapTbox01">
                             <span class="mapT01"><span class="mapTbg01">疫情新增趋势图</span></span>
                         </h2>
-
                         <div id="chartLine01" class="chartSty01"></div>
-
                     </div>
                     <div role="tabpanel" class="tab-pane" id="tab02">
                         <h2 class="mapTbox01">
@@ -221,16 +217,122 @@
                         </h2>
                         <div id="chartLine05" class="chartSty01"></div>
                     </div>
+                    <!--网格化排查-->
+                    <div role="tabpanel" class="tab-pane" id="tabWghpc">
+                        <h2 class="mapTbox01">
+                            <span class="mapT01"><span class="mapTbg01">网格化排查工作情况</span></span>
+                        </h2>
+                        <div id="secondWghpcgzqkCharLine" class="chartSty01"></div>
+                    </div>
+                    <!--联防联控工作情况-->
+                    <div role="tabpanel" class="tab-pane" id="tabLflk">
+                        <h2 class="mapTbox01">
+                            <span class="mapT01"><span class="mapTbg01">联防联控工作情况</span></span>
+                        </h2>
+                        <div id="secondLflkChartLine" class="chartSty01"></div>
+                    </div>
+                    <!--排查特殊人群情况-->
+                    <div role="tabpanel" class="tab-pane" id="tabPctsrqqk">
+                        <h2 class="mapTbox01">
+                            <span class="mapT01"><span class="mapTbg01">排查特殊人群情况</span></span>
+                        </h2>
+                        <div id="secondPctsrqqkBar" class="chartSty01"></div>
+                    </div>
+                    <!--入住留验点人员情况-->
+                    <div role="tabpanel" class="tab-pane" id="tabRzlydry">
+                        <h2 class="mapTbox01">
+                            <span class="mapT01"><span class="mapTbg01">入住留验点人员情况</span></span>
+                        </h2>
+                        <div id="secondRzlydryBar" class="chartSty01"></div>
+                    </div>
+                    <!--登记在册人员排查-->
+                    <div role="tabpanel" class="tab-pane" id="tabDjzcrypc">
+                        <h2 class="mapTbox01">
+                            <span class="mapT01"><span class="mapTbg01">登记在册人员排查</span></span>
+                        </h2>
+                        <div id="secondDjzcrypcBar" class="chartSty01"></div>
+                    </div>
+                    <!--公安检查点排查情况-->
+                    <div role="tabpanel" class="tab-pane" id="tabGajcdpcqk">
+                        <h2 class="mapTbox01">
+                            <span class="mapT01"><span class="mapTbg01">公安检查点排查情况</span></span>
+                        </h2>
+                        <div id="secondGajcdpcqkBar" class="chartSty01"></div>
+                    </div>
+                    <!--疫区来昆人员统计-->
+                    <div role="tabpanel" class="tab-pane" id="tabYqlkrytj">
+                        <h2 class="mapTbox01">
+                            <span class="mapT01"><span class="mapTbg01">疫区来昆人员统计</span></span>
+                        </h2>
+                        <div id="secondYqlkrytjChartLine" class="chartSty01"></div>
+                    </div>
 
                 </div>
                 <!-- Nav tabs -->
-                <ul class="nav nav-tabs tab01" role="tablist">
-                    <li role="presentation" class="active"><a href="#tab01" aria-controls="home" role="tab" data-toggle="tab">新增疑似/新增确诊</a></li>
-                    <li role="presentation"><a href="#tab02" aria-controls="profile" role="tab" data-toggle="tab">现存确诊/现存疑似</a></li>
-                    <li role="presentation"><a href="#tab03" aria-controls="messages" role="tab" data-toggle="tab">死亡/治愈</a></li>
-                    <li role="presentation"><a href="#tab04" aria-controls="settings" role="tab" data-toggle="tab">病死率</a></li>
-                    <li role="presentation"><a href="#tab05" aria-controls="settings" role="tab" data-toggle="tab">治愈率</a></li>
-                </ul>
+<!--                <ul class="nav nav-tabs tab01" role="tablist" id="tab_btn">-->
+<!--                    <li role="presentation" class="active"><a href="#tab01" aria-controls="home" role="tab" data-toggle="tab">新增疑似/新增确诊</a></li>-->
+<!--                    <li role="presentation"><a href="#tab02" aria-controls="profile" role="tab" data-toggle="tab">现存确诊/现存疑似</a></li>-->
+<!--                    <li role="presentation"><a href="#tab03" aria-controls="messages" role="tab" data-toggle="tab">死亡/治愈</a></li>-->
+<!--                    <li role="presentation"><a href="#tab04" aria-controls="settings" role="tab" data-toggle="tab">病死率</a></li>-->
+<!--                    <li role="presentation"><a href="#tab05" aria-controls="settings" role="tab" data-toggle="tab">治愈率</a></li>-->
+<!--                    &lt;!&ndash;网格化排查&ndash;&gt;-->
+<!--                    <li role="presentation"><a href="#tabWghpc" aria-controls="settings" role="tab" data-toggle="tab">网格化排查人数</a></li>-->
+<!--                    &lt;!&ndash;联防联控工作情况&ndash;&gt;-->
+<!--                    <li role="presentation"><a href="#tabLflk" aria-controls="settings" role="tab" data-toggle="tab">联防联控工作开展</a></li>-->
+<!--                    &lt;!&ndash;排查特殊人群情况&ndash;&gt;-->
+<!--                    <li role="presentation" id="btn_tabPctsrqqk"><a href="#tabPctsrqqk" aria-controls="settings" role="tab" data-toggle="tab">排查特殊人群情况</a></li>-->
+<!--                    &lt;!&ndash;入住留验点人员情况&ndash;&gt;-->
+<!--                    <li role="presentation" id="btn_tabRzlydry"><a href="#tabRzlydry" aria-controls="settings" role="tab" data-toggle="tab">入住留验点人员情况</a></li>-->
+<!--                    &lt;!&ndash;登记在册人员排查&ndash;&gt;-->
+<!--                    <li role="presentation" id="btn_tabDjzcrypc"><a href="#tabDjzcrypc" aria-controls="settings" role="tab" data-toggle="tab">登记在册人员排查</a></li>-->
+<!--                    &lt;!&ndash;公安检查点排查情况&ndash;&gt;-->
+<!--                    <li role="presentation" id="btn_tabGajcdpcqk"><a href="#tabGajcdpcqk" aria-controls="settings" role="tab" data-toggle="tab">公安检查点排查情况</a></li>-->
+<!--                    &lt;!&ndash;疫区来昆人员统计&ndash;&gt;-->
+<!--                    <li role="presentation"><a href="#tabYqlkrytj" aria-controls="settings" role="tab" data-toggle="tab">疫区来昆人员统计</a></li>-->
+<!--                </ul>-->
+
+                <div class="tab01Wrap">
+                    <ul class="nav nav-tabs tab01" role="tablist" id="tab_btn">
+<!--                        <li role="presentation" class="active page01"><a href="#tab01" aria-controls="home" role="tab" data-toggle="tab">新增疑似/新增确诊</a></li>-->
+<!--                        <li role="presentation" class="page01"><a href="#tab02" aria-controls="profile" role="tab" data-toggle="tab">现存确诊/现存疑似</a></li>-->
+<!--                        <li role="presentation" class="page01"><a href="#tab03" aria-controls="messages" role="tab" data-toggle="tab">死亡/治愈</a></li>-->
+<!--                        <li role="presentation" class="page01"><a href="#tab04" aria-controls="settings" role="tab" data-toggle="tab">病死率</a></li>-->
+<!--                        <li role="presentation" class="page01"><a href="#tab05" aria-controls="settings" role="tab" data-toggle="tab">治愈率</a></li>-->
+<!--                        <li role="presentation" class="page02"><a href="#tab01a" aria-controls="home" role="tab" data-toggle="tab">网格化排查人数</a></li>-->
+<!--                        <li role="presentation" class="page02"><a href="#tab01b" aria-controls="profile" role="tab" data-toggle="tab">联防联控工作展开</a></li>-->
+<!--                        <li role="presentation" class="page02"><a href="#tab01c" aria-controls="messages" role="tab" data-toggle="tab">排查特殊人群数量</a></li>-->
+<!--                        <li role="presentation" class="page02"><a href="#tab01d" aria-controls="settings" role="tab" data-toggle="tab">入住留验点人员数量</a></li>-->
+<!--                        <li role="presentation" class="page02"><a href="#tab01e" aria-controls="settings" role="tab" data-toggle="tab">疫区来昆人员统计</a></li>-->
+
+                        <li role="presentation" class="active page01" id="xzysOrXzqz"><a href="#tab01" aria-controls="home" role="tab" data-toggle="tab">新增疑似/新增确诊</a></li>
+                        <li role="presentation" class="page01"><a href="#tab02" aria-controls="profile" role="tab" data-toggle="tab">现存确诊/现存疑似</a></li>
+                        <li role="presentation" class="page01"><a href="#tab03" aria-controls="messages" role="tab" data-toggle="tab">死亡/治愈</a></li>
+                        <li role="presentation" class="page01"><a href="#tab04" aria-controls="settings" role="tab" data-toggle="tab">病死率</a></li>
+                        <li role="presentation" class="page01"><a href="#tab05" aria-controls="settings" role="tab" data-toggle="tab">治愈率</a></li>
+                        <!--网格化排查-->
+                        <li role="presentation" class="page02"><a href="#tabWghpc" aria-controls="home" role="tab" data-toggle="tab">网格化排查人数</a></li>
+                        <!--联防联控工作情况-->
+                        <li role="presentation" class="page02"><a href="#tabLflk" aria-controls="profile" role="tab" data-toggle="tab">联防联控工作开展</a></li>
+                        <!--排查特殊人群情况-->
+                        <li role="presentation" class="page03" id="btn_tabPctsrqqk" style="margin:0 0 0 9px;"><a onclick="changeRight('pctsrqqk');" style="padding: 8px 12px;" href="#tabPctsrqqk" aria-controls="messages" role="tab" data-toggle="tab">排查特殊人群情况</a></li>
+                        <!--入住留验点人员情况-->
+                        <li role="presentation" class="page03" id="btn_tabRzlydry" style="margin:0 0 0 9px;"><a onclick="changeRight('rzlydryqk');" style="padding: 8px 12px;" href="#tabRzlydry" aria-controls="settings" role="tab" data-toggle="tab">入住留验点人员情况</a></li>
+                        <!--登记在册人员排查-->
+                        <li role="presentation" class="page04" id="btn_tabDjzcrypc" style="margin:0 0 0 9px;"><a  onclick="changeRight('djzc');" style="padding: 8px 12px;" href="#tabDjzcrypc" aria-controls="messages" role="tab" data-toggle="tab">登记在册人员排查</a></li>
+                        <!--公安检查点排查情况-->
+                        <li role="presentation" class="page04" id="btn_tabGajcdpcqk" style="margin:0 0 0 9px;"><a onclick="changeRight('gajcdpcqk');" style="padding: 8px 12px;" href="#tabGajcdpcqk" aria-controls="settings" role="tab" data-toggle="tab">公安检查点排查情况</a></li>
+                        <!--疫区来昆人员统计-->
+                        <li role="presentation" class="page02" ><a href="#tabYqlkrytj" aria-controls="settings" role="tab" data-toggle="tab">疫区来昆人员统计</a></li>
+                    </ul>
+                    <span id="orgBoxBottomSwitch">
+                            <a class="sPrev"></a>
+                            <a class="sNext hover"></a>
+                         <script id="tpl-orgBoxBottomSwitch" type="text/html">
+                            <a value="{{type}}" class="sPrev"></a>
+                            <a value="{{type}}" class="sNext hover"></a>
+                         </script>
+                    </span>
+                </div>
 
 
             </div>
@@ -245,26 +347,30 @@
                     </h2>
                     <div class="ycBox03">
                         <ul class="ycBox0301">
-                            <li>
+<!--                            <li>-->
+                            <li  onclick="toggleChart('wghpc');">
                                 <div class="liBg">
                                     <strong>发动参加排查人员总数</strong>
                                     <p class="color01"><em>累计</em>{{fdcjpcryzslj}}人</p>
                                     <p class="color02"><em>新增</em>{{fdcjpcryzsxz}}人</p>
                                 </div>
                             </li>
-                            <li>
+<!--                            <li>-->
+                            <li  onclick="toggleChart('lflk');">
                                 <div class="liBg">
                                     <strong>微信群数量</strong>
                                     <p class="color01"><em>累计</em>{{wxqsllj}}个</p>
                                     <p class="color02"><em>新增</em>{{wxqslxz}}个</p>
                                 </div>
                             </li>
-                            <li>
+<!--                            <li>-->
+                            <li onclick="toggleChart('wghpc');">
                                 <strong>排查总人数</strong>
                                 <p class="color01"><i></i><em>累计</em>{{pczrslj}}人</p>
                                 <p class="color02"><i></i><em>新增</em>{{pczrsxz}}人</p>
                             </li>
-                            <li>
+<!--                            <li>-->
+                            <li onclick="toggleChart('lflk');">
                                 <strong>微信群覆盖率</strong>
                                 <p class="color01"><i></i><em>累计</em>{{(fxqfgllj*100)}}%</p>
                                 <p class="color02"><i></i><em>新增</em>{{(fxqfglxz*100)}}%</p>
@@ -281,10 +387,15 @@
                 </h2>
                 <div class="tab02Box clearfix">
                     <ul class="nav nav-tabs tab02" role="tablist">
-                        <li role="presentation" class="active  liLft" id="tab06title"><a href="#tab06" aria-controls="home" role="tab" data-toggle="tab" id="tab1">排查特殊人群数量</a></li>
-                        <li role="presentation" class="liRgt" id="tab07title"><a href="#tab07" aria-controls="profile" role="tab" data-toggle="tab">入住留验点人员</a></li>
-                        <li role="presentation" class="active  liLft" style="display: none" id="tab08title"><a href="#tab08" aria-controls="home" role="tab" data-toggle="tab" id="tab2">登记在册人员排查</a></li>
-                        <li role="presentation" class="liRgt" style="display: none;" id="tab09title"><a href="#tab09" aria-controls="profile" role="tab" data-toggle="tab">公安检查点排查</a></li>
+<!--                        <li role="presentation" class="active  liLft" id="tab06title"><a href="#tab06" aria-controls="home" role="tab" data-toggle="tab" id="tab1">排查特殊人群数量</a></li>-->
+<!--                        <li role="presentation" class="liRgt" id="tab07title"><a href="#tab07" aria-controls="profile" role="tab" data-toggle="tab">入住留验点人员</a></li>-->
+<!--                        <li role="presentation" class="active  liLft" style="display: none" id="tab08title"><a href="#tab08" aria-controls="home" role="tab" data-toggle="tab" id="tab2">登记在册人员排查</a></li>-->
+<!--                        <li role="presentation" class="liRgt" style="display: none;" id="tab09title"><a href="#tab09" aria-controls="profile" role="tab" data-toggle="tab">公安检查点排查</a></li>-->
+
+                        <li role="presentation" class="active  liLft" id="tab06title"  onclick="toggleChart('pctsrqqk');"><a href="#tab06" aria-controls="home" role="tab" data-toggle="tab" id="tab1">排查特殊人群数量</a></li>
+                        <li role="presentation" class="liRgt" id="tab07title"  onclick="toggleChart('rzlydry');"><a href="#tab07" aria-controls="profile" role="tab" data-toggle="tab" id="tab3">入住留验点人员</a></li>
+                        <li role="presentation" class="active  liLft" style="display: none" id="tab08title"  onclick="toggleChart('djzcrypc');"><a href="#tab08" aria-controls="home" role="tab" data-toggle="tab" id="tab2">登记在册人员排查</a></li>
+                        <li role="presentation" class="liRgt" style="display: none;" id="tab09title"  onclick="toggleChart('gajcdpcqk');"><a href="#tab09" aria-controls="profile" role="tab" data-toggle="tab" id="tab4">公安检查点排查</a></li>
 
                     </ul>
                 </div>
@@ -309,7 +420,8 @@
             <!--疫区来昆人员追踪-->
             <div class="sideBox03" id="orgBox05">
                 <script id="tpl-orgBox05" type="text/html">
-                    <h2 class="mapTbox">
+<!--                    <h2 class="mapTbox">-->
+                    <h2 class="mapTbox"  onclick="toggleChart('yqlkrytj');">
                         <span class="mapT01"><span class="mapTbg01">疫区来昆人员追踪</span></span>
                     </h2>
 
@@ -364,8 +476,6 @@
                             <% } %>
                             <% } %>
 
-
-
                             {{/each}}
 
                         </table>
@@ -391,6 +501,22 @@
 <script type="text/javascript" src="src/js/chartPie03.js"></script>
 <script type="text/javascript" src="src/js/chartPie04.js"></script>
 <!--<script type="text/javascript" src="src/js/chartLine11.js"></script>-->
+
+<!--网格化排查-->
+<script type="text/javascript" src="src/js/secondWghpcgzqkChartLine.js"></script>
+<!--联防联控工作情况-->
+<script type="text/javascript" src="src/js/secondLflkChartLine.js"></script>
+<!--排查特殊人群情况-->
+<script type="text/javascript" src="src/js/secondPctsrqqkBar.js"></script>
+<!--入住留验点人员情况-->
+<script type="text/javascript" src="src/js/secondRzlydryBar.js"></script>
+<!--登记在册人员排查-->
+<script type="text/javascript" src="src/js/secondDjzcrypcBar.js"></script>
+<!--公安检查点排查情况-->
+<script type="text/javascript" src="src/js/secondGajcdpcqkBar.js"></script>
+<!--疫区来昆人员统计-->
+<script type="text/javascript" src="src/js/secondYqlkrytjChartLine.js"></script>
+
 <script>
 
     var initTime = function (data) {
@@ -891,7 +1017,7 @@
                 tooltip: {
                     trigger: 'item',
                     formatter:function(data){
-                        console.log(data)
+                        // console.log(data)
                         return data.name+ " : " + data.value + " ("+data.percent.toFixed(0)+"%)";
                     }
                 },
@@ -1073,6 +1199,7 @@
                         initPclk(res.data.id, name)
                         initRyzz(res.data.id, name)
                         initdt(res.data.id, name)
+                        initMiddleBottomQs(res.data.id,name,res.data.jglx);
                     });
                 }
             });
@@ -1096,6 +1223,8 @@
         initPclk(jgId, jgName)
         initRyzz(jgId, jgName)
         initMap(jgId, jgName, initdt)
+
+        initMiddleBottomQs(jgId,jgName,jgType);
 
     }
 
@@ -1144,6 +1273,7 @@
             myMapChart.setMap(pname,jgName,initMaps)
         }
     }
+
     function initMaps(jgName){
         myMapChart.setMap(jgName)
     }
@@ -1171,6 +1301,488 @@
         });
 
     });
+
+
+   /* $('.sNext').click(function () {
+        var od = $(this).attr("value");
+        console.log("sNext-od="+od);
+        $(this).removeClass('hover')
+        $('.sPrev').addClass('hover')
+        if(od=='2'){
+            $('.tab01Wrap').find('.page01').hide();
+            $('.tab01Wrap').find('.page02').show();
+            $('.tab01Wrap').find('.page03').show();
+            $('.tab01Wrap').find('.page04').hide();
+        }else{
+            $('.tab01Wrap').find('.page01').hide();
+            $('.tab01Wrap').find('.page02').show();
+            $('.tab01Wrap').find('.page03').hide();
+            $('.tab01Wrap').find('.page04').show();
+        }
+    })
+
+    $('.sPrev').click(function () {
+        var od = $(this).attr("value");
+        console.log("sPrev-od="+od);
+        $(this).removeClass('hover')
+        $('.sNext').addClass('hover')
+        if(od=='2'){
+            $('.tab01Wrap').find('.page01').show();
+            $('.tab01Wrap').find('.page02').hide();
+            $('.tab01Wrap').find('.page03').show();
+            $('.tab01Wrap').find('.page04').hide();
+        }else{
+            $('.tab01Wrap').find('.page01').show();
+            $('.tab01Wrap').find('.page02').hide();
+            $('.tab01Wrap').find('.page03').hide();
+            $('.tab01Wrap').find('.page04').show();
+        }
+    })*/
+
+
+    // 网格化排查
+    var secondWghpcgzqkCharLine = echarts.init(document.getElementById('secondWghpcgzqkCharLine'));
+    // 联防联控工作情况
+    var secondLflkChartLine = echarts.init(document.getElementById('secondLflkChartLine'));
+    // 排查特殊人群情况
+    var secondPctsrqqkBar = echarts.init(document.getElementById('secondPctsrqqkBar'));
+    //入住留验点人员情况
+    var secondRzlydryBar = echarts.init(document.getElementById('secondRzlydryBar'));
+    // 登记在册人员排查
+    var secondDjzcrypcBar = echarts.init(document.getElementById('secondDjzcrypcBar'));
+    //公安检查点排查情况
+    var secondGajcdpcqkBar = echarts.init(document.getElementById('secondGajcdpcqkBar'));
+    //疫区来昆人员统计
+    var secondYqlkrytjChartLine = echarts.init(document.getElementById('secondYqlkrytjChartLine'));
+
+    // 切换下方趋势图
+    function toggleChart(type){
+        // 将首字母变成大写
+        var name = type;
+        // 将所有字符变成小写
+        name = name.toLowerCase();
+        // 提取首字母转换为大写并与其余的字母拼接起来(3种方法)
+        var name = name.charAt(0).toUpperCase() + name.slice(1);
+        // 切换下方按钮
+        $('.tab01Wrap').find('.page01').hide();
+        $('.tab01Wrap').find('.page02').show();
+        if(selectType=='2'){
+            $('.tab01Wrap').find('.page03').hide();
+            $('.tab01Wrap').find('.page04').show();
+        }else{
+            $('.tab01Wrap').find('.page03').show();
+            $('.tab01Wrap').find('.page04').hide();
+        }
+        // 根据类型切换tab
+        $('#tab_btn a[href="#tab'+name+'"]').tab('show');
+    }
+
+    // 控制底部按钮  街道或这区显示隐藏
+    var initBottomSwitch = function(jgType){
+        var html = template('tpl-orgBoxBottomSwitch', {type:jgType});
+        document.getElementById('orgBoxBottomSwitch').innerHTML = html;
+
+        // tab01
+        $('#tab_btn a[href="#tab01"]').tab('show');
+        $('.tab01Wrap').find('.page01').show();
+        $('.tab01Wrap').find('.page02').hide();
+        $('.tab01Wrap').find('.page03').hide();
+        $('.tab01Wrap').find('.page04').hide();
+
+        $('.sNext').click(function () {
+            var od = $(this).attr("value");
+            $(this).removeClass('hover');
+            $('.sPrev').addClass('hover');
+            if(od=='2'){
+                $('.tab01Wrap').find('.page01').hide();
+                $('.tab01Wrap').find('.page02').show();
+                $('.tab01Wrap').find('.page03').hide();
+                $('.tab01Wrap').find('.page04').show();
+
+            }else{
+                $('.tab01Wrap').find('.page01').hide();
+                $('.tab01Wrap').find('.page02').show();
+                $('.tab01Wrap').find('.page03').show();
+                $('.tab01Wrap').find('.page04').hide();
+            }
+        })
+
+        $('.sPrev').click(function () {
+            var od = $(this).attr("value");
+            $(this).removeClass('hover');
+            $('.sNext').addClass('hover');
+            if(od=='2'){
+                $('.tab01Wrap').find('.page01').show();
+                $('.tab01Wrap').find('.page02').hide();
+                $('.tab01Wrap').find('.page03').hide();
+                $('.tab01Wrap').find('.page04').hide();
+            }else{
+                $('.tab01Wrap').find('.page01').show();
+                $('.tab01Wrap').find('.page02').hide();
+                $('.tab01Wrap').find('.page03').hide();
+                $('.tab01Wrap').find('.page04').hide();
+            }
+        })
+    }
+
+    var selectType='';
+
+    var initMiddleBottomQs = function(jgId, jgName,jgType){
+        selectType=jgType;
+        initBottomSwitch(jgType);
+        // 网格化排查echarts   联防联控echarts
+        $.axget1("/api/yndp/wghpclflk/getPcjlflkListAll?jgId="+jgId,false, function (res) {
+            console.log("_____---网格化排查--联防联控---_____");
+            console.log(res.data);
+            //网格化排查echarts
+            var xAxisData = [];
+            var wghYjrcjpcryzs=[];
+            var wghYljcjpcryzs=[];
+            var wghYjrpcrs=[];
+            var wghYljpczrs=[];
+            //联防联控echarts
+            var lflkYjrxzwxqsl=[]; //今日新增微信群数量
+            var lflkYwxqzl=[]; //微信群总量
+            var lflkYwxqfgl=[]; //微信群覆盖率
+            for (let i = 0; i < res.data.length; i++) {
+                //网格化排查
+                xAxisData.push(res.data[i].field5);
+                wghYjrcjpcryzs.push(res.data[i].fdcjpcryzsxz);//发动参加排查人员总数-新增
+                wghYljcjpcryzs.push(res.data[i].fdcjpcryzslj);//发动参加排查人员总数-累计
+                wghYjrpcrs.push(res.data[i].pczrslj); //排查总人数-新增
+                wghYljpczrs.push(res.data[i].pczrsxz); //排查总人数-累计
+                // 联防联控
+                lflkYjrxzwxqsl.push(res.data[i].pczrsxz); //今日新增微信群数量
+                lflkYwxqzl.push(res.data[i].pczrslj); //微信群总量
+                lflkYwxqfgl.push(res.data[i].fxqfgllj); ////微信群覆盖率
+
+            }
+            // 网格化排查
+            secondWghpcgzqkCharLine.setOption({
+                    xAxis:{
+                        data:xAxisData
+                    },
+                    series: [
+                        {
+                            name: '今日参加排查人员总数',
+                            data: wghYjrcjpcryzs
+                        },
+                        {
+                            name: '累计参加排查人员总数',
+                            data: wghYljcjpcryzs
+                        },
+                        {
+                            name: '今日排查人数',
+                            data: wghYjrpcrs
+                        },
+                        {
+                            name: '累计排查总人数',
+                            data: wghYljpczrs
+                        }
+
+                    ]
+            });
+
+            // 联防联控
+            secondLflkChartLine.setOption({
+                xAxis:{
+                    data:xAxisData
+                },
+                series: [
+                    {
+                        name: '今日新增微信群数量',
+                        data: lflkYjrxzwxqsl
+                    },
+                    {
+                        name: '微信群总量',
+                        data: lflkYwxqzl
+                    },
+                    {
+                        name: '微信群覆盖率',
+                        yAxisIndex: 1,
+                        data: lflkYwxqfgl
+                    }
+
+                ]
+            });
+        });
+
+        console.log("-----------------------------------");
+        console.log(jgId);
+        // 重点人员摸排
+        $.axget("/api/yndp/zdrymp/getZdrympDataListAll?jgid="+jgId, function (res) {
+            console.log("_____----重点人员摸排----_____");
+            console.log(res.data);
+
+            //登记在册人员排查
+            var xjdzcAxisData = [];
+            var yLkyk = [];//来昆游客
+            var yWgqxhkry = [];//务工求学回昆人员
+            var yJqdgyqry = [];//近期到过疫区人员
+            for (let i = 0; i < res.data.djzcList.length; i++) {
+                xjdzcAxisData.push(res.data.djzcList[i].field4);
+                if(res.data.djzcList[i].zdrymc == '来昆游客'){
+                    yLkyk.push(res.data.djzcList[i].zdryrs);
+                }else if(res.data.djzcList[i].zdrymc == '务工求学回昆人员'){
+                    yWgqxhkry.push(res.data.djzcList[i].zdryrs);
+                }else if(res.data.djzcList[i].zdrymc == '近期到过疫区人员'){
+                    yJqdgyqry.push(res.data.djzcList[i].zdryrs);
+                }else{
+
+                }
+            }
+
+            secondDjzcrypcBar.setOption({
+                xAxis:{
+                    data:uniq(xjdzcAxisData)
+                },
+                series: [
+                    {
+                        name: '来昆游客',
+                        data: yLkyk
+                    },
+                    {
+                        name: '务工求学回昆人员',
+                        data: yWgqxhkry
+                    },
+                    {
+                        name: '近期到过疫区人员',
+                        data: yJqdgyqry
+                    }
+                ]
+            });
+
+
+            //公安检查点排查
+            var xGajcdpcAxisData = [];
+            var yZcData =[];//正常
+            var yYcData =[];//异常
+            for (let i = 0; i < res.data.gajcdpcryList.length ; i++) {
+                xGajcdpcAxisData.push(res.data.gajcdpcryList[i].field4);
+                if (res.data.gajcdpcryList[i].zdrymc == '正常'){
+                    yZcData.push(res.data.gajcdpcryList[i].zdryrs);
+                }else if(res.data.gajcdpcryList[i].zdrymc == '异常'){
+                    yYcData.push(res.data.gajcdpcryList[i].zdryrs);
+                }else{
+
+                }
+            }
+            secondGajcdpcqkBar.setOption({
+                xAxis: [{
+                    data: uniq(xGajcdpcAxisData)
+                }],
+                series: [
+                    {
+                        name: '正常',
+                        data: yZcData
+                    },
+                    {
+                        name: '异常',
+                        data: yYcData
+                    }
+                ]
+            });
+
+
+            //入驻留验点人员
+            //
+            var xRzlyzdAxisData = [];
+            var yMaleData = []; // 男性
+            var yFemaleData = []; // 女性
+            for (let i = 0; i < res.data.rzlydryList.length; i++) {
+                xRzlyzdAxisData.push(res.data.rzlydryList[i].field4);
+                if(res.data.rzlydryList[i].zdrymc == '男性'){
+                    yMaleData.push(res.data.rzlydryList[i].zdryrs);
+                }else if(res.data.rzlydryList[i].zdrymc == '女性'){
+                    yFemaleData.push(res.data.rzlydryList[i].zdryrs);
+                }else{
+                }
+            }
+            secondRzlydryBar.setOption({
+                xAxis:{
+                    data:uniq(xRzlyzdAxisData)
+                },
+                series: [{
+                    name: '男性',
+                    data: yMaleData
+                },
+                    {
+                        name: '女性',
+                        data: yFemaleData
+                    }
+                ]
+            });
+
+
+            //排查特殊人群数量
+            var xPctsrqslAxisData = [];
+            var yWgfkData = [];//务工返昆
+            var ySxfkData = [];//上学返昆
+            var yYqlklyData = [];//疫区来昆旅游
+            var yJqdgyqData = [];//近期到过疫区
+            var yQtData = [];//其他
+            for (let i = 0; i < res.data.tsrqList.length; i++) {
+                xPctsrqslAxisData.push(res.data.tsrqList[i].field4);
+                if(res.data.tsrqList[i].zdrymc == '务工返昆'){
+                    yWgfkData.push(res.data.tsrqList[i].zdryrs);
+                }else if(res.data.tsrqList[i].zdrymc == '上学返昆'){
+                    ySxfkData.push(res.data.tsrqList[i].zdryrs);
+                }else if(res.data.tsrqList[i].zdrymc == '疫区来昆旅游'){
+                    yYqlklyData.push(res.data.tsrqList[i].zdryrs);
+                }else if(res.data.tsrqList[i].zdrymc == '近期到过疫区'){
+                    yJqdgyqData.push(res.data.tsrqList[i].zdryrs);
+                }else if(res.data.tsrqList[i].zdrymc == '其他'){
+                    yQtData.push(res.data.tsrqList[i].zdryrs);
+                }
+            }
+            secondPctsrqqkBar.setOption({
+                xAxis:{
+                    data:uniq(xPctsrqslAxisData)
+                },
+                series: [
+                        {
+                            name: '疫区来昆游客',
+                            data: yYqlklyData
+                        },
+                        {
+                            name: '务工返昆',
+                            data: yWgfkData
+                        },
+                        {
+                            name: '上学返昆',
+                            data: ySxfkData
+                        },
+                        {
+                            name: '近期到过疫区',
+                            data: yJqdgyqData
+                        },
+                        {
+                            name: '其他',
+                            data: yQtData
+                        }
+                    ]
+            });
+
+        });
+
+        // 疫区来昆人员追踪
+        $.axget("/api/yndp/yqlkryzz/getChartDataList?jgId="+jgId, function (res) {
+            console.log("_____----疫区来昆人员追踪----_____");
+            console.log(res.data);
+            var xAxisData = [];
+            var yYzdlgData = [];//已住店离观
+            var yLkData = [];//离昆
+            var yGlqg14tData = [];//隔离期过14天
+            var yBzxqjzdData = [];//不在辖区居住地
+            var yJcyxgcryData = [];//解除医学观察人员
+            var yRzzdjdData = [];//入住指定的酒店
+            var yHbywqtdfhkryData = [];//湖北以外其他地方回昆人员
+            var yQtData = [];//其他
+            var yZsData = [];//总数
+
+            for (let i = 0; i < res.data.length ; i++) {
+               xAxisData.push(res.data[i].rq);
+               if(res.data[i].rylx == '已住店离观'){
+                   yYzdlgData.push(res.data[i].rysl);
+               }else if(res.data[i].rylx == '离昆'){
+                   yLkData.push(res.data[i].rysl);
+               }else if(res.data[i].rylx == '隔离期过14天'){
+                   yGlqg14tData.push(res.data[i].rysl);
+               }else if(res.data[i].rylx == '不在辖区居住地'){
+                   yBzxqjzdData.push(res.data[i].rysl);
+               }else if(res.data[i].rylx == '解除医学观察人员'){
+                   yJcyxgcryData.push(res.data[i].rysl);
+               }else if(res.data[i].rylx == '入住指定的酒店'){
+                   yRzzdjdData.push(res.data[i].rysl);
+               }else if(res.data[i].rylx == '湖北以外其他地方回昆人员'){
+                   yHbywqtdfhkryData.push(res.data[i].rysl);
+               }else if(res.data[i].rylx == '其他'){
+                   yQtData.push(res.data[i].rysl);
+               }else if(res.data[i].rylx == '总数'){
+                   yZsData.push(res.data[i].rysl);
+               }
+            }
+            secondYqlkrytjChartLine.setOption({
+                legend: {
+                    selected:{
+                        '解除医学观察人员':false,
+                        '其他':false,
+                        '累计排查总人数':false,
+                        '湖北以外其他地方回昆人员':false,
+                        '入住指定的如家商旅酒店':false
+                    }
+                },
+                xAxis: {
+                    data: uniq(xAxisData)
+                },
+                series: [
+                    {
+                        name: '已住店离观',
+                        data: yYzdlgData
+                    },
+                    {
+                        name: '离昆',
+                        data: yLkData
+                    },
+                    {
+                        name: '隔离期过14天',
+                        data: yGlqg14tData
+                    },
+                    {
+                        name: '不在辖区居住地',
+                        data: yBzxqjzdData
+                    }
+                    ,
+                    {
+                        name: '解除医学观察人员',
+                        data: yJcyxgcryData
+                    },
+                    {
+                        name: '其他',
+                        data: yQtData
+                    } ,
+                    {
+                        name: '湖北以外其他地方回昆人员',
+                        data: yHbywqtdfhkryData
+                    } ,
+                    {
+                        name: '入住指定的如家商旅酒店',
+                        data: yRzzdjdData
+                    }
+
+                ]
+            });
+
+        });
+    }
+
+
+    // 点击中下按钮，右边重点人员摸排跟着动
+    function changeRight(type){
+            if(type=='pctsrqqk'){//排查特殊人群情况
+                $("#tab1").tab('show')
+            }else if(type=='rzlydryqk'){//入住留验点人员情况
+                $("#tab3").tab('show')
+            }else if(type=='djzc'){//登记在册人员排查
+                $("#tab2").tab('show')
+            }else if(type=='gajcdpcqk'){//公安检查点排查情况
+                $("#tab4").tab('show')
+            }else{
+
+            }
+    }
+
+   // 数组去重
+    function uniq(array){
+        var temp = []; //一个新的临时数组
+        for(var i = 0; i < array.length; i++){
+            if(temp.indexOf(array[i]) == -1){
+                temp.push(array[i]);
+            }
+        }
+        return temp;
+    }
+
 </script>
 </body>
 </html>

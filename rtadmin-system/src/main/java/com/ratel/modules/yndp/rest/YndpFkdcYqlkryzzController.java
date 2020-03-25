@@ -79,4 +79,15 @@ public class YndpFkdcYqlkryzzController {
     }
 
 
+    @GetMapping(value = "/getChartDataList")
+    @ApiOperation("查询中下疫区来昆人员追踪")
+    public Result getChartDataList(@RequestParam String jgId) {
+        Result result = new Result();
+        result.setCode(Result.SUCCESS_CODE);
+        result.setData(yndpFkdcYqlkryzzService.getChartDataList(jgId));
+        result.setMessage("成功");
+        return result;
+    }
+
+
 }

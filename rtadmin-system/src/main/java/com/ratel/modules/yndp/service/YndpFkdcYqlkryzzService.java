@@ -59,4 +59,8 @@ public class YndpFkdcYqlkryzzService extends BaseService<YndpFkdcYqlkryzz, Strin
     public List<YndpFkdcYqlkryzz> getChartData(String jgId) {
         return yndpFkdcYqlkryzzRepository.getChartData(jgId);
     }
+
+    public List<YndpFkdcYqlkryzz> getChartDataList(String jgId) {
+        return yndpFkdcYqlkryzzRepository.getChartDataList(jgId);
+    }
 }

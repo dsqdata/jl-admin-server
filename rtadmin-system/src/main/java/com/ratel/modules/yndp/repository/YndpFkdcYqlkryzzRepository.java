@@ -49,4 +49,8 @@ public interface YndpFkdcYqlkryzzRepository extends BaseRepository<YndpFkdcYqlkr
     // 查询echart数据
     @Query(value = "select * FROM yndp_fkdc_yqlkryzz where  jgid=?1 and rylx='总数' ORDER BY rq asc",nativeQuery = true)
     List<YndpFkdcYqlkryzz> getChartData(String jgId);
+
+    // 查询疫区来昆人员追踪中下echarts数据
+    @Query(value = "select * FROM yndp_fkdc_yqlkryzz where  jgid=?1 ORDER BY rq asc",nativeQuery = true)
+    List<YndpFkdcYqlkryzz> getChartDataList(String jgId);
 }

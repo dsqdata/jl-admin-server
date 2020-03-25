@@ -24,4 +24,13 @@ public interface YndpFkdcZdrympRepository extends BaseRepository<YndpFkdcZdrymp,
      */
     @Query(value = "select max(field4)  rq FROM yndp_fkdc_zdrymp  where zdrylx = ?1 and jgid = ?2",nativeQuery = true)
     String getMaxDay(String rylx, String jgid);
+
+    /**
+     * 获得重点人员摸排记录List
+     * @param rylx 人员类型
+     * @param jgid 机构ID
+     * @return List
+     */
+    @Query(value = "select * FROM yndp_fkdc_zdrymp where zdrylx = ?1 and jgid = ?2 ORDER BY field4 asc",nativeQuery = true)
+    List<YndpFkdcZdrymp> findZdrympList(String rylx, String jgid);
 }
