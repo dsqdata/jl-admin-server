@@ -33,4 +33,18 @@ public class YndpFkdcZdrympController {
         result.setMessage("成功");
         return result;
     }
+
+    @GetMapping(value = "/getZdrympDataListAll")
+    @ApiOperation("根据类型查询重点人员摸排数据List")
+    public Result getZdrympDataListAll(YndpFkdcZdrymp yndpFkdcZdrymp) {
+//        String rq = yndpFkdcZdrympService.getMaxDay(yndpFkdcZdrymp);
+//        yndpFkdcZdrymp.setField4(rq);
+        Result result = new Result();
+        result.setCode(Result.SUCCESS_CODE);
+        result.setData(yndpFkdcZdrympService.getZdrympDataList(yndpFkdcZdrymp));
+        result.setMessage("成功");
+        return result;
+    }
+
+
 }

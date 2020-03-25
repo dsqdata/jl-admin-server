@@ -67,10 +67,10 @@ public interface YndpFourSchoolRepository extends BaseRepository<YndpFourSchool,
      * @author xjl
      * @date 2020/3/9
      */
-    @Query(nativeQuery = true, value = "SELECT s.name school_id,a.ext21 FROM\n" +
+    @Query(nativeQuery = true, value = "SELECT s.name school_id,a.ext21  ext21 FROM\n" +
             "\t(SELECT school_id, sum(ext21) ext21 FROM yndp_four_school_msg\n" +
             "\t\tWHERE ext21 > 0 and DATE_FORMAT(date, 'Y%m%d') = DATE_FORMAT(?1, 'Y%m%d') GROUP BY school_id ) a, yndp_four_school s  where a.school_id=s.id ORDER BY ext21 desc")
-    List<YndpFourSchoolMsg> getXxtjs21(String date);
+    List<Map> getXxtjs21(String date);
 
     /**
      * 各学校在昆教职工情况跟踪-新发感染病例统计数
@@ -80,17 +80,17 @@ public interface YndpFourSchoolRepository extends BaseRepository<YndpFourSchool,
     @Query(nativeQuery = true, value = "SELECT s.name school_id,a.ext25 FROM\n" +
             "\t(SELECT school_id, sum(ext25) ext25 FROM yndp_four_school_msg\n" +
             "\t\tWHERE ext25 > 0 and DATE_FORMAT(date, 'Y%m%d') = DATE_FORMAT(?1, 'Y%m%d') GROUP BY school_id ) a, yndp_four_school s  where a.school_id=s.id ORDER BY ext25 desc")
-    List<YndpFourSchoolMsg> getXxtjs25(String date);
+    List<Map> getXxtjs25(String date);
 
     /**
      * 各学校在昆教职工情况跟踪-确诊病例统计数
      * @author xjl
      * @date 2020/3/9
      */
-    @Query(nativeQuery = true, value = "SELECT s.name school_id,a.ext26 FROM\n" +
+    @Query(nativeQuery = true, value = "SELECT s.name name,a.ext26 FROM\n" +
             "\t(SELECT school_id, sum(ext26) ext26 FROM yndp_four_school_msg\n" +
             "\t\tWHERE ext26 > 0 and DATE_FORMAT(date, 'Y%m%d') = DATE_FORMAT(?1, 'Y%m%d') GROUP BY school_id ) a, yndp_four_school s  where a.school_id=s.id ORDER BY ext26 desc")
-    List<YndpFourSchoolMsg> getXxtjs26(String date);
+    List<Map> getXxtjs26(String date);
 
     /**
      * 各学校在昆教职工情况跟踪-疑似病例 统计数
@@ -100,6 +100,6 @@ public interface YndpFourSchoolRepository extends BaseRepository<YndpFourSchool,
     @Query(nativeQuery = true, value = "SELECT s.name school_id,a.ext27 FROM\n" +
             "\t(SELECT school_id, sum(ext27) ext27 FROM yndp_four_school_msg\n" +
             "\t\tWHERE ext27 > 0  and DATE_FORMAT(date, 'Y%m%d') = DATE_FORMAT(?1, 'Y%m%d') GROUP BY school_id ) a, yndp_four_school s  where a.school_id=s.id ORDER BY ext27 desc")
-    List<YndpFourSchoolMsg> getXxtjs27(String date);
+    List<Map> getXxtjs27(String date);
 
 }

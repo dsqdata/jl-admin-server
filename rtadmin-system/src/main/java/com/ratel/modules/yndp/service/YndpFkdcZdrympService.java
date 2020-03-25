@@ -35,4 +35,18 @@ public class YndpFkdcZdrympService extends BaseService<YndpFkdcZdrymp, String> {
     public String getMaxDay(YndpFkdcZdrymp yndpFkdcZdrymp) {
         return yndpFkdcZdrympRepository.getMaxDay(yndpFkdcZdrymp.getZdrylx(),yndpFkdcZdrymp.getJgid());
     }
+
+    public Object getZdrympDataList(YndpFkdcZdrymp yndpFkdcZdrymp) {
+        Map<String, Object> map = new HashMap<>();
+        // 重点人员类型（1 特殊人群 2 入住留验点人员 3登记在册 4公安检查点排查人员）
+        List<YndpFkdcZdrymp> tsrqList = yndpFkdcZdrympRepository.findZdrympList("1",yndpFkdcZdrymp.getJgid());
+        List<YndpFkdcZdrymp> rzlydryList = yndpFkdcZdrympRepository.findZdrympList("2",yndpFkdcZdrymp.getJgid());
+        List<YndpFkdcZdrymp> djzcList = yndpFkdcZdrympRepository.findZdrympList("3",yndpFkdcZdrymp.getJgid());
+        List<YndpFkdcZdrymp> gajcdpcryList = yndpFkdcZdrympRepository.findZdrympList("4",yndpFkdcZdrymp.getJgid());
+        map.put("tsrqList",tsrqList);
+        map.put("rzlydryList",rzlydryList);
+        map.put("djzcList",djzcList);
+        map.put("gajcdpcryList",gajcdpcryList);
+        return map;
+    }
 }

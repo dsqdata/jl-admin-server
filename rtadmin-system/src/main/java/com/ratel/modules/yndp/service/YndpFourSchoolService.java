@@ -41,16 +41,16 @@ public class YndpFourSchoolService extends BaseService<YndpFourSchool, String> {
             return yndpFourSchoolRepository.getXxfls(date);
     }
 
-    public List<YndpFourSchoolMsg> getXxtjs21(String date){
+    public List<Map> getXxtjs21(String date){
         return yndpFourSchoolRepository.getXxtjs21(date);
     }
-    public List<YndpFourSchoolMsg> getXxtjs25(String date){
+    public List<Map> getXxtjs25(String date){
         return yndpFourSchoolRepository.getXxtjs25(date);
     }
-    public List<YndpFourSchoolMsg> getXxtjs26(String date){
+    public List<Map> getXxtjs26(String date){
         return yndpFourSchoolRepository.getXxtjs26(date);
     }
-    public List<YndpFourSchoolMsg> getXxtjs27(String date){
+    public List<Map> getXxtjs27(String date){
         return yndpFourSchoolRepository.getXxtjs27(date);
     }
 }

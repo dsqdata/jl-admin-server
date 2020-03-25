@@ -4,8 +4,18 @@ $(function(){
         color: ['#72d7e9', '#f5e665'],
 
         tooltip: {
-            trigger: 'axis'
-            //formatter: "{b} <br> 合格率: {c}%"
+            trigger: 'axis',
+            formatter:function(params) {
+                var relVal = params[0].name;
+                for (var i = 0;i< params.length; i++) {
+                    if(i==0){
+                        relVal += '<br/>' + params[i].marker + params[i].seriesName + ' : ' + (params[i].value == null?'-':params[i].value+"人");
+                    }else{
+                        relVal += '<br/>' + params[i].marker + params[i].seriesName + ' : ' + (params[i].value == null?'-':params[i].value)+"人";
+                    }
+                }
+                return relVal;
+            }
         },
         legend: {
             top:'5%',
@@ -47,7 +57,7 @@ $(function(){
         },
         yAxis: {
             type: 'value',
-            // name: '人',
+            name: '(人)',
             nameTextStyle: {
                 color: '#22b3e0'
             },
@@ -60,19 +70,7 @@ $(function(){
                 lineStyle: {
                     color: '#464f57'
                 }
-            },
-            // axisTick: {
-            //     show: false,
-            // },
-            // splitLine: {
-            //     show: false,
-            //     lineStyle: {
-            //         color: '#112a2f',
-            //         type: 'solid'
-            //     }
-            // },
-            // minInterval : 1,
-            // boundaryGap : [ 0, 0.1 ]
+            }
         },
         series: [
                     {

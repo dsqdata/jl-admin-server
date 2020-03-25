@@ -15,6 +15,18 @@ $(function() {
                 shadowStyle: {
                     color: 'rgba(67,100,247,0.08)'
                 }
+            },
+            formatter:function(params) {
+                var relVal = params[0].name;
+                for (var i = 0, l = params.length; i < l; i++) {
+
+                    if(i==0){
+                        relVal += '<br/>' + params[i].marker + params[i].seriesName + ' : ' + (params[i].value == null?'-':params[i].value)+"人";
+                    }else{
+                        relVal += '<br/>' + params[i].marker + params[i].seriesName + ' : ' + (params[i].value == null?'-':params[i].value)+"人";
+                    }
+                }
+                return relVal;
             }
         },
         legend: {
@@ -25,7 +37,7 @@ $(function() {
             itemHeight: 15,
             itemGap: 20,
             textStyle: {
-                fontSize: 18,
+                fontSize: 12,
                 color: '#1d97c0'
             },
 
@@ -44,8 +56,11 @@ $(function() {
                 }
             },
             axisLabel: {
-                fontSize: 18,
-                color: "#21b0dd"
+                show:true,
+                color: '#22b3e0',
+                fontSize: 12,
+                rotate: 30,
+                showMaxLabel: true
             },
             type: 'category',
             axisTick: {
@@ -56,13 +71,15 @@ $(function() {
         }],
         yAxis: [{
             type: 'value',
+            // min:1,
+            // max:100000,
             name: '(人)   ',
             nameTextStyle: {
                 color: "#21b0dd",
-                fontSize: 18
+                fontSize: 12
             },
             splitLine: {
-                show: false
+                show: true
             },
             axisTick: {
                 show: false
@@ -72,39 +89,11 @@ $(function() {
                 show: false
             },
             axisLabel: {
-                fontSize: 18,
+                fontSize: 12,
                 color: "#21b0dd"
             },
             position: 'left',
-        },
-            {
-                type: 'value',
-                name: '      %',
-                min: 0,
-                nameTextStyle: {
-                    color: "#21b0dd",
-                    fontSize: 18
-                },
-                axisTick: {
-                    show: false
-                },
-                axisLine: {
-                    lineStyle: {
-                        color: '#14688b'
-                    }
-                },
-                axisLabel: {
-                    fontSize: 18,
-                    color: "#21b0dd"
-                },
-                splitLine: {
-                    lineStyle: {
-                        color: "#13688a"
-                    }
-                },
-
-                position: 'right'
-            }
+        }
         ],
         series: [{
             name: '正常',
@@ -134,7 +123,6 @@ $(function() {
                         color: 'rgba(248,142,31,0.4)',
                         borderColor: '#f8a681'
                     }
-
                 },
                 data: line_data1
             }
