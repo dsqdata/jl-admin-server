@@ -89,7 +89,7 @@ public class YndpFourSchoolController {
     public Result getXxtjs21(@RequestParam String date,HttpServletRequest request, HttpServletResponse response) {
 
         // 1. 根据所选择的机构ID查询出列表
-        List<YndpFourSchoolMsg> yndpFourSchool = yndpFourSchoolService.getXxtjs21(date);
+        List<Map> yndpFourSchool = yndpFourSchoolService.getXxtjs21(date);
         Result result = new Result();
         result.setCode(Result.SUCCESS_CODE);
         result.setData(yndpFourSchool);
@@ -102,7 +102,7 @@ public class YndpFourSchoolController {
     public Result getXxtjs25(@RequestParam String date,HttpServletRequest request, HttpServletResponse response) {
 
         // 1. 根据所选择的机构ID查询出列表
-        List<YndpFourSchoolMsg> yndpFourSchool = yndpFourSchoolService.getXxtjs25(date);
+        List<Map> yndpFourSchool = yndpFourSchoolService.getXxtjs25(date);
         Result result = new Result();
         result.setCode(Result.SUCCESS_CODE);
         result.setData(yndpFourSchool);
@@ -115,7 +115,7 @@ public class YndpFourSchoolController {
     public Result getXxtjs26(@RequestParam String date,HttpServletRequest request, HttpServletResponse response) {
 
         // 1. 根据所选择的机构ID查询出列表
-        List<YndpFourSchoolMsg> yndpFourSchool = yndpFourSchoolService.getXxtjs26(date);
+        List<Map> yndpFourSchool = yndpFourSchoolService.getXxtjs26(date);
         Result result = new Result();
         result.setCode(Result.SUCCESS_CODE);
         result.setData(yndpFourSchool);
@@ -127,7 +127,7 @@ public class YndpFourSchoolController {
     public Result getXxtjs27(@RequestParam String date,HttpServletRequest request, HttpServletResponse response) {
 
         // 1. 根据所选择的机构ID查询出列表
-        List<YndpFourSchoolMsg> yndpFourSchool = yndpFourSchoolService.getXxtjs27(date);
+        List<Map> yndpFourSchool = yndpFourSchoolService.getXxtjs27(date);
         Result result = new Result();
         result.setCode(Result.SUCCESS_CODE);
         result.setData(yndpFourSchool);

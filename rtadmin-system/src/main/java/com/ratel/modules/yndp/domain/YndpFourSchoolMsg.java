@@ -6,6 +6,7 @@ import lombok.Data;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  * 校园疫情防控-学校疫情信息
@@ -36,102 +37,102 @@ public class YndpFourSchoolMsg extends YndpBaseUuidEntity {
      * 教职工流动情况跟踪-教职工总数
      */
     @Column(name = "ext11", columnDefinition = "INT COMMENT '教职工流动情况跟踪-教职工总数'")
-    private String ext11;
+    private int ext11;
     /**
      * 教职工流动情况跟踪-截止目前在昆教职工数
      */
     @Column(name = "ext12", columnDefinition = "INT COMMENT '教职工流动情况跟踪-截止目前在昆教职工数'")
-    private String ext12;
+    private int ext12;
     /**
      * 教职工流动情况跟踪-截止目前在其他州教职工数
      */
     @Column(name = "ext13", columnDefinition = "INT COMMENT '教职工流动情况跟踪-截止目前在其他州教职工数'")
-    private String ext13;
+    private int ext13;
     /**
      * 教职工流动情况跟踪-在湖北（含武汉）人数
      */
     @Column(name = "ext14", columnDefinition = "INT COMMENT '教职工流动情况跟踪-在湖北（含武汉）人数'")
-    private String ext14;
+    private int ext14;
     /**
      * 教职工流动情况跟踪-在其他省外人数
      */
     @Column(name = "ext15", columnDefinition = "INT COMMENT '教职工流动情况跟踪-在其他省外人数'")
-    private String ext15;
+    private int ext15;
     /**
      * 在昆教职工情况跟踪-有发热、咳嗦、呼吸困难等症状
      */
     @Column(name = "ext21", columnDefinition = "INT COMMENT '在昆教职工情况跟踪-有发热、咳嗦、呼吸困难等症状'")
-    private String ext21;
+    private int ext21;
     /**
      * 在昆教职工情况跟踪-外出后返昆未满15天
      */
     @Column(name = "ext22", columnDefinition = "INT COMMENT '在昆教职工情况跟踪-外出后返昆未满15天'")
-    private String ext22;
+    private int ext22;
     /**
      * 在昆教职工情况跟踪-正在进行隔离观察（治疗）
      */
     @Column(name = "ext23", columnDefinition = "INT COMMENT '在昆教职工情况跟踪-正在进行隔离观察（治疗）'")
-    private String ext23;
+    private int ext23;
     /**
      * 在昆教职工情况跟踪-与确诊及疑似密切接触未满15天
      */
     @Column(name = "ext24", columnDefinition = "INT COMMENT '在昆教职工情况跟踪-与确诊及疑似密切接触未满15天'")
-    private String ext24;
+    private int ext24;
     /**
      * 在昆教职工情况跟踪-新发感染病例
      */
     @Column(name = "ext25", columnDefinition = "INT COMMENT '在昆教职工情况跟踪-新发感染病例'")
-    private String ext25;
+    private int ext25;
     /**
      * 在昆教职工情况跟踪-确诊病例
      */
     @Column(name = "ext26", columnDefinition = "INT COMMENT '在昆教职工情况跟踪-确诊病例'")
-    private String ext26;
+    private int ext26;
     /**
      * 在昆教职工情况跟踪-疑似病例
      */
     @Column(name = "ext27", columnDefinition = "INT COMMENT '在昆教职工情况跟踪-疑似病例'")
-    private String ext27;
+    private int ext27;
     /**
      * 所有教职工到疫源地既往史-到湖北（含武汉）情况-总人数
      */
     @Column(name = "ext31", columnDefinition = "INT COMMENT '所有教职工到疫源地既往史-到湖北（含武汉）情况-总人数'")
-    private String ext31;
+    private int ext31;
     /**
      * 所有教职工到疫源地既往史-到湖北（含武汉）情况-已返昆人数
      */
     @Column(name = "ext32", columnDefinition = "INT COMMENT '所有教职工到疫源地既往史-到湖北（含武汉）情况-已返昆人数'")
-    private String ext32;
+    private int ext32;
     /**
      * 所有教职工到疫源地既往史-到武汉情况-总人数
      */
     @Column(name = "ext33", columnDefinition = "INT COMMENT '所有教职工到疫源地既往史-到武汉情况-总人数'")
-    private String ext33;
+    private int ext33;
     /**
      * 所有教职工到疫源地既往史-到武汉情况-已返昆人数
      */
     @Column(name = "ext34", columnDefinition = "INT COMMENT '所有教职工到疫源地既往史-到武汉情况-已返昆人数'")
-    private String ext34;
+    private int ext34;
     /**
      * 扩展1
      */
     @Column(name = "ext1", columnDefinition = "INT COMMENT '扩展1'")
-    private String ext1;
+    private int ext1;
     /**
      * 扩展2
      */
     @Column(name = "ext2", columnDefinition = "INT COMMENT '扩展2'")
-    private String ext2;
+    private int ext2;
     /**
      * 扩展3
      */
     @Column(name = "ext3", columnDefinition = "INT COMMENT '扩展3'")
-    private String ext3;
+    private int ext3;
     /**
      * 扩展4
      */
     @Column(name = "ext4", columnDefinition = "INT COMMENT '扩展4'")
-    private String ext4;
+    private int ext4;
     /**
      * 扩展5
      */
@@ -147,6 +148,7 @@ public class YndpFourSchoolMsg extends YndpBaseUuidEntity {
      */
     @Column(name = "ext7", columnDefinition = "VARCHAR(500) COMMENT '扩展7'")
     private String ext7;
+
     /**
      * 创建时间
      */
