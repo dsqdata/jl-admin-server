@@ -9,6 +9,7 @@
     <script type="text/javascript" src="component/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="component/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <script type="text/javascript" src="component/echarts/echarts.js"></script>
+    <script type="text/javascript" src="static/js/template-web.js"></script>
 
 </head>
 <body>
@@ -61,7 +62,13 @@
         </div>
         <div class="midCon posT">
             <ul class="schoolList02 clearfix">
-                <li class="itemLi"><a href="#"><strong>学校总数</strong><p><em>47</em>个</p><p>分校点合并统计</p></a>
+                <li class="itemLi"><a href="#"><strong>学校总数</strong>
+                        <span id="orgBox01">
+                            <script id="tpl-orgBox01" type="text/html">
+                               <p><em>{{data}}</em>个</p>
+                           </script>
+                        </span>
+                    <p>分校点合并统计</p></a>
                 <div class="sWin01">
                     <div class="searchBox clearfix"><input type="text" class="form-control winput"><button type="button" class="btn sbtn"></button></div>
                     <ul class="sWinList">
@@ -228,10 +235,16 @@
 
             <dl class="schoolLegend">
                 <dt>图例</dt>
-                <dd class="dd01">托幼机构 <span>2512 <em>个</em></span></dd>
-                <dd class="dd02">小学<span>2512 <em>个</em></span></dd>
+                <span id="orgBox02">
+                <script id="tpl-orgBox02" type="text/html">
+                     {{each xxfl item i}}
+                        <dd class="dd01">{{item.xxfl}} <span>{{item.count}}<em>个</em></span></dd>
+                     {{/each}}
+              <!--  <dd class="dd02">小学<span>2512 <em>个</em></span></dd>
                 <dd class="dd03">初中<span>2512 <em>个</em></span></dd>
-                <dd class="dd04">大专院校<span>2512 <em>个</em></span></dd>
+                <dd class="dd04">大专院校<span>2512 <em>个</em></span></dd>-->
+                </script>
+                </span>
             </dl>
             
         </div>
@@ -280,7 +293,8 @@
     </div>
 
 </div>
-
+<script src="./static/js/jquery.ajax.js"></script>
+<script type="text/javascript" src="src/js/four_x.js"></script>
 <script>
     $(".schoolBtn").click(function (){
         var flag = $(".schoolMid").is(":hidden");
@@ -300,6 +314,11 @@
     })
     $(document).click(function(){
         $('.schoolList02 .sWin01').hide();
+    });
+
+    $(document).ready(function () {
+        getXxzs();
+        getXxtl();
     });
 
 </script>
