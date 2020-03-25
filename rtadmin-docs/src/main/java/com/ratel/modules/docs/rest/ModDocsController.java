@@ -8,15 +8,16 @@ import com.ratel.modules.logging.aop.log.Log;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.websocket.server.PathParam;
 import java.io.IOException;
 
 @RestController
@@ -28,6 +29,15 @@ public class ModDocsController {
     private ModDocsService modDocsService;
 
     private static final String ENTITY_NAME = "modDocs";
+
+    @GetMapping("/getPageData")
+    public Page<ModDocs> getPageData(@PathParam("userId") Integer userId,
+                                     @PathParam("currentPage") Integer currentPage,
+                                     @PathParam("pageSize") Integer pageSize) {
+        // 同步前端传回的当前页参数
+        currentPage = currentPage - 1;
+        return modDocsService.getPageData(userId, currentPage, pageSize);
+    }
 
     @Log("导出文档数据")
     @ApiOperation("导出文档数据")
