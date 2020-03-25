@@ -7,6 +7,7 @@ import com.ratel.modules.yndp.domain.YndpThreePageSchool;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 学校复工情况
@@ -16,22 +17,32 @@ import java.util.List;
 @Repository
 public interface YndpFourSchoolRepository extends BaseRepository<YndpFourSchool, String> {
 
+
+
+    /**
+     * 学校总数
+     * @author xjl
+     * @date 2020/3/9
+     */
+    @Query(nativeQuery = true, value = "select * from yndp_four_school")
+    List<YndpFourSchool> getXxjw();
+
     /**
      * 学校总数
      * @author xjl
      * @date 2020/3/9
      */
     @Query(nativeQuery = true, value = "select count(*) from yndp_four_school")
-    YndpFourSchool getXxzs();
+    String getXxzs();
 
     /**
      * 学校图例
      * @author xjl
      * @date 2020/3/9
      */
-    @Query(nativeQuery = true, value = "select  count(type) count,type type,CASE  WHEN ext3 =1  THEN  '托幼机构' WHEN ext3 =2  THEN  '小学' WHEN ext3 =3 THEN '初中' WHEN ext3 =4 THEN '大专院校' END 'type1' \n" +
+    @Query(nativeQuery = true, value = "select  count(type) count,type type,CASE  WHEN type =1  THEN  '托幼机构' WHEN type =2  THEN  '小学' WHEN type =3 THEN '初中' WHEN type =4 THEN '大专院校' END 'xxfl' \n" +
             "from yndp_four_school   GROUP BY type ORDER BY type")
-    List<YndpFourSchool> getXxtl();
+    List<Map> getXxtl();
 
 
 

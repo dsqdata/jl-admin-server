@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.util.Date;
+import javax.persistence.Transient;
 
 /**
  *
@@ -22,8 +23,14 @@ public class YndpFourSchool extends YndpBaseUuidEntity {
     /**
      * id
      */
-    @Column(name = "id", columnDefinition = "VARCHAR(20) COMMENT 'id '")
+    @Column(name = "id", columnDefinition = "VARCHAR(20) COMMENT 'id'")
     private String id;
+
+    @Transient
+    private String count;
+
+    @Transient
+    private String xxfl;
     /**
      * 学校名称
      */
@@ -57,6 +64,8 @@ public class YndpFourSchool extends YndpBaseUuidEntity {
      */
     @Column(name = "create_time", columnDefinition = "VARCHAR(20) COMMENT '创建日期'")
     private Date create_time;
+
+
 
 
 }

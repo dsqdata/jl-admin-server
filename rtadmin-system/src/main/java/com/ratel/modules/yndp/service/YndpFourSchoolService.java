@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
+import java.util.Map;
+
 /**
  * 学校复工情况
  * @author xjl
@@ -22,11 +24,16 @@ public class YndpFourSchoolService extends BaseService<YndpFourSchool, String> {
     @Autowired
     private YndpFourSchoolRepository yndpFourSchoolRepository;
 
-    public YndpFourSchool getXxzs() {
+    public List<YndpFourSchool> getXxjw() {
+        return yndpFourSchoolRepository.getXxjw();
+    }
+
+
+    public String getXxzs() {
         return yndpFourSchoolRepository.getXxzs();
     }
 
-    public List<YndpFourSchool> getXxtl() {
+    public List<Map> getXxtl() {
         return yndpFourSchoolRepository.getXxtl();
     }
 

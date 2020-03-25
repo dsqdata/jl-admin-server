@@ -678,3 +678,77 @@ a,a:hover{ text-decoration: none!important;}
 .btmPart01n{ height: 100%; width: 100%; background: rgba(1,15,26,0.80);border: 1px solid #117491;box-shadow: inset 0 0 22px 0 #117491;}
 .btmPart01n .pieBox{ width: 72.666%;}
 .btmPart01n .actionBox02{ width: 26.444%;}
+
+/*校园疫情防控*/
+#header h1.h04{ float: left; width: 538px; height: 54px; background: url("../images/tit_h1_03.png") no-repeat; background-size:100% 100%; }
+.schoolSide01{ position: relative; height:  calc(33% - 25px) ; padding: 5px; background: rgba(3,28,47,0.60); border: 1px solid #117491; box-shadow: inset 0 0 22px 0 #117491; margin-bottom: 25px;}
+.schoolSide02{ position: relative; height:  calc(39% - 25px);padding: 5px; background: rgba(3,28,47,0.60); border: 1px solid #117491; box-shadow: inset 0 0 22px 0 #117491; margin-bottom: 25px;}
+.schoolSide03{ position: relative;  height: 28%;padding: 5px; background: rgba(3,28,47,0.60); border: 1px solid #117491; box-shadow: inset 0 0 22px 0 #117491;}
+.schoolTxt01{ width: 70%; font-size: 18px; font-weight: bold; margin: 30px auto 0 auto; padding:10px 15px 8px 15px;background-image: linear-gradient(to right, #096e9c , #069777);border: 1px solid #23B7E5;box-shadow: inset 0 2px 11px 0 rgba(0,0,0,0.50);}
+.schoolTxt01:before{ content: ''; float: left; margin-right: 15px; display: block; margin-top: 2px; width: 29px; height: 22px; background: url("../images/school_i01.png") no-repeat; background-size:100%; }
+.schoolTxt01 span{ float: right; font-size: 20px;}
+.schoolTxt01 em{ font-weight: normal; font-size: 16px; margin-left: 5px;}
+.schoolTxt02{background-image: linear-gradient(to right, #275b1c , #5f8935);border: 1px solid #7ED321;box-shadow: inset 0 2px 11px 0 rgba(0,0,0,0.50);}
+.schoolTxt02:before{margin-top: 0; width:22px; height:24px;background: url("../images/school_i02.png") no-repeat; background-size:100%;}
+.schoolBox01{ padding: 18px 20px;  margin: 0 auto 12px auto; height: 38%; width: 88%; background-image: linear-gradient(to right, #096e9c , #069777);border: 1px solid #23B7E5;box-shadow: inset 0 2px 11px 0 rgba(0,0,0,0.50);}
+.mt30{ margin-top: 30px;}
+.schoolTit01{ font-size: 18px; font-weight: bold; text-align: center; margin-bottom: 12px;}
+.schoolList01{ overflow: hidden;}
+.schoolList01 li{ float: left; width: 40%; font-size: 17px; font-weight: bold;}
+.schoolList01 li:first-child{}
+.schoolList01 li:last-child{ float: right; color: #F8E71C;}
+.schoolList01 span{ float: right; font-size: 20px;}
+.schoolList01 em{ font-size: 12px; font-weight: normal; margin-left: 5px;}
+.schoolBox01.schoolGreen{background-image: linear-gradient(to right, #275b1c , #5f8935);border: 1px solid #7ED321;box-shadow: inset 0 2px 11px 0 rgba(0,0,0,0.50);}
+
+.schoolMid{ display:none;position: absolute; bottom: 0; left:0; z-index: 900; height: 35%; width: 100%; padding: 5px; background: rgba(3,28,47,0.60); border: 1px solid #117491; box-shadow: inset 0 0 22px 0 #117491;}
+.schoolBtn{ display: block; cursor: pointer; width: 35px; height: 35px; position: absolute; bottom:37%; left:0; background: url("../images/school_i05.png") no-repeat; background-size:100%; }
+.txtDate{ position: absolute; right: 0; top:35px; font-size: 18px; color: #23B7E5;background: url("../images/icon_update.png") no-repeat; background-size:23px 29px; padding: 3px 0 7px 35px; }
+.txtDate span{ color: #7ED321; margin-left:12px; }
+.schoolList02 .itemLi{ position: relative; float: left; margin: 0 4px; padding: 8px 0; font-size: 13px; width: calc(20% - 8px); height:83px;background: rgba(255,89,89,0.20);border: 1px solid #FF5959; text-align: center;}
+.schoolList02 li a{ color: #fff;}
+.schoolList02 .itemLi:before{ content: ''; display: block; width: 16px; height: 16px; position:absolute; right:7px; top:7px; background: url("../images/school_i04.png") no-repeat; background-size:100%;  }
+.schoolList02 .itemLi strong{ display: block; text-align: center;}
+.schoolList02 .itemLi:first-child{padding: 6px 0;background-image: linear-gradient(to right, #a65b22 , #b18f42);border: 1px solid rgba(248,231,28,0.80);box-shadow: inset 0 2px 11px 0 rgba(0,0,0,0.50);}
+.schoolList02 .itemLi:first-child:before{ background: url("../images/school_i03.png") no-repeat; background-size:100%; }
+.schoolList02 .itemLi span{ display: block; text-align: center;}
+.schoolList02 .itemLi em{ font-size: 22px;}
+.sWin01{ display: none; position: absolute;z-index: 1000;  padding: 12px; top:90px; left:0; width:190px; height: 175px;background: rgba(0,0,0,0.80);border: 1px solid #1CFFFB;box-shadow: 4px 4px 8px 0 rgba(0,0,0,0.30);border-radius: 2px; }
+.sWinList{ color:#1CFFFB; line-height: 28px;}
+.searchBox{ background: #108383; border-radius: 3px; margin-bottom: 10px; }
+.searchBox input{ float: left; width: 120px; color: #fff;padding: 5px 12px; height: 24px; background: none; border: none; box-shadow: none!important;-webkit-box-shadow:none!important;}
+.searchBox button{ float: right; width: 18px; height: 18px; margin: 3px 3px 0 0; padding: 0; background: url("../images/search.png") no-repeat; background-size:100% 100%; }
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus{outline:none!important;}
+.sWin01.redBg{border: 1px solid #FF5959;}
+.sWin01.redBg .searchBox{background: #812e30;}
+.sWin01.redBg .sWinList{ color: #fb5858;}
+.schoolLegend{ width: 192px; padding: 10px; position: absolute; right: 0;bottom: 50px;background: rgba(0,0,0,0.60);border: 1px solid #3e7481;box-shadow: 4px 4px 8px 0 rgba(0,0,0,0.30);}
+.schoolLegend dt{ text-align: center; margin-bottom: 10px;}
+.schoolLegend dd{ overflow: hidden; height: 35px; padding: 0 0 0 30px;}
+.schoolLegend dd span{ float: right;}
+.schoolLegend .dd01{ background: url("../images/legend01.png") no-repeat left top; background-size: 19px 19px; }
+.schoolLegend .dd02{ background: url("../images/legend02.png") no-repeat left top; background-size: 19px 19px; }
+.schoolLegend .dd03{ background: url("../images/legend03.png") no-repeat left top; background-size: 19px 19px; }
+.schoolLegend .dd04{ background: url("../images/legend04.png") no-repeat left top; background-size: 19px 19px; }
+/*翻页*/
+.navigation{ float: right; margin: 10px 0; text-align: right; line-height: 24px; font-size: 12px;}
+.dataTotalNum{ padding: 0 10px; background: #fff;  }
+.navigation span,.histroyCon .navigation select,.histroyCon .navigation ul{ float: left; color: #5a5a5a; }
+.navigation select,.histroyCon .navigation input{ margin:0 10px; border: 1px solid #e4e4e4!important; }
+.navigation select.input-sm{  height: 25px; line-height: 25px; padding: 0;  border-radius: 3px;  color: #999;}
+.pagination > li{ float: left; margin-right: 5px; }
+.pagination > li > a,.histroyCon .pagination > li > span{ padding: 1px 5px; color: #1CFFFB }
+.pagination > li > a{ border: none;  }
+.pagination > li:first-child > a{ color: #a9a8af;}
+.pagination{ margin: 0 ; float: left;}
+.pagination li:first-child span,.pagination li:last-child span{ color: #1CFFFB!important;}
+.currentPage a,.histroyCon .currentPage a:hover,.histroyCon .currentPage a:focus{ background: #118b8d!important; border: 1px solid #108ee9;  color: #fff!important; }
+.input-sm,.inputPage{ float: left; color: #999!important;}
+.inputPage input{ width: 40px; height: 25px; line-height: 25px; text-align: center; border-radius: 3px; border: 1px solid #e4e4e4; margin: 0 5px; }
+.pagination>li>a, .pagination>li>span{ background: #3b4950;}
+.pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover{background-color:#118b8d; color: #fff;}
+.sWin01.redBg .pagination > li > a,.sWin01.redBg .pagination > li > span{  color: #fb5858 }
+.sWin01.redBg .pagination li:first-child span,.sWin01.redBg .pagination li:last-child span{ color: #fb5858!important;}
+.sWin01.redBg .pagination>li>a:focus,.sWin01.redBg .pagination>li>a:hover,.sWin01.redBg .pagination>li>span:focus,.sWin01.redBg .pagination>li>span:hover{ background:#812e30; color: #fff; }
+.sWin01.redBg .currentPage a,.sWin01.redBg .currentPage a:hover,.sWin01.redBg .currentPage a:focus{ background: #812e30!important;  }
+

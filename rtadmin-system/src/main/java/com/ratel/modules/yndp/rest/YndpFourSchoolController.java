@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
+import java.util.Map;
+
 /**
  * 学校复工情况
  * @author xjl
@@ -29,15 +31,29 @@ public class YndpFourSchoolController {
     @Autowired
     YndpFourSchoolService yndpFourSchoolService;
 
+    @ApiOperation("查询出学校坐标")
+    @GetMapping(value = "/getXxjw")
+    public Result getXxjw(HttpServletRequest request, HttpServletResponse response) {
+
+        // 1. 根据所选择的机构ID查询出列表
+        List<YndpFourSchool> yndpFourSchool = yndpFourSchoolService.getXxjw();
+        Result result = new Result();
+        result.setCode(Result.SUCCESS_CODE);
+        result.setData(yndpFourSchool);
+        result.setMessage("成功");
+        return result;
+    }
+
+
     @ApiOperation("查询出学校总数")
     @GetMapping(value = "/getXxzs")
     public Result getXxzs(HttpServletRequest request, HttpServletResponse response) {
 
         // 1. 根据所选择的机构ID查询出列表
-        YndpFourSchool yndpFourSchool = yndpFourSchoolService.getXxzs();
+        String count = yndpFourSchoolService.getXxzs();
         Result result = new Result();
         result.setCode(Result.SUCCESS_CODE);
-        result.setData(yndpFourSchool);
+        result.setData(count);
         result.setMessage("成功");
         return result;
     }
@@ -47,7 +63,7 @@ public class YndpFourSchoolController {
     public Result getXxtl(HttpServletRequest request, HttpServletResponse response) {
 
         // 1. 根据所选择的机构ID查询出列表
-        List<YndpFourSchool> yndpFourSchool = yndpFourSchoolService.getXxtl();
+        List<Map> yndpFourSchool = yndpFourSchoolService.getXxtl();
         Result result = new Result();
         result.setCode(Result.SUCCESS_CODE);
         result.setData(yndpFourSchool);
