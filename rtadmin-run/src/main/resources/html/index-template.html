@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>昆明经开区网格化管理服务组织架构</title>
+    <link rel="stylesheet" type="text/css" href="component/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="component/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="src/css/links.css">
+    <script type="text/javascript" src="component/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="component/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="static/js/jquery.ajax.js"></script>
+    <script type="text/javascript" src="static/js/template-web.js"></script>
+    <script type="text/javascript" src="static/js/jquery.template.js"></script>
+    <script type="text/javascript" src="static/js/jquery.template.ext.js"></script>
+</head>
+<body>
+<div id="wrapper">
+    <div id="tlDemo">
+
+    </div>
+</div>
+
+
+<script>
+
+    $("#tlDemo").tlProcessAppend({
+        id: 'test',
+        src: './template/demo/demo.html'
+    }, {
+        value: '777'
+    }, function () {
+        console.log(0)
+    })
+
+</script>
+</body>
+</html>
