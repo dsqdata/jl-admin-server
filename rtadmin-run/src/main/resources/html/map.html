@@ -518,17 +518,16 @@
 <script type="text/javascript" src="src/js/secondYqlkrytjChartLine.js"></script>
 
 <script>
-
     var initTime = function (data) {
         var arr = data.sjgxsj.split('-');
-        console.log(arr);
+        // console.log(arr);
         var time = arr[0]+"年"+arr[1]+"月"+arr[2]+"日";
         var html = template('tpl-header', {sjgxsj: time});
         document.getElementById('header').innerHTML = html;
     }
 
     function searchMap(type,jgId,jgName) {//初始化-资源配置
-        console.log("type==="+type);
+        // console.log("type==="+type);
         debugger;
         if(type === 1 || type === '1' ){
             $("#btn02").removeClass('hover')
@@ -1002,7 +1001,7 @@
                     data:(function () {
                         var arrNum = [];
                         var zdrymp = res.data;
-                        console.log(zdrymp)
+                        // console.log(zdrymp)
                         for(var i=0;i<zdrymp.length; i++){
                             arrNum.push({"value": zdrymp[i].zdryrs,"name":zdrymp[i].zdrymc,"xzrs":zdrymp[i].zdryxzrs,"bfb":zdrymp[i].zdryrszb});
                             pie01rs= parseInt(zdrymp[i].zdryrs)+parseInt(pie01rs);
@@ -1036,7 +1035,7 @@
                     data:(function () {
                         var arrNum = [];
                         var zdrymp = res.data;
-                        console.log(zdrymp)
+                        // console.log(zdrymp)
                         for(var i=0;i<zdrymp.length; i++){
                             arrNum.push({"value": zdrymp[i].zdryrs,"name":zdrymp[i].zdrymc,"xzrs":zdrymp[i].zdryxzrs,"bfb":zdrymp[i].zdryrszb});
                             pie01rs= parseInt(zdrymp[i].zdryrs)+parseInt(pie01rs);
@@ -1051,7 +1050,7 @@
                 tooltip: {
                     trigger: 'item',
                     formatter:function(data){
-                        console.log(data)
+                        // console.log(data)
                         return data.name+ " : " + data.value + " ("+data.percent.toFixed(0)+"%)";
                     }
                 },
@@ -1070,7 +1069,7 @@
                     data:(function () {
                         var arrNum = [];
                         var zdrymp = res.data;
-                        console.log(zdrymp)
+                        // console.log(zdrymp)
                         for(var i=0;i<zdrymp.length; i++){
                             arrNum.push({"value": zdrymp[i].zdryrs,"name":zdrymp[i].zdrymc,"xzrs":zdrymp[i].zdryxzrs,"bfb":zdrymp[i].zdryrszb});
                             pie01rs= parseInt(zdrymp[i].zdryrs)+parseInt(pie01rs);
@@ -1085,7 +1084,7 @@
                 tooltip: {
                     trigger: 'item',
                     formatter:function(data){
-                        console.log(data)
+                        // console.log(data)
                         return data.name+ " : " + data.value + " ("+data.percent.toFixed(0)+"%)";
                     }
                 },
@@ -1104,7 +1103,7 @@
                     data:(function () {
                         var arrNum = [];
                         var zdrymp = res.data;
-                        console.log(zdrymp)
+                        // console.log(zdrymp)
                         for(var i=0;i<zdrymp.length; i++){
                             arrNum.push({"value": zdrymp[i].zdryrs,"name":zdrymp[i].zdrymc,"xzrs":zdrymp[i].zdryxzrs,"bfb":zdrymp[i].zdryrszb});
                             pie01rs= parseInt(zdrymp[i].zdryrs)+parseInt(pie01rs);
@@ -1119,7 +1118,7 @@
                 tooltip: {
                     trigger: 'item',
                     formatter:function(data){
-                        console.log(data)
+                        // console.log(data)
                         return data.name+ " : " + data.value + " ("+data.percent.toFixed(0)+"%)";
                     }
                 },
@@ -1288,8 +1287,8 @@
             var jgId = e.jgId;
             var jgName = e.jgName;
             var jgType = e.jgType;
-            console.log("!!!!!"+jgId)
-            console.log("!!!!!"+jgName)
+            // console.log("!!!!!"+jgId)
+            // console.log("!!!!!"+jgName)
             initHtmlNoMap(jgId, jgName,jgType);
         })
         // var jgId = getQueryVariable("jgId")
@@ -1432,8 +1431,8 @@
         initBottomSwitch(jgType);
         // 网格化排查echarts   联防联控echarts
         $.axget1("/api/yndp/wghpclflk/getPcjlflkListAll?jgId="+jgId,false, function (res) {
-            console.log("_____---网格化排查--联防联控---_____");
-            console.log(res.data);
+            // console.log("_____---网格化排查--联防联控---_____");
+            // console.log(res.data);
             //网格化排查echarts
             var xAxisData = [];
             var wghYjrcjpcryzs=[];
@@ -1507,12 +1506,12 @@
             });
         });
 
-        console.log("-----------------------------------");
-        console.log(jgId);
+        // console.log("-----------------------------------");
+        // console.log(jgId);
         // 重点人员摸排
         $.axget("/api/yndp/zdrymp/getZdrympDataListAll?jgid="+jgId, function (res) {
-            console.log("_____----重点人员摸排----_____");
-            console.log(res.data);
+            // console.log("_____----重点人员摸排----_____");
+            // console.log(res.data);
 
             //登记在册人员排查
             var xjdzcAxisData = [];
@@ -1667,8 +1666,8 @@
 
         // 疫区来昆人员追踪
         $.axget("/api/yndp/yqlkryzz/getChartDataList?jgId="+jgId, function (res) {
-            console.log("_____----疫区来昆人员追踪----_____");
-            console.log(res.data);
+            // console.log("_____----疫区来昆人员追踪----_____");
+            // console.log(res.data);
             var xAxisData = [];
             var yYzdlgData = [];//已住店离观
             var yLkData = [];//离昆
