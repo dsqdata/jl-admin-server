@@ -242,32 +242,32 @@
 //     fourthZkxsqkgzCircle.setOption(option);
 // });
 
-$(function(){
+function fourthZkxsqkgzCircle(date,school_id,type,ext12,ext21,ext22,ext23,ext24,ext25,ext26,ext27){
 
     data = [{
             'name': '有发热、咳嗽、呼吸困难等症状',
-            'value': 20
+            'value': ext21
         }, {
             'name': '外出后返昆未满15天',
-            'value': 10
+            'value': ext22
         }, {
             'name': '正在进行隔离观察（治疗）',
-            'value': 19
+            'value': ext23
         }, {
             'name': '与确诊及疑似密切接触未满15天',
-            'value': 15
+            'value': ext24
         },
         {
             'name': '新发感染病例',
-            'value': 11
+            'value': ext25
         },
         {
             'name': '确诊病例',
-            'value': 6
+            'value': ext26
         },
         {
             'name': '疑似病例',
-            'value': 1
+            'value': ext27
         }]
 
     let arrValue = getArrayValue(data, "value");
@@ -444,16 +444,28 @@ $(function(){
         series: seriesObjs
     }
 
-    fourthZkxsqkgzCircle.setOption(option);
+    fourthZkxsqkgz.setOption(option);
+    fourthZkxsqkgz.on('click',  function (params) {
+        $(".schoolMid").show();
+        initOrgBoxTitle(params.seriesName);
+        YndpFourPeopleMsg(date,school_id,type,params.seriesName);
+    });
 
+    fourthZkxsqkgz.on('legendselectchanged', function(obj) {
+        var selected = obj.selected;
+        var legend = obj.name;
+        $(".schoolMid").show();
+        initOrgBoxTitle(legend);
+        YndpFourPeopleMsg(date,school_id,type,legend);
+
+    });
 
     window.onresize = function () {
         setTimeout(function () {
-            myChart.resize();
-
+            fourthZkxsqkgz.resize();
         }, 300)
     };
-})
+}
 
 
 

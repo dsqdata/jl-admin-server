@@ -67,11 +67,13 @@ function YndpFourSchoolMsg(date,school_id,type){
         if(1==type){
             chartBar401(date,school_id,type,ext11,ext12,ext13,ext14,ext15);
             //chartBar403(date,school_id,type,ext12,ext21,ext22,ext23,ext24,ext25,ext26,ext27);
+            fourthZkjzgqkgzCircle(date,school_id,type,ext12,ext21,ext22,ext23,ext24,ext25,ext26,ext27);
         }
 
         if(2==type){
             chartBar402(date,school_id,type,ext11,ext12,ext13,ext14,ext15);
             //chartBar404(date,school_id,type,ext12,ext21,ext22,ext23,ext24,ext25,ext26,ext27);
+            fourthZkxsqkgzCircle(date,school_id,type,ext12,ext21,ext22,ext23,ext24,ext25,ext26,ext27);
         }
 
     });
@@ -141,7 +143,7 @@ function YndpFourPeopleMsg(date,school_id,type,title){
             chartBar422(rq,ext11,ext15);
         }*/
 
-        if('有发热、咳嗦、呼吸困难等症状'==title){
+        if('有发热、咳嗽、呼吸困难等症状'==title){
             chartBar422(rq,ext12,ext21);
         }
         if('外出后返昆未满15天'==title){
