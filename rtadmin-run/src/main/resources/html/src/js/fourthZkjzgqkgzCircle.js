@@ -111,9 +111,12 @@ debugger;
             icon: 'circle',
             itemWidth: 0,
             itemHeight: 0,
-            itemGap: 8,
+            // itemGap: 8,
+            // left: '175',
+            // top:'20',
+            itemGap: 4,
             left: '175',
-            top:'20',
+            top:'35',
 
             data: ['有发热、咳嗽、呼吸困难等症状','外出后返昆未满15天','正在进行隔离观察（治疗）','与确诊及疑似密切接触未满15天','新发感染病例','确诊病例','疑似病例'],
             formatter:function(name){
