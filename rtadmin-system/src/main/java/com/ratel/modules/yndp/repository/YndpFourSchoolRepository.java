@@ -24,8 +24,8 @@ public interface YndpFourSchoolRepository extends BaseRepository<YndpFourSchool,
      * @author xjl
      * @date 2020/3/9
      */
-    @Query(nativeQuery = true, value = "select * from yndp_four_school")
-    List<YndpFourSchool> getXxjw();
+    @Query(nativeQuery = true, value = "select * from yndp_four_school where name LIKE %?1%")
+    List<YndpFourSchool> getXxjw(String name);
 
     /**
      * 学校总数
@@ -52,13 +52,13 @@ public interface YndpFourSchoolRepository extends BaseRepository<YndpFourSchool,
      * @author xjl
      * @date 2020/3/9
      */
-    @Query(nativeQuery = true, value = "select  count(DISTINCT(school_id)) ext21  from yndp_four_school_msg   where ext21 >0 and DATE_FORMAT(date, 'Y%m%d') = DATE_FORMAT(?1, 'Y%m%d') and  school_id in(SELECT  id from yndp_four_school) \n" +
-            "UNION ALL\n" +
-            "select  count(DISTINCT(school_id)) ext25  from yndp_four_school_msg   where ext25 >0 and DATE_FORMAT(date, 'Y%m%d') = DATE_FORMAT(?1, 'Y%m%d') and  school_id in(SELECT  id from yndp_four_school) \n" +
+    @Query(nativeQuery = true, value = "select  count(DISTINCT(school_id)) ext25  from yndp_four_school_msg   where ext25 >0 and DATE_FORMAT(date, 'Y%m%d') = DATE_FORMAT(?1, 'Y%m%d') and  school_id in(SELECT  id from yndp_four_school) \n" +
             "UNION ALL\n" +
             "select  count(DISTINCT(school_id)) ext26  from yndp_four_school_msg   where ext26 >0 and DATE_FORMAT(date, 'Y%m%d') = DATE_FORMAT(?1, 'Y%m%d') and  school_id in(SELECT  id from yndp_four_school) \n" +
             "UNION ALL\n" +
-            "select  count(DISTINCT(school_id)) ext27  from yndp_four_school_msg   where ext27 >0 and DATE_FORMAT(date, 'Y%m%d') = DATE_FORMAT(?1, 'Y%m%d') and  school_id in(SELECT  id from yndp_four_school) ")
+            "select  count(DISTINCT(school_id)) ext27  from yndp_four_school_msg   where ext27 >0 and DATE_FORMAT(date, 'Y%m%d') = DATE_FORMAT(?1, 'Y%m%d') and  school_id in(SELECT  id from yndp_four_school) \n" +
+            "UNION ALL\n" +
+            "select  count(DISTINCT(school_id)) ext21  from yndp_four_school_msg   where ext21 >0 and DATE_FORMAT(date, 'Y%m%d') = DATE_FORMAT(?1, 'Y%m%d') and  school_id in(SELECT  id from yndp_four_school) ")
     List<String> getXxfls(String date);
 
 
@@ -69,8 +69,8 @@ public interface YndpFourSchoolRepository extends BaseRepository<YndpFourSchool,
      */
     @Query(nativeQuery = true, value = "SELECT s.name school_id,a.ext21  ext21 FROM\n" +
             "\t(SELECT school_id, sum(ext21) ext21 FROM yndp_four_school_msg\n" +
-            "\t\tWHERE ext21 > 0 and DATE_FORMAT(date, 'Y%m%d') = DATE_FORMAT(?1, 'Y%m%d') GROUP BY school_id ) a, yndp_four_school s  where a.school_id=s.id ORDER BY ext21 desc")
-    List<Map> getXxtjs21(String date);
+            "\t\tWHERE ext21 > 0 and DATE_FORMAT(date, 'Y%m%d') = DATE_FORMAT(?1, 'Y%m%d') GROUP BY school_id ) a, yndp_four_school s  where a.school_id=s.id and s.name LIKE %?2% ORDER BY ext21 desc")
+    List<Map> getXxtjs21(String date,String name);
 
     /**
      * 各学校在昆教职工情况跟踪-新发感染病例统计数
@@ -79,18 +79,18 @@ public interface YndpFourSchoolRepository extends BaseRepository<YndpFourSchool,
      */
     @Query(nativeQuery = true, value = "SELECT s.name school_id,a.ext25 FROM\n" +
             "\t(SELECT school_id, sum(ext25) ext25 FROM yndp_four_school_msg\n" +
-            "\t\tWHERE ext25 > 0 and DATE_FORMAT(date, 'Y%m%d') = DATE_FORMAT(?1, 'Y%m%d') GROUP BY school_id ) a, yndp_four_school s  where a.school_id=s.id ORDER BY ext25 desc")
-    List<Map> getXxtjs25(String date);
+            "\t\tWHERE ext25 > 0 and DATE_FORMAT(date, 'Y%m%d') = DATE_FORMAT(?1, 'Y%m%d') GROUP BY school_id ) a, yndp_four_school s  where a.school_id=s.id and s.name LIKE %?2% ORDER BY ext25 desc")
+    List<Map> getXxtjs25(String date,String name);
 
     /**
      * 各学校在昆教职工情况跟踪-确诊病例统计数
      * @author xjl
      * @date 2020/3/9
      */
-    @Query(nativeQuery = true, value = "SELECT s.name name,a.ext26 FROM\n" +
+    @Query(nativeQuery = true, value = "SELECT s.name school_id,a.ext26 FROM\n" +
             "\t(SELECT school_id, sum(ext26) ext26 FROM yndp_four_school_msg\n" +
-            "\t\tWHERE ext26 > 0 and DATE_FORMAT(date, 'Y%m%d') = DATE_FORMAT(?1, 'Y%m%d') GROUP BY school_id ) a, yndp_four_school s  where a.school_id=s.id ORDER BY ext26 desc")
-    List<Map> getXxtjs26(String date);
+            "\t\tWHERE ext26 > 0 and DATE_FORMAT(date, 'Y%m%d') = DATE_FORMAT(?1, 'Y%m%d') GROUP BY school_id ) a, yndp_four_school s  where a.school_id=s.id and s.name LIKE %?2% ORDER BY ext26 desc")
+    List<Map> getXxtjs26(String date,String name);
 
     /**
      * 各学校在昆教职工情况跟踪-疑似病例 统计数
@@ -99,7 +99,7 @@ public interface YndpFourSchoolRepository extends BaseRepository<YndpFourSchool,
      */
     @Query(nativeQuery = true, value = "SELECT s.name school_id,a.ext27 FROM\n" +
             "\t(SELECT school_id, sum(ext27) ext27 FROM yndp_four_school_msg\n" +
-            "\t\tWHERE ext27 > 0  and DATE_FORMAT(date, 'Y%m%d') = DATE_FORMAT(?1, 'Y%m%d') GROUP BY school_id ) a, yndp_four_school s  where a.school_id=s.id ORDER BY ext27 desc")
-    List<Map> getXxtjs27(String date);
+            "\t\tWHERE ext27 > 0  and DATE_FORMAT(date, 'Y%m%d') = DATE_FORMAT(?1, 'Y%m%d') GROUP BY school_id ) a, yndp_four_school s  where a.school_id=s.id and s.name LIKE %?2% ORDER BY ext27 desc")
+    List<Map> getXxtjs27(String date,String name);
 
 }

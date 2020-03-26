@@ -713,7 +713,7 @@ a,a:hover{ text-decoration: none!important;}
 .schoolList02 .itemLi:first-child:before{ background: url("../images/school_i03.png") no-repeat; background-size:100%; }
 .schoolList02 .itemLi span{ display: block; text-align: center;}
 .schoolList02 .itemLi em{ font-size: 22px;}
-.sWin01{ display: none; position: absolute;z-index: 1000;  padding: 12px; top:90px; left:0; width:190px; height: 175px;background: rgba(0,0,0,0.80);border: 1px solid #1CFFFB;box-shadow: 4px 4px 8px 0 rgba(0,0,0,0.30);border-radius: 2px; }
+.sWin01{ display: none; position: absolute;z-index: 1000;  padding: 12px; top:90px; left:0; width:320px; min-height: 175px;background: rgba(0,0,0,0.80);border: 1px solid #1CFFFB;box-shadow: 4px 4px 8px 0 rgba(0,0,0,0.30);border-radius: 2px; }
 .sWinList{ color:#1CFFFB; line-height: 28px;}
 .searchBox{ background: #108383; border-radius: 3px; margin-bottom: 10px; }
 .searchBox input{ float: left; width: 120px; color: #fff;padding: 5px 12px; height: 24px; background: none; border: none; box-shadow: none!important;-webkit-box-shadow:none!important;}

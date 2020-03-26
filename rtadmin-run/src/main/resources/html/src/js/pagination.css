@@ -1,0 +1,72 @@
+@charset "utf-8";
+
+.setPageDiv{
+    float: right;
+    margin: 10px 0;
+    text-align: right;
+    line-height: 24px;
+    font-size: 12px;
+
+}
+.setPageDiv21{
+    float: right;
+    margin: 10px 0;
+    text-align: right;
+    line-height: 24px;
+    font-size: 12px;
+
+}
+.setPageDiv25{
+    float: right;
+    margin: 10px 0;
+    text-align: right;
+    line-height: 24px;
+    font-size: 12px;
+
+}
+.setPageDiv26{
+    float: right;
+    margin: 10px 0;
+    text-align: right;
+    line-height: 24px;
+    font-size: 12px;
+
+}
+.setPageDiv27{
+    float: right;
+    margin: 10px 0;
+    text-align: right;
+    line-height: 24px;
+    font-size: 12px;
+
+}
+.paginationNew{
+    line-height: 14px;
+    font-size: 12px;
+    display: flex;
+}
+
+.paginationNew a {
+    text-decoration: none;
+    border:none;
+    color: #1CFFFB!important;
+    background: #3b4950;
+}
+
+.paginationNew a, .paginationNew span {
+    display: inline-block;
+    padding: 3px 6px;
+    margin-right: 5px;
+}
+
+.paginationNew .current {
+    border:none;
+    color: #ffffff;
+    background: #118b8d!important;
+}
+
+.paginationNew .current.prev, .paginationNew .current.next{
+    border:none;
+    color: #1CFFFB;
+    background: #3b4950!important;
+}

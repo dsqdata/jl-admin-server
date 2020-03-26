@@ -24,8 +24,8 @@ public class YndpFourSchoolService extends BaseService<YndpFourSchool, String> {
     @Autowired
     private YndpFourSchoolRepository yndpFourSchoolRepository;
 
-    public List<YndpFourSchool> getXxjw() {
-        return yndpFourSchoolRepository.getXxjw();
+    public List<YndpFourSchool> getXxjw(String name) {
+        return yndpFourSchoolRepository.getXxjw(name);
     }
 
 
@@ -41,16 +41,16 @@ public class YndpFourSchoolService extends BaseService<YndpFourSchool, String> {
             return yndpFourSchoolRepository.getXxfls(date);
     }
 
-    public List<Map> getXxtjs21(String date){
-        return yndpFourSchoolRepository.getXxtjs21(date);
+    public List<Map> getXxtjs21(String date,String name){
+        return yndpFourSchoolRepository.getXxtjs21(date,name);
     }
-    public List<Map> getXxtjs25(String date){
-        return yndpFourSchoolRepository.getXxtjs25(date);
+    public List<Map> getXxtjs25(String date,String name){
+        return yndpFourSchoolRepository.getXxtjs25(date,name);
     }
-    public List<Map> getXxtjs26(String date){
-        return yndpFourSchoolRepository.getXxtjs26(date);
+    public List<Map> getXxtjs26(String date,String name){
+        return yndpFourSchoolRepository.getXxtjs26(date,name);
     }
-    public List<Map> getXxtjs27(String date){
-        return yndpFourSchoolRepository.getXxtjs27(date);
+    public List<Map> getXxtjs27(String date,String name){
+        return yndpFourSchoolRepository.getXxtjs27(date,name);
     }
 }

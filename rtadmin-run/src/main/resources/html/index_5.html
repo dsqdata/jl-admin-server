@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>昆明经开区网格化管理校园疫情防控</title>
-    <link rel="stylesheet" type="text/css" href="component/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="component/bootstrap-3.3.7-dist/css/bootstrap.min.css">pagination
     <link rel="stylesheet" type="text/css" href="component/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="src/css/links.css">
+    <link rel="stylesheet" type="text/css" href="src/js/pagination.css">
     <script type="text/javascript" src="component/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="component/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <script type="text/javascript" src="component/echarts/echarts.js"></script>
@@ -70,161 +71,118 @@
         <div class="midCon posT">
             <ul class="schoolList02 clearfix">
                 <li class="itemLi"><a href="#"><strong>学校总数</strong>
-                        <span id="orgBox01">
+                    <span id="orgBox01">
                             <script id="tpl-orgBox01" type="text/html">
                                <p><em>{{data}}</em>个</p>
                            </script>
                         </span>
                     <p>分校点合并统计</p></a>
-                <div class="sWin01">
-                    <div class="searchBox clearfix"><input type="text" class="form-control winput"><button type="button" class="btn sbtn"></button></div>
-                    <ul class="sWinList">
-                        <li>1 昆明学院附属经开区学校</li>
-                        <li>2 昆明学院附属经开区学校</li>
-                        <li>3 昆明学院附属经开区学校</li>
-                    </ul>
-                    <div class="clearfix">
-                        <div aria-label="Page navigation" class="Page navigation">
-                            <ul class="pagination">
-                                <li>
-                                    <a href="#" aria-label="Previous">
-                                        <span aria-hidden="true"><</span>
-                                    </a>
-                                </li>
-                                <li class="currentPage"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li>
-                                    <a href="#" aria-label="Next">
-                                        <span aria-hidden="true"> > </span>
-                                    </a>
-                                </li>
-                            </ul>
-
-                        </div>
-
-                    </div>
-                </div>
-                </li>
-                <li class="itemLi"><a href="#"><p class="mb10"><em>47</em>个</p><p>存在新发感染病例学校</p></a>
-                    <div class="sWin01 redBg">
-                        <div class="searchBox clearfix"><input type="text" class="form-control winput"><button type="button" class="btn sbtn"></button></div>
-                        <ul class="sWinList">
-                            <li>1 昆明学院附属经开区学校</li>
-                            <li>2 昆明学院附属经开区学校</li>
-                            <li>3 昆明学院附属经开区学校</li>
+                    <div class="sWin01">
+                        <div class="searchBox clearfix"><input id="ext1" type="text" class="form-control winput"><button type="button" class="btn sbtn" onclick="onclick1()"></button></div>
+                        <ul class="sWinList" id="page">
+                            <!--   <li>1 昆明学院附属经开区学校</li>
+                               <li>2 昆明学院附属经开区学校</li>
+                               <li>3 昆明学院附属经开区学校</li>-->
                         </ul>
                         <div class="clearfix">
-                            <div aria-label="Page navigation" class="Page navigation">
-                                <ul class="pagination">
-                                    <li>
-                                        <a href="#" aria-label="Previous">
-                                            <span aria-hidden="true"><</span>
-                                        </a>
-                                    </li>
-                                    <li class="currentPage"><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li>
-                                        <a href="#" aria-label="Next">
-                                            <span aria-hidden="true"> > </span>
-                                        </a>
-                                    </li>
-                                </ul>
+                            <div class="setPageDiv">
+                                <div class="paginationNew" id="pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="itemLi"><a href="#">
+                       <span id="orgBox31">
+                            <script id="tpl-orgBox31" type="text/html">
+                              <p class="mb10"><em>{{xxfls1}}</em>个</p>
+                           </script>
+                        </span>
+                    <p>存在新发感染病例学校</p></a>
+                    <div class="sWin01 redBg">
+                        <div class="searchBox clearfix"><input id="ext25" type="text" class="form-control winput"><button type="button" class="btn sbtn" onclick="onclick25()"></button></div>
+                        <ul class="sWinList" id="page25">
+                            <!--   <li>1 昆明学院附属经开区学校</li>
+                               <li>2 昆明学院附属经开区学校</li>
+                               <li>3 昆明学院附属经开区学校</li>-->
+                        </ul>
+                        <div class="clearfix">
 
+                            <div class="setPageDiv25">
+                                <div class="paginationNew" id="pagination25"></div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </li>
+                <li class="itemLi"><a href="#">
+                        <span id="orgBox32">
+                            <script id="tpl-orgBox32" type="text/html">
+                              <p class="mb10"><em>{{xxfls2}}</em>个</p>
+                           </script>
+                        </span>
+                    <!-- <p class="mb10"><em>47</em>个</p>-->
+                    <p>存在疑似病例学校</p></a>
+                    <div class="sWin01 redBg">
+                        <div class="searchBox clearfix"><input id="ext26" type="text" class="form-control winput"><button type="button" class="btn sbtn" onclick="onclick26()"></button></div>
+                        <ul class="sWinList" id="page26">
+                            <!--<li>1 昆明学院附属经开区学校</li>
+                            <li>2 昆明学院附属经开区学校</li>
+                            <li>3 昆明学院附属经开区学校</li>-->
+                        </ul>
+                        <div class="clearfix">
+                            <div class="setPageDiv26">
+                                <div class="paginationNew" id="pagination26"></div>
                             </div>
 
                         </div>
                     </div>
                 </li>
-                <li class="itemLi"><a href="#"><p class="mb10"><em>47</em>个</p><p>存在疑似病例学校</p></a>
+                <li class="itemLi"><a href="#">
+                     <span id="orgBox33">
+                        <script id="tpl-orgBox33" type="text/html">
+                          <p class="mb10"><em>{{xxfls3}}</em>个</p>
+                       </script>
+                    </span>
+                    <!-- <p class="mb10"><em>47</em>个</p>-->
+                    <p>存在确诊病例学校</p></a>
                     <div class="sWin01 redBg">
-                        <div class="searchBox clearfix"><input type="text" class="form-control winput"><button type="button" class="btn sbtn"></button></div>
-                        <ul class="sWinList">
-                            <li>1 昆明学院附属经开区学校</li>
+                        <div class="searchBox clearfix"><input id="ext27" type="text" class="form-control winput"><button type="button" class="btn sbtn" onclick="onclick27()"></button></div>
+                        <ul class="sWinList" id="page27">
+                            <!--<li>1 昆明学院附属经开区学校</li>
                             <li>2 昆明学院附属经开区学校</li>
-                            <li>3 昆明学院附属经开区学校</li>
+                            <li>3 昆明学院附属经开区学校</li>-->
                         </ul>
                         <div class="clearfix">
-                            <div aria-label="Page navigation" class="Page navigation">
-                                <ul class="pagination">
-                                    <li>
-                                        <a href="#" aria-label="Previous">
-                                            <span aria-hidden="true"><</span>
-                                        </a>
-                                    </li>
-                                    <li class="currentPage"><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li>
-                                        <a href="#" aria-label="Next">
-                                            <span aria-hidden="true"> > </span>
-                                        </a>
-                                    </li>
-                                </ul>
-
+                            <div class="setPageDiv27">
+                                <div class="paginationNew" id="pagination27"></div>
                             </div>
 
                         </div>
                     </div>
                 </li>
-                <li class="itemLi"><a href="#"><p class="mb10"><em>47</em>个</p><p>存在确诊病例学校</p></a>
-                    <div class="sWin01 redBg">
-                        <div class="searchBox clearfix"><input type="text" class="form-control winput"><button type="button" class="btn sbtn"></button></div>
-                        <ul class="sWinList">
-                            <li>1 昆明学院附属经开区学校</li>
-                            <li>2 昆明学院附属经开区学校</li>
-                            <li>3 昆明学院附属经开区学校</li>
+                <li class="itemLi"><a href="#">
+                    <span id="orgBox34">
+                            <script id="tpl-orgBox34" type="text/html">
+                              <em>{{xxfls4}}</em>个</p>
+                              <!-- <p><em>{{xxfls4}}</em>个</p>-->
+                           </script>
+                        </span>
+                    <!-- <p><em>47</em>个</p>-->
+                    <p>有发热、咳嗽、呼吸<br />困难等症状人群的学校</p></a>
+                    <div class="sWin01">
+                        <div class="searchBox clearfix"><input id="ext21" type="text" class="form-control winput"><button type="button" class="btn sbtn" onclick="onclick21()"></button></div>
+                        <ul class="sWinList" id="page21">
+
+                            <!--   <dd class="dd01">{{item.xxfl}} <span>{{item.count}}<em>个</em></span></dd>-->
+                            <!--  <li>1 昆明学院附属经开区学校</li>
+                              <li>2 昆明学院附属经开区学校</li>
+                              <li>3 昆明学院附属经开区学校</li>-->
                         </ul>
                         <div class="clearfix">
-                            <div aria-label="Page navigation" class="Page navigation">
-                                <ul class="pagination">
-                                    <li>
-                                        <a href="#" aria-label="Previous">
-                                            <span aria-hidden="true"><</span>
-                                        </a>
-                                    </li>
-                                    <li class="currentPage"><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li>
-                                        <a href="#" aria-label="Next">
-                                            <span aria-hidden="true"> > </span>
-                                        </a>
-                                    </li>
-                                </ul>
 
-                            </div>
-
-                        </div>
-                    </div>
-                </li>
-                <li class="itemLi"><a href="#"><p><em>47</em>个</p><p>有发热、咳嗽、呼吸<br />困难等症状人群的学校</p></a>
-                    <div class="sWin01 redBg">
-                        <div class="searchBox clearfix"><input type="text" class="form-control winput"><button type="button" class="btn sbtn"></button></div>
-                        <ul class="sWinList">
-                            <li>1 昆明学院附属经开区学校</li>
-                            <li>2 昆明学院附属经开区学校</li>
-                            <li>3 昆明学院附属经开区学校</li>
-                        </ul>
-                        <div class="clearfix">
-                            <div aria-label="Page navigation" class="Page navigation">
-                                <ul class="pagination">
-                                    <li>
-                                        <a href="#" aria-label="Previous">
-                                            <span aria-hidden="true"><</span>
-                                        </a>
-                                    </li>
-                                    <li class="currentPage"><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li>
-                                        <a href="#" aria-label="Next">
-                                            <span aria-hidden="true"> > </span>
-                                        </a>
-                                    </li>
-                                </ul>
-
+                            <div class="setPageDiv21">
+                                <div class="paginationNew" id="pagination21"></div>
                             </div>
 
                         </div>
@@ -232,6 +190,7 @@
 
                 </li>
             </ul>
+            <iframe id="mainContent" width="100%" height="1200px"></iframe>
             <span class="schoolBtn"></span>
             <div class="schoolMid">
                 <div id="orgBoxTitle">
@@ -251,11 +210,11 @@
                 <span id="orgBox02">
                 <script id="tpl-orgBox02" type="text/html">
                      {{each xxfl item i}}
-                        <dd class="dd01">{{item.xxfl}} <span>{{item.count}}<em>个</em></span></dd>
+                     <dd class="dd01">{{item.xxfl}} <span>{{item.count}}<em>个</em></span></dd>
                      {{/each}}
-              <!--  <dd class="dd02">小学<span>2512 <em>个</em></span></dd>
-                <dd class="dd03">初中<span>2512 <em>个</em></span></dd>
-                <dd class="dd04">大专院校<span>2512 <em>个</em></span></dd>-->
+                     <!--  <dd class="dd02">小学<span>2512 <em>个</em></span></dd>
+                       <dd class="dd03">初中<span>2512 <em>个</em></span></dd>
+                       <dd class="dd04">大专院校<span>2512 <em>个</em></span></dd>-->
                 </script>
                 </span>
             </dl>
@@ -313,6 +272,8 @@
 </div>
 <script src="./static/js/jquery.ajax.js"></script>
 <script type="text/javascript" src="src/js/four_x.js"></script>
+<script type="text/javascript" src="src/js/jquery.pagination.js"></script>
+<script type="text/javascript" src="src/js/coordtransform.js"></script>
 <script type="text/javascript" src="src/js/fourBothSides.js"></script>
 <script type="text/javascript" src="src/js/chartBar401.js"></script>
 <script type="text/javascript" src="src/js/chartBar422.js"></script>
@@ -353,6 +314,15 @@
         });
 
 
+        getXxzs();
+        getXxtl();
+        getXxfls();
+        /* getXxtjs21();*/
+        getXxtjs(5,'')
+        getXxtjs21(5,'')
+        getXxtjs25(5,'')
+        getXxtjs26(5,'')
+        getXxtjs27(5,'')
 
         getXxzs();
         getXxtl();
@@ -367,6 +337,10 @@
         var html = template('tpl-header', {time:time});
         document.getElementById('header').innerHTML = html;
     }
+
+    var mainContent = document.getElementById('mainContent');
+    <!-- 指定所展示url -->
+    mainContent.src = "test.html"
 
 </script>
 </body>

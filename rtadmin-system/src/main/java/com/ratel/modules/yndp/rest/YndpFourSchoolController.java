@@ -33,10 +33,10 @@ public class YndpFourSchoolController {
 
     @ApiOperation("查询出学校坐标")
     @GetMapping(value = "/getXxjw")
-    public Result getXxjw(HttpServletRequest request, HttpServletResponse response) {
+    public Result getXxjw(@RequestParam String name,HttpServletRequest request, HttpServletResponse response) {
 
         // 1. 根据所选择的机构ID查询出列表
-        List<YndpFourSchool> yndpFourSchool = yndpFourSchoolService.getXxjw();
+        List<YndpFourSchool> yndpFourSchool = yndpFourSchoolService.getXxjw(name);
         Result result = new Result();
         result.setCode(Result.SUCCESS_CODE);
         result.setData(yndpFourSchool);
@@ -86,10 +86,10 @@ public class YndpFourSchoolController {
 
     @ApiOperation("查询各学校在昆教职工情况跟踪-有发热、咳嗦、呼吸困难等症状 统计数")
     @GetMapping(value = "/getXxtjs21")
-    public Result getXxtjs21(@RequestParam String date,HttpServletRequest request, HttpServletResponse response) {
+    public Result getXxtjs21(@RequestParam String date,@RequestParam String name,HttpServletRequest request, HttpServletResponse response) {
 
         // 1. 根据所选择的机构ID查询出列表
-        List<Map> yndpFourSchool = yndpFourSchoolService.getXxtjs21(date);
+        List<Map> yndpFourSchool = yndpFourSchoolService.getXxtjs21(date,name);
         Result result = new Result();
         result.setCode(Result.SUCCESS_CODE);
         result.setData(yndpFourSchool);
@@ -99,10 +99,10 @@ public class YndpFourSchoolController {
 
     @ApiOperation("查询各学校在昆教职工情况跟踪-新发感染病例统计数")
     @GetMapping(value = "/getXxtjs25")
-    public Result getXxtjs25(@RequestParam String date,HttpServletRequest request, HttpServletResponse response) {
+    public Result getXxtjs25(@RequestParam String date,@RequestParam String name,HttpServletRequest request, HttpServletResponse response) {
 
         // 1. 根据所选择的机构ID查询出列表
-        List<Map> yndpFourSchool = yndpFourSchoolService.getXxtjs25(date);
+        List<Map> yndpFourSchool = yndpFourSchoolService.getXxtjs25(date,name);
         Result result = new Result();
         result.setCode(Result.SUCCESS_CODE);
         result.setData(yndpFourSchool);
@@ -112,10 +112,10 @@ public class YndpFourSchoolController {
 
     @ApiOperation("查询各学校在昆教职工情况跟踪-确诊病例统计数")
     @GetMapping(value = "/getXxtjs26")
-    public Result getXxtjs26(@RequestParam String date,HttpServletRequest request, HttpServletResponse response) {
+    public Result getXxtjs26(@RequestParam String date,@RequestParam String name,HttpServletRequest request, HttpServletResponse response) {
 
         // 1. 根据所选择的机构ID查询出列表
-        List<Map> yndpFourSchool = yndpFourSchoolService.getXxtjs26(date);
+        List<Map> yndpFourSchool = yndpFourSchoolService.getXxtjs26(date,name);
         Result result = new Result();
         result.setCode(Result.SUCCESS_CODE);
         result.setData(yndpFourSchool);
@@ -124,10 +124,10 @@ public class YndpFourSchoolController {
     }
     @ApiOperation("查询各学校在昆教职工情况跟踪-疑似病例统计数")
     @GetMapping(value = "/getXxtjs27")
-    public Result getXxtjs27(@RequestParam String date,HttpServletRequest request, HttpServletResponse response) {
+    public Result getXxtjs27(@RequestParam String date,@RequestParam String name,HttpServletRequest request, HttpServletResponse response) {
 
         // 1. 根据所选择的机构ID查询出列表
-        List<Map> yndpFourSchool = yndpFourSchoolService.getXxtjs27(date);
+        List<Map> yndpFourSchool = yndpFourSchoolService.getXxtjs27(date,name);
         Result result = new Result();
         result.setCode(Result.SUCCESS_CODE);
         result.setData(yndpFourSchool);
