@@ -5,6 +5,8 @@
     <select id="getYndpFourSchoolMsgList" resultType="com.ratel.modules.yndp.domain.YndpFourSchoolMsg">
         SELECT
             b.date,
+            b.school_id,
+            b.type,
             sum(b.ext11) ext11,
             sum(b.ext12) ext12,
             sum(b.ext13) ext13,
@@ -32,6 +34,8 @@
           b.date,
           b.school_id,
           b.type
+        ORDER BY
+          b.date ASC
     </select>
 
     <select id="getAllPeopleMsgList" resultType="com.ratel.modules.yndp.domain.YndpFourSchoolMsg">
@@ -68,6 +72,7 @@
     <select id="getAllSchoolMsgList" resultType="com.ratel.modules.yndp.domain.YndpFourSchoolMsg">
         SELECT
             b.date,
+            b.type,
             sum(b.ext11) ext11,
             sum(b.ext12) ext12,
             sum(b.ext13) ext13,
@@ -93,5 +98,7 @@
         GROUP BY
           b.date,
           b.type
+        ORDER BY
+          b.date ASC
     </select>
 </mapper>
