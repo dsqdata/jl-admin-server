@@ -43,6 +43,8 @@
             b.date,
             b.school_id,
             a.name,
+            a.latitude,
+            a.longitude,
             sum(b.ext11) ext11,
             sum(b.ext12) ext12,
             sum(b.ext13) ext13,
@@ -68,6 +70,40 @@
         GROUP BY
           b.date,
           b.school_id
+    </select>
+
+    <select id="getAllMsgList" resultType="com.ratel.modules.yndp.domain.YndpFourSchoolMsg">
+        SELECT
+            b.date,
+            b.school_id,
+            a.name,
+            a.latitude,
+            a.longitude,
+            sum(b.ext11) ext11,
+            sum(b.ext12) ext12,
+            sum(b.ext13) ext13,
+            sum(b.ext14) ext14,
+            sum(b.ext15) ext15,
+            sum(b.ext21) ext21,
+            sum(b.ext22) ext22,
+            sum(b.ext23) ext23,
+            sum(b.ext24) ext24,
+            sum(b.ext25) ext25,
+            sum(b.ext26) ext26,
+            sum(b.ext27) ext27,
+            sum(b.ext31) ext31,
+            sum(b.ext32) ext32,
+            sum(b.ext33) ext33,
+            sum(b.ext34) ext34
+        FROM
+          yndp_four_school a
+        INNER JOIN yndp_four_school_msg b ON a.id = b.school_id
+        WHERE
+          ${date} = b.date
+        GROUP BY
+          b.date,
+          b.school_id
+
     </select>
 
     <select id="getAllSchoolMsgList" resultType="com.ratel.modules.yndp.domain.YndpFourSchoolMsg">

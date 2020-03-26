@@ -32,8 +32,13 @@ public class YndpFourSchoolMsgService extends BaseService<YndpFourSchoolMsg, Str
     public List<YndpFourSchoolMsg> getYndpFourSchoolMsgList(String date,String school_id,int type) {
         System.out.println(school_id);
         System.out.println(school_id.length());
-        if(3==type){
-            return YndpFourSchoolMsgMapper.getAllPeopleMsgList(date,school_id);
+        if(3==type ){
+            if(school_id != null && school_id.length() != 0){
+                return YndpFourSchoolMsgMapper.getAllPeopleMsgList(date,school_id);
+            }else{
+                return YndpFourSchoolMsgMapper.getAllMsgList(date);
+            }
+
         }else if(school_id != null && school_id.length() != 0){
             System.out.println(111);
             return YndpFourSchoolMsgMapper.getYndpFourSchoolMsgList(date,school_id,type);

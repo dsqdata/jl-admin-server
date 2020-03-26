@@ -11,8 +11,10 @@ import java.util.List;
  */
 @Component
 public interface YndpFourSchoolMsgMapper {
-
+    
     List<YndpFourSchoolMsg> getAllPeopleMsgList(@Param("date")String date,@Param("school_id")String school_id);
+
+    List<YndpFourSchoolMsg> getAllMsgList(@Param("date")String date);
 
     List<YndpFourSchoolMsg> getYndpFourSchoolMsgList(@Param("date")String date,@Param("school_id")String school_id,@Param("type")int type);
 
