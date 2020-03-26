@@ -239,7 +239,7 @@
                 <h2 class="mapTbox">
                     <span class="mapT01"><span class="mapTbg01">在昆学生情况跟踪</span></span>
                 </h2>
-
+                <div id="fourthZkxsqkgzCircle" class="chartSty01" style="width:100%; height:320px; "></div>
             </div>
             <!--在昆学生情况跟踪 //-->
             <!--疫区来昆人员追踪-->
@@ -278,6 +278,7 @@
 <script type="text/javascript" src="src/js/chartBar401.js"></script>
 <script type="text/javascript" src="src/js/chartBar422.js"></script>
 <script type="text/javascript" src="src/js/chartBar402.js"></script>
+<script type="text/javascript" src="src/js/fourthZkxsqkgzCircle.js"></script>
 <script>
     $(".schoolBtn").click(function (){
         var flag = $(".schoolMid").is(":hidden");
@@ -330,7 +331,7 @@
 
     var myChart401 = echarts.init(document.getElementById('chartBar401'));
     var myChart402 = echarts.init(document.getElementById('chartBar402'));
-
+    var fourthZkxsqkgzCircle = echarts.init(document.getElementById('fourthZkxsqkgzCircle'));
     var initOrgBoxfourDate = function (data) {
         var str = data.date;
         var time = str.substring(0, 4)+"年"+str.substring(4, 6)+"月"+str.substring(6, 8)+"日";
