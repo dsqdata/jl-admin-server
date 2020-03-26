@@ -61,11 +61,16 @@ $(function(){
                         function(params){
                             var str = ''
                             switch(params.name){
-                                case '务工返昆':str =  '{circle01|}{a|'+params.name+'}\n{b|'+params.value+'人}{c|'+params.data.bfb+'%'+'}\n{c|新增 '+'+'+params.data.xzrs+'人}';break;
-                                case '其他':str =  '{circle02|}{a|'+params.name+'}\n{b|'+params.value+'人}{c|'+params.data.bfb+"%"+'}\n{c|新增 '+'+'+params.data.xzrs+'人}';break;
-                                case '上学返昆':str =  '{circle03|}{a|'+params.name+'}\n{b|'+params.value+'人}{c|'+params.data.bfb+"%"+'}\n{c|新增'+'+'+params.data.xzrs+'人}';break;
-                                case '疫区来昆旅游':str =  '{circle04|}{a|'+params.name+'}\n{b|'+params.value+'人}{c|'+params.data.bfb+"%"+'}\n{c|新增'+'+'+params.data.xzrs+'人}';break;
-                                case '近期到过疫区':str =  '{circle05|}{a|'+params.name+'}\n{b|'+params.value+'人}{c|'+params.data.bfb+"%"+'}\n{c|新增'+'+'+params.data.xzrs+'人}';break;
+                                // case '务工返昆':str =  '{circle01|}{a|'+params.name+'}\n{b|'+params.value+'人}{c|'+params.data.bfb+'%'+'}\n{c|新增 '+'+'+params.data.xzrs+'人}';break;
+                                // case '其他':str =  '{circle02|}{a|'+params.name+'}\n{b|'+params.value+'人}{c|'+params.data.bfb+"%"+'}\n{c|新增 '+'+'+params.data.xzrs+'人}';break;
+                                // case '上学返昆':str =  '{circle03|}{a|'+params.name+'}\n{b|'+params.value+'人}{c|'+params.data.bfb+"%"+'}\n{c|新增'+'+'+params.data.xzrs+'人}';break;
+                                // case '疫区来昆旅游':str =  '{circle04|}{a|'+params.name+'}\n{b|'+params.value+'人}{c|'+params.data.bfb+"%"+'}\n{c|新增'+'+'+params.data.xzrs+'人}';break;
+                                // case '近期到过疫区':str =  '{circle05|}{a|'+params.name+'}\n{b|'+params.value+'人}{c|'+params.data.bfb+"%"+'}\n{c|新增'+'+'+params.data.xzrs+'人}';break;
+                                case '务工返昆':str =  '{circle01|}{a|'+params.name+'}\n{b|'+params.value+'人}{c|'+params.data.bfb+'%'+'} {c|新增 '+'+'+params.data.xzrs+'人}';break;
+                                case '其他':str =  '{circle02|}{a|'+params.name+'}\n{b|'+params.value+'人}{c|'+params.data.bfb+"%"+'} {c|新增 '+'+'+params.data.xzrs+'人}';break;
+                                case '上学返昆':str =  '{circle03|}{a|'+params.name+'}\n{b|'+params.value+'人}{c|'+params.data.bfb+"%"+'} {c|新增'+'+'+params.data.xzrs+'人}';break;
+                                case '疫区来昆旅游':str =  '{circle04|}{a|'+params.name+'}\n{b|'+params.value+'人}{c|'+params.data.bfb+"%"+'} {c|新增'+'+'+params.data.xzrs+'人}';break;
+                                case '近期到过疫区':str =  '{circle05|}{a|'+params.name+'}\n{b|'+params.value+'人}{c|'+params.data.bfb+"%"+'} {c|新增'+'+'+params.data.xzrs+'人}';break;
                             }
                             return str
                         },
@@ -73,20 +78,20 @@ $(function(){
                         a: {
                             fontSize: 11,
                             align: 'left',
-                            // padding: 6
+                            padding: 6
                         },
                         b: {
                             fontSize: 11,
                             color: '#fff',
                             fontWeight:'700',
                             align: 'left',
-                            // padding: [1,10,1,0]
+                            padding: [1,10,1,0]
                         },
                         c:{
                             fontSize: 11,
                             color: '#fff',
                             align: 'left',
-                            // padding: [3,0]
+                            padding: [3,0]
                         },
                         circle01:{
                             backgroundColor: "#f3ce30",
