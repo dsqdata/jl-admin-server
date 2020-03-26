@@ -66,10 +66,12 @@ function YndpFourSchoolMsg(date,school_id,type){
 
         if(1==type){
             chartBar401(date,school_id,type,ext11,ext12,ext13,ext14,ext15);
+            //chartBar403(date,school_id,type,ext12,ext21,ext22,ext23,ext24,ext25,ext26,ext27);
         }
 
         if(2==type){
             chartBar402(date,school_id,type,ext11,ext12,ext13,ext14,ext15);
+            //chartBar404(date,school_id,type,ext12,ext21,ext22,ext23,ext24,ext25,ext26,ext27);
         }
 
     });
@@ -114,19 +116,19 @@ function YndpFourPeopleMsg(date,school_id,type,title){
             }
         }
 
-        if('截止目前在昆教职工数'==title){
+        if('截止目前在昆人数'==title){
             chartBar422(rq,ext11,ext12);
         }
-        if('截止目前在其他州教职工数'==title){
+        if('截止目前在其他州人数'==title){
             chartBar422(rq,ext11,ext13);
         }
-        if('在湖北(含武汉)教职工数'==title){
+        if('在湖北(含武汉)人数'==title){
             chartBar422(rq,ext11,ext14);
         }
-        if('在其他省外教职工数'==title){
+        if('在其他省外人数'==title){
             chartBar422(rq,ext11,ext15);
         }
-        if('截止目前在昆学生数'==title){
+        /*if('截止目前在昆学生数'==title){
             chartBar422(rq,ext11,ext12);
         }
         if('截止目前在其他州学生数'==title){
@@ -137,8 +139,29 @@ function YndpFourPeopleMsg(date,school_id,type,title){
         }
         if('在其他省外学生数'==title){
             chartBar422(rq,ext11,ext15);
-        }
+        }*/
 
+        if('有发热、咳嗦、呼吸困难等症状'==title){
+            chartBar422(rq,ext12,ext21);
+        }
+        if('外出后返昆未满15天'==title){
+            chartBar422(rq,ext12,ext22);
+        }
+        if('正在进行隔离观察(治疗)'==title){
+            chartBar422(rq,ext12,ext23);
+        }
+        if('与确诊及疑似密切接触未满15天'==title){
+            chartBar422(rq,ext12,ext24);
+        }
+        if('新发感染病例 '==title){
+            chartBar422(rq,ext12,ext25);
+        }
+        if('确诊病例'==title){
+            chartBar422(rq,ext12,ext26);
+        }
+        if('疑似病例'==title){
+            chartBar422(rq,ext12,ext27);
+        }
 
     });
 }

@@ -42,6 +42,7 @@
         SELECT
             b.date,
             b.school_id,
+            a.name,
             sum(b.ext11) ext11,
             sum(b.ext12) ext12,
             sum(b.ext13) ext13,
