@@ -150,7 +150,14 @@
                 position: e.target.wgs84togcj02
             });
             map.add(marker);
+       marker.on('click', markerClick1);
+
        selectMap(e.target.id);
+   }
+
+   function markerClick1(e) {
+       infoWindow.setContent(e.target.content);
+       infoWindow.open(map, e.target.getPosition());
    }
 
    function sayHello(id,date) {
