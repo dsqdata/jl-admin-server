@@ -1,5 +1,6 @@
 
 function fourthZkjzgqkgzCircle(date,school_id,type,ext12,ext21,ext22,ext23,ext24,ext25,ext26,ext27){
+    debugger;
     data1 = [{
             'name': '有发热、咳嗽、呼吸困难等症状',
             'value': ext21
@@ -93,7 +94,7 @@ function fourthZkjzgqkgzCircle(date,school_id,type,ext12,ext21,ext22,ext23,ext24
                 value: data1[i].value
             }, {
                 // value: data[0].value * 4 / 3 - data[i].value,
-                value:MaxValue1 * 4 / 3 - data1[i].value,
+                value:(MaxValue1==0?1:MaxValue1) * 4 / 3 - data1[i].value,
                 name: 'invisible',
                 itemStyle: placeHolderStyle
             }]

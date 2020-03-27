@@ -337,7 +337,7 @@ function fourthZkxsqkgzCircle(date,school_id,type,ext12,ext21,ext22,ext23,ext24,
                 value: data[i].value
             }, {
                 // value: data[0].value * 4 / 3 - data[i].value,
-                value:MaxValue * 4 / 3 - data[i].value,
+                value:(MaxValue==0?1:MaxValue) * 4 / 3 - data[i].value,
                 name: 'invisible',
                 itemStyle: placeHolderStyle
             }]
