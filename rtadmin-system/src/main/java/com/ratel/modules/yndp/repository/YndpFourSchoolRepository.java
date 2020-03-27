@@ -24,7 +24,7 @@ public interface YndpFourSchoolRepository extends BaseRepository<YndpFourSchool,
      * @author xjl
      * @date 2020/3/9
      */
-    @Query(nativeQuery = true, value = "select * from yndp_four_school where name LIKE %?1%")
+    @Query(nativeQuery = true, value = "select * from yndp_four_school where name LIKE %?1% ORDER BY type ")
     List<YndpFourSchool> getXxjw(String name);
 
     /**

@@ -21,7 +21,7 @@
         body,
         #container {
           width: 100%;
-          height: 84%;
+          height: 100%;
         }
         .dlGreen dt{ color: #1CFFFB;font-size:14px; margin-bottom:10px; font-weight: bold;}
         .dlGreen dd{ border-left:2px solid #F8E71C; padding:  0 0 0 10px; margin: 0 0 10px 0; line-height: 12px; }
@@ -136,9 +136,12 @@
    });
 
    function markerClick(e) {
-console.log($('#dlGreen'))
+       var date= parent.window.document.getElementById("date").value;
+       parent.YndpFourSchoolMsg(date,e.target.id,1);
+       parent.YndpFourSchoolMsg(date,e.target.id,2);
+/*console.log($('#dlGreen'))
      $(".dlGreen dd").addClass("")
-       console.log(e)
+       console.log(e)*/
        map.clearMap()
        infoWindow.setContent(e.target.content);
        infoWindow.open(map, e.target.getPosition());
@@ -239,6 +242,9 @@ console.log($('#dlGreen'))
            }
        });
    }
+   $(document).click(function(){
+       parent.$('.schoolList02 .sWin01').hide();
+   });
 
 </script>
 
