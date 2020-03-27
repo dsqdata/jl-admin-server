@@ -205,6 +205,7 @@ function fourthZkjzgqkgzCircle(date,school_id,type,ext12,ext21,ext22,ext23,ext24
     }
 
     fourthZkjzgqkgz.setOption(option);
+    fourthZkjzgqkgz.off('click');
     fourthZkjzgqkgz.on('click',  function (params) {
         $(".schoolMid").show();
         initOrgBoxTitle(params.seriesName);
