@@ -61,7 +61,7 @@
 
     var styleName = "amap://styles/" + "darkblue";
      map.setMapStyle(styleName);
-    ajax('http://localhost:8000/static/geojson.json', function(err, geoJSON) {
+/*    ajax('/static/geojson.json', function(err, geoJSON) {
         if (!err) {
             var geojson = new AMap.GeoJSON({
                 geoJSON: geoJSON,
@@ -81,11 +81,11 @@
 
             geojson.setMap(map);
 
-            log.success('GeoJSON 数据加载完成')
+            /!*log.success('GeoJSON 数据加载完成')*!/
         } else {
             log.error('GeoJSON 服务请求失败')
          }
-    })
+    })*/
 
    var markerMap = {}
    $(document).ready(function () {
@@ -148,6 +148,7 @@
        infoWindow.open(map, e.target.getPosition());
            var marker = new AMap.Marker({
                 icon: e.target.images,
+                offset: new AMap.Pixel(-50, -154),
                 position: e.target.wgs84togcj02
             });
             map.add(marker);
@@ -263,6 +264,7 @@
                // 构造点标记
                var marker = new AMap.Marker({
                    icon:icon,
+                   offset: new AMap.Pixel(-34, -104),
                    /*position: [res.data[i].longitude, res.data[i].latitude]*/
                    position: wgs84togcj02
                });
