@@ -458,6 +458,16 @@ function fourthZkxsqkgzCircle(date,school_id,type,ext12,ext21,ext22,ext23,ext24,
         initOrgBoxTitle(legend);
         YndpFourPeopleMsg(date,school_id,type,legend);
 
+        var option = this.getOption();
+        var select_value = Object.values(obj.selected);
+        select_value.map(res => {
+            if(!res){
+                option.legend[0].selected[obj.name] = true;
+            }
+        });
+        this.setOption(option)
+
+
     });
 
     window.onresize = function () {

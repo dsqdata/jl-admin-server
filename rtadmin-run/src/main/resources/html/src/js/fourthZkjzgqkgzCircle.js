@@ -218,6 +218,17 @@ debugger;
         initOrgBoxTitle(legend);
         YndpFourPeopleMsg(date,school_id,type,legend);
 
+
+
+        var option = this.getOption();
+        var select_value = Object.values(obj.selected);
+        select_value.map(res => {
+            if(!res){
+                 option.legend[0].selected[obj.name] = true;
+            }
+        });
+        this.setOption(option)
+
     });
 
 
