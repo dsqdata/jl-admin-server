@@ -12,7 +12,7 @@ function chartBar401(date,school_id,type,ext11,ext12,ext13,ext14,ext15){
                 show: false,
                 x: 'center',
 
-                data: ['在湖北(含武汉)人数', '在其他省外人数', '截止目前在其他州人数', '截止目前在昆人数'],
+                data: ['在湖北(含武汉)人数', '在其他省外人数', '截止目前在其他州教职工数', '截止目前在昆人数'],
                 icon: 'circle',
                 textStyle: {
                     color: '#fff',
@@ -77,7 +77,7 @@ function chartBar401(date,school_id,type,ext11,ext12,ext13,ext14,ext15){
                     },
                     {
                         value: ext13,
-                        name: '截止目前在其他州人数',
+                        name: '截止目前在其他州教职工数',
                         itemStyle: {
                             normal: {
                                 color: '#FF5959'

@@ -130,6 +130,10 @@ function YndpFourPeopleMsg(date,school_id,type,title){
         if('在其他省外人数'==title){
             chartBar422(rq,ext11,ext15);
         }
+
+        if('截止目前在其他州教职工数'==title){
+            chartBar422(rq,ext11,ext13);
+        }
         /*if('截止目前在昆学生数'==title){
             chartBar422(rq,ext11,ext12);
         }
