@@ -204,18 +204,24 @@
            for (var i = 0; i < res.data.length; i++) {
                var wgs84togcj02 = coordtransform.wgs84togcj02(res.data[i].longitude, res.data[i].latitude);
                var icon='';
-               if(res.data[i].schoolType=='1'){
-                   icon= "src/images/legend01.png";
+
+               if(res.data[i].ext21==0 &&res.data[i].ext25 ==0 && res.data[i].ext26 ==0 && res.data[i].ext27 ==0){
+                   if(res.data[i].schoolType=='1'){
+                       icon= "src/images/legend01.png";
+                   }
+                   if(res.data[i].schoolType=='2'){
+                       icon="src/images/legend02.png";
+                   }
+                   if(res.data[i].schoolType=='3'){
+                       icon="src/images/legend03.png";
+                   }
+                   if(res.data[i].schoolType=='4'){
+                       icon="src/images/legend04.png";
+                   }
+               }else {
+                   icon="src/images/red.png";
                }
-               if(res.data[i].schoolType=='2'){
-                   icon="src/images/legend02.png";
-               }
-               if(res.data[i].schoolType=='3'){
-                   icon="src/images/legend03.png";
-               }
-               if(res.data[i].schoolType=='4'){
-                   icon="src/images/legend04.png";
-               }
+
 
                // 构造点标记
                var marker = new AMap.Marker({
