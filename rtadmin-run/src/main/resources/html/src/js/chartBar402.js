@@ -159,6 +159,7 @@ function chartBar402(date,school_id,type,ext11,ext12,ext13,ext14,ext15){
         }]
     };
     myChart402.setOption(option);
+    myChart402.off('click');
     myChart402.on('click',  function (params) {
         $(".schoolMid").show();
         initOrgBoxTitle(params.name);

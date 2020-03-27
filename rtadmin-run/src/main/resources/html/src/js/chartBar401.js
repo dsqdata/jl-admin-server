@@ -160,9 +160,11 @@ function chartBar401(date,school_id,type,ext11,ext12,ext13,ext14,ext15){
         };
 
     myChart401.setOption(option);
+    myChart401.off('click');
     myChart401.on('click',  function (params) {
         $(".schoolMid").show();
         initOrgBoxTitle(params.name);
+
         YndpFourPeopleMsg(date,school_id,type,params.name);
     });
 }
