@@ -84,8 +84,8 @@
                            </script>
                         </span>
                     <p>分校点合并统计</p></a>
-                    <div class="sWin01">
-                        <div class="searchBox clearfix"><input id="ext1" type="text" class="form-control winput"><button type="button" class="btn sbtn" onclick="onclick1()"></button></div>
+                    <div class="sWin01" onclick="stop(event)">
+                        <div class="searchBox clearfix"><input id="ext1" type="text" class="form-control winput" style="width: 90%"><button type="button" class="btn sbtn" onclick="onclick1()"></button></div>
                         <ul class="sWinList" id="page">
                             <!--   <li>1 昆明学院附属经开区学校</li>
                                <li>2 昆明学院附属经开区学校</li>
@@ -105,8 +105,8 @@
                            </script>
                         </span>
                     <p>存在新发感染病例学校</p></a>
-                    <div class="sWin01 redBg">
-                        <div class="searchBox clearfix"><input id="ext25" type="text" class="form-control winput"><button type="button" class="btn sbtn" onclick="onclick25()"></button></div>
+                    <div class="sWin01 redBg" onclick="stop(event)">
+                        <div class="searchBox clearfix"><input id="ext25" type="text" class="form-control winput" style="width: 90%"><button type="button" class="btn sbtn" onclick="onclick25()"></button></div>
                         <ul class="sWinList" id="page25">
                             <!--   <li>1 昆明学院附属经开区学校</li>
                                <li>2 昆明学院附属经开区学校</li>
@@ -130,8 +130,8 @@
                         </span>
                     <!-- <p class="mb10"><em>47</em>个</p>-->
                     <p>存在疑似病例学校</p></a>
-                    <div class="sWin01 redBg">
-                        <div class="searchBox clearfix"><input id="ext26" type="text" class="form-control winput"><button type="button" class="btn sbtn" onclick="onclick26()"></button></div>
+                    <div class="sWin01 redBg" onclick="stop(event)">
+                        <div class="searchBox clearfix"><input id="ext26" type="text" class="form-control winput" style="width: 90%"><button type="button" class="btn sbtn" onclick="onclick26()"></button></div>
                         <ul class="sWinList" id="page26">
                             <!--<li>1 昆明学院附属经开区学校</li>
                             <li>2 昆明学院附属经开区学校</li>
@@ -153,8 +153,8 @@
                     </span>
                     <!-- <p class="mb10"><em>47</em>个</p>-->
                     <p>存在确诊病例学校</p></a>
-                    <div class="sWin01 redBg">
-                        <div class="searchBox clearfix"><input id="ext27" type="text" class="form-control winput"><button type="button" class="btn sbtn" onclick="onclick27()"></button></div>
+                    <div class="sWin01 redBg" onclick="stop(event)">
+                        <div class="searchBox clearfix"><input id="ext27" type="text" class="form-control winput" style="width: 90%"><button type="button" class="btn sbtn" onclick="onclick27()"></button></div>
                         <ul class="sWinList" id="page27">
                             <!--<li>1 昆明学院附属经开区学校</li>
                             <li>2 昆明学院附属经开区学校</li>
@@ -177,14 +177,14 @@
                         </span>
                     <!-- <p><em>47</em>个</p>-->
                     <p>有发热、咳嗽、呼吸<br />困难等症状人群的学校</p></a>
-                    <div class="sWin01 redBg">
-                        <div class="searchBox clearfix"><input id="ext21" type="text" class="form-control winput"><button type="button" class="btn sbtn" onclick="onclick21()"></button></div>
+                    <div class="sWin01 redBg" onclick="stop(event)">
+                        <div class="searchBox clearfix"><input id="ext21" type="text" class="form-control winput" style="width: 90%"><button type="button" class="btn sbtn" onclick="onclick21()"></button></div>
                         <ul class="sWinList" id="page21">
 
                             <!--   <dd class="dd01">{{item.xxfl}} <span>{{item.count}}<em>个</em></span></dd>-->
                             <!--  <li>1 昆明学院附属经开区学校</li>
-                              <li>2 昆明学院附属经开区学校</li>
-                              <li>3 昆明学院附属经开区学校</li>-->
+                       i       <li>2 昆明学院附属经开区学校</li>
+                              <l>3 昆明学院附属经开区学校</li>-->
                         </ul>
                         <div class="clearfix">
 
@@ -312,17 +312,59 @@
         }
     });
 
-    $('.schoolList02 .itemLi').each(function () {
+    $('.schoolList02 .itemLi').each(function (i) {
         $(this).click(function (e){
-            e.stopPropagation();
+
+            $('#ext1').val('');
+            $('#ext21').val('');
+            $('#ext25').val('');
+            $('#ext26').val('');
+            $('#ext27').val('');
             $('.schoolList02 .sWin01').hide();
-            $(this).find('.sWin01').show();
+           if(i==0){
+                getXxtjs(5,'')
+
+               $(this).find('.sWin01').show();
+            }else if(i==1){
+               if(date1!=0){
+                   getXxtjs25(5,'',date)
+
+                   $(this).find('.sWin01').show();
+               }
+
+            }else if(i==2){
+               if(date2!=0){
+                   getXxtjs26(5,'',date)
+
+                   $(this).find('.sWin01').show();
+               }
+
+            }else if(i==3){
+               if(date3!=0){
+                   getXxtjs27(5,'',date)
+
+                   $(this).find('.sWin01').show();
+               }
+
+            }else if(i==4){
+               if(date4!=0){
+                   getXxtjs21(5,'',date)
+
+                   $(this).find('.sWin01').show();
+               }
+
+            }
+
+            e.stopPropagation();
+
         })
     })
     $(document).click(function(){
         $('.schoolList02 .sWin01').hide();
     });
-
+    function stop(event){
+        event.stopPropagation();
+    }
     $(document).ready(function () {
 
         var date = '';
@@ -342,11 +384,11 @@
         getXxtl();
         getXxfls(date);
         /* getXxtjs21();*/
-        getXxtjs(5,'')
+     /*   getXxtjs(5,'')
         getXxtjs21(5,'',date)
         getXxtjs25(5,'',date)
         getXxtjs26(5,'',date)
-        getXxtjs27(5,'',date)
+        getXxtjs27(5,'',date)*/
 
         getXxzs();
         getXxtl();

@@ -136,6 +136,7 @@
    });
 
    function markerClick(e) {
+      /* infoWindow.on('close',showInfoClose)*/
        var date= parent.window.document.getElementById("date").value;
        parent.YndpFourSchoolMsg(date,e.target.id,1);
        parent.YndpFourSchoolMsg(date,e.target.id,2);
@@ -163,13 +164,39 @@
    function sayHello(id,date) {
        $.axget("/api/yndp/SchoolMsg/getYndpFourSchoolMsgList?date="+date+"&&school_id="+id+"&&type=3", function (res) {
            if(res.data.length>0){
+               console.log(123)
+               console.log(res.data[0])
                var wgs84togcj02 = coordtransform.wgs84togcj02(res.data[0].longitude, res.data[0].latitude);
                var images='';
                var  dlGreen ='dlGreen';
                if(res.data[0].ext21==0 &&res.data[0].ext25 ==0 && res.data[0].ext26 ==0 && res.data[0].ext27 ==0){
-                   images= "src/images/BLUE.png";
+                   if(res.data[0].schoolType=='1'){
+                       images= "src/images/qq4.png";
+                   }
+                   if(res.data[0].schoolType=='2'){
+                       images="src/images/qq3.png";
+                   }
+                   if(res.data[0].schoolType=='3'){
+                       images="src/images/qq2.png";
+                   }
+                   if(res.data[0].schoolType=='4'){
+                       images="src/images/qq1.png";
+                   }
+                  /* images= "src/images/BLUE.png";*/
                }else{
-                   images= "src/images/red.png";
+                   if(res.data[0].schoolType=='1'){
+                       images= "src/images/ff4.png";
+                   }
+                   if(res.data[0].schoolType=='2'){
+                       images="src/images/ff3.png";
+                   }
+                   if(res.data[0].schoolType=='3'){
+                       images="src/images/ff2.png";
+                   }
+                   if(res.data[0].schoolType=='4'){
+                       images="src/images/ff1.png";
+                   }
+                  /* images= "src/images/red.png";*/
                    dlGreen ='dlRed';
                }
 
@@ -198,7 +225,6 @@
    }
 
    function  selectMap(id){
-
        var date= parent.window.document.getElementById("date").value;
        $.axget("/api/yndp/SchoolMsg/getYndpFourSchoolMsgList?date="+date+"&type=3&school_id="+'', function (res) {
            for (var i = 0; i < res.data.length; i++) {
@@ -207,19 +233,30 @@
 
                if(res.data[i].ext21==0 &&res.data[i].ext25 ==0 && res.data[i].ext26 ==0 && res.data[i].ext27 ==0){
                    if(res.data[i].schoolType=='1'){
-                       icon= "src/images/legend01.png";
+                       icon= "src/images/q4.png";
                    }
                    if(res.data[i].schoolType=='2'){
-                       icon="src/images/legend02.png";
+                       icon="src/images/q3.png";
                    }
                    if(res.data[i].schoolType=='3'){
-                       icon="src/images/legend03.png";
+                       icon="src/images/q2.png";
                    }
                    if(res.data[i].schoolType=='4'){
-                       icon="src/images/legend04.png";
+                       icon="src/images/q1.png";
                    }
                }else {
-                   icon="src/images/red.png";
+                   if(res.data[i].schoolType=='1'){
+                       icon= "src/images/f4.png";
+                   }
+                   if(res.data[i].schoolType=='2'){
+                       icon="src/images/f3.png";
+                   }
+                   if(res.data[i].schoolType=='3'){
+                       icon="src/images/f2.png";
+                   }
+                   if(res.data[i].schoolType=='4'){
+                       icon="src/images/f1.png";
+                   }
                }
 
 
@@ -236,9 +273,33 @@
                var  images ='';
                var  dlGreen ='dlGreen';
                if(res.data[i].ext21==0 &&res.data[i].ext25 ==0 && res.data[i].ext26 ==0 && res.data[i].ext27 ==0){
-                   images= "src/images/BLUE.png";
+                   if(res.data[i].schoolType=='1'){
+                       images= "src/images/qq4.png";
+                   }
+                   if(res.data[i].schoolType=='2'){
+                       images="src/images/qq3.png";
+                   }
+                   if(res.data[i].schoolType=='3'){
+                       images="src/images/qq2.png";
+                   }
+                   if(res.data[i].schoolType=='4'){
+                       images="src/images/qq1.png";
+                   }
+                 /*  images= "src/images/BLUE.png";*/
                }else{
-                   images= "src/images/red.png";
+                   if(res.data[i].schoolType=='1'){
+                       images= "src/images/ff4.png";
+                   }
+                   if(res.data[i].schoolType=='2'){
+                       images="src/images/ff3.png";
+                   }
+                   if(res.data[i].schoolType=='3'){
+                       images="src/images/ff2.png";
+                   }
+                   if(res.data[i].schoolType=='4'){
+                       images="src/images/ff1.png";
+                   }
+                /*   images= "src/images/red.png";*/
                    dlGreen ='dlRed';
                }
                marker.id=res.data[i].school_id;
@@ -258,6 +319,11 @@
    $(document).click(function(){
        parent.$('.schoolList02 .sWin01').hide();
    });
+
+/*   function showInfoClose(e){
+       map.clearMap()
+       selectMap('')
+   }*/
 
 </script>
 

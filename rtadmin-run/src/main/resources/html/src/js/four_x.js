@@ -1,3 +1,8 @@
+var date1=0
+var date2=0
+var date3=0
+var date4=0
+
 
 function getXxzs() {
     $.axget("/api/yndp/xxxx/getXxzs", function (res) {
@@ -14,6 +19,10 @@ function getXxtl() {
 function getXxfls() {
     var date=$('#date').val();
     $.axget("/api/yndp/xxxx/getXxfls?date="+date, function (res) {
+        date1=res.data[0];
+        date2=res.data[1];
+        date3=res.data[2];
+        date4=res.data[3];
         initOrgBox03(res.data)
     });
 }
@@ -64,27 +73,28 @@ function getXxtjs21(num,name) {
         var showNum = num;
         var dataL = res.data.length;
         var pageNum = Math.ceil(dataL / showNum);
-        $('#pagination21').pagination(pageNum, {
-            num_edge_entries: 1, //边缘页数
-            num_display_entries: 4, //主体页数
-            items_per_page: 1, //每页显示1项
-            prev_text: "<",
-            next_text: ">",
-            callback: function(index) {
-                //console.log(index);
-                var html = ''
-                for(var i = showNum * index; i < showNum * index + showNum; i++) {
-                    console.log(Number(i)+1)
-                    if(i < dataL) {
-                        var  a=Number(i)+1;
-                        html += '<a href="#" onclick="onclickMap('+res.data[i].school_id+')"><li>'+a+'.'+res.data[i].name+' <font color="red"> '+res.data[i].ext21+'人<font></li></a>'
 
+            $('#pagination21').pagination(pageNum, {
+                num_edge_entries: 1, //边缘页数
+                num_display_entries: 4, //主体页数
+                items_per_page: 1, //每页显示1项
+                prev_text: "<",
+                next_text: ">",
+                callback: function(index) {
+                    //console.log(index);
+                    var html = ''
+                    for(var i = showNum * index; i < showNum * index + showNum; i++) {
+                        console.log(Number(i)+1)
+                        if(i < dataL) {
+                            var  a=Number(i)+1;
+                            html += '<a href="#" onclick="onclickMap('+res.data[i].school_id+')"><li>'+a+'.'+res.data[i].name+' <font color="red"> '+res.data[i].ext21+'人<font></li></a>'
+
+                        }
                     }
-                }
 
-                $('#page21').html(html)
-            }
-        })
+                    $('#page21').html(html)
+                }
+            })
 
 
     })
@@ -101,26 +111,27 @@ function getXxtjs25(num,name) {
         var showNum = num;
         var dataL = res.data.length;
         var pageNum = Math.ceil(dataL / showNum);
-        $('#pagination25').pagination(pageNum, {
-            num_edge_entries: 1, //边缘页数
-            num_display_entries: 4, //主体页数
-            items_per_page: 1, //每页显示1项
-            prev_text: "<",
-            next_text: ">",
-            callback: function(index) {
-                //console.log(index);
-                var html = ''
-                for(var i = showNum * index; i < showNum * index + showNum; i++) {
-                    if(i < dataL) {
-                        var  a=Number(i)+1;
-                        html += '<a href="#" onclick="onclickMap('+res.data[i].school_id+')"><li>'+a+'.'+res.data[i].name+' <font color="red">  '+res.data[i].ext25+'人</font></li></a>'
 
+            $('#pagination25').pagination(pageNum, {
+                num_edge_entries: 1, //边缘页数
+                num_display_entries: 4, //主体页数
+                items_per_page: 1, //每页显示1项
+                prev_text: "<",
+                next_text: ">",
+                callback: function (index) {
+                    //console.log(index);
+                    var html = ''
+                    for (var i = showNum * index; i < showNum * index + showNum; i++) {
+                        if (i < dataL) {
+                            var a = Number(i) + 1;
+                            html += '<a href="#" onclick="onclickMap(' + res.data[i].school_id + ')"><li>' + a + '.' + res.data[i].name + ' <font color="red">  ' + res.data[i].ext25 + '人</font></li></a>'
+
+                        }
                     }
-                }
 
-                $('#page25').html(html)
-            }
-        })
+                    $('#page25').html(html)
+                }
+            })
 
 
     })
@@ -137,26 +148,27 @@ function getXxtjs26(num,name) {
         var showNum = num;
         var dataL = res.data.length;
         var pageNum = Math.ceil(dataL / showNum);
-        $('#pagination26').pagination(pageNum, {
-            num_edge_entries: 1, //边缘页数
-            num_display_entries: 4, //主体页数
-            items_per_page: 1, //每页显示1项
-            prev_text: "<",
-            next_text: ">",
-            callback: function(index) {
-                //console.log(index);
-                var html = ''
-                for(var i = showNum * index; i < showNum * index + showNum; i++) {
-                    if(i < dataL) {
-                        var  a=Number(i)+1;
-                        html += '<a href="#"  onclick="onclickMap('+res.data[i].school_id+')"><li>'+a+'.'+res.data[i].name+' <font color="red">  '+res.data[i].ext26+'人</font></li></a>'
 
+            $('#pagination26').pagination(pageNum, {
+                num_edge_entries: 1, //边缘页数
+                num_display_entries: 4, //主体页数
+                items_per_page: 1, //每页显示1项
+                prev_text: "<",
+                next_text: ">",
+                callback: function (index) {
+                    //console.log(index);
+                    var html = ''
+                    for (var i = showNum * index; i < showNum * index + showNum; i++) {
+                        if (i < dataL) {
+                            var a = Number(i) + 1;
+                            html += '<a href="#"  onclick="onclickMap(' + res.data[i].school_id + ')"><li>' + a + '.' + res.data[i].name + ' <font color="red">  ' + res.data[i].ext26 + '人</font></li></a>'
+
+                        }
                     }
-                }
 
-                $('#page26').html(html)
-            }
-        })
+                    $('#page26').html(html)
+                }
+            })
 
 
     })
@@ -172,26 +184,28 @@ function getXxtjs27(num,name) {
         var showNum = num;
         var dataL = res.data.length;
         var pageNum = Math.ceil(dataL / showNum);
-        $('#pagination27').pagination(pageNum, {
-            num_edge_entries: 1, //边缘页数
-            num_display_entries: 4, //主体页数
-            items_per_page: 1, //每页显示1项
-            prev_text: "<",
-            next_text: ">",
-            callback: function (index) {
-                //console.log(index);
-                var html = ''
-                for (var i = showNum * index; i < showNum * index + showNum; i++) {
-                    if (i < dataL) {
-                        var a = Number(i) + 1;
-                        html += '<a href="#"  onclick="onclickMap('+res.data[i].school_id+')"><li>' + a + '.' + res.data[i].name + ' <font color="red"> ' + res.data[i].ext27 + '人</font></li></a>'
 
+            $('#pagination27').pagination(pageNum, {
+                num_edge_entries: 1, //边缘页数
+                num_display_entries: 4, //主体页数
+                items_per_page: 1, //每页显示1项
+                prev_text: "<",
+                next_text: ">",
+                callback: function (index) {
+                    //console.log(index);
+                    var html = ''
+                    for (var i = showNum * index; i < showNum * index + showNum; i++) {
+                        if (i < dataL) {
+                            var a = Number(i) + 1;
+                            html += '<a href="#"  onclick="onclickMap(' + res.data[i].school_id + ')"><li>' + a + '.' + res.data[i].name + ' <font color="red"> ' + res.data[i].ext27 + '人</font></li></a>'
+
+                        }
                     }
-                }
 
-                $('#page27').html(html)
-            }
-        })
+                    $('#page27').html(html)
+                }
+            })
+
     })
 }
     $('.setPageDiv').change(function() {
@@ -204,26 +218,26 @@ function getXxtjs27(num,name) {
             var showNum = num;
             var dataL = res.data.length;
             var pageNum = Math.ceil(dataL / showNum);
-            $('#pagination').pagination(pageNum, {
-                num_edge_entries: 1, //边缘页数
-                num_display_entries: 4, //主体页数
-                items_per_page: 1, //每页显示1项
-                prev_text: "<",
-                next_text: ">",
-                callback: function (index) {
-                    //console.log(index);
-                    var html = ''
-                    for (var i = showNum * index; i < showNum * index + showNum; i++) {
-                        if (i < dataL) {
-                            var a = Number(i) + 1;
-                            html += '<a href="#" onclick="onclickMap('+res.data[i].id+')"><li>' + a + '.' + res.data[i].name + '</li></a>'
+                $('#pagination').pagination(pageNum, {
+                    num_edge_entries: 1, //边缘页数
+                    num_display_entries: 4, //主体页数
+                    items_per_page: 1, //每页显示1项
+                    prev_text: "<",
+                    next_text: ">",
+                    callback: function (index) {
+                        //console.log(index);
+                        var html = ''
+                        for (var i = showNum * index; i < showNum * index + showNum; i++) {
+                            if (i < dataL) {
+                                var a = Number(i) + 1;
+                                html += '<a href="#" onclick="onclickMap(' + res.data[i].id + ')"><li>' + a + '.' + res.data[i].name + '</li></a>'
 
+                            }
                         }
-                    }
 
-                    $('#page').html(html)
-                }
-            })
+                        $('#page').html(html)
+                    }
+                })
         })
     }
 function onclickMap(id) {
@@ -233,25 +247,30 @@ function onclickMap(id) {
 }
 
 function onclick21() {
+    event.stopPropagation();
     var ext21 =$('#ext21').val();
     getXxtjs21(5,ext21)
 }
 
 function onclick25() {
+    event.stopPropagation();
     var ext25 =$('#ext25').val();
     getXxtjs25(5,ext25)
 }
 
 function onclick26() {
+    event.stopPropagation();
     var ext26 =$('#ext26').val();
     getXxtjs26(5,ext26)
 }
 
 function onclick27() {
+    event.stopPropagation();
     var ext27 =$('#ext27').val();
     getXxtjs27(5,ext27)
 }
 function onclick1() {
+    event.stopPropagation();
     var ext1 =$('#ext1').val();
     getXxtjs(5,ext1)
 }
