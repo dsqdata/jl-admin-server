@@ -49,9 +49,10 @@ $(function() {
 
         },
         grid: {
-            top: '24%',
+            // top: '24%',
             left: '3%',
             right: '4%',
+            bottom:'10%',
 
             containLabel: true
         },
@@ -109,7 +110,6 @@ $(function() {
             stack: '排查特殊人群情况',
             smooth: true,
             barWidth: 33,
-
             itemStyle: {
                 normal: {
                     color:'rgba(248,77,119, 0.4)',

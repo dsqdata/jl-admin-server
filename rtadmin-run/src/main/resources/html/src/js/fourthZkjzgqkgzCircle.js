@@ -1,6 +1,5 @@
 
 function fourthZkjzgqkgzCircle(date,school_id,type,ext12,ext21,ext22,ext23,ext24,ext25,ext26,ext27){
-    debugger;
     data1 = [{
             'name': '有发热、咳嗽、呼吸困难等症状',
             'value': ext21
@@ -45,9 +44,11 @@ function fourthZkjzgqkgzCircle(date,school_id,type,ext12,ext21,ext22,ext23,ext24
             labelLine: {
                 show: false
             },
-            color: 'rgba(0, 0, 0, 0)',
-            borderColor: 'rgba(0, 0, 0, 0)',
-            borderWidth: 0
+            // color: 'rgba(0, 0, 0, 0)',
+            // borderColor: 'rgba(0, 0, 0, 0)',
+            color: '#20232a',
+            borderColor: '#20232a',
+            borderWidth: 6
         }
     }
 
@@ -67,9 +68,10 @@ function fourthZkjzgqkgzCircle(date,school_id,type,ext12,ext21,ext22,ext23,ext24
         let seriesObj = {
             name: data1[i].name,
             type: 'pie',
-            clockWise: false,
+            clockWise: false,//顺时加载
             center: ['35%', '55%'],
-            radius: [r - 1 - i * 18, r - i * 18],
+            // radius: [r - 1 - i * 18, r - i * 18],
+            radius: [r  - i * 18, r - i * 18],
             itemStyle: {
                 normal: {
                     label: {
@@ -98,6 +100,7 @@ function fourthZkjzgqkgzCircle(date,school_id,type,ext12,ext21,ext22,ext23,ext24
                 name: 'invisible',
                 itemStyle: placeHolderStyle
             }]
+
         }
         seriesObjs1.push(seriesObj)
     }
@@ -130,7 +133,6 @@ function fourthZkjzgqkgzCircle(date,school_id,type,ext12,ext21,ext22,ext23,ext24
                 color: '#23B7E5',
                 fontSize: 12,
                 rich: {
-
                     color0: {
                         color:'#cf2d67',
                         fontSize: 14,
@@ -205,7 +207,6 @@ function fourthZkjzgqkgzCircle(date,school_id,type,ext12,ext21,ext22,ext23,ext24
     }
 
     fourthZkjzgqkgz.setOption(option);
-    fourthZkjzgqkgz.off('click');
     fourthZkjzgqkgz.on('click',  function (params) {
         $(".schoolMid").show();
         initOrgBoxTitle(params.seriesName);

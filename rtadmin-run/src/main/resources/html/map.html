@@ -30,7 +30,7 @@
         <div class="sideCon">
             <!--资源配置-->
             <div class="sideBox01" id="orgBox01">
-                <script id="tpl-orgBox01" type="text/html">>
+                <script id="tpl-orgBox01" type="text/html">
                 <h2 class="mapTbox">
                     <span class="mapT01"><span class="mapTbg01">资源配置</span></span>
                 </h2>
@@ -698,7 +698,7 @@
 
     var initOrgBox05 = function (data,sumChart) {
 
-        // var MaxY = 1000000;
+        var MaxY = 1000000;
         var sumArr = [];
         var rqArr = [];
         var sum = 0;
@@ -711,10 +711,10 @@
         }
 
         //获取Y轴最大值
-        // MaxY =  Math.max.apply(null,sumArr);
-        // if (MaxY==-Infinity){
-        //     MaxY=1000000;
-        // }
+        MaxY =  Math.max.apply(null,sumArr);
+        if (MaxY==-Infinity){
+            MaxY=1000000;
+        }
         // console.log("MaxY="+MaxY);
         // console.log(sumArr);
         // console.log(rqArr);
@@ -768,9 +768,9 @@
             },
             yAxis: {
                 type: 'value',
-                // min:0,
+                min:0,
                 // max:20000,
-                // max:MaxY+10000,
+                max:MaxY+10000,
                 axisLabel: {
                     show: false,
                 },
@@ -856,6 +856,7 @@
 
     var initWzbz = function (jgId, jgName) {//初始化-物资保障
         $.axget("/api/yndp/wzbz/findWzbzListByJgId?jgId="+jgId, function (res) {
+
             initOrgBox02(res.data)
             // console.log("物资保障"+res.data)
         });
@@ -995,6 +996,11 @@
         $.axget("/api/yndp/zdrymp/getZdrympData?jgid="+jgId+"&zdrylx=3", function (res) {
             var pie01rs =0
             var pie01xzrs = 0
+            var legendData = [];
+            for(var i=0;i<res.data.length; i++){
+                legendData.push({"value": res.data[i].zdryrs,"name":res.data[i].zdrymc,"xzrs":res.data[i].zdryxzrs,"bfb":res.data[i].zdryrszb});
+
+            }
             chartPie03.setOption({
                 series:[{
                     name: '重点人员摸排',
@@ -1013,6 +1019,38 @@
 
                 }
                 ],
+                legend: {
+                    orient: "vartical",
+                    icon: 'circle',
+                    x: "left",
+                    top: "25%",
+                    left: "60%",
+                    bottom: "0%",
+                    data:legendData,
+                    selectedMode:false,
+                    itemWidth: 8,
+                    itemHeight: 8,
+                    textStyle: {
+                        fontSize: 14,
+                        color: '#fft',
+                        rich: {
+                            white: {
+                                color: '#fff',
+                                fontSize: 14,
+                            }
+                        },
+                    },
+                    itemGap: 20,
+                    formatter: function (name) {
+                        for (let i = 0; i <legendData.length ; i++) {
+                            if(legendData[i].name==name){
+                                return name+'  '+ legendData[i].value + '人'
+                            }
+                        }
+
+                    },
+
+                },
                 tooltip: {
                     trigger: 'item',
                     formatter:function(data){
@@ -1029,6 +1067,11 @@
         $.axget("/api/yndp/zdrymp/getZdrympData?jgid="+jgId+"&zdrylx=4", function (res) {
             var pie01rs =0
             var pie01xzrs = 0
+            var legendData = [];
+            for(var i=0;i<res.data.length; i++){
+                legendData.push({"value": res.data[i].zdryrs,"name":res.data[i].zdrymc,"xzrs":res.data[i].zdryxzrs,"bfb":res.data[i].zdryrszb});
+
+            }
             chartPie04.setOption({
                 series:[{
                     name: '重点人员摸排',
@@ -1047,6 +1090,38 @@
 
                 }
                 ],
+                legend: {
+                    orient: "vartical",
+                    icon: 'circle',
+                    x: "left",
+                    top: "35%",
+                    left: "60%",
+                    bottom: "0%",
+                    data:legendData,
+                    selectedMode:false,
+                    itemWidth: 8,
+                    itemHeight: 8,
+                    textStyle: {
+                        fontSize: 14,
+                        color: '#fft',
+                        rich: {
+                            white: {
+                                color: '#fff',
+                                fontSize: 14,
+                            }
+                        },
+                    },
+                    itemGap: 20,
+                    formatter: function (name) {
+                        for (let i = 0; i <legendData.length ; i++) {
+                            if(legendData[i].name==name){
+                                return name+'  '+ legendData[i].value + '人'
+                            }
+                        }
+
+                    },
+
+                },
                 tooltip: {
                     trigger: 'item',
                     formatter:function(data){
@@ -1061,8 +1136,15 @@
         });
         //1 特殊人群
         $.axget("/api/yndp/zdrymp/getZdrympData?jgid="+jgId+"&zdrylx=1", function (res) {
+            console.log("____特殊人群____");
+            console.log(res.data);
             var pie01rs =0
             var pie01xzrs = 0
+            var legendData = [];
+            for(var i=0;i<res.data.length; i++){
+                legendData.push({"value": res.data[i].zdryrs,"name":res.data[i].zdrymc,"xzrs":res.data[i].zdryxzrs,"bfb":res.data[i].zdryrszb});
+
+            }
             chartPie01.setOption({
                 series:[{
                     name: '重点人员摸排',
@@ -1081,6 +1163,38 @@
 
                 }
                 ],
+                legend: {
+                    orient: "vartical",
+                    icon: 'circle',
+                    x: "left",
+                    top: "15%",
+                    left: "60%",
+                    bottom: "0%",
+                    data:legendData,
+                    selectedMode:false,
+                    itemWidth: 8,
+                    itemHeight: 8,
+                    textStyle: {
+                        fontSize: 14,
+                        color: '#fft',
+                        rich: {
+                            white: {
+                                color: '#fff',
+                                fontSize: 14,
+                            }
+                        },
+                    },
+                    itemGap: 20,
+                    formatter: function (name) {
+                        for (let i = 0; i <legendData.length ; i++) {
+                            if(legendData[i].name==name){
+                                return name+'  '+ legendData[i].value + '人'
+                            }
+                        }
+
+                    },
+
+                },
                 tooltip: {
                     trigger: 'item',
                     formatter:function(data){
@@ -1097,6 +1211,11 @@
         $.axget("/api/yndp/zdrymp/getZdrympData?jgid="+jgId+"&zdrylx=2", function (res) {
             var pie01rs =0
             var pie01xzrs = 0
+            var legendData = [];
+            for(var i=0;i<res.data.length; i++){
+                legendData.push({"value": res.data[i].zdryrs,"name":res.data[i].zdrymc,"xzrs":res.data[i].zdryxzrs,"bfb":res.data[i].zdryrszb});
+
+            }
             chartPie02.setOption({
                 series:[{
                     name: '重点人员摸排',
@@ -1115,6 +1234,38 @@
 
                 }
                 ],
+                legend: {
+                    orient: "vartical",
+                    icon: 'circle',
+                    x: "left",
+                    top: "35%",
+                    left: "60%",
+                    bottom: "0%",
+                    data:legendData,
+                    selectedMode:false,
+                    itemWidth: 8,
+                    itemHeight: 8,
+                    textStyle: {
+                        fontSize: 14,
+                        color: '#fft',
+                        rich: {
+                            white: {
+                                color: '#fff',
+                                fontSize: 14,
+                            }
+                        },
+                    },
+                    itemGap: 20,
+                    formatter: function (name) {
+                        for (let i = 0; i <legendData.length ; i++) {
+                            if(legendData[i].name==name){
+                                return name+'  '+ legendData[i].value + '人'
+                            }
+                        }
+
+                    },
+
+                },
                 tooltip: {
                     trigger: 'item',
                     formatter:function(data){

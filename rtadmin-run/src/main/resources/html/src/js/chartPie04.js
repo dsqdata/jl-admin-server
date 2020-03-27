@@ -1,3 +1,4 @@
+/*
 $(function(){
 
     option = {
@@ -163,5 +164,135 @@ $(function(){
             chartPie04.resize();
 
         }, 300)
+    };
+})
+*/
+
+
+$(function() {
+    // var dataChart01 = echarts.init(document.getElementById('jqyknlfx'));
+    // var total = result[0]['num']+result[1]['num']+result[2]['num']+result[3]['num']+result[4]['num'];
+    var color = ["#30b781", "#ed3d63", "#efd053", "#a139f1", "#7dc3f9"];
+    // var xdata = ['1-15岁', "16-25岁", "26-35岁", "36-50岁", '51岁以上'];
+    // var ydata = [{
+    //     name: '1-15岁',
+    //     value: result[0]['num']
+    // },
+    //     {
+    //         name: '16-25岁',
+    //         value: result[1]['num']
+    //     },
+    //     {
+    //         name: '26-35岁',
+    //         value: result[2]['num']
+    //     },
+    //     {
+    //         name: '36-50岁',
+    //         value: result[3]['num']
+    //     },
+    //     {
+    //         name: '51岁以上',
+    //         value: result[4]['num']
+    //     }
+    // ];
+    var rich = {
+        white: {
+            color: '#fff',
+            fontSize: 14,
+        }
+    };
+    option = {
+        color: color,
+        tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        title: [
+            {
+                text: '0人',
+                x: '25%',
+                y: '38%',
+                textStyle: {
+                    fontSize: 18,
+                    fontWeight: 'normal',
+                    fontStyle: 'normal',
+                    color: '#f8e71c'
+                }
+            },
+            {
+                text: '特殊人群',
+                x: '21%',
+                y: '47%',
+                textStyle: {
+                    fontSize: 12,
+                    fontWeight: '700',
+                    fontStyle: 'normal',
+                    color: '#23b7e5'
+                }
+            },
+            {
+                text: '新增 +0人',
+                x: '23%',
+                y: '57%',
+                textStyle: {
+                    fontSize: 12,
+                    fontWeight: '700',
+                    fontStyle: 'normal',
+                    color: '#7ed321'
+                }
+            }
+        ],
+        legend: {
+            orient: "vartical",
+            icon: 'circle',
+            x: "left",
+            top: "15%",
+            left: "60%",
+            bottom: "0%",
+            data: [],
+            selectedMode:false,
+            itemWidth: 8,
+            itemHeight: 8,
+            textStyle: {
+                fontSize: 16,
+                color: '#fft',
+                rich: rich,
+            },
+            itemGap: 20,
+            // formatter: function (name) {
+            //     var value = option.series[0].data;
+            //     for (var i = 0; i < value.length; i++) {
+            //         if (name == value[i].name)
+            //             /*return value[i].name + '  ' + '{white|' + Math.round((value[i].value/total)*100) + '%}'*/
+            //             return value[i].name + '  ' + '{white|' + value[i].value + '}'
+            //     }
+            //
+            // },
+        },
+        series: [{
+            name: '景区游客年龄分析',
+            type: 'pie',
+            clockwise: false, //饼图的扇区是否是顺时针排布
+            minAngle: 20, //最小的扇区角度（0 ~ 360）
+            radius: ["55%", "74%"],
+            center: ["30%", "50%"],
+            avoidLabelOverlap: false,
+            label: {
+                normal: {
+                    show: false,
+                },
+
+            },
+            data: []
+        }]
+    };
+
+    chartPie04.setOption(option);
+    chartPie04.resize();
+    window.onresize = function () {
+        setTimeout(function () {
+            chartPie04.resize();
+        }, 300)
+
     };
 })

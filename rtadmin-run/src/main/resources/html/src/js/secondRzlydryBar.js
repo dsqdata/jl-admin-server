@@ -45,9 +45,10 @@ $(function() {
             }
         },
         grid: {
-            top: '24%',
+            // top: '24%',
             left: '3%',
             right: '4%',
+            bottom:'10%',
             containLabel: true
         },
         xAxis: [{

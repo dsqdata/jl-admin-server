@@ -288,9 +288,12 @@ function fourthZkxsqkgzCircle(date,school_id,type,ext12,ext21,ext22,ext23,ext24,
             labelLine: {
                 show: false
             },
-            color: 'rgba(0, 0, 0, 0)',
-            borderColor: 'rgba(0, 0, 0, 0)',
-            borderWidth: 0
+            // color: 'rgba(0, 0, 0, 0)',
+            // borderColor: 'rgba(0, 0, 0, 0)',
+            // borderWidth: 0
+            color: '#20232a',
+            borderColor: '#20232a',
+            borderWidth: 6
         }
     }
 
@@ -312,7 +315,8 @@ function fourthZkxsqkgzCircle(date,school_id,type,ext12,ext21,ext22,ext23,ext24,
             type: 'pie',
             clockWise: false,
             center: ['35%', '55%'],
-            radius: [r - 1 - i * 18, r - i * 18],
+            // radius: [r - 1 - i * 18, r - i * 18],
+            radius: [r - i * 18, r - i * 18],
             itemStyle: {
                 normal: {
                     label: {
