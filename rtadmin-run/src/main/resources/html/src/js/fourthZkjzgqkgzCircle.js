@@ -1,7 +1,6 @@
 
 function fourthZkjzgqkgzCircle(date,school_id,type,ext12,ext21,ext22,ext23,ext24,ext25,ext26,ext27){
-debugger;
-    data = [{
+    data1 = [{
             'name': '有发热、咳嗽、呼吸困难等症状',
             'value': ext21
         }, {
@@ -27,13 +26,13 @@ debugger;
             'value': ext27
         }]
 
-    let arrValue = getArrayValue(data, "value");
-    let MaxValue = parseInt(arrValue[0]);
-    for (let i = 0; i < arrValue.length - 1; i++) {
-        MaxValue = MaxValue < parseInt(arrValue[i+1]) ? parseInt(arrValue[i+1]) : MaxValue
+    let arrValue1 = getArrayValue(data1, "value");
+    let MaxValue1 = parseInt(arrValue1[0]);
+    for (let i = 0; i < arrValue1.length - 1; i++) {
+        MaxValue1 = MaxValue1 < parseInt(arrValue1[i+1]) ? parseInt(arrValue1[i+1]) : MaxValue1
     }
 
-    let seriesObjs = [];
+    let seriesObjs1 = [];
     let r = 130;
     let color = ['#cf2d67', '#f7b632', '#5974f7', '#0063fe', '#fa6b40', '#d145cc', '#f7517f'];
     let placeHolderStyle = {
@@ -62,10 +61,10 @@ debugger;
         return res;
     }
 
-    for (let i = 0; i < data.length; i++) {
+    for (let i = 0; i < data1.length; i++) {
         //            legendData.push(data[i].name)
         let seriesObj = {
-            name: data[i].name,
+            name: data1[i].name,
             type: 'pie',
             clockWise: false,
             center: ['35%', '55%'],
@@ -91,15 +90,15 @@ debugger;
             },
             hoverAnimation: false,
             data: [{
-                value: data[i].value
+                value: data1[i].value
             }, {
                 // value: data[0].value * 4 / 3 - data[i].value,
-                value:MaxValue * 4 / 3 - data[i].value,
+                value:MaxValue1 * 4 / 3 - data1[i].value,
                 name: 'invisible',
                 itemStyle: placeHolderStyle
             }]
         }
-        seriesObjs.push(seriesObj)
+        seriesObjs1.push(seriesObj)
     }
     option = {
         tooltip: {
@@ -120,9 +119,9 @@ debugger;
 
             data: ['有发热、咳嗽、呼吸困难等症状','外出后返昆未满15天','正在进行隔离观察（治疗）','与确诊及疑似密切接触未满15天','新发感染病例','确诊病例','疑似病例'],
             formatter:function(name){
-                for(var i = 0; i < data.length; i++){
-                    if(name==data[i].name){
-                        return name + '     ' +'{color' + i + '|'+ data[i].value +'}'+'{font' + i + '|'+ '人'+'}';
+                for(var i = 0; i < data1.length; i++){
+                    if(name==data1[i].name){
+                        return name + '     ' +'{color' + i + '|'+ data1[i].value +'}'+'{font' + i + '|'+ '人'+'}';
                     }
                 }
             },
@@ -201,7 +200,7 @@ debugger;
         toolbox: {
             show: false
         },
-        series: seriesObjs
+        series: seriesObjs1
     }
 
     fourthZkjzgqkgz.setOption(option);
@@ -217,7 +216,6 @@ debugger;
         $(".schoolMid").show();
         initOrgBoxTitle(legend);
         YndpFourPeopleMsg(date,school_id,type,legend);
-
 
 
         var option = this.getOption();

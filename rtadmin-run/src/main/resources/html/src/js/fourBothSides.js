@@ -149,13 +149,13 @@ function YndpFourPeopleMsg(date,school_id,type,title){
         if('外出后返昆未满15天'==title){
             chartBar422(rq,ext12,ext22);
         }
-        if('正在进行隔离观察(治疗)'==title){
+        if('正在进行隔离观察（治疗）'==title){
             chartBar422(rq,ext12,ext23);
         }
         if('与确诊及疑似密切接触未满15天'==title){
             chartBar422(rq,ext12,ext24);
         }
-        if('新发感染病例 '==title){
+        if('新发感染病例'==title){
             chartBar422(rq,ext12,ext25);
         }
         if('确诊病例'==title){
