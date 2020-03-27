@@ -79,6 +79,7 @@
             a.name,
             a.latitude,
             a.longitude,
+            a.type schoolType,
             sum(b.ext11) ext11,
             sum(b.ext12) ext12,
             sum(b.ext13) ext13,

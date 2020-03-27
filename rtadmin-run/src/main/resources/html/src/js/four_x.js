@@ -1,3 +1,4 @@
+
 function getXxzs() {
     $.axget("/api/yndp/xxxx/getXxzs", function (res) {
         initOrgBox01(res.data)
@@ -11,8 +12,8 @@ function getXxtl() {
 }
 
 function getXxfls() {
-    $.axget("/api/yndp/xxxx/getXxfls?date=20200318", function (res) {
-        console.log(res.data)
+    var date=$('#date').val();
+    $.axget("/api/yndp/xxxx/getXxfls?date="+date, function (res) {
         initOrgBox03(res.data)
     });
 }
@@ -57,9 +58,9 @@ $('.setPageDiv21').change(function() {
 
 
 function getXxtjs21(num,name) {
-    $.axget("/api/yndp/xxxx/getXxtjs21?date=20200318&name="+name, function (res) {
+    var date=$('#date').val();
+    $.axget("/api/yndp/xxxx/getXxtjs21?date="+date+"&name="+name, function (res) {
         //1.计算分页数量
-        console.log(res.data)
         var showNum = num;
         var dataL = res.data.length;
         var pageNum = Math.ceil(dataL / showNum);
@@ -72,13 +73,11 @@ function getXxtjs21(num,name) {
             callback: function(index) {
                 //console.log(index);
                 var html = ''
-
-                console.log(showNum * index + '~' + parseInt(showNum * index) + parseInt(showNum))
                 for(var i = showNum * index; i < showNum * index + showNum; i++) {
                     console.log(Number(i)+1)
                     if(i < dataL) {
                         var  a=Number(i)+1;
-                        html += '<li>'+a+'.'+res.data[i].school_id+'  '+res.data[i].ext21+'人</li>'
+                        html += '<a href="#" onclick="onclickMap('+res.data[i].school_id+')"><li>'+a+'.'+res.data[i].name+' <font color="red"> '+res.data[i].ext21+'人<font></li></a>'
 
                     }
                 }
@@ -96,9 +95,9 @@ $('.setPageDiv25').change(function() {
 
 
 function getXxtjs25(num,name) {
-    $.axget("/api/yndp/xxxx/getXxtjs25?date=20200318&name="+name, function (res) {
+    var date=$('#date').val();
+    $.axget("/api/yndp/xxxx/getXxtjs25?date="+date+"&name="+name, function (res) {
         //1.计算分页数量
-        console.log(res.data)
         var showNum = num;
         var dataL = res.data.length;
         var pageNum = Math.ceil(dataL / showNum);
@@ -111,13 +110,10 @@ function getXxtjs25(num,name) {
             callback: function(index) {
                 //console.log(index);
                 var html = ''
-
-                console.log(showNum * index + '~' + parseInt(showNum * index) + parseInt(showNum))
                 for(var i = showNum * index; i < showNum * index + showNum; i++) {
-                    console.log(Number(i)+1)
                     if(i < dataL) {
                         var  a=Number(i)+1;
-                        html += '<li>'+a+'.'+res.data[i].school_id+'  '+res.data[i].ext25+'人</li>'
+                        html += '<a href="#" onclick="onclickMap('+res.data[i].school_id+')"><li>'+a+'.'+res.data[i].name+' <font color="red">  '+res.data[i].ext25+'人</font></li></a>'
 
                     }
                 }
@@ -135,10 +131,9 @@ $('.setPageDiv26').change(function() {
 })
 
 function getXxtjs26(num,name) {
-    $.axget("/api/yndp/xxxx/getXxtjs26?date=20200318&name="+name, function (res) {
+    var date=$('#date').val();
+    $.axget("/api/yndp/xxxx/getXxtjs26?date="+date+"&name="+name, function (res) {
         //1.计算分页数量
-        console.log(res.data)
-        console.log(123)
         var showNum = num;
         var dataL = res.data.length;
         var pageNum = Math.ceil(dataL / showNum);
@@ -151,13 +146,10 @@ function getXxtjs26(num,name) {
             callback: function(index) {
                 //console.log(index);
                 var html = ''
-
-                console.log(showNum * index + '~' + parseInt(showNum * index) + parseInt(showNum))
                 for(var i = showNum * index; i < showNum * index + showNum; i++) {
-                    console.log(Number(i)+1)
                     if(i < dataL) {
                         var  a=Number(i)+1;
-                        html += '<li>'+a+'.'+res.data[i].school_id+'  '+res.data[i].ext26+'人</li>'
+                        html += '<a href="#"  onclick="onclickMap('+res.data[i].school_id+')"><li>'+a+'.'+res.data[i].name+' <font color="red">  '+res.data[i].ext26+'人</font></li></a>'
 
                     }
                 }
@@ -174,9 +166,9 @@ $('.setPageDiv27').change(function() {
 })
 
 function getXxtjs27(num,name) {
-    $.axget("/api/yndp/xxxx/getXxtjs27?date=20200318&name="+name, function (res) {
+    var date=$('#date').val();
+    $.axget("/api/yndp/xxxx/getXxtjs27?date="+date+"&name="+name, function (res) {
         //1.计算分页数量
-        console.log(res.data)
         var showNum = num;
         var dataL = res.data.length;
         var pageNum = Math.ceil(dataL / showNum);
@@ -189,13 +181,10 @@ function getXxtjs27(num,name) {
             callback: function (index) {
                 //console.log(index);
                 var html = ''
-
-                console.log(showNum * index + '~' + parseInt(showNum * index) + parseInt(showNum))
                 for (var i = showNum * index; i < showNum * index + showNum; i++) {
-                    console.log(Number(i) + 1)
                     if (i < dataL) {
                         var a = Number(i) + 1;
-                        html += '<li>' + a + '.' + res.data[i].school_id + '  ' + res.data[i].ext27 + '人</li>'
+                        html += '<a href="#"  onclick="onclickMap('+res.data[i].school_id+')"><li>' + a + '.' + res.data[i].name + ' <font color="red"> ' + res.data[i].ext27 + '人</font></li></a>'
 
                     }
                 }
@@ -212,7 +201,6 @@ function getXxtjs27(num,name) {
     function getXxtjs(num,name) {
         $.axget("/api/yndp/xxxx/getXxjw?name="+name, function (res) {
             //1.计算分页数量
-            console.log(res.data)
             var showNum = num;
             var dataL = res.data.length;
             var pageNum = Math.ceil(dataL / showNum);
@@ -225,13 +213,10 @@ function getXxtjs27(num,name) {
                 callback: function (index) {
                     //console.log(index);
                     var html = ''
-
-                    console.log(showNum * index + '~' + parseInt(showNum * index) + parseInt(showNum))
                     for (var i = showNum * index; i < showNum * index + showNum; i++) {
-                        console.log(Number(i) + 1)
                         if (i < dataL) {
                             var a = Number(i) + 1;
-                            html += '<li onclick="abc('+res.data[i].longitude+','+res.data[i].latitude+')">' + a + '.' + res.data[i].name + '</li>'
+                            html += '<a href="#" onclick="onclickMap('+res.data[i].id+')"><li>' + a + '.' + res.data[i].name + '</li></a>'
 
                         }
                     }
@@ -241,9 +226,10 @@ function getXxtjs27(num,name) {
             })
         })
     }
-function abc(longitude,latitude) {
-  var childWindow=$('#mainContent')[0].contentWindow;
-    childWindow.sayHello(longitude,latitude);
+function onclickMap(id) {
+    var date=$('#date').val();
+    var childWindow=$('#mainContent')[0].contentWindow;
+    childWindow.sayHello(id,date);
 }
 
 function onclick21() {

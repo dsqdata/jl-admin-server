@@ -11,14 +11,21 @@
     <script type="text/javascript" src="component/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <script type="text/javascript" src="component/echarts/echarts.js"></script>
     <script type="text/javascript" src="static/js/template-web.js"></script>
+    <style>
+        .sWinList li{
+            text-align: left;
+        }
 
+    </style>
 </head>
+
 <body>
+<input id="date" type="hidden" value="">
 <div id="wrapper">
     <div id="header">
         <script id="tpl-header" type="text/html">
-        <h1 class="h04"></h1>
-        <p class="txtDate">数据更新时间 <span>{{time}}</span></p>
+            <h1 class="h04"></h1>
+            <p class="txtDate">数据更新时间 <span>{{time}}</span></p>
         </script>
     </div>
     <div id="container" class="clearfix">
@@ -26,7 +33,7 @@
             <!--教职工流动情况跟踪-->
             <div class="schoolSide01">
                 <h2 class="mapTbox">
-                   <span class="mapT01"><span class="mapTbg01">教职工流动情况跟踪</span></span>
+                    <span class="mapT01"><span class="mapTbg01">教职工流动情况跟踪</span></span>
                 </h2>
                 <div id="orgBoxAllTeacher">
                     <script id="tpl-orgBoxAllTeacher" type="text/html">
@@ -41,7 +48,6 @@
                 <h2 class="mapTbox">
                     <span class="mapT01"><span class="mapTbg01">在昆教职工情况跟踪</span></span>
                 </h2>
-                <div id="fourthZkjzgqkgz" class="chartSty01" style="width:100%; height:320px; "></div>
 
             </div>
             <!--在昆教职工情况跟踪 //-->
@@ -51,20 +57,20 @@
                     <span class="mapT01"><span class="mapTbg01">所有教职工到疫源地既往史</span></span>
                 </h2>
                 <script id="tpl-orgBoxHistoryT" type="text/html">
-                <div class="schoolBox01 mt30">
-                    <h3 class="schoolTit01">到湖北（含武汉）情况</h3>
-                    <ul class="schoolList01">
-                        <li>总人数 <span>{{ext31}}<em>人</em></span></li>
-                        <li>已返昆人数 <span>{{ext32}}<em>人</em></span></li>
-                    </ul>
-                </div>
-                <div class="schoolBox01">
-                    <h3 class="schoolTit01">到武汉情况</h3>
-                    <ul class="schoolList01">
-                        <li>总人数 <span>{{ext33}}<em>人</em></span></li>
-                        <li>已返昆人数 <span>{{ext34}}<em>人</em></span></li>
-                    </ul>
-                </div>
+                    <div class="schoolBox01 mt30">
+                        <h3 class="schoolTit01">到湖北（含武汉）情况</h3>
+                        <ul class="schoolList01">
+                            <li>总人数 <span>{{ext31}}<em>人</em></span></li>
+                            <li>已返昆人数 <span>{{ext32}}<em>人</em></span></li>
+                        </ul>
+                    </div>
+                    <div class="schoolBox01">
+                        <h3 class="schoolTit01">到武汉情况</h3>
+                        <ul class="schoolList01">
+                            <li>总人数 <span>{{ext33}}<em>人</em></span></li>
+                            <li>已返昆人数 <span>{{ext34}}<em>人</em></span></li>
+                        </ul>
+                    </div>
                 </script>
             </div>
             <!--所有教职工到疫源地既往史-->
@@ -171,7 +177,7 @@
                         </span>
                     <!-- <p><em>47</em>个</p>-->
                     <p>有发热、咳嗽、呼吸<br />困难等症状人群的学校</p></a>
-                    <div class="sWin01">
+                    <div class="sWin01 redBg">
                         <div class="searchBox clearfix"><input id="ext21" type="text" class="form-control winput"><button type="button" class="btn sbtn" onclick="onclick21()"></button></div>
                         <ul class="sWinList" id="page21">
 
@@ -191,18 +197,18 @@
 
                 </li>
             </ul>
-            <iframe id="mainContent" width="100%" height="1200px"></iframe>
+            <iframe id="mainContent" width="100%" height="1200px" style="border: none;"></iframe>
             <span class="schoolBtn"></span>
             <div class="schoolMid">
                 <div id="orgBoxTitle">
-                <script id="tpl-orgBoxTitle" type="text/html">
-                <h2 class="mapTbox">
-                    <span class="mapT01"><span class="mapTbg01">{{name}}</span></span>
-                </h2>
-                </script>
+                    <script id="tpl-orgBoxTitle" type="text/html">
+                        <h2 class="mapTbox">
+                            <span class="mapT01"><span class="mapTbg01">{{name}}</span></span>
+                        </h2>
+                    </script>
                 </div>
 
-                    <div id="chartBar422" style="width: 745px; height:310px" ></div>
+                <div id="chartBar422" style="width: 745px; height:310px" ></div>
 
             </div>
 
@@ -211,7 +217,20 @@
                 <span id="orgBox02">
                 <script id="tpl-orgBox02" type="text/html">
                      {{each xxfl item i}}
-                     <dd class="dd01">{{item.xxfl}} <span>{{item.count}}<em>个</em></span></dd>
+                     <% if (item.type=='1') { %>
+                     <dd class="dd01">
+                     <% }%>
+                      <% if (item.type=='2') { %>
+                     <dd class="dd02">
+                     <% }%>
+                      <% if (item.type=='3') { %>
+                     <dd class="dd03">
+                     <% }%>
+                      <% if (item.type=='4') { %>
+                     <dd class="dd04">
+                     <% }%>
+
+                     {{item.xxfl}} <span>{{item.count}}<em>个</em></span></dd>
                      {{/each}}
                      <!--  <dd class="dd02">小学<span>2512 <em>个</em></span></dd>
                        <dd class="dd03">初中<span>2512 <em>个</em></span></dd>
@@ -219,7 +238,7 @@
                 </script>
                 </span>
             </dl>
-            
+
         </div>
         <div class="sideCon">
             <!--学生流动情况跟踪-->
@@ -240,7 +259,7 @@
                 <h2 class="mapTbox">
                     <span class="mapT01"><span class="mapTbg01">在昆学生情况跟踪</span></span>
                 </h2>
-                <div id="fourthZkxsqkgz" class="chartSty01" style="width:100%; height:320px; "></div>
+
             </div>
             <!--在昆学生情况跟踪 //-->
             <!--疫区来昆人员追踪-->
@@ -249,20 +268,20 @@
                     <span class="mapT01"><span class="mapTbg01">疫区来昆人员追踪</span></span>
                 </h2>
                 <script id="tpl-orgBoxHistoryS" type="text/html">
-                <div class="schoolBox01 mt30 schoolGreen">
-                    <h3 class="schoolTit01">到湖北（含武汉）情况</h3>
-                    <ul class="schoolList01">
-                        <li>总人数 <span>{{ext31}}<em>人</em></span></li>
-                        <li>已返昆人数 <span>{{ext32}}<em>人</em></span></li>
-                    </ul>
-                </div>
-                <div class="schoolBox01 schoolGreen">
-                    <h3 class="schoolTit01">到武汉情况</h3>
-                    <ul class="schoolList01">
-                        <li>总人数 <span>{{ext33}}<em>人</em></span></li>
-                        <li>已返昆人数 <span>{{ext34}}<em>人</em></span></li>
-                    </ul>
-                </div>
+                    <div class="schoolBox01 mt30 schoolGreen">
+                        <h3 class="schoolTit01">到湖北（含武汉）情况</h3>
+                        <ul class="schoolList01">
+                            <li>总人数 <span>{{ext31}}<em>人</em></span></li>
+                            <li>已返昆人数 <span>{{ext32}}<em>人</em></span></li>
+                        </ul>
+                    </div>
+                    <div class="schoolBox01 schoolGreen">
+                        <h3 class="schoolTit01">到武汉情况</h3>
+                        <ul class="schoolList01">
+                            <li>总人数 <span>{{ext33}}<em>人</em></span></li>
+                            <li>已返昆人数 <span>{{ext34}}<em>人</em></span></li>
+                        </ul>
+                    </div>
                 </script>
             </div>
             <!--疫区来昆人员追踪 //-->
@@ -279,9 +298,6 @@
 <script type="text/javascript" src="src/js/chartBar401.js"></script>
 <script type="text/javascript" src="src/js/chartBar422.js"></script>
 <script type="text/javascript" src="src/js/chartBar402.js"></script>
-<script type="text/javascript" src="src/js/fourthZkxsqkgzCircle.js"></script>
-<script type="text/javascript" src="src/js/fourthZkjzgqkgzCircle.js"></script>
-
 <script>
     $(".schoolBtn").click(function (){
         var flag = $(".schoolMid").is(":hidden");
@@ -309,24 +325,24 @@
         var school_id = '';
         var title = '';
 
-        $.axget("/api/yndp/FourDate/getYndpFourDate", function (res) {
+        $.axget1("/api/yndp/FourDate/getYndpFourDate",false, function (res) {
             console.log(res.data.date);
             initOrgBoxfourDate(res.data);
             date = res.data.date;
+            $('#date').val(date)
             YndpFourSchoolMsg(date,school_id,1);
             YndpFourSchoolMsg(date,school_id,2);
         });
 
-
         getXxzs();
         getXxtl();
-        getXxfls();
+        getXxfls(date);
         /* getXxtjs21();*/
         getXxtjs(5,'')
-        getXxtjs21(5,'')
-        getXxtjs25(5,'')
-        getXxtjs26(5,'')
-        getXxtjs27(5,'')
+        getXxtjs21(5,'',date)
+        getXxtjs25(5,'',date)
+        getXxtjs26(5,'',date)
+        getXxtjs27(5,'',date)
 
         getXxzs();
         getXxtl();
@@ -334,8 +350,6 @@
 
     var myChart401 = echarts.init(document.getElementById('chartBar401'));
     var myChart402 = echarts.init(document.getElementById('chartBar402'));
-    var fourthZkxsqkgz = echarts.init(document.getElementById('fourthZkxsqkgz'));
-    var fourthZkjzgqkgz = echarts.init(document.getElementById('fourthZkjzgqkgz'));
 
     var initOrgBoxfourDate = function (data) {
         var str = data.date;

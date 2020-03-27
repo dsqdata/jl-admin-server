@@ -21,8 +21,30 @@
         body,
         #container {
           width: 100%;
-          height: 100%;
+          height: 84%;
         }
+        .dlGreen dt{ color: #1CFFFB;font-size:14px; margin-bottom:10px; font-weight: bold;}
+        .dlGreen dd{ border-left:2px solid #F8E71C; padding:  0 0 0 10px; margin: 0 0 10px 0; line-height: 12px; }
+        .amap-info-content{background: rgba(0,0,0,0.50);
+            border: 1px solid #106f76;
+            border-top:2px solid #1CFFFB;
+            box-shadow: 4px 4px 8px 0 rgba(0,0,0,0.30); color: #fff;
+            padding-top:0;
+            padding-right:30px;
+            bottom: -5px;
+            left: 25px;
+        }
+
+        .dlRed dt{ color: #FF5959;font-size:14px; margin-bottom:10px; font-weight: bold;}
+        .dlRed dd{ border-left:2px solid #FF5959; padding:  0 0 0 10px; margin: 0 0 10px 0; line-height: 12px; }
+
+        .amap-info-content.redmapBox{border: 1px solid #60363e;
+            border-top:2px solid #FF5959;}
+        .amap-info-content.redmapBox dt{ color: #FF5959;}
+        .amap-info-content.redmapBox dd{border-left:2px solid #FF5959;}
+        .amap-info-close{right:5px!important;}
+        .bottom-center .amap-info-sharp{border:none!important;}
+
     </style>
 </head>
 <body>
@@ -64,43 +86,158 @@
             log.error('GeoJSON 服务请求失败')
          }
     })
+
+   var markerMap = {}
    $(document).ready(function () {
-       $.axget("/api/yndp/xxxx/getXxjw?name="+'', function (res) {
-           console.log(res.data)
+       selectMap('')
+/*       var date= parent.window.document.getElementById("date").value;
+       $.axget("/api/yndp/SchoolMsg/getYndpFourSchoolMsgList?date="+date+"&type=3&school_id="+'', function (res) {
            for (var i = 0; i < res.data.length; i++) {
                var wgs84togcj02 = coordtransform.wgs84togcj02(res.data[i].longitude, res.data[i].latitude);
+                  var icon='';
+                   if(res.data[i].schoolType=='1'){
+                       icon= "src/images/legend01.png";
+                   }
+                   if(res.data[i].schoolType=='2'){
+                       icon="src/images/legend02.png";
+                   }
+                   if(res.data[i].schoolType=='3'){
+                       icon="src/images/legend03.png";
+                   }
+                   if(res.data[i].schoolType=='4'){
+                       icon="src/images/legend04.png";
+                   }
                // 构造点标记
-
                    var marker = new AMap.Marker({
-                       icon: "https://webapi.amap.com/theme/v1.3/markers/n/mark_b.png",
-                       /*position: [res.data[i].longitude, res.data[i].latitude]*/
+                       icon:icon,
+                       /!*position: [res.data[i].longitude, res.data[i].latitude]*!/
                        position: wgs84togcj02
                    });
+                    marker.id=res.data[i].school_id;
                    map.add(marker);
-                   marker.content =  "<div  style=''>"+res.data[i].name+ '@'+res.data[i].longitude+ '@'+res.data[i].latitude+"</div>";
+               var  images ='';
+               if(res.data[i].ext21==0 &&res.data[i].ext25 ==0 && res.data[i].ext26 ==0 && res.data[i].ext27 ==0){
+                   images= "src/images/BLUE.png";
+               }else{
+                   images= "src/images/red.png";
+               }
+               marker.images=images;
+               marker.wgs84togcj02=wgs84togcj02;
+                   markerMap[res.data[i].school_id] = marker;
+                   marker.content =  "<dl class='dlGreen'>"+ "<dt>"+res.data[i].name+"</dt><dd>"+" 新发感染病例："+res.data[i].ext25+"人"+"</dd><dd>"
+               +"疑似病例："+res.data[i].ext26+"人"+"</dd><dd>"
+               +"确诊病例："+res.data[i].ext27+"人"+"</dd><dd>"
+               +"有发热、咳嗽、呼吸困难等症状："+res.data[i].ext21+"人"+"</dd></dl>";
                    marker.on('click', markerClick);
-                marker.emit('click', {target: marker});
+               /!* marker.emit('click', {target: marker});*!/
 
            }
-       });
+       });*/
    });
 
    function markerClick(e) {
+console.log($('#dlGreen'))
+     $(".dlGreen dd").addClass("")
+       console.log(e)
+       map.clearMap()
        infoWindow.setContent(e.target.content);
        infoWindow.open(map, e.target.getPosition());
+           var marker = new AMap.Marker({
+                icon: e.target.images,
+                position: e.target.wgs84togcj02
+            });
+            map.add(marker);
+       selectMap(e.target.id);
    }
 
-   function sayHello(longitude,latitude) {
-       var wgs84togcj02 = coordtransform.wgs84togcj02(longitude, latitude);
-       var marker = new AMap.Marker({
-           icon: "https://webapi.amap.com/theme/v1.3/markers/n/mark_b.png",
-           position: [longitude, latitude]
-          /* position: wgs84togcj02*/
+   function sayHello(id,date) {
+       $.axget("/api/yndp/SchoolMsg/getYndpFourSchoolMsgList?date="+date+"&&school_id="+id+"&&type=3", function (res) {
+           if(res.data.length>0){
+               var wgs84togcj02 = coordtransform.wgs84togcj02(res.data[0].longitude, res.data[0].latitude);
+               var images='';
+               var  dlGreen ='dlGreen';
+               if(res.data[0].ext21==0 &&res.data[0].ext25 ==0 && res.data[0].ext26 ==0 && res.data[0].ext27 ==0){
+                   images= "src/images/BLUE.png";
+               }else{
+                   images= "src/images/red.png";
+                   dlGreen ='dlRed';
+               }
+
+               var oldMarker = markerMap[res.data[0].school_id]
+                map.remove(oldMarker);
+              var marker = new AMap.Marker({
+                   icon: images,
+                 /*  /!*  position: [longitude, latitude]*!/*/
+                   position: wgs84togcj02
+                });
+                   map.add(marker);
+               marker.id=res.data[0].school_id;
+               marker.images=images;
+               marker.wgs84togcj02=wgs84togcj02;
+
+
+               marker.content =  "<dl class='"+dlGreen+"'>"+ "<dt>"+res.data[0].name+"</dt><dd>"+" 新发感染病例："+res.data[0].ext25+"人"+"</dd><dd>"
+                   +"疑似病例："+res.data[0].ext26+"人"+"</dd><dd>"
+                   +"确诊病例："+res.data[0].ext27+"人"+"</dd><dd>"
+                   +"有发热、咳嗽、呼吸困难等症状："+res.data[0].ext21+"人"+"</dd></dl>";
+               marker.on('click', markerClick);
+               marker.emit('click', {target: marker});
+           }
        });
- /*      map.add(marker);*/
-       marker.content =  "<div  style=''>"+123+ '@'+longitude+ '@'+latitude+"</div>";
-       marker.on('click', markerClick);
-       marker.emit('click', {target: marker});
+
+   }
+
+   function  selectMap(id){
+
+       var date= parent.window.document.getElementById("date").value;
+       $.axget("/api/yndp/SchoolMsg/getYndpFourSchoolMsgList?date="+date+"&type=3&school_id="+'', function (res) {
+           for (var i = 0; i < res.data.length; i++) {
+               var wgs84togcj02 = coordtransform.wgs84togcj02(res.data[i].longitude, res.data[i].latitude);
+               var icon='';
+               if(res.data[i].schoolType=='1'){
+                   icon= "src/images/legend01.png";
+               }
+               if(res.data[i].schoolType=='2'){
+                   icon="src/images/legend02.png";
+               }
+               if(res.data[i].schoolType=='3'){
+                   icon="src/images/legend03.png";
+               }
+               if(res.data[i].schoolType=='4'){
+                   icon="src/images/legend04.png";
+               }
+
+               // 构造点标记
+               var marker = new AMap.Marker({
+                   icon:icon,
+                   /*position: [res.data[i].longitude, res.data[i].latitude]*/
+                   position: wgs84togcj02
+               });
+               if(id!=res.data[i].school_id){
+
+                   map.add(marker);
+               }
+               var  images ='';
+               var  dlGreen ='dlGreen';
+               if(res.data[i].ext21==0 &&res.data[i].ext25 ==0 && res.data[i].ext26 ==0 && res.data[i].ext27 ==0){
+                   images= "src/images/BLUE.png";
+               }else{
+                   images= "src/images/red.png";
+                   dlGreen ='dlRed';
+               }
+               marker.id=res.data[i].school_id;
+               marker.images=images;
+               marker.wgs84togcj02=wgs84togcj02;
+               markerMap[res.data[i].school_id] = marker;
+               marker.content =  "<dl class='"+dlGreen+"'>"+ "<dt>"+res.data[i].name+"</dt><dd>"+" 新发感染病例："+res.data[i].ext25+"人"+"</dd><dd>"
+                   +"疑似病例："+res.data[i].ext26+"人"+"</dd><dd>"
+                   +"确诊病例："+res.data[i].ext27+"人"+"</dd><dd>"
+                   +"有发热、咳嗽、呼吸困难等症状："+res.data[i].ext21+"人"+"</dd></dl>";
+               marker.on('click', markerClick);
+               /* marker.emit('click', {target: marker});*/
+
+           }
+       });
    }
 
 </script>

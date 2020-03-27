@@ -154,5 +154,15 @@ public class YndpFourSchoolMsg extends YndpBaseUuidEntity {
      */
     /*@Column(name = "create_time", columnDefinition = "datetime) COMMENT '创建时间'")
     private Date create_time;*/
+    @Transient
+    private String name;
+    @Transient
+    private String longitude;
+    @Transient
+    private String latitude;
+    @Transient
+    private String schoolType;
+
+
 
 }
