@@ -698,7 +698,7 @@
 
     var initOrgBox05 = function (data,sumChart) {
 
-        var MaxY = 1000000;
+        // var MaxY = 1000000;
         var sumArr = [];
         var rqArr = [];
         var sum = 0;
@@ -711,10 +711,10 @@
         }
 
         //获取Y轴最大值
-        MaxY =  Math.max.apply(null,sumArr);
-        if (MaxY==-Infinity){
-            MaxY=1000000;
-        }
+        // MaxY =  Math.max.apply(null,sumArr);
+        // if (MaxY==-Infinity){
+        //     MaxY=1000000;
+        // }
         // console.log("MaxY="+MaxY);
         // console.log(sumArr);
         // console.log(rqArr);
@@ -768,9 +768,9 @@
             },
             yAxis: {
                 type: 'value',
-                min:0,
+                // min:0,
                 // max:20000,
-                max:MaxY+10000,
+                // max:MaxY+10000,
                 axisLabel: {
                     show: false,
                 },
