@@ -307,10 +307,18 @@
         var flag = $(".schoolMid").is(":hidden");
         if(flag){
             $(".schoolMid").show();
+            $(".schoolLegend").hide();
         }else{
             $(".schoolMid").hide();
+            $(".schoolLegend").show();
         }
     });
+
+    function hideEchart(){
+        $(".schoolMid").hide();
+        $(".schoolLegend").show();
+    }
+
 
     $('.schoolList02 .itemLi').each(function (i) {
         $(this).click(function (e){

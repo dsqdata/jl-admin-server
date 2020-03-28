@@ -163,6 +163,7 @@ function chartBar401(date,school_id,type,ext11,ext12,ext13,ext14,ext15){
     myChart401.off('click');
     myChart401.on('click',  function (params) {
         $(".schoolMid").show();
+        $(".schoolLegend").hide();
         initOrgBoxTitle(params.name);
         YndpFourPeopleMsg(date,school_id,type,params.name);
     });

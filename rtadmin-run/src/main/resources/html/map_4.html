@@ -138,6 +138,7 @@
    function markerClick(e) {
       /* infoWindow.on('close',showInfoClose)*/
        var date= parent.window.document.getElementById("date").value;
+       parent.hideEchart();
        parent.YndpFourSchoolMsg(date,e.target.id,1);
        parent.YndpFourSchoolMsg(date,e.target.id,2);
 /*console.log($('#dlGreen'))
