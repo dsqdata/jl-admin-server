@@ -317,6 +317,7 @@
                    +"确诊病例："+res.data[i].ext27+"人"+"</dd><dd>"
                    +"有发热、咳嗽、呼吸困难等症状："+res.data[i].ext21+"人"+"</dd></dl>";
                marker.on('click', markerClick);
+               $('.amap-info-contentContainer').parent().css('bottom','120px');
                /* marker.emit('click', {target: marker});*/
 
            }
