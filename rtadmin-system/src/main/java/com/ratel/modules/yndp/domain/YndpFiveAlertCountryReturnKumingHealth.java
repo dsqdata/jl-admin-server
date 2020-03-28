@@ -8,25 +8,35 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 /**
- * 严防外源输入- 弹出层-湖北入滇目的
+ * 严防外源输入- 弹出层-境外入滇人员当前健康状态
  * @author GXP
  * @date 2020/2/26 8:47
  */
 @Data
 @Entity
-@Table(name = "yndp_five_alert_hubei_return_kuming_aim")
-public class YndpFiveHbKmAim extends YndpBaseUuidEntity {
+@Table(name = "yndp_five_alert_country_return_kuming_health")
+public class YndpFiveAlertCountryReturnKumingHealth extends YndpBaseUuidEntity {
 
     /**
-     * 分类名称
+     * 总人数
      */
-    @Column(name = "type_name", columnDefinition = "VARCHAR(32) COMMENT '分类名称 '")
-    private String type_name;
+    @Column(name = "num", columnDefinition = "INT COMMENT '总人数 '")
+    private int num;
     /**
-     * 分类值
+     * 异常人数
      */
-    @Column(name = "type_value", columnDefinition = "INT COMMENT '分类值 '")
-    private int type_value;
+    @Column(name = "num1", columnDefinition = "INT COMMENT '异常人数 '")
+    private int num1;
+    /**
+     * 中国籍
+     */
+    @Column(name = "num2", columnDefinition = "INT COMMENT '中国籍 '")
+    private int num2;
+    /**
+     * 外国籍
+     */
+    @Column(name = "num3", columnDefinition = "INT COMMENT '外国籍 '")
+    private int num3;
 
     /**
      * 扩展1

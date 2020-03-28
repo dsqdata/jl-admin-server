@@ -121,7 +121,7 @@ function YndpFourPeopleMsg(date,school_id,type,title){
         if('截止目前在昆人数'==title){
             chartBar422(rq,ext11,ext12);
         }
-        if('截止目前在其他州人数'==title){
+        if('截止目前在其他地州人数'==title){
             chartBar422(rq,ext11,ext13);
         }
         if('在湖北(含武汉)人数'==title){
@@ -131,13 +131,13 @@ function YndpFourPeopleMsg(date,school_id,type,title){
             chartBar422(rq,ext11,ext15);
         }
 
-        if('截止目前在其他州教职工数'==title){
+        if('截止目前在其他地州教职工数'==title){
             chartBar422(rq,ext11,ext13);
         }
         /*if('截止目前在昆学生数'==title){
             chartBar422(rq,ext11,ext12);
         }
-        if('截止目前在其他州学生数'==title){
+        if('截止目前在其他地州学生数'==title){
             chartBar422(rq,ext11,ext13);
         }
         if('在湖北(含武汉)学生数'==title){

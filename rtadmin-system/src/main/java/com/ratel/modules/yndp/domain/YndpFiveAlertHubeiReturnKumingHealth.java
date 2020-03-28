@@ -15,7 +15,7 @@ import javax.persistence.Table;
 @Data
 @Entity
 @Table(name = "yndp_five_alert_hubei_return_kuming_health")
-public class YndpFiveHbKmHealth extends YndpBaseUuidEntity {
+public class YndpFiveAlertHubeiReturnKumingHealth extends YndpBaseUuidEntity {
 
     /**
      * 总人数

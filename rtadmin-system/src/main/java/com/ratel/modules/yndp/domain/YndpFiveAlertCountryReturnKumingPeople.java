@@ -15,7 +15,7 @@ import javax.persistence.Table;
 @Data
 @Entity
 @Table(name = "yndp_five_alert_country_return_kuming_people")
-public class YndpFiveCountryPeople extends YndpBaseUuidEntity {
+public class YndpFiveAlertCountryReturnKumingPeople extends YndpBaseUuidEntity {
 
     /**
      * 序号（+排序）

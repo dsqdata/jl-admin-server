@@ -8,14 +8,14 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 /**
- * 严防外源输入- 弹出层-境外入滇人员来源地国家分布
+ * 严防外源输入- 弹出层-湖北入滇目的
  * @author GXP
  * @date 2020/2/26 8:47
  */
 @Data
 @Entity
-@Table(name = "yndp_five_alert_country_return_kuming_aim")
-public class YndpFiveCountryAim extends YndpBaseUuidEntity {
+@Table(name = "yndp_five_alert_hubei_return_kuming_aim")
+public class YndpFiveAlertHubeiReturnKumingAim extends YndpBaseUuidEntity {
 
     /**
      * 分类名称
