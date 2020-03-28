@@ -31,8 +31,8 @@
             box-shadow: 4px 4px 8px 0 rgba(0,0,0,0.30); color: #fff;
             padding-top:0;
             padding-right:30px;
-            bottom: -5px;
-            left: 25px;
+            /*margin-bottom:120px*/
+
         }
 
         .dlRed dt{ color: #FF5959;font-size:14px; margin-bottom:10px; font-weight: bold;}
@@ -59,7 +59,7 @@
         center: [102.839284,24.969013] //初始化地图中心点
     });
 
-    var styleName = "amap://styles/" + "darkblue";
+    var styleName = "amap://styles/" + "blue";
      map.setMapStyle(styleName);
 /*    ajax('/static/geojson.json', function(err, geoJSON) {
         if (!err) {
@@ -156,6 +156,7 @@
                 position: e.target.wgs84togcj02
             });
             map.add(marker);
+       map.setCenter(e.target.wgs84togcj02);
        marker.on('click', markerClick1);
 
        selectMap(e.target.id);
@@ -176,30 +177,30 @@
                var  dlGreen ='dlGreen';
                if(res.data[0].ext21==0 &&res.data[0].ext25 ==0 && res.data[0].ext26 ==0 && res.data[0].ext27 ==0){
                    if(res.data[0].schoolType=='1'){
-                       images= "src/images/qq4.png";
+                       images= "src/images/q4.png";
                    }
                    if(res.data[0].schoolType=='2'){
-                       images="src/images/qq3.png";
+                       images="src/images/q3.png";
                    }
                    if(res.data[0].schoolType=='3'){
-                       images="src/images/qq2.png";
+                       images="src/images/q2.png";
                    }
                    if(res.data[0].schoolType=='4'){
-                       images="src/images/qq1.png";
+                       images="src/images/q1.png";
                    }
                   /* images= "src/images/BLUE.png";*/
                }else{
                    if(res.data[0].schoolType=='1'){
-                       images= "src/images/ff4.png";
+                       images= "src/images/f4.png";
                    }
                    if(res.data[0].schoolType=='2'){
-                       images="src/images/ff3.png";
+                       images="src/images/f3.png";
                    }
                    if(res.data[0].schoolType=='3'){
-                       images="src/images/ff2.png";
+                       images="src/images/f2.png";
                    }
                    if(res.data[0].schoolType=='4'){
-                       images="src/images/ff1.png";
+                       images="src/images/f1.png";
                    }
                   /* images= "src/images/red.png";*/
                    dlGreen ='dlRed';
@@ -237,7 +238,7 @@
                var icon='';
 
                if(res.data[i].ext21==0 &&res.data[i].ext25 ==0 && res.data[i].ext26 ==0 && res.data[i].ext27 ==0){
-                   if(res.data[i].schoolType=='1'){
+                  /* if(res.data[i].schoolType=='1'){
                        icon= "src/images/q4.png";
                    }
                    if(res.data[i].schoolType=='2'){
@@ -248,9 +249,10 @@
                    }
                    if(res.data[i].schoolType=='4'){
                        icon="src/images/q1.png";
-                   }
+                   }*/
+                   icon="src/images/newblue.png";
                }else {
-                   if(res.data[i].schoolType=='1'){
+                   /*if(res.data[i].schoolType=='1'){
                        icon= "src/images/f4.png";
                    }
                    if(res.data[i].schoolType=='2'){
@@ -261,7 +263,8 @@
                    }
                    if(res.data[i].schoolType=='4'){
                        icon="src/images/f1.png";
-                   }
+                   }*/
+                   icon="src/images/newred.png";
                }
 
 
@@ -280,30 +283,30 @@
                var  dlGreen ='dlGreen';
                if(res.data[i].ext21==0 &&res.data[i].ext25 ==0 && res.data[i].ext26 ==0 && res.data[i].ext27 ==0){
                    if(res.data[i].schoolType=='1'){
-                       images= "src/images/qq4.png";
+                       images= "src/images/q4.png";
                    }
                    if(res.data[i].schoolType=='2'){
-                       images="src/images/qq3.png";
+                       images="src/images/q3.png";
                    }
                    if(res.data[i].schoolType=='3'){
-                       images="src/images/qq2.png";
+                       images="src/images/q2.png";
                    }
                    if(res.data[i].schoolType=='4'){
-                       images="src/images/qq1.png";
+                       images="src/images/q1.png";
                    }
                  /*  images= "src/images/BLUE.png";*/
                }else{
                    if(res.data[i].schoolType=='1'){
-                       images= "src/images/ff4.png";
+                       images= "src/images/f4.png";
                    }
                    if(res.data[i].schoolType=='2'){
-                       images="src/images/ff3.png";
+                       images="src/images/f3.png";
                    }
                    if(res.data[i].schoolType=='3'){
-                       images="src/images/ff2.png";
+                       images="src/images/f2.png";
                    }
                    if(res.data[i].schoolType=='4'){
-                       images="src/images/ff1.png";
+                       images="src/images/f1.png";
                    }
                 /*   images= "src/images/red.png";*/
                    dlGreen ='dlRed';
@@ -317,6 +320,7 @@
                    +"确诊病例："+res.data[i].ext27+"人"+"</dd><dd>"
                    +"有发热、咳嗽、呼吸困难等症状："+res.data[i].ext21+"人"+"</dd></dl>";
                marker.on('click', markerClick);
+               $('.amap-info-contentContainer').parent().css('bottom','120px');
                /* marker.emit('click', {target: marker});*/
 
            }

@@ -194,10 +194,12 @@
 
                         </div>
                     </div>
-
+                    <img src="src/images/reduction.png" style="height: 80%;padding-top: 20px;padding-left: 90px;" onclick="abc()">
                 </li>
+
             </ul>
-            <iframe id="mainContent" width="100%" height="90%" style="border: none;"></iframe>
+
+            <iframe id="mainContent" width="98%" height="91.3%" style="border: none;margin-left: 8px"></iframe>
 
             <div class="schoolMid">
                 <div id="orgBoxTitle">
@@ -420,6 +422,34 @@
     var mainContent = document.getElementById('mainContent');
     <!-- 指定所展示url -->
     mainContent.src = "map_4.html"
+
+    function abc() {
+        var date = '';
+        var school_id = '';
+        var title = '';
+        $.axget1("/api/yndp/FourDate/getYndpFourDate",false, function (res) {
+            console.log(res.data.date);
+            initOrgBoxfourDate(res.data);
+            date = res.data.date;
+            $('#date').val(date)
+            YndpFourSchoolMsg(date,school_id,1);
+            YndpFourSchoolMsg(date,school_id,2);
+        });
+        var date=$('#date').val();
+        getXxzs();
+        getXxtl();
+        getXxfls(date);
+        getXxtjs(5,'')
+       getXxtjs21(5,'',date)
+       getXxtjs25(5,'',date)
+       getXxtjs26(5,'',date)
+       getXxtjs27(5,'',date)
+
+        getXxzs();
+        getXxtl();
+
+        $('#mainContent').attr('src', $('#mainContent').attr('src'));
+    }
 
 </script>
 </body>
