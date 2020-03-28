@@ -385,6 +385,9 @@
             $('#date').val(date)
             YndpFourSchoolMsg(date,school_id,1);
             YndpFourSchoolMsg(date,school_id,2);
+            //初始化Echart图
+            initOrgBoxTitle('截止目前在昆教职工数');
+            YndpFourPeopleMsg(date,school_id,1,'截止目前在昆教职工数');
         });
 
         getXxzs();
