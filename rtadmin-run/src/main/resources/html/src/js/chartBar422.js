@@ -70,7 +70,7 @@ function chartBar422(rq,allnum,thisnum){
         }],
         yAxis: [{
             type: 'value',
-            name: '(户)    ',
+            name: '(人)    ',
             nameTextStyle: {
                 color: "#21b0dd",
                 fontSize: 12

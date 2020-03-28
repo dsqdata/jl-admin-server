@@ -452,7 +452,7 @@ function fourthZkxsqkgzCircle(date,school_id,type,ext12,ext21,ext22,ext23,ext24,
     fourthZkxsqkgz.off('click');
     fourthZkxsqkgz.on('click',  function (params) {
         $(".schoolMid").show();
-        initOrgBoxTitle(params.seriesName);
+        initOrgBoxTitle(params.seriesName+'学生数');
         YndpFourPeopleMsg(date,school_id,type,params.seriesName);
     });
 
@@ -460,7 +460,7 @@ function fourthZkxsqkgzCircle(date,school_id,type,ext12,ext21,ext22,ext23,ext24,
         var selected = obj.selected;
         var legend = obj.name;
         $(".schoolMid").show();
-        initOrgBoxTitle(legend);
+        initOrgBoxTitle(legend+'学生数');
         YndpFourPeopleMsg(date,school_id,type,legend);
 
         var option = this.getOption();

@@ -118,23 +118,20 @@ function YndpFourPeopleMsg(date,school_id,type,title){
             }
         }
 
-        if('截止目前在昆人数'==title){
+        if('截止目前在昆教职工数'==title){
             chartBar422(rq,ext11,ext12);
         }
-        if('截止目前在其他地州人数'==title){
-            chartBar422(rq,ext11,ext13);
-        }
-        if('在湖北(含武汉)人数'==title){
-            chartBar422(rq,ext11,ext14);
-        }
-        if('在其他省外人数'==title){
-            chartBar422(rq,ext11,ext15);
-        }
-
         if('截止目前在其他地州教职工数'==title){
             chartBar422(rq,ext11,ext13);
         }
-        /*if('截止目前在昆学生数'==title){
+        if('在湖北(含武汉)教职工数'==title){
+            chartBar422(rq,ext11,ext14);
+        }
+        if('在其他省外教职工数'==title){
+            chartBar422(rq,ext11,ext15);
+        }
+
+        if('截止目前在昆学生数'==title){
             chartBar422(rq,ext11,ext12);
         }
         if('截止目前在其他地州学生数'==title){
@@ -145,7 +142,7 @@ function YndpFourPeopleMsg(date,school_id,type,title){
         }
         if('在其他省外学生数'==title){
             chartBar422(rq,ext11,ext15);
-        }*/
+        }
 
         if('有发热、咳嗽、呼吸困难等症状'==title){
             chartBar422(rq,ext12,ext21);
