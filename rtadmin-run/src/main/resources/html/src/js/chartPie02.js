@@ -229,7 +229,7 @@ $(function() {
         title: [
             {
                 text: '0人',
-                x: '26%',
+                x: '24%',
                 y: '38%',
                 textStyle: {
                     fontSize: 18,
