@@ -108,6 +108,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/*/api-docs").permitAll()
                 //
                 .antMatchers("/api/yndp/**").permitAll()
+                .antMatchers("/api/demo/**").permitAll()
                 // 文件
                 .antMatchers("/static/**").permitAll()
                 .antMatchers("/avatar/**").permitAll()
