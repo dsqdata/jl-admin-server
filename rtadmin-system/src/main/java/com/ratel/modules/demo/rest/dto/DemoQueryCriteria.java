@@ -51,8 +51,4 @@ public class DemoQueryCriteria {
 	@Query(type = Query.Type.BETWEEN)
 	private List<Timestamp> createTime;
 
-
-	private Integer page;
-	private Integer size;
-
 }
