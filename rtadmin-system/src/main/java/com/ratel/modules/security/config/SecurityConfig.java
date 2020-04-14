@@ -1,7 +1,10 @@
 package com.ratel.modules.security.config;
 
 import com.ratel.framework.annotation.AnonymousAccess;
-import com.ratel.modules.security.security.*;
+import com.ratel.modules.security.security.JwtAccessDeniedHandler;
+import com.ratel.modules.security.security.JwtAuthenticationEntryPoint;
+import com.ratel.modules.security.security.TokenConfigurer;
+import com.ratel.modules.security.security.TokenProvider;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,6 +22,7 @@ import org.springframework.web.filter.CorsFilter;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.mvc.method.RequestMappingInfo;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
+
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
@@ -109,6 +113,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 //
                 .antMatchers("/api/yndp/**").permitAll()
                 .antMatchers("/api/demo/**").permitAll()
+                .antMatchers("/api/jl/**").anonymous()
                 // 文件
                 .antMatchers("/static/**").permitAll()
                 .antMatchers("/avatar/**").permitAll()

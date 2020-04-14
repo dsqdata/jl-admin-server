@@ -6,8 +6,22 @@ spring:
     check-template-location: false
   profiles:
     active: dev
-  jackson:
-    time-zone: GMT+8
+      #jackson:
+      #time-zone: GMT+8
+      #serialization:
+      #格式化输出
+      #indent_output: true
+      #deserialization:
+      #允许对象忽略json中不存在的属性
+      #fail_on_unknown_properties: false
+      #parser:
+      #允许出现特殊字符和转义符
+      #allow_unquoted_control_chars: true
+      #允许出现单引号
+      #allow_single_quotes: true
+      #设置空如何序列化
+      #defaultPropertyInclusion: NON_EMPTY
+
   data:
     redis:
       repositories:

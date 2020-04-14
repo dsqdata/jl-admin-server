@@ -4,12 +4,12 @@ spring:
     druid:
       db-type: com.alibaba.druid.pool.DruidDataSource
       driverClassName: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
-      #      url: jdbc:log4jdbc:mysql://localhost:3306/s1?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
-      #      username: root
-      #      password: Dongsiqi@12
-      url: jdbc:log4jdbc:mysql://111.229.220.40:3389/yn_yqdp?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
+      url: jdbc:log4jdbc:mysql://localhost:3306/s1?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
       username: root
-      password: admin1q2w3e
+      password: Dongsiqi@12
+#      url: jdbc:log4jdbc:mysql://111.229.220.40:3389/yn_yqdp?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
+#      username: root
+#      password: admin1q2w3e
       #      url: jdbc:log4jdbc:mysql://172.16.36.217:3309/yn_yqdp_dev?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
       #      username: root
       #      password: 12345678
@@ -44,7 +44,7 @@ spring:
   jpa:
     hibernate:
       # 生产环境设置成 none，避免程序运行时自动更新数据库结构
-      ddl-auto: none
+      ddl-auto: update
 
 pagehelper:
   helperDialect: mysql
